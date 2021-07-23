@@ -219,94 +219,94 @@ Solving Kinematics Numerically with Python | Foldable Robotics
 <p>Note that solving kinematics numerically can prove troublesome, as the lack of a symbolic system of equations prevents us from analyzing those equations for situations when the system approaches a singularity, or when the initial guess for the state of the system is far away from the solution.  We will use a number of techniques to mitigate some of these problems but they are not always solvable.</p>
 <h2 id="import-packages">Import Packages</h2>
 <p>Import the packages you will need.  You will need <em>numpy</em> for array handling, <em>matplotlib</em>&rsquo;s plotting capabilities, the <em>scipy.optimize</em> package to do nonlinear multidimensional solving, and the <em>math</em> package for trig constants and functions.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># This line produces inline images in jupyter notebook</span>
-<span style="color:#f92672">%</span>matplotlib inline
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># import all the packages necessary for running the code</span>
-<span style="color:#f92672">import</span> numpy
-<span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
-<span style="color:#f92672">import</span> scipy.optimize
-<span style="color:#f92672">import</span> math
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># This line produces inline images in jupyter notebook</span>
+<span style="color:#f92672">%</span><span style="color:#111">matplotlib</span> <span style="color:#111">inline</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># import all the packages necessary for running the code</span>
+<span style="color:#f92672">import</span> <span style="color:#111">numpy</span>
+<span style="color:#f92672">import</span> <span style="color:#111">matplotlib.pyplot</span> <span style="color:#f92672">as</span> <span style="color:#111">plt</span>
+<span style="color:#f92672">import</span> <span style="color:#111">scipy.optimize</span>
+<span style="color:#f92672">import</span> <span style="color:#111">math</span>
 </code></pre></div><h2 id="constraint-equations">Constraint Equations</h2>
 <p>We will define some functions which will assist you in creating constraint equations for your mechanism.  These functions will be used over and over to define fixed elements of your design, such as the angle between two links, the length of a link, or the absolute angle between two vectors (using a reference).</p>
 <h3 id="length-of-a-vector">Length of a Vector</h3>
 <p>First you want to define a length constraint.  Assume a numpy array is fed in.  The function should return the length of the vector:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">length</span>(v1):
-    <span style="color:#e6db74">&#39;&#39;&#39;
-</span><span style="color:#e6db74">    finds the length of a vector
-</span><span style="color:#e6db74">    
-</span><span style="color:#e6db74">    :param v1: the vector
-</span><span style="color:#e6db74">    :type v1: tuple or list of floats
-</span><span style="color:#e6db74">    :rtypes: [float,] 
-</span><span style="color:#e6db74">    &#39;&#39;&#39;</span>
-    v1 <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>array(v1)<span style="color:#f92672">.</span>flatten()
-    l <span style="color:#f92672">=</span> (v1<span style="color:#f92672">.</span>dot(v1))<span style="color:#f92672">**.</span><span style="color:#ae81ff">5</span>
-    <span style="color:#66d9ef">return</span> l
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a8c8">def</span> <span style="color:#75af00">length</span><span style="color:#111">(</span><span style="color:#111">v1</span><span style="color:#111">):</span>
+    <span style="color:#d88200">&#39;&#39;&#39;
+</span><span style="color:#d88200">    finds the length of a vector
+</span><span style="color:#d88200">    
+</span><span style="color:#d88200">    :param v1: the vector
+</span><span style="color:#d88200">    :type v1: tuple or list of floats
+</span><span style="color:#d88200">    :rtypes: [float,] 
+</span><span style="color:#d88200">    &#39;&#39;&#39;</span>
+    <span style="color:#111">v1</span> <span style="color:#f92672">=</span> <span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">array</span><span style="color:#111">(</span><span style="color:#111">v1</span><span style="color:#111">)</span><span style="color:#f92672">.</span><span style="color:#111">flatten</span><span style="color:#111">()</span>
+    <span style="color:#111">l</span> <span style="color:#f92672">=</span> <span style="color:#111">(</span><span style="color:#111">v1</span><span style="color:#f92672">.</span><span style="color:#111">dot</span><span style="color:#111">(</span><span style="color:#111">v1</span><span style="color:#111">))</span><span style="color:#f92672">**.</span><span style="color:#ae81ff">5</span>
+    <span style="color:#00a8c8">return</span> <span style="color:#111">l</span>
 </code></pre></div><h3 id="inner-angle-between-vectors">Inner angle between vectors</h3>
 <p>Next you want to use the identity $\vec{v1}\cdot \vec{v2} = \left|\vec{v1}\right| \left|\vec{v2}\right|\cos{\theta}$.  This equation returns the inner angle between vectors without considering the direction of each vector.  It is useful, however, because given a valid initial condition, this formula can be used to maintain a fixed angle between vectors.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">inner_angle</span>(v1,v2):
-    <span style="color:#e6db74">&#39;&#39;&#39;
-</span><span style="color:#e6db74">    finds the interior angle between two vectors
-</span><span style="color:#e6db74">    
-</span><span style="color:#e6db74">    :param v1: the first vector
-</span><span style="color:#e6db74">    :type v1: tuple or list of floats
-</span><span style="color:#e6db74">    :param v2: the second vector
-</span><span style="color:#e6db74">    :type v2: tuple or list of floats
-</span><span style="color:#e6db74">    :rtypes: [float,] 
-</span><span style="color:#e6db74">    &#39;&#39;&#39;</span>
-    v1 <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>array(v1)<span style="color:#f92672">.</span>flatten()
-    l1 <span style="color:#f92672">=</span> length(v1)
-    v2 <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>array(v2)<span style="color:#f92672">.</span>flatten()
-    l2 <span style="color:#f92672">=</span> length(v2)
-    cost <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>dot(v1,v2)<span style="color:#f92672">/</span>l1<span style="color:#f92672">/</span>l2
-    t <span style="color:#f92672">=</span> math<span style="color:#f92672">.</span>acos(cost)
-    <span style="color:#66d9ef">return</span> t
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a8c8">def</span> <span style="color:#75af00">inner_angle</span><span style="color:#111">(</span><span style="color:#111">v1</span><span style="color:#111">,</span><span style="color:#111">v2</span><span style="color:#111">):</span>
+    <span style="color:#d88200">&#39;&#39;&#39;
+</span><span style="color:#d88200">    finds the interior angle between two vectors
+</span><span style="color:#d88200">    
+</span><span style="color:#d88200">    :param v1: the first vector
+</span><span style="color:#d88200">    :type v1: tuple or list of floats
+</span><span style="color:#d88200">    :param v2: the second vector
+</span><span style="color:#d88200">    :type v2: tuple or list of floats
+</span><span style="color:#d88200">    :rtypes: [float,] 
+</span><span style="color:#d88200">    &#39;&#39;&#39;</span>
+    <span style="color:#111">v1</span> <span style="color:#f92672">=</span> <span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">array</span><span style="color:#111">(</span><span style="color:#111">v1</span><span style="color:#111">)</span><span style="color:#f92672">.</span><span style="color:#111">flatten</span><span style="color:#111">()</span>
+    <span style="color:#111">l1</span> <span style="color:#f92672">=</span> <span style="color:#111">length</span><span style="color:#111">(</span><span style="color:#111">v1</span><span style="color:#111">)</span>
+    <span style="color:#111">v2</span> <span style="color:#f92672">=</span> <span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">array</span><span style="color:#111">(</span><span style="color:#111">v2</span><span style="color:#111">)</span><span style="color:#f92672">.</span><span style="color:#111">flatten</span><span style="color:#111">()</span>
+    <span style="color:#111">l2</span> <span style="color:#f92672">=</span> <span style="color:#111">length</span><span style="color:#111">(</span><span style="color:#111">v2</span><span style="color:#111">)</span>
+    <span style="color:#111">cost</span> <span style="color:#f92672">=</span> <span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">dot</span><span style="color:#111">(</span><span style="color:#111">v1</span><span style="color:#111">,</span><span style="color:#111">v2</span><span style="color:#111">)</span><span style="color:#f92672">/</span><span style="color:#111">l1</span><span style="color:#f92672">/</span><span style="color:#111">l2</span>
+    <span style="color:#111">t</span> <span style="color:#f92672">=</span> <span style="color:#111">math</span><span style="color:#f92672">.</span><span style="color:#111">acos</span><span style="color:#111">(</span><span style="color:#111">cost</span><span style="color:#111">)</span>
+    <span style="color:#00a8c8">return</span> <span style="color:#111">t</span>
 </code></pre></div><h3 id="absolute-angle-between-vectors">Absolute angle between vectors</h3>
 <p>Sometimes it is necessary to specify the angle between two directed vectors.  This cannot be done using only sine or cosine due to their limited range when computing inverse sines and inverse cosines.  the <code>atan2</code> function may be used in code, but computing the absolute angle between vectors has two solutions unless you supply a third orientation vector v3, indicating the handedness of the solution you prefer.  We will assume that the desired reference vector is a unit vector in the positive z direction, but this can be supplied as an optional third term.  The following function has some error proofing code in it to ensure that the supplied reference is considered in determining which answer to use in solving the total angle between two vectors.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">total_angle</span>(v1,v2,v3<span style="color:#f92672">=</span>None):
-    <span style="color:#e6db74">&#39;&#39;&#39;
-</span><span style="color:#e6db74">    finds the interior angle between two vectors
-</span><span style="color:#e6db74">    
-</span><span style="color:#e6db74">    :param v1: the first vector
-</span><span style="color:#e6db74">    :type v1: tuple or list of floats
-</span><span style="color:#e6db74">    :param v2: the second vector
-</span><span style="color:#e6db74">    :type v2: tuple or list of floats
-</span><span style="color:#e6db74">    :rtypes: [float,] 
-</span><span style="color:#e6db74">    &#39;&#39;&#39;</span>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a8c8">def</span> <span style="color:#75af00">total_angle</span><span style="color:#111">(</span><span style="color:#111">v1</span><span style="color:#111">,</span><span style="color:#111">v2</span><span style="color:#111">,</span><span style="color:#111">v3</span><span style="color:#f92672">=</span><span style="color:#111">None</span><span style="color:#111">):</span>
+    <span style="color:#d88200">&#39;&#39;&#39;
+</span><span style="color:#d88200">    finds the interior angle between two vectors
+</span><span style="color:#d88200">    
+</span><span style="color:#d88200">    :param v1: the first vector
+</span><span style="color:#d88200">    :type v1: tuple or list of floats
+</span><span style="color:#d88200">    :param v2: the second vector
+</span><span style="color:#d88200">    :type v2: tuple or list of floats
+</span><span style="color:#d88200">    :rtypes: [float,] 
+</span><span style="color:#d88200">    &#39;&#39;&#39;</span>
 
-    v1 <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>array(v1)<span style="color:#f92672">.</span>flatten()
-    <span style="color:#66d9ef">if</span> len(v1)<span style="color:#f92672">==</span><span style="color:#ae81ff">2</span>:
-        v1 <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>r_[v1,<span style="color:#ae81ff">0</span>]
-        v3 <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>array([<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>])
+    <span style="color:#111">v1</span> <span style="color:#f92672">=</span> <span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">array</span><span style="color:#111">(</span><span style="color:#111">v1</span><span style="color:#111">)</span><span style="color:#f92672">.</span><span style="color:#111">flatten</span><span style="color:#111">()</span>
+    <span style="color:#00a8c8">if</span> <span style="color:#111">len</span><span style="color:#111">(</span><span style="color:#111">v1</span><span style="color:#111">)</span><span style="color:#f92672">==</span><span style="color:#ae81ff">2</span><span style="color:#111">:</span>
+        <span style="color:#111">v1</span> <span style="color:#f92672">=</span> <span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">r_</span><span style="color:#111">[</span><span style="color:#111">v1</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">]</span>
+        <span style="color:#111">v3</span> <span style="color:#f92672">=</span> <span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">array</span><span style="color:#111">([</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span><span style="color:#ae81ff">1</span><span style="color:#111">])</span>
 
-        v2 <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>array(v2)<span style="color:#f92672">.</span>flatten()
-    <span style="color:#66d9ef">if</span> len(v2)<span style="color:#f92672">==</span><span style="color:#ae81ff">2</span>:
-        v2 <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>r_[v2,<span style="color:#ae81ff">0</span>]
-        v3 <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>array([<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>])
+        <span style="color:#111">v2</span> <span style="color:#f92672">=</span> <span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">array</span><span style="color:#111">(</span><span style="color:#111">v2</span><span style="color:#111">)</span><span style="color:#f92672">.</span><span style="color:#111">flatten</span><span style="color:#111">()</span>
+    <span style="color:#00a8c8">if</span> <span style="color:#111">len</span><span style="color:#111">(</span><span style="color:#111">v2</span><span style="color:#111">)</span><span style="color:#f92672">==</span><span style="color:#ae81ff">2</span><span style="color:#111">:</span>
+        <span style="color:#111">v2</span> <span style="color:#f92672">=</span> <span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">r_</span><span style="color:#111">[</span><span style="color:#111">v2</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">]</span>
+        <span style="color:#111">v3</span> <span style="color:#f92672">=</span> <span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">array</span><span style="color:#111">([</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span><span style="color:#ae81ff">1</span><span style="color:#111">])</span>
 
-    costheta <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>dot(v1,v2)
-    sintheta  <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>cross(v1,v2)
-    l_sintheta <span style="color:#f92672">=</span> length(sintheta)
-    neg <span style="color:#f92672">=</span> sintheta<span style="color:#f92672">.</span>dot(v3)
-    <span style="color:#66d9ef">if</span> neg<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">0</span>:
-        neg <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
-    <span style="color:#66d9ef">else</span>:
-        neg<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
-    theta <span style="color:#f92672">=</span> math<span style="color:#f92672">.</span>atan2(neg<span style="color:#f92672">*</span>l_sintheta,costheta)
-    <span style="color:#66d9ef">return</span> theta    
+    <span style="color:#111">costheta</span> <span style="color:#f92672">=</span> <span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">dot</span><span style="color:#111">(</span><span style="color:#111">v1</span><span style="color:#111">,</span><span style="color:#111">v2</span><span style="color:#111">)</span>
+    <span style="color:#111">sintheta</span>  <span style="color:#f92672">=</span> <span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">cross</span><span style="color:#111">(</span><span style="color:#111">v1</span><span style="color:#111">,</span><span style="color:#111">v2</span><span style="color:#111">)</span>
+    <span style="color:#111">l_sintheta</span> <span style="color:#f92672">=</span> <span style="color:#111">length</span><span style="color:#111">(</span><span style="color:#111">sintheta</span><span style="color:#111">)</span>
+    <span style="color:#111">neg</span> <span style="color:#f92672">=</span> <span style="color:#111">sintheta</span><span style="color:#f92672">.</span><span style="color:#111">dot</span><span style="color:#111">(</span><span style="color:#111">v3</span><span style="color:#111">)</span>
+    <span style="color:#00a8c8">if</span> <span style="color:#111">neg</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">0</span><span style="color:#111">:</span>
+        <span style="color:#111">neg</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+    <span style="color:#00a8c8">else</span><span style="color:#111">:</span>
+        <span style="color:#111">neg</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+    <span style="color:#111">theta</span> <span style="color:#f92672">=</span> <span style="color:#111">math</span><span style="color:#f92672">.</span><span style="color:#111">atan2</span><span style="color:#111">(</span><span style="color:#111">neg</span><span style="color:#f92672">*</span><span style="color:#111">l_sintheta</span><span style="color:#111">,</span><span style="color:#111">costheta</span><span style="color:#111">)</span>
+    <span style="color:#00a8c8">return</span> <span style="color:#111">theta</span>    
 </code></pre></div><h2 id="angle-between-planes">Angle Between Planes</h2>
 <p>This function finds the angle between two planes</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">angle_between_planes</span>(v1,v2,v3):
-    <span style="color:#e6db74">&#39;&#39;&#39;measures the angle between planes.  
-</span><span style="color:#e6db74">    v1 and v2 are two vectors which define one plane
-</span><span style="color:#e6db74">    v2 and v3 define the third plane.&#39;&#39;&#39;</span>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a8c8">def</span> <span style="color:#75af00">angle_between_planes</span><span style="color:#111">(</span><span style="color:#111">v1</span><span style="color:#111">,</span><span style="color:#111">v2</span><span style="color:#111">,</span><span style="color:#111">v3</span><span style="color:#111">):</span>
+    <span style="color:#d88200">&#39;&#39;&#39;measures the angle between planes.  
+</span><span style="color:#d88200">    v1 and v2 are two vectors which define one plane
+</span><span style="color:#d88200">    v2 and v3 define the third plane.&#39;&#39;&#39;</span>
     
-    n1 <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>cross(v1,v2)
-    n2 <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>cross(v2,v3)
-    <span style="color:#66d9ef">return</span> total_angle(n1,n2,v2)
+    <span style="color:#111">n1</span> <span style="color:#f92672">=</span> <span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">cross</span><span style="color:#111">(</span><span style="color:#111">v1</span><span style="color:#111">,</span><span style="color:#111">v2</span><span style="color:#111">)</span>
+    <span style="color:#111">n2</span> <span style="color:#f92672">=</span> <span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">cross</span><span style="color:#111">(</span><span style="color:#111">v2</span><span style="color:#111">,</span><span style="color:#111">v3</span><span style="color:#111">)</span>
+    <span style="color:#00a8c8">return</span> <span style="color:#111">total_angle</span><span style="color:#111">(</span><span style="color:#111">n1</span><span style="color:#111">,</span><span style="color:#111">n2</span><span style="color:#111">,</span><span style="color:#111">v2</span><span style="color:#111">)</span>
 </code></pre></div><h2 id="constraint-equations-creation">Constraint Equations Creation</h2>
 <p>The next function which is generated is responsible for generating and evaluating all the constraint equations for a given system.  Consider a four-bar linkage of four vectors</p>
 <p><div class="text-center">
-  <a href="/figures/kinematics/fourbar.png" target="_blank"><img src="/figures/kinematics/fourbar.png" alt="four bar linkage"  class="img-fluid"/></a>
+  <a href="/figures/kinematics/fourbar.png"><img src="/figures/kinematics/fourbar.png" alt="four bar linkage"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <p>The planar four bar linkage can be defined by four points: $p_1$, $p_2$, $p_3$, and $p_4$.  The distance between these points is fixed by a rigid link.  Additionally, you can see that link 1 is rigidly attached to the world frame, which defines both its position and orientation.  For the 8 unknowns of the system, there must be 8 equations which can fully define the position of those four planar vectors.</p>
 <p>To sum them up:</p>
@@ -319,26 +319,26 @@ Solving Kinematics Numerically with Python | Foldable Robotics
 <h3 id="implementation-in-python">Implementation in Python</h3>
 <p>To solve these equations in python requires the use of the <code>scipy.optimize</code> module.  The <code>minimize</code> function takes a function and an initial guess for a number of variables, and attempts to reduce the error produced by the function.  So our description of our kinematic constraint equations must result in the form of a function that returns the error of a guess made by the <code>scipy.optimize.minimize</code> function.</p>
 <p>But what if we want to build an arbitrary four-bar linkage?  If we supply specific constraint equations and a value for q, we will have to regenerate a new four-bar function for each design and configuration.  So instead, we wrap the four-bar constraint error calculation in another function which takes in our desired design and configuration variables, <code>q1,dl1,dl2,dl3,dl4</code>.  This wrapper permits us to reuse the calc_fourbar() function for any four-bar linkage for which we have a set of desired link lengths and input angle.  The implementation can be seen below:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">p0_ini <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>
-p1_ini <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>
-p2_ini <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>
-p3_ini <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
-p4_ini <span style="color:#f92672">=</span> <span style="color:#f92672">.</span><span style="color:#ae81ff">5</span>,<span style="color:#f92672">-.</span><span style="color:#ae81ff">5</span>
-p_ini <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>array([p0_ini,p1_ini,p2_ini,p3_ini,p4_ini])
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">p0_ini</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span>
+<span style="color:#111">p1_ini</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span>
+<span style="color:#111">p2_ini</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#111">,</span><span style="color:#ae81ff">1</span>
+<span style="color:#111">p3_ini</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+<span style="color:#111">p4_ini</span> <span style="color:#f92672">=</span> <span style="color:#f92672">.</span><span style="color:#ae81ff">5</span><span style="color:#111">,</span><span style="color:#f92672">-.</span><span style="color:#ae81ff">5</span>
+<span style="color:#111">p_ini</span> <span style="color:#f92672">=</span> <span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">array</span><span style="color:#111">([</span><span style="color:#111">p0_ini</span><span style="color:#111">,</span><span style="color:#111">p1_ini</span><span style="color:#111">,</span><span style="color:#111">p2_ini</span><span style="color:#111">,</span><span style="color:#111">p3_ini</span><span style="color:#111">,</span><span style="color:#111">p4_ini</span><span style="color:#111">])</span>
 </code></pre></div><p>define a list of label strings for labeling points</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">point_text <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;p0&#39;</span>,<span style="color:#e6db74">&#39;p1&#39;</span>,<span style="color:#e6db74">&#39;p2&#39;</span>,<span style="color:#e6db74">&#39;p3&#39;</span>,<span style="color:#e6db74">&#39;p4&#39;</span>]
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">point_text</span> <span style="color:#f92672">=</span> <span style="color:#111">[</span><span style="color:#d88200">&#39;p0&#39;</span><span style="color:#111">,</span><span style="color:#d88200">&#39;p1&#39;</span><span style="color:#111">,</span><span style="color:#d88200">&#39;p2&#39;</span><span style="color:#111">,</span><span style="color:#d88200">&#39;p3&#39;</span><span style="color:#111">,</span><span style="color:#d88200">&#39;p4&#39;</span><span style="color:#111">]</span>
 </code></pre></div><p>Define a list of vectors by the index of the points used</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">vector_order <span style="color:#f92672">=</span> []
-vector_order<span style="color:#f92672">.</span>append((<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>))
-vector_order<span style="color:#f92672">.</span>append((<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>))
-vector_order<span style="color:#f92672">.</span>append((<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>))
-vector_order<span style="color:#f92672">.</span>append((<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">0</span>))
-vector_order<span style="color:#f92672">.</span>append((<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">4</span>))
-vector_order<span style="color:#f92672">.</span>append((<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">4</span>))
-vector_order <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>array(vector_order)
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">vector_order</span> <span style="color:#f92672">=</span> <span style="color:#111">[]</span>
+<span style="color:#111">vector_order</span><span style="color:#f92672">.</span><span style="color:#111">append</span><span style="color:#111">((</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span><span style="color:#ae81ff">1</span><span style="color:#111">))</span>
+<span style="color:#111">vector_order</span><span style="color:#f92672">.</span><span style="color:#111">append</span><span style="color:#111">((</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span><span style="color:#ae81ff">2</span><span style="color:#111">))</span>
+<span style="color:#111">vector_order</span><span style="color:#f92672">.</span><span style="color:#111">append</span><span style="color:#111">((</span><span style="color:#ae81ff">2</span><span style="color:#111">,</span><span style="color:#ae81ff">3</span><span style="color:#111">))</span>
+<span style="color:#111">vector_order</span><span style="color:#f92672">.</span><span style="color:#111">append</span><span style="color:#111">((</span><span style="color:#ae81ff">3</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">))</span>
+<span style="color:#111">vector_order</span><span style="color:#f92672">.</span><span style="color:#111">append</span><span style="color:#111">((</span><span style="color:#ae81ff">2</span><span style="color:#111">,</span><span style="color:#ae81ff">4</span><span style="color:#111">))</span>
+<span style="color:#111">vector_order</span><span style="color:#f92672">.</span><span style="color:#111">append</span><span style="color:#111">((</span><span style="color:#ae81ff">3</span><span style="color:#111">,</span><span style="color:#ae81ff">4</span><span style="color:#111">))</span>
+<span style="color:#111">vector_order</span> <span style="color:#f92672">=</span> <span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">array</span><span style="color:#111">(</span><span style="color:#111">vector_order</span><span style="color:#111">)</span>
 </code></pre></div><p>For each vector, define the initial vector as the difference from point 1 minus point 0</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">v_ini <span style="color:#f92672">=</span> p_ini[vector_order[:,<span style="color:#ae81ff">1</span>]]<span style="color:#f92672">-</span>p_ini[vector_order[:,<span style="color:#ae81ff">0</span>]]
-v_ini
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">v_ini</span> <span style="color:#f92672">=</span> <span style="color:#111">p_ini</span><span style="color:#111">[</span><span style="color:#111">vector_order</span><span style="color:#111">[:,</span><span style="color:#ae81ff">1</span><span style="color:#111">]]</span><span style="color:#f92672">-</span><span style="color:#111">p_ini</span><span style="color:#111">[</span><span style="color:#111">vector_order</span><span style="color:#111">[:,</span><span style="color:#ae81ff">0</span><span style="color:#111">]]</span>
+<span style="color:#111">v_ini</span>
 </code></pre></div><pre><code>array([[ 1. ,  0. ],
        [ 0. ,  1. ],
        [-2. , -2. ],
@@ -347,8 +347,8 @@ v_ini
        [ 1.5,  0.5]])
 </code></pre>
 <p>Calculate the initial length</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">l_ini <span style="color:#f92672">=</span> [length(item) <span style="color:#66d9ef">for</span> item <span style="color:#f92672">in</span> v_ini]
-l_ini
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">l_ini</span> <span style="color:#f92672">=</span> <span style="color:#111">[</span><span style="color:#111">length</span><span style="color:#111">(</span><span style="color:#111">item</span><span style="color:#111">)</span> <span style="color:#00a8c8">for</span> <span style="color:#111">item</span> <span style="color:#f92672">in</span> <span style="color:#111">v_ini</span><span style="color:#111">]</span>
+<span style="color:#111">l_ini</span>
 </code></pre></div><pre><code>[1.0,
  1.0,
  2.8284271247461903,
@@ -357,8 +357,8 @@ l_ini
  1.5811388300841898]
 </code></pre>
 <p>Compute the text location as halfway between point 0 and 1 for each vector</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">text_location <span style="color:#f92672">=</span> (p_ini[vector_order[:,<span style="color:#ae81ff">1</span>]]<span style="color:#f92672">+</span>p_ini[vector_order[:,<span style="color:#ae81ff">0</span>]])<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>
-text_location
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">text_location</span> <span style="color:#f92672">=</span> <span style="color:#111">(</span><span style="color:#111">p_ini</span><span style="color:#111">[</span><span style="color:#111">vector_order</span><span style="color:#111">[:,</span><span style="color:#ae81ff">1</span><span style="color:#111">]]</span><span style="color:#f92672">+</span><span style="color:#111">p_ini</span><span style="color:#111">[</span><span style="color:#111">vector_order</span><span style="color:#111">[:,</span><span style="color:#ae81ff">0</span><span style="color:#111">]])</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>
+<span style="color:#111">text_location</span>
 </code></pre></div><pre><code>array([[ 0.5 ,  0.  ],
        [ 1.  ,  0.5 ],
        [ 0.  ,  0.  ],
@@ -367,126 +367,126 @@ text_location
        [-0.25, -0.75]])
 </code></pre>
 <p>Add labels for labeling the vector midpoint</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">vector_text <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;v0&#39;</span>,<span style="color:#e6db74">&#39;v1&#39;</span>,<span style="color:#e6db74">&#39;v2&#39;</span>,<span style="color:#e6db74">&#39;v3&#39;</span>,<span style="color:#e6db74">&#39;v4&#39;</span>,<span style="color:#e6db74">&#39;v5&#39;</span>]
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">vector_text</span> <span style="color:#f92672">=</span> <span style="color:#111">[</span><span style="color:#d88200">&#39;v0&#39;</span><span style="color:#111">,</span><span style="color:#d88200">&#39;v1&#39;</span><span style="color:#111">,</span><span style="color:#d88200">&#39;v2&#39;</span><span style="color:#111">,</span><span style="color:#d88200">&#39;v3&#39;</span><span style="color:#111">,</span><span style="color:#d88200">&#39;v4&#39;</span><span style="color:#111">,</span><span style="color:#d88200">&#39;v5&#39;</span><span style="color:#111">]</span>
 </code></pre></div><p>Create a function that plots a mechanism</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">plot_mechanism</span>(point_location,text_location<span style="color:#f92672">=</span>None):
-    <span style="color:#66d9ef">for</span> item <span style="color:#f92672">in</span> vector_order:
-        plt<span style="color:#f92672">.</span>plot(<span style="color:#f92672">*</span>(point_location[item,:<span style="color:#ae81ff">3</span>]<span style="color:#f92672">.</span>T),<span style="color:#e6db74">&#39;ko-&#39;</span>)
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a8c8">def</span> <span style="color:#75af00">plot_mechanism</span><span style="color:#111">(</span><span style="color:#111">point_location</span><span style="color:#111">,</span><span style="color:#111">text_location</span><span style="color:#f92672">=</span><span style="color:#111">None</span><span style="color:#111">):</span>
+    <span style="color:#00a8c8">for</span> <span style="color:#111">item</span> <span style="color:#f92672">in</span> <span style="color:#111">vector_order</span><span style="color:#111">:</span>
+        <span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">(</span><span style="color:#f92672">*</span><span style="color:#111">(</span><span style="color:#111">point_location</span><span style="color:#111">[</span><span style="color:#111">item</span><span style="color:#111">,:</span><span style="color:#ae81ff">3</span><span style="color:#111">]</span><span style="color:#f92672">.</span><span style="color:#111">T</span><span style="color:#111">),</span><span style="color:#d88200">&#39;ko-&#39;</span><span style="color:#111">)</span>
 
-    <span style="color:#66d9ef">if</span> text_location <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> None:
-        <span style="color:#66d9ef">for</span> item,text <span style="color:#f92672">in</span> zip(point_location,point_text):
-            ax<span style="color:#f92672">.</span>text(x<span style="color:#f92672">=</span>item[<span style="color:#ae81ff">0</span>],y<span style="color:#f92672">=</span>item[<span style="color:#ae81ff">1</span>],s<span style="color:#f92672">=</span>text)
+    <span style="color:#00a8c8">if</span> <span style="color:#111">text_location</span> <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#111">None</span><span style="color:#111">:</span>
+        <span style="color:#00a8c8">for</span> <span style="color:#111">item</span><span style="color:#111">,</span><span style="color:#111">text</span> <span style="color:#f92672">in</span> <span style="color:#111">zip</span><span style="color:#111">(</span><span style="color:#111">point_location</span><span style="color:#111">,</span><span style="color:#111">point_text</span><span style="color:#111">):</span>
+            <span style="color:#111">ax</span><span style="color:#f92672">.</span><span style="color:#111">text</span><span style="color:#111">(</span><span style="color:#111">x</span><span style="color:#f92672">=</span><span style="color:#111">item</span><span style="color:#111">[</span><span style="color:#ae81ff">0</span><span style="color:#111">],</span><span style="color:#111">y</span><span style="color:#f92672">=</span><span style="color:#111">item</span><span style="color:#111">[</span><span style="color:#ae81ff">1</span><span style="color:#111">],</span><span style="color:#111">s</span><span style="color:#f92672">=</span><span style="color:#111">text</span><span style="color:#111">)</span>
 
-        <span style="color:#66d9ef">for</span> item,text <span style="color:#f92672">in</span> zip(text_location,vector_text):
-            ax<span style="color:#f92672">.</span>text(x<span style="color:#f92672">=</span>item[<span style="color:#ae81ff">0</span>],y<span style="color:#f92672">=</span>item[<span style="color:#ae81ff">1</span>],s<span style="color:#f92672">=</span>text)
+        <span style="color:#00a8c8">for</span> <span style="color:#111">item</span><span style="color:#111">,</span><span style="color:#111">text</span> <span style="color:#f92672">in</span> <span style="color:#111">zip</span><span style="color:#111">(</span><span style="color:#111">text_location</span><span style="color:#111">,</span><span style="color:#111">vector_text</span><span style="color:#111">):</span>
+            <span style="color:#111">ax</span><span style="color:#f92672">.</span><span style="color:#111">text</span><span style="color:#111">(</span><span style="color:#111">x</span><span style="color:#f92672">=</span><span style="color:#111">item</span><span style="color:#111">[</span><span style="color:#ae81ff">0</span><span style="color:#111">],</span><span style="color:#111">y</span><span style="color:#f92672">=</span><span style="color:#111">item</span><span style="color:#111">[</span><span style="color:#ae81ff">1</span><span style="color:#111">],</span><span style="color:#111">s</span><span style="color:#f92672">=</span><span style="color:#111">text</span><span style="color:#111">)</span>
 
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>figure();
-ax <span style="color:#f92672">=</span> fig<span style="color:#f92672">.</span>add_subplot(<span style="color:#ae81ff">111</span>)
-plot_mechanism(p_ini,text_location)
-plt<span style="color:#f92672">.</span>show()
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">fig</span> <span style="color:#f92672">=</span> <span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">figure</span><span style="color:#111">();</span>
+<span style="color:#111">ax</span> <span style="color:#f92672">=</span> <span style="color:#111">fig</span><span style="color:#f92672">.</span><span style="color:#111">add_subplot</span><span style="color:#111">(</span><span style="color:#ae81ff">111</span><span style="color:#111">)</span>
+<span style="color:#111">plot_mechanism</span><span style="color:#111">(</span><span style="color:#111">p_ini</span><span style="color:#111">,</span><span style="color:#111">text_location</span><span style="color:#111">)</span>
+<span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">show</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_27_0.png" target="_blank"><img src="output_27_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_27_0.png"><img src="output_27_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">gen_function</span>(q1,dl1,dl2,dl3,dl4,dl5,dl6):
-    <span style="color:#66d9ef">def</span> <span style="color:#a6e22e">calc_fourbar</span>(arguments):
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a8c8">def</span> <span style="color:#75af00">gen_function</span><span style="color:#111">(</span><span style="color:#111">q1</span><span style="color:#111">,</span><span style="color:#111">dl1</span><span style="color:#111">,</span><span style="color:#111">dl2</span><span style="color:#111">,</span><span style="color:#111">dl3</span><span style="color:#111">,</span><span style="color:#111">dl4</span><span style="color:#111">,</span><span style="color:#111">dl5</span><span style="color:#111">,</span><span style="color:#111">dl6</span><span style="color:#111">):</span>
+    <span style="color:#00a8c8">def</span> <span style="color:#75af00">calc_fourbar</span><span style="color:#111">(</span><span style="color:#111">arguments</span><span style="color:#111">):</span>
         <span style="color:#75715e"># break arguments variable into 8 discrete variables, 2 for each planar point in the four-bar linkage</span>
-        x0,y0,x1,y1,x2,y2,x3,y3,x4,y4 <span style="color:#f92672">=</span> arguments
+        <span style="color:#111">x0</span><span style="color:#111">,</span><span style="color:#111">y0</span><span style="color:#111">,</span><span style="color:#111">x1</span><span style="color:#111">,</span><span style="color:#111">y1</span><span style="color:#111">,</span><span style="color:#111">x2</span><span style="color:#111">,</span><span style="color:#111">y2</span><span style="color:#111">,</span><span style="color:#111">x3</span><span style="color:#111">,</span><span style="color:#111">y3</span><span style="color:#111">,</span><span style="color:#111">x4</span><span style="color:#111">,</span><span style="color:#111">y4</span> <span style="color:#f92672">=</span> <span style="color:#111">arguments</span>
         
         <span style="color:#75715e">#Create four points: p1, p2, p3, p4</span>
-        p0 <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>array([x0,y0])
-        p1 <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>array([x1,y1])
-        p2 <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>array([x2,y2])
-        p3 <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>array([x3,y3])
-        p4 <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>array([x4,y4])
+        <span style="color:#111">p0</span> <span style="color:#f92672">=</span> <span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">array</span><span style="color:#111">([</span><span style="color:#111">x0</span><span style="color:#111">,</span><span style="color:#111">y0</span><span style="color:#111">])</span>
+        <span style="color:#111">p1</span> <span style="color:#f92672">=</span> <span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">array</span><span style="color:#111">([</span><span style="color:#111">x1</span><span style="color:#111">,</span><span style="color:#111">y1</span><span style="color:#111">])</span>
+        <span style="color:#111">p2</span> <span style="color:#f92672">=</span> <span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">array</span><span style="color:#111">([</span><span style="color:#111">x2</span><span style="color:#111">,</span><span style="color:#111">y2</span><span style="color:#111">])</span>
+        <span style="color:#111">p3</span> <span style="color:#f92672">=</span> <span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">array</span><span style="color:#111">([</span><span style="color:#111">x3</span><span style="color:#111">,</span><span style="color:#111">y3</span><span style="color:#111">])</span>
+        <span style="color:#111">p4</span> <span style="color:#f92672">=</span> <span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">array</span><span style="color:#111">([</span><span style="color:#111">x4</span><span style="color:#111">,</span><span style="color:#111">y4</span><span style="color:#111">])</span>
 
         
         <span style="color:#75715e">#create new point array using inputs of function</span>
-        p <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>array([p0,p1,p2,p3,p4])
+        <span style="color:#111">p</span> <span style="color:#f92672">=</span> <span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">array</span><span style="color:#111">([</span><span style="color:#111">p0</span><span style="color:#111">,</span><span style="color:#111">p1</span><span style="color:#111">,</span><span style="color:#111">p2</span><span style="color:#111">,</span><span style="color:#111">p3</span><span style="color:#111">,</span><span style="color:#111">p4</span><span style="color:#111">])</span>
         
         <span style="color:#75715e">#create new vector array using vector ordering defined above</span>
-        v <span style="color:#f92672">=</span> p[vector_order[:,<span style="color:#ae81ff">1</span>]]<span style="color:#f92672">-</span>p[vector_order[:,<span style="color:#ae81ff">0</span>]]
+        <span style="color:#111">v</span> <span style="color:#f92672">=</span> <span style="color:#111">p</span><span style="color:#111">[</span><span style="color:#111">vector_order</span><span style="color:#111">[:,</span><span style="color:#ae81ff">1</span><span style="color:#111">]]</span><span style="color:#f92672">-</span><span style="color:#111">p</span><span style="color:#111">[</span><span style="color:#111">vector_order</span><span style="color:#111">[:,</span><span style="color:#ae81ff">0</span><span style="color:#111">]]</span>
         
         <span style="color:#75715e">#create new length vector</span>
-        l <span style="color:#f92672">=</span> [length(item) <span style="color:#66d9ef">for</span> item <span style="color:#f92672">in</span> v]
+        <span style="color:#111">l</span> <span style="color:#f92672">=</span> <span style="color:#111">[</span><span style="color:#111">length</span><span style="color:#111">(</span><span style="color:#111">item</span><span style="color:#111">)</span> <span style="color:#00a8c8">for</span> <span style="color:#111">item</span> <span style="color:#f92672">in</span> <span style="color:#111">v</span><span style="color:#111">]</span>
 
         <span style="color:#75715e"># Define the x and y axis unit vectors</span>
-        x_axis <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>array([<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>])
-        y_axis <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>array([<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>])
+        <span style="color:#111">x_axis</span> <span style="color:#f92672">=</span> <span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">array</span><span style="color:#111">([</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">])</span>
+        <span style="color:#111">y_axis</span> <span style="color:#f92672">=</span> <span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">array</span><span style="color:#111">([</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span><span style="color:#ae81ff">1</span><span style="color:#111">])</span>
 
         <span style="color:#75715e"># define the error variable for holding all mechanism error calcs</span>
-        error <span style="color:#f92672">=</span> []
+        <span style="color:#111">error</span> <span style="color:#f92672">=</span> <span style="color:#111">[]</span>
 
         <span style="color:#75715e"># Compute the error in the structure as the absolute, cumulative </span>
         <span style="color:#75715e"># difference between the link lengths and their desired lengths</span>
-        error<span style="color:#f92672">.</span>append([l[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">-</span>dl1])
-        error<span style="color:#f92672">.</span>append([l[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">-</span>dl2])
-        error<span style="color:#f92672">.</span>append([l[<span style="color:#ae81ff">2</span>]<span style="color:#f92672">-</span>dl3])
-        error<span style="color:#f92672">.</span>append([l[<span style="color:#ae81ff">3</span>]<span style="color:#f92672">-</span>dl4])
-        error<span style="color:#f92672">.</span>append([l[<span style="color:#ae81ff">4</span>]<span style="color:#f92672">-</span>dl5])
-        error<span style="color:#f92672">.</span>append([l[<span style="color:#ae81ff">5</span>]<span style="color:#f92672">-</span>dl6])
+        <span style="color:#111">error</span><span style="color:#f92672">.</span><span style="color:#111">append</span><span style="color:#111">([</span><span style="color:#111">l</span><span style="color:#111">[</span><span style="color:#ae81ff">0</span><span style="color:#111">]</span><span style="color:#f92672">-</span><span style="color:#111">dl1</span><span style="color:#111">])</span>
+        <span style="color:#111">error</span><span style="color:#f92672">.</span><span style="color:#111">append</span><span style="color:#111">([</span><span style="color:#111">l</span><span style="color:#111">[</span><span style="color:#ae81ff">1</span><span style="color:#111">]</span><span style="color:#f92672">-</span><span style="color:#111">dl2</span><span style="color:#111">])</span>
+        <span style="color:#111">error</span><span style="color:#f92672">.</span><span style="color:#111">append</span><span style="color:#111">([</span><span style="color:#111">l</span><span style="color:#111">[</span><span style="color:#ae81ff">2</span><span style="color:#111">]</span><span style="color:#f92672">-</span><span style="color:#111">dl3</span><span style="color:#111">])</span>
+        <span style="color:#111">error</span><span style="color:#f92672">.</span><span style="color:#111">append</span><span style="color:#111">([</span><span style="color:#111">l</span><span style="color:#111">[</span><span style="color:#ae81ff">3</span><span style="color:#111">]</span><span style="color:#f92672">-</span><span style="color:#111">dl4</span><span style="color:#111">])</span>
+        <span style="color:#111">error</span><span style="color:#f92672">.</span><span style="color:#111">append</span><span style="color:#111">([</span><span style="color:#111">l</span><span style="color:#111">[</span><span style="color:#ae81ff">4</span><span style="color:#111">]</span><span style="color:#f92672">-</span><span style="color:#111">dl5</span><span style="color:#111">])</span>
+        <span style="color:#111">error</span><span style="color:#f92672">.</span><span style="color:#111">append</span><span style="color:#111">([</span><span style="color:#111">l</span><span style="color:#111">[</span><span style="color:#ae81ff">5</span><span style="color:#111">]</span><span style="color:#f92672">-</span><span style="color:#111">dl6</span><span style="color:#111">])</span>
         
         <span style="color:#75715e"># add the desired input angle q1 minus the actual angle as another error component to be solved</span>
-        error<span style="color:#f92672">.</span>append([total_angle(v[<span style="color:#ae81ff">0</span>],<span style="color:#f92672">-</span>v[<span style="color:#ae81ff">3</span>])<span style="color:#f92672">-</span>q1<span style="color:#f92672">*</span>math<span style="color:#f92672">.</span>pi<span style="color:#f92672">/</span><span style="color:#ae81ff">180</span>])
+        <span style="color:#111">error</span><span style="color:#f92672">.</span><span style="color:#111">append</span><span style="color:#111">([</span><span style="color:#111">total_angle</span><span style="color:#111">(</span><span style="color:#111">v</span><span style="color:#111">[</span><span style="color:#ae81ff">0</span><span style="color:#111">],</span><span style="color:#f92672">-</span><span style="color:#111">v</span><span style="color:#111">[</span><span style="color:#ae81ff">3</span><span style="color:#111">])</span><span style="color:#f92672">-</span><span style="color:#111">q1</span><span style="color:#f92672">*</span><span style="color:#111">math</span><span style="color:#f92672">.</span><span style="color:#111">pi</span><span style="color:#f92672">/</span><span style="color:#ae81ff">180</span><span style="color:#111">])</span>
         <span style="color:#75715e">#error.append([inner_angle(-v4,y_axis)-q1*math.pi/180+math.pi/2])</span>
         
         <span style="color:#75715e"># add two more constraints defining p1 as fixed at (0,0)</span>
-        error<span style="color:#f92672">.</span>append([p[<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>]<span style="color:#f92672">-</span><span style="color:#ae81ff">0</span>])
-        error<span style="color:#f92672">.</span>append([p[<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>]<span style="color:#f92672">-</span><span style="color:#ae81ff">0</span>])
+        <span style="color:#111">error</span><span style="color:#f92672">.</span><span style="color:#111">append</span><span style="color:#111">([</span><span style="color:#111">p</span><span style="color:#111">[</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">]</span><span style="color:#f92672">-</span><span style="color:#ae81ff">0</span><span style="color:#111">])</span>
+        <span style="color:#111">error</span><span style="color:#f92672">.</span><span style="color:#111">append</span><span style="color:#111">([</span><span style="color:#111">p</span><span style="color:#111">[</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span><span style="color:#ae81ff">1</span><span style="color:#111">]</span><span style="color:#f92672">-</span><span style="color:#ae81ff">0</span><span style="color:#111">])</span>
         
         <span style="color:#75715e"># define v1 to be parallel to the x axis.</span>
-        error<span style="color:#f92672">.</span>append([inner_angle(v[<span style="color:#ae81ff">0</span>],x_axis)<span style="color:#f92672">-</span><span style="color:#ae81ff">0</span>])
+        <span style="color:#111">error</span><span style="color:#f92672">.</span><span style="color:#111">append</span><span style="color:#111">([</span><span style="color:#111">inner_angle</span><span style="color:#111">(</span><span style="color:#111">v</span><span style="color:#111">[</span><span style="color:#ae81ff">0</span><span style="color:#111">],</span><span style="color:#111">x_axis</span><span style="color:#111">)</span><span style="color:#f92672">-</span><span style="color:#ae81ff">0</span><span style="color:#111">])</span>
 
         <span style="color:#75715e"># turn the error list into a vector</span>
-        error1 <span style="color:#f92672">=</span>numpy<span style="color:#f92672">.</span>array(error)
+        <span style="color:#111">error1</span> <span style="color:#f92672">=</span><span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">array</span><span style="color:#111">(</span><span style="color:#111">error</span><span style="color:#111">)</span>
         
         <span style="color:#75715e"># return the square root of the sum of squared errors.  The length function that we wrote earlier does that.</span>
-        <span style="color:#66d9ef">return</span> length(error1)
+        <span style="color:#00a8c8">return</span> <span style="color:#111">length</span><span style="color:#111">(</span><span style="color:#111">error1</span><span style="color:#111">)</span>
     
-    <span style="color:#66d9ef">return</span> calc_fourbar
+    <span style="color:#00a8c8">return</span> <span style="color:#111">calc_fourbar</span>
 </code></pre></div><p>To test the function we simply need to create a valid initial guess for the initial locations of the 8 variables <code>x1,y1,x2,y2,x3,y3,x4,y4</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">ini <span style="color:#f92672">=</span> list(p_ini<span style="color:#f92672">.</span>flatten())
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">ini</span> <span style="color:#f92672">=</span> <span style="color:#111">list</span><span style="color:#111">(</span><span style="color:#111">p_ini</span><span style="color:#f92672">.</span><span style="color:#111">flatten</span><span style="color:#111">())</span>
 </code></pre></div><p>as well as a set of design variables for <code>dl1,dl2,dl3,dl4</code>.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">design <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>array([<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">4.4</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">3</span>])
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">design</span> <span style="color:#f92672">=</span> <span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">array</span><span style="color:#111">([</span><span style="color:#ae81ff">4</span><span style="color:#111">,</span><span style="color:#ae81ff">2</span><span style="color:#111">,</span><span style="color:#ae81ff">4.4</span><span style="color:#111">,</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span><span style="color:#ae81ff">5</span><span style="color:#111">,</span><span style="color:#ae81ff">3</span><span style="color:#111">])</span>
 </code></pre></div><p>and a state for the one configuration variable <code>q1</code></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">q1<span style="color:#f92672">=-</span><span style="color:#ae81ff">170</span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">function<span style="color:#f92672">=</span>gen_function(q1,<span style="color:#f92672">*</span>design)
-result  <span style="color:#f92672">=</span> scipy<span style="color:#f92672">.</span>optimize<span style="color:#f92672">.</span>minimize(function,ini)
-x <span style="color:#f92672">=</span> result<span style="color:#f92672">.</span>x
-x <span style="color:#f92672">=</span>x<span style="color:#f92672">.</span>reshape((<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">2</span>))
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">q1</span><span style="color:#f92672">=-</span><span style="color:#ae81ff">170</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">function</span><span style="color:#f92672">=</span><span style="color:#111">gen_function</span><span style="color:#111">(</span><span style="color:#111">q1</span><span style="color:#111">,</span><span style="color:#f92672">*</span><span style="color:#111">design</span><span style="color:#111">)</span>
+<span style="color:#111">result</span>  <span style="color:#f92672">=</span> <span style="color:#111">scipy</span><span style="color:#f92672">.</span><span style="color:#111">optimize</span><span style="color:#f92672">.</span><span style="color:#111">minimize</span><span style="color:#111">(</span><span style="color:#111">function</span><span style="color:#111">,</span><span style="color:#111">ini</span><span style="color:#111">)</span>
+<span style="color:#111">x</span> <span style="color:#f92672">=</span> <span style="color:#111">result</span><span style="color:#f92672">.</span><span style="color:#111">x</span>
+<span style="color:#111">x</span> <span style="color:#f92672">=</span><span style="color:#111">x</span><span style="color:#f92672">.</span><span style="color:#111">reshape</span><span style="color:#111">((</span><span style="color:#ae81ff">5</span><span style="color:#111">,</span><span style="color:#ae81ff">2</span><span style="color:#111">))</span>
 </code></pre></div><p>Compute the error of the resulting configuration found.  If it is near zero, it was able to find a solution</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">result<span style="color:#f92672">.</span>fun
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">result</span><span style="color:#f92672">.</span><span style="color:#111">fun</span>
 </code></pre></div><pre><code>6.995398416354163e-08
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>figure();
-ax <span style="color:#f92672">=</span> fig<span style="color:#f92672">.</span>add_subplot(<span style="color:#ae81ff">111</span>)
-plot_mechanism(x)
-plt<span style="color:#f92672">.</span>axis(<span style="color:#e6db74">&#39;equal&#39;</span>)
-plt<span style="color:#f92672">.</span>show()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">fig</span> <span style="color:#f92672">=</span> <span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">figure</span><span style="color:#111">();</span>
+<span style="color:#111">ax</span> <span style="color:#f92672">=</span> <span style="color:#111">fig</span><span style="color:#f92672">.</span><span style="color:#111">add_subplot</span><span style="color:#111">(</span><span style="color:#ae81ff">111</span><span style="color:#111">)</span>
+<span style="color:#111">plot_mechanism</span><span style="color:#111">(</span><span style="color:#111">x</span><span style="color:#111">)</span>
+<span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">axis</span><span style="color:#111">(</span><span style="color:#d88200">&#39;equal&#39;</span><span style="color:#111">)</span>
+<span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">show</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_38_0.png" target="_blank"><img src="output_38_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_38_0.png"><img src="output_38_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <h2 id="computing-a-path">Computing a Path</h2>
 <p>But what if we want to compute more than one configuration in the same plot?  We need to re-run the optimize function with different values for q.  The example below does just that.  Additionally, we only want to show valid solutions, so we add some error proofing to check whether a solution has error below a desired tolerance.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">all_q <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>r_[<span style="color:#f92672">-</span><span style="color:#ae81ff">170</span>:<span style="color:#ae81ff">181</span>:<span style="color:#ae81ff">10</span>]
-path <span style="color:#f92672">=</span> []
-q_in <span style="color:#f92672">=</span> []
-ini<span style="color:#f92672">=</span>result<span style="color:#f92672">.</span>x
-<span style="color:#66d9ef">for</span> q1 <span style="color:#f92672">in</span> all_q:
-    function<span style="color:#f92672">=</span>gen_function(q1,<span style="color:#f92672">*</span>design)
-    result  <span style="color:#f92672">=</span> scipy<span style="color:#f92672">.</span>optimize<span style="color:#f92672">.</span>minimize(function,ini)
-    points <span style="color:#f92672">=</span> result<span style="color:#f92672">.</span>x
-    points <span style="color:#f92672">=</span>points<span style="color:#f92672">.</span>reshape((<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">2</span>))
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">all_q</span> <span style="color:#f92672">=</span> <span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">r_</span><span style="color:#111">[</span><span style="color:#f92672">-</span><span style="color:#ae81ff">170</span><span style="color:#111">:</span><span style="color:#ae81ff">181</span><span style="color:#111">:</span><span style="color:#ae81ff">10</span><span style="color:#111">]</span>
+<span style="color:#111">path</span> <span style="color:#f92672">=</span> <span style="color:#111">[]</span>
+<span style="color:#111">q_in</span> <span style="color:#f92672">=</span> <span style="color:#111">[]</span>
+<span style="color:#111">ini</span><span style="color:#f92672">=</span><span style="color:#111">result</span><span style="color:#f92672">.</span><span style="color:#111">x</span>
+<span style="color:#00a8c8">for</span> <span style="color:#111">q1</span> <span style="color:#f92672">in</span> <span style="color:#111">all_q</span><span style="color:#111">:</span>
+    <span style="color:#111">function</span><span style="color:#f92672">=</span><span style="color:#111">gen_function</span><span style="color:#111">(</span><span style="color:#111">q1</span><span style="color:#111">,</span><span style="color:#f92672">*</span><span style="color:#111">design</span><span style="color:#111">)</span>
+    <span style="color:#111">result</span>  <span style="color:#f92672">=</span> <span style="color:#111">scipy</span><span style="color:#f92672">.</span><span style="color:#111">optimize</span><span style="color:#f92672">.</span><span style="color:#111">minimize</span><span style="color:#111">(</span><span style="color:#111">function</span><span style="color:#111">,</span><span style="color:#111">ini</span><span style="color:#111">)</span>
+    <span style="color:#111">points</span> <span style="color:#f92672">=</span> <span style="color:#111">result</span><span style="color:#f92672">.</span><span style="color:#111">x</span>
+    <span style="color:#111">points</span> <span style="color:#f92672">=</span><span style="color:#111">points</span><span style="color:#f92672">.</span><span style="color:#111">reshape</span><span style="color:#111">((</span><span style="color:#ae81ff">5</span><span style="color:#111">,</span><span style="color:#ae81ff">2</span><span style="color:#111">))</span>
 
     <span style="color:#75715e"># Only add solution to path if the error is smaller than some nominal value</span>
-    <span style="color:#66d9ef">print</span>(result<span style="color:#f92672">.</span>fun)
+    <span style="color:#00a8c8">print</span><span style="color:#111">(</span><span style="color:#111">result</span><span style="color:#f92672">.</span><span style="color:#111">fun</span><span style="color:#111">)</span>
 
-    <span style="color:#66d9ef">if</span> result<span style="color:#f92672">.</span>fun<span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1e-1</span>:
-        path<span style="color:#f92672">.</span>append(points)
-        q_in<span style="color:#f92672">.</span>append(q1)
-        ini <span style="color:#f92672">=</span> result<span style="color:#f92672">.</span>x
+    <span style="color:#00a8c8">if</span> <span style="color:#111">result</span><span style="color:#f92672">.</span><span style="color:#111">fun</span><span style="color:#f92672">&lt;</span><span style="color:#ae81ff">1e-1</span><span style="color:#111">:</span>
+        <span style="color:#111">path</span><span style="color:#f92672">.</span><span style="color:#111">append</span><span style="color:#111">(</span><span style="color:#111">points</span><span style="color:#111">)</span>
+        <span style="color:#111">q_in</span><span style="color:#f92672">.</span><span style="color:#111">append</span><span style="color:#111">(</span><span style="color:#111">q1</span><span style="color:#111">)</span>
+        <span style="color:#111">ini</span> <span style="color:#f92672">=</span> <span style="color:#111">result</span><span style="color:#f92672">.</span><span style="color:#111">x</span>
 
-path <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>array(path)
-q_in <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>array(q_in)
+<span style="color:#111">path</span> <span style="color:#f92672">=</span> <span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">array</span><span style="color:#111">(</span><span style="color:#111">path</span><span style="color:#111">)</span>
+<span style="color:#111">q_in</span> <span style="color:#f92672">=</span> <span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">array</span><span style="color:#111">(</span><span style="color:#111">q_in</span><span style="color:#111">)</span>
 </code></pre></div><pre><code>6.994958769426199e-08
 9.03578396742785e-08
 6.818126377658796e-08
@@ -525,33 +525,33 @@ q_in <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</sp
 0.059675897246800585
 </code></pre>
 <p>Plotting the result&hellip;</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">f <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>figure()
-a <span style="color:#f92672">=</span> f<span style="color:#f92672">.</span>add_subplot(<span style="color:#ae81ff">111</span>)
-<span style="color:#66d9ef">for</span> item <span style="color:#f92672">in</span> path:
-    plot_mechanism(item)
-plt<span style="color:#f92672">.</span>axis(<span style="color:#e6db74">&#39;equal&#39;</span>)
-plt<span style="color:#f92672">.</span>savefig(<span style="color:#e6db74">&#39;f1.png&#39;</span>)
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">f</span> <span style="color:#f92672">=</span> <span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">figure</span><span style="color:#111">()</span>
+<span style="color:#111">a</span> <span style="color:#f92672">=</span> <span style="color:#111">f</span><span style="color:#f92672">.</span><span style="color:#111">add_subplot</span><span style="color:#111">(</span><span style="color:#ae81ff">111</span><span style="color:#111">)</span>
+<span style="color:#00a8c8">for</span> <span style="color:#111">item</span> <span style="color:#f92672">in</span> <span style="color:#111">path</span><span style="color:#111">:</span>
+    <span style="color:#111">plot_mechanism</span><span style="color:#111">(</span><span style="color:#111">item</span><span style="color:#111">)</span>
+<span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">axis</span><span style="color:#111">(</span><span style="color:#d88200">&#39;equal&#39;</span><span style="color:#111">)</span>
+<span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">savefig</span><span style="color:#111">(</span><span style="color:#d88200">&#39;f1.png&#39;</span><span style="color:#111">)</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_42_0.png" target="_blank"><img src="output_42_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_42_0.png"><img src="output_42_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <h2 id="computing-the-jacobian">Computing The Jacobian</h2>
 <p>Now consider we want to look at an end-effector attached to $\vec{v}_3$.  Plotting the end effector p4:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">path<span style="color:#f92672">.</span>shape
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">path</span><span style="color:#f92672">.</span><span style="color:#111">shape</span>
 </code></pre></div><pre><code>(36, 5, 2)
 </code></pre>
 <p>This plots as the following set of points:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plt<span style="color:#f92672">.</span>figure()
-p4 <span style="color:#f92672">=</span> path[:,<span style="color:#ae81ff">4</span>,:]
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">figure</span><span style="color:#111">()</span>
+<span style="color:#111">p4</span> <span style="color:#f92672">=</span> <span style="color:#111">path</span><span style="color:#111">[:,</span><span style="color:#ae81ff">4</span><span style="color:#111">,:]</span>
 <span style="color:#75715e">#p4 = numpy.r_[p4,p4[0:1]]</span>
-plt<span style="color:#f92672">.</span>plot(p4[:,<span style="color:#ae81ff">0</span>],p4[:,<span style="color:#ae81ff">1</span>],<span style="color:#e6db74">&#39;go-&#39;</span>)
-plt<span style="color:#f92672">.</span>axis(<span style="color:#e6db74">&#39;equal&#39;</span>)
-plt<span style="color:#f92672">.</span>savefig(<span style="color:#e6db74">&#39;f2.png&#39;</span>)
+<span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">(</span><span style="color:#111">p4</span><span style="color:#111">[:,</span><span style="color:#ae81ff">0</span><span style="color:#111">],</span><span style="color:#111">p4</span><span style="color:#111">[:,</span><span style="color:#ae81ff">1</span><span style="color:#111">],</span><span style="color:#d88200">&#39;go-&#39;</span><span style="color:#111">)</span>
+<span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">axis</span><span style="color:#111">(</span><span style="color:#d88200">&#39;equal&#39;</span><span style="color:#111">)</span>
+<span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">savefig</span><span style="color:#111">(</span><span style="color:#d88200">&#39;f2.png&#39;</span><span style="color:#111">)</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_46_0.png" target="_blank"><img src="output_46_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_46_0.png"><img src="output_46_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <p>But what if we&rsquo;re only interested in the portion of the path where the end effector is supposed to be touching the ground?  Restricting to that portion of the path:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">y_out <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>vstack([p4,p4[<span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">2</span>]])
-y_out
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">y_out</span> <span style="color:#f92672">=</span> <span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">vstack</span><span style="color:#111">([</span><span style="color:#111">p4</span><span style="color:#111">,</span><span style="color:#111">p4</span><span style="color:#111">[</span><span style="color:#ae81ff">0</span><span style="color:#111">:</span><span style="color:#ae81ff">2</span><span style="color:#111">]])</span>
+<span style="color:#111">y_out</span>
 </code></pre></div><pre><code>array([[ 0.64264265, -2.69384763],
        [ 0.7828071 , -2.79823562],
        [ 0.95188307, -2.88646359],
@@ -591,38 +591,38 @@ y_out
        [ 0.64264265, -2.69384763],
        [ 0.7828071 , -2.79823562]])
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">q_in <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>r_[q_in,q_in[<span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">2</span>]]
-q_in
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">q_in</span> <span style="color:#f92672">=</span> <span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">r_</span><span style="color:#111">[</span><span style="color:#111">q_in</span><span style="color:#111">,</span><span style="color:#111">q_in</span><span style="color:#111">[</span><span style="color:#ae81ff">0</span><span style="color:#111">:</span><span style="color:#ae81ff">2</span><span style="color:#111">]]</span>
+<span style="color:#111">q_in</span>
 </code></pre></div><pre><code>array([-170, -160, -150, -140, -130, -120, -110, -100,  -90,  -80,  -70,
         -60,  -50,  -40,  -30,  -20,  -10,    0,   10,   20,   30,   40,
          50,   60,   70,   80,   90,  100,  110,  120,  130,  140,  150,
         160,  170,  180, -170, -160])
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">range_min <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
-range_max <span style="color:#f92672">=</span> <span style="color:#ae81ff">11</span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">if</span> range_min<span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">0</span>:
-    y_out <span style="color:#f92672">=</span> p4[range_min:range_max]
-    q_in <span style="color:#f92672">=</span> q_in[range_min:range_max]
-<span style="color:#66d9ef">else</span>:
-    y_out <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>vstack([p4[range_min:,:],p4[<span style="color:#ae81ff">0</span>:range_max,:]])
-    q_in <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>r_[q_in[range_min:],q_in[<span style="color:#ae81ff">0</span>:range_max]]
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">range_min</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+<span style="color:#111">range_max</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">11</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a8c8">if</span> <span style="color:#111">range_min</span><span style="color:#f92672">&gt;=</span><span style="color:#ae81ff">0</span><span style="color:#111">:</span>
+    <span style="color:#111">y_out</span> <span style="color:#f92672">=</span> <span style="color:#111">p4</span><span style="color:#111">[</span><span style="color:#111">range_min</span><span style="color:#111">:</span><span style="color:#111">range_max</span><span style="color:#111">]</span>
+    <span style="color:#111">q_in</span> <span style="color:#f92672">=</span> <span style="color:#111">q_in</span><span style="color:#111">[</span><span style="color:#111">range_min</span><span style="color:#111">:</span><span style="color:#111">range_max</span><span style="color:#111">]</span>
+<span style="color:#00a8c8">else</span><span style="color:#111">:</span>
+    <span style="color:#111">y_out</span> <span style="color:#f92672">=</span> <span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">vstack</span><span style="color:#111">([</span><span style="color:#111">p4</span><span style="color:#111">[</span><span style="color:#111">range_min</span><span style="color:#111">:,:],</span><span style="color:#111">p4</span><span style="color:#111">[</span><span style="color:#ae81ff">0</span><span style="color:#111">:</span><span style="color:#111">range_max</span><span style="color:#111">,:]])</span>
+    <span style="color:#111">q_in</span> <span style="color:#f92672">=</span> <span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">r_</span><span style="color:#111">[</span><span style="color:#111">q_in</span><span style="color:#111">[</span><span style="color:#111">range_min</span><span style="color:#111">:],</span><span style="color:#111">q_in</span><span style="color:#111">[</span><span style="color:#ae81ff">0</span><span style="color:#111">:</span><span style="color:#111">range_max</span><span style="color:#111">]]</span>
 </code></pre></div><p>Now we may calculate the relative change in position of the end-effector (in green) between each step as a function of the change in input angle $q$.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">f <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>figure()
-a <span style="color:#f92672">=</span> f<span style="color:#f92672">.</span>add_subplot(<span style="color:#ae81ff">111</span>)
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">f</span> <span style="color:#f92672">=</span> <span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">figure</span><span style="color:#111">()</span>
+<span style="color:#111">a</span> <span style="color:#f92672">=</span> <span style="color:#111">f</span><span style="color:#f92672">.</span><span style="color:#111">add_subplot</span><span style="color:#111">(</span><span style="color:#ae81ff">111</span><span style="color:#111">)</span>
 
 <span style="color:#75715e">#for item in path[range_min:range_max]:</span>
 <span style="color:#75715e">#    plot_mechanism(item)</span>
     
-a<span style="color:#f92672">.</span>plot(p4[:,<span style="color:#ae81ff">0</span>],p4[:,<span style="color:#ae81ff">1</span>],<span style="color:#e6db74">&#39;go-&#39;</span>)    
-a<span style="color:#f92672">.</span>plot(y_out[:,<span style="color:#ae81ff">0</span>],y_out[:,<span style="color:#ae81ff">1</span>],<span style="color:#e6db74">&#39;ro-&#39;</span>)    
-plt<span style="color:#f92672">.</span>axis(<span style="color:#e6db74">&#39;equal&#39;</span>)
-plt<span style="color:#f92672">.</span>savefig(<span style="color:#e6db74">&#39;f3.png&#39;</span>)
+<span style="color:#111">a</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">(</span><span style="color:#111">p4</span><span style="color:#111">[:,</span><span style="color:#ae81ff">0</span><span style="color:#111">],</span><span style="color:#111">p4</span><span style="color:#111">[:,</span><span style="color:#ae81ff">1</span><span style="color:#111">],</span><span style="color:#d88200">&#39;go-&#39;</span><span style="color:#111">)</span>    
+<span style="color:#111">a</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">(</span><span style="color:#111">y_out</span><span style="color:#111">[:,</span><span style="color:#ae81ff">0</span><span style="color:#111">],</span><span style="color:#111">y_out</span><span style="color:#111">[:,</span><span style="color:#ae81ff">1</span><span style="color:#111">],</span><span style="color:#d88200">&#39;ro-&#39;</span><span style="color:#111">)</span>    
+<span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">axis</span><span style="color:#111">(</span><span style="color:#d88200">&#39;equal&#39;</span><span style="color:#111">)</span>
+<span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">savefig</span><span style="color:#111">(</span><span style="color:#d88200">&#39;f3.png&#39;</span><span style="color:#111">)</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_53_0.png" target="_blank"><img src="output_53_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_53_0.png"><img src="output_53_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <p>We use the trapezoidal rule to find the slope in y as a function of the previous and next neighbors of each point in the path.  For a path of n points this will produce n-2 sets of partial derivatives</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">dy <span style="color:#f92672">=</span> y_out[<span style="color:#ae81ff">2</span>:,:]<span style="color:#f92672">-</span>y_out[:<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>,:]
-dy
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">dy</span> <span style="color:#f92672">=</span> <span style="color:#111">y_out</span><span style="color:#111">[</span><span style="color:#ae81ff">2</span><span style="color:#111">:,:]</span><span style="color:#f92672">-</span><span style="color:#111">y_out</span><span style="color:#111">[:</span><span style="color:#f92672">-</span><span style="color:#ae81ff">2</span><span style="color:#111">,:]</span>
+<span style="color:#111">dy</span>
 </code></pre></div><pre><code>array([[ 0.30924041, -0.19261596],
        [ 0.36200364, -0.15726297],
        [ 0.40372661, -0.11708114],
@@ -633,54 +633,54 @@ dy
        [ 0.40378898,  0.06267861],
        [ 0.35725081,  0.07749734]])
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">dq <span style="color:#f92672">=</span> q_in[<span style="color:#ae81ff">2</span>:]<span style="color:#f92672">-</span>q_in[:<span style="color:#f92672">-</span><span style="color:#ae81ff">2</span>]
-dq
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">dq</span> <span style="color:#f92672">=</span> <span style="color:#111">q_in</span><span style="color:#111">[</span><span style="color:#ae81ff">2</span><span style="color:#111">:]</span><span style="color:#f92672">-</span><span style="color:#111">q_in</span><span style="color:#111">[:</span><span style="color:#f92672">-</span><span style="color:#ae81ff">2</span><span style="color:#111">]</span>
+<span style="color:#111">dq</span>
 </code></pre></div><pre><code>array([20, 20, 20, 20, 20, 20, 20, 20, 20])
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">dq<span style="color:#f92672">.</span>shape
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">dq</span><span style="color:#f92672">.</span><span style="color:#111">shape</span>
 </code></pre></div><pre><code>(9,)
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">f <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>figure()
-a <span style="color:#f92672">=</span> f<span style="color:#f92672">.</span>add_subplot(<span style="color:#ae81ff">111</span>)
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">f</span> <span style="color:#f92672">=</span> <span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">figure</span><span style="color:#111">()</span>
+<span style="color:#111">a</span> <span style="color:#f92672">=</span> <span style="color:#111">f</span><span style="color:#f92672">.</span><span style="color:#111">add_subplot</span><span style="color:#111">(</span><span style="color:#ae81ff">111</span><span style="color:#111">)</span>
 
 <span style="color:#75715e">#for item in path[range_min:range_max]:</span>
 <span style="color:#75715e">#    plot_mechanism(item)</span>
     
-a<span style="color:#f92672">.</span>plot(p4[:,<span style="color:#ae81ff">0</span>],p4[:,<span style="color:#ae81ff">1</span>],<span style="color:#e6db74">&#39;go-&#39;</span>)    
-a<span style="color:#f92672">.</span>plot(y_out[:,<span style="color:#ae81ff">0</span>],y_out[:,<span style="color:#ae81ff">1</span>],<span style="color:#e6db74">&#39;ro-&#39;</span>)    
-plt<span style="color:#f92672">.</span>axis(<span style="color:#e6db74">&#39;equal&#39;</span>)
-plt<span style="color:#f92672">.</span>savefig(<span style="color:#e6db74">&#39;f3.png&#39;</span>)
+<span style="color:#111">a</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">(</span><span style="color:#111">p4</span><span style="color:#111">[:,</span><span style="color:#ae81ff">0</span><span style="color:#111">],</span><span style="color:#111">p4</span><span style="color:#111">[:,</span><span style="color:#ae81ff">1</span><span style="color:#111">],</span><span style="color:#d88200">&#39;go-&#39;</span><span style="color:#111">)</span>    
+<span style="color:#111">a</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">(</span><span style="color:#111">y_out</span><span style="color:#111">[:,</span><span style="color:#ae81ff">0</span><span style="color:#111">],</span><span style="color:#111">y_out</span><span style="color:#111">[:,</span><span style="color:#ae81ff">1</span><span style="color:#111">],</span><span style="color:#d88200">&#39;ro-&#39;</span><span style="color:#111">)</span>    
+<span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">axis</span><span style="color:#111">(</span><span style="color:#d88200">&#39;equal&#39;</span><span style="color:#111">)</span>
+<span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">savefig</span><span style="color:#111">(</span><span style="color:#d88200">&#39;f3.png&#39;</span><span style="color:#111">)</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_58_0.png" target="_blank"><img src="output_58_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_58_0.png"><img src="output_58_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plt<span style="color:#f92672">.</span>figure()
-plt<span style="color:#f92672">.</span>plot(y_out[:,<span style="color:#ae81ff">0</span>],y_out[:,<span style="color:#ae81ff">1</span>],<span style="color:#e6db74">&#39;ro-&#39;</span>)    
-plt<span style="color:#f92672">.</span>quiver(y_out[<span style="color:#ae81ff">1</span>:<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>],y_out[<span style="color:#ae81ff">1</span>:<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>],dy[:,<span style="color:#ae81ff">0</span>],dy[:,<span style="color:#ae81ff">1</span>])
-plt<span style="color:#f92672">.</span>axis(<span style="color:#e6db74">&#39;equal&#39;</span>)
-plt<span style="color:#f92672">.</span>show()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">figure</span><span style="color:#111">()</span>
+<span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">(</span><span style="color:#111">y_out</span><span style="color:#111">[:,</span><span style="color:#ae81ff">0</span><span style="color:#111">],</span><span style="color:#111">y_out</span><span style="color:#111">[:,</span><span style="color:#ae81ff">1</span><span style="color:#111">],</span><span style="color:#d88200">&#39;ro-&#39;</span><span style="color:#111">)</span>    
+<span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">quiver</span><span style="color:#111">(</span><span style="color:#111">y_out</span><span style="color:#111">[</span><span style="color:#ae81ff">1</span><span style="color:#111">:</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">],</span><span style="color:#111">y_out</span><span style="color:#111">[</span><span style="color:#ae81ff">1</span><span style="color:#111">:</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span><span style="color:#ae81ff">1</span><span style="color:#111">],</span><span style="color:#111">dy</span><span style="color:#111">[:,</span><span style="color:#ae81ff">0</span><span style="color:#111">],</span><span style="color:#111">dy</span><span style="color:#111">[:,</span><span style="color:#ae81ff">1</span><span style="color:#111">])</span>
+<span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">axis</span><span style="color:#111">(</span><span style="color:#d88200">&#39;equal&#39;</span><span style="color:#111">)</span>
+<span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">show</span><span style="color:#111">()</span>
 
 </code></pre></div><p><div class="text-center">
-  <a href="output_59_0.png" target="_blank"><img src="output_59_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_59_0.png"><img src="output_59_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <p>Dividing dy over dq produces 10, 2x1 Jacobian matrices, 1 for each interior point in the motion path.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">J<span style="color:#f92672">=</span>(dy<span style="color:#f92672">.</span>T<span style="color:#f92672">/</span>dq<span style="color:#f92672">.</span>T)
-J<span style="color:#f92672">.</span>shape
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">J</span><span style="color:#f92672">=</span><span style="color:#111">(</span><span style="color:#111">dy</span><span style="color:#f92672">.</span><span style="color:#111">T</span><span style="color:#f92672">/</span><span style="color:#111">dq</span><span style="color:#f92672">.</span><span style="color:#111">T</span><span style="color:#111">)</span>
+<span style="color:#111">J</span><span style="color:#f92672">.</span><span style="color:#111">shape</span>
 </code></pre></div><pre><code>(2, 9)
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">J
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">J</span>
 </code></pre></div><pre><code>array([[ 0.01546202,  0.01810018,  0.02018633,  0.02164021,  0.02240348,
          0.02243525,  0.02170568,  0.02018945,  0.01786254],
        [-0.0096308 , -0.00786315, -0.00585406, -0.00373351, -0.00164028,
          0.00028595,  0.00191403,  0.00313393,  0.00387487]])
 </code></pre>
 <p>Now let&rsquo;s find the torque required to accelerage a 1-kg mass forward at 1g, while holding itself up against gravity:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">m <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> <span style="color:#75715e">#kg</span>
-g <span style="color:#f92672">=</span> <span style="color:#ae81ff">9.81</span> <span style="color:#75715e">#m/s^2</span>
-fx <span style="color:#f92672">=</span> m<span style="color:#f92672">*</span>g
-fy <span style="color:#f92672">=</span> <span style="color:#f92672">-</span>m<span style="color:#f92672">*</span>g
-f <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>array([[fx,fy]])<span style="color:#f92672">.</span>T
-t <span style="color:#f92672">=</span> J<span style="color:#f92672">.</span>T<span style="color:#f92672">.</span>dot(f)
-t <span style="color:#75715e">#N-m</span>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">m</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span> <span style="color:#75715e">#kg</span>
+<span style="color:#111">g</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">9.81</span> <span style="color:#75715e">#m/s^2</span>
+<span style="color:#111">fx</span> <span style="color:#f92672">=</span> <span style="color:#111">m</span><span style="color:#f92672">*</span><span style="color:#111">g</span>
+<span style="color:#111">fy</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#111">m</span><span style="color:#f92672">*</span><span style="color:#111">g</span>
+<span style="color:#111">f</span> <span style="color:#f92672">=</span> <span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">array</span><span style="color:#111">([[</span><span style="color:#111">fx</span><span style="color:#111">,</span><span style="color:#111">fy</span><span style="color:#111">]])</span><span style="color:#f92672">.</span><span style="color:#111">T</span>
+<span style="color:#111">t</span> <span style="color:#f92672">=</span> <span style="color:#111">J</span><span style="color:#f92672">.</span><span style="color:#111">T</span><span style="color:#f92672">.</span><span style="color:#111">dot</span><span style="color:#111">(</span><span style="color:#111">f</span><span style="color:#111">)</span>
+<span style="color:#111">t</span> <span style="color:#75715e">#N-m</span>
 </code></pre></div><pre><code>array([[0.24616055],
        [0.25470027],
        [0.2554562 ],
@@ -691,26 +691,26 @@ t <span style="color:#75715e">#N-m</span>
        [0.16731464],
        [0.13721908]])
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">t<span style="color:#f92672">.</span>max()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">t</span><span style="color:#f92672">.</span><span style="color:#111">max</span><span style="color:#111">()</span>
 </code></pre></div><pre><code>0.2554562024243693
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">t<span style="color:#f92672">.</span>min()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">t</span><span style="color:#f92672">.</span><span style="color:#111">min</span><span style="color:#111">()</span>
 </code></pre></div><pre><code>0.13721907554495927
 </code></pre>
 <p>Thus, the torque required by a motor to hold those forces specified by $f_x$ and $f_y$ is around .25 N-m in the worst case.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">motor_speed <span style="color:#f92672">=</span> <span style="color:#ae81ff">500</span><span style="color:#75715e">#rpm</span>
-dq_dt <span style="color:#f92672">=</span> motor_speed<span style="color:#f92672">*</span><span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>math<span style="color:#f92672">.</span>pi<span style="color:#f92672">/</span><span style="color:#ae81ff">60</span>
-velocity <span style="color:#f92672">=</span> J<span style="color:#f92672">*</span>dq_dt
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">velocity[<span style="color:#ae81ff">0</span>,:]
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">motor_speed</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">500</span><span style="color:#75715e">#rpm</span>
+<span style="color:#111">dq_dt</span> <span style="color:#f92672">=</span> <span style="color:#111">motor_speed</span><span style="color:#f92672">*</span><span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#111">math</span><span style="color:#f92672">.</span><span style="color:#111">pi</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60</span>
+<span style="color:#111">velocity</span> <span style="color:#f92672">=</span> <span style="color:#111">J</span><span style="color:#f92672">*</span><span style="color:#111">dq_dt</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">velocity</span><span style="color:#111">[</span><span style="color:#ae81ff">0</span><span style="color:#111">,:]</span>
 </code></pre></div><pre><code>array([0.80958951, 0.94772333, 1.05695379, 1.13307856, 1.17304321,
        1.17470717, 1.13650686, 1.05711709, 0.93528043])
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">f
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">f</span>
 </code></pre></div><pre><code>array([[ 9.81],
        [-9.81]])
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">P <span style="color:#f92672">=</span> t<span style="color:#f92672">.</span>dot(dq_dt)
-P
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">P</span> <span style="color:#f92672">=</span> <span style="color:#111">t</span><span style="color:#f92672">.</span><span style="color:#111">dot</span><span style="color:#111">(</span><span style="color:#111">dq_dt</span><span style="color:#111">)</span>
+<span style="color:#111">P</span>
 </code></pre></div><pre><code>array([[12.88893646],
        [13.33607515],
        [13.37565548],
@@ -721,7 +721,6 @@ P
        [ 8.76057407],
        [ 7.18477399]])
 </code></pre>
-
   </article>
 </main>
 

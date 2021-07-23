@@ -214,104 +214,104 @@ Basic Data Types | Foldable Robotics
 <main class="container">
   <article>
   <h1 id="basic-data-types">Basic Data Types</h1>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">type(<span style="color:#ae81ff">4.1</span>)
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">type</span><span style="color:#111">(</span><span style="color:#ae81ff">4.1</span><span style="color:#111">)</span>
 </code></pre></div><pre><code>float
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">type(int(<span style="color:#ae81ff">4.1</span>))
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">type</span><span style="color:#111">(</span><span style="color:#111">int</span><span style="color:#111">(</span><span style="color:#ae81ff">4.1</span><span style="color:#111">))</span>
 </code></pre></div><pre><code>int
 </code></pre>
 <h2 id="bool">Bool</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">True
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">True</span>
 </code></pre></div><pre><code>True
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">False
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">False</span>
 </code></pre></div><pre><code>False
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ae81ff">1</span><span style="color:#f92672">==</span><span style="color:#ae81ff">2</span>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ae81ff">1</span><span style="color:#f92672">==</span><span style="color:#ae81ff">2</span>
 </code></pre></div><pre><code>False
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ae81ff">3</span><span style="color:#f92672">!=</span><span style="color:#ae81ff">5</span>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ae81ff">3</span><span style="color:#f92672">!=</span><span style="color:#ae81ff">5</span>
 </code></pre></div><pre><code>True
 </code></pre>
 <h2 id="integer">Integer</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ae81ff">1</span>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ae81ff">1</span>
 </code></pre></div><pre><code>1
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ae81ff">1</span><span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ae81ff">1</span><span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>
 </code></pre></div><pre><code>3
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ae81ff">2</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ae81ff">2</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
 </code></pre></div><pre><code>1
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
-b <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a<span style="color:#f92672">+</span>b
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">a</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+<span style="color:#111">b</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">a</span><span style="color:#f92672">+</span><span style="color:#111">b</span>
 </code></pre></div><pre><code>3
 </code></pre>
 <h2 id="float-operations">Float Operations</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> math
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ae81ff">1.1</span> 
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> <span style="color:#111">math</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ae81ff">1.1</span> 
 </code></pre></div><pre><code>1.1
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ae81ff">1.1</span><span style="color:#f92672">*</span><span style="color:#ae81ff">2.2</span> 
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ae81ff">1.1</span><span style="color:#f92672">*</span><span style="color:#ae81ff">2.2</span> 
 </code></pre></div><pre><code>2.4200000000000004
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#ae81ff">1.1</span> 
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#ae81ff">1.1</span> 
 </code></pre></div><pre><code>2.2
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">round(<span style="color:#ae81ff">1.4</span>)
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">round</span><span style="color:#111">(</span><span style="color:#ae81ff">1.4</span><span style="color:#111">)</span>
 </code></pre></div><pre><code>1
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">round(<span style="color:#ae81ff">1.5</span>)
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">round</span><span style="color:#111">(</span><span style="color:#ae81ff">1.5</span><span style="color:#111">)</span>
 </code></pre></div><pre><code>2
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">round(<span style="color:#f92672">-</span><span style="color:#ae81ff">1.4</span>)
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">round</span><span style="color:#111">(</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1.4</span><span style="color:#111">)</span>
 </code></pre></div><pre><code>-1
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">round(<span style="color:#f92672">-</span><span style="color:#ae81ff">1.5</span>)
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">round</span><span style="color:#111">(</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1.5</span><span style="color:#111">)</span>
 </code></pre></div><pre><code>-2
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">math<span style="color:#f92672">.</span>trunc(<span style="color:#ae81ff">1.8</span>)
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">math</span><span style="color:#f92672">.</span><span style="color:#111">trunc</span><span style="color:#111">(</span><span style="color:#ae81ff">1.8</span><span style="color:#111">)</span>
 </code></pre></div><pre><code>1
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">math<span style="color:#f92672">.</span>floor(<span style="color:#ae81ff">1.8</span>)
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">math</span><span style="color:#f92672">.</span><span style="color:#111">floor</span><span style="color:#111">(</span><span style="color:#ae81ff">1.8</span><span style="color:#111">)</span>
 </code></pre></div><pre><code>1
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">math<span style="color:#f92672">.</span>trunc(<span style="color:#f92672">-</span><span style="color:#ae81ff">1.8</span>)
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">math</span><span style="color:#f92672">.</span><span style="color:#111">trunc</span><span style="color:#111">(</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1.8</span><span style="color:#111">)</span>
 </code></pre></div><pre><code>-1
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">math<span style="color:#f92672">.</span>floor(<span style="color:#f92672">-</span><span style="color:#ae81ff">1.8</span>)
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">math</span><span style="color:#f92672">.</span><span style="color:#111">floor</span><span style="color:#111">(</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1.8</span><span style="color:#111">)</span>
 </code></pre></div><pre><code>-2
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">math<span style="color:#f92672">.</span>ceil(<span style="color:#ae81ff">1.8</span>)
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">math</span><span style="color:#f92672">.</span><span style="color:#111">ceil</span><span style="color:#111">(</span><span style="color:#ae81ff">1.8</span><span style="color:#111">)</span>
 </code></pre></div><pre><code>2
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">math<span style="color:#f92672">.</span>ceil(<span style="color:#f92672">-</span><span style="color:#ae81ff">1.8</span>)
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">math</span><span style="color:#f92672">.</span><span style="color:#111">ceil</span><span style="color:#111">(</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1.8</span><span style="color:#111">)</span>
 </code></pre></div><pre><code>-1
 </code></pre>
 <h2 id="conversions">Conversions</h2>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">int(<span style="color:#ae81ff">8.1</span>)
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">int</span><span style="color:#111">(</span><span style="color:#ae81ff">8.1</span><span style="color:#111">)</span>
 </code></pre></div><pre><code>8
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">float(<span style="color:#ae81ff">8</span>)
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">float</span><span style="color:#111">(</span><span style="color:#ae81ff">8</span><span style="color:#111">)</span>
 </code></pre></div><pre><code>8.0
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">int(<span style="color:#ae81ff">8</span>)
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">int</span><span style="color:#111">(</span><span style="color:#ae81ff">8</span><span style="color:#111">)</span>
 </code></pre></div><pre><code>8
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">str(<span style="color:#ae81ff">9.815</span>)
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">str</span><span style="color:#111">(</span><span style="color:#ae81ff">9.815</span><span style="color:#111">)</span>
 </code></pre></div><pre><code>'9.815'
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">bool(<span style="color:#ae81ff">8.15</span>)
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">bool</span><span style="color:#111">(</span><span style="color:#ae81ff">8.15</span><span style="color:#111">)</span>
 </code></pre></div><pre><code>True
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">float(str(<span style="color:#ae81ff">8.15</span>))
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">float</span><span style="color:#111">(</span><span style="color:#111">str</span><span style="color:#111">(</span><span style="color:#ae81ff">8.15</span><span style="color:#111">))</span>
 </code></pre></div><pre><code>8.15
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">int(str(<span style="color:#ae81ff">8</span>))
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">int</span><span style="color:#111">(</span><span style="color:#111">str</span><span style="color:#111">(</span><span style="color:#ae81ff">8</span><span style="color:#111">))</span>
 </code></pre></div><pre><code>8
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">int(str(<span style="color:#ae81ff">8.15</span>))
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">int</span><span style="color:#111">(</span><span style="color:#111">str</span><span style="color:#111">(</span><span style="color:#ae81ff">8.15</span><span style="color:#111">))</span>
 </code></pre></div><pre><code>---------------------------------------------------------------------------
 
 ValueError                                Traceback (most recent call last)

@@ -213,30 +213,30 @@ Least Squares Optimization | Foldable Robotics
     
 <main class="container">
   <article>
-  <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">%</span>matplotlib inline
-<span style="color:#f92672">import</span> numpy
-<span style="color:#f92672">import</span> numpy.random
-<span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
-<span style="color:#f92672">import</span> numpy.linalg
+  <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">%</span><span style="color:#111">matplotlib</span> <span style="color:#111">inline</span>
+<span style="color:#f92672">import</span> <span style="color:#111">numpy</span>
+<span style="color:#f92672">import</span> <span style="color:#111">numpy.random</span>
+<span style="color:#f92672">import</span> <span style="color:#111">matplotlib.pyplot</span> <span style="color:#f92672">as</span> <span style="color:#111">plt</span>
+<span style="color:#f92672">import</span> <span style="color:#111">numpy.linalg</span>
 
 </code></pre></div><p>Define your x variable</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">x <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>r_[<span style="color:#f92672">-</span><span style="color:#ae81ff">10</span>:<span style="color:#ae81ff">10</span>:<span style="color:#f92672">.</span><span style="color:#ae81ff">5</span>]
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">x</span> <span style="color:#f92672">=</span> <span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">r_</span><span style="color:#111">[</span><span style="color:#f92672">-</span><span style="color:#ae81ff">10</span><span style="color:#111">:</span><span style="color:#ae81ff">10</span><span style="color:#111">:</span><span style="color:#f92672">.</span><span style="color:#ae81ff">5</span><span style="color:#111">]</span>
 </code></pre></div><p>Define y as a function of x.  This can be anything</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#y = x</span>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#y = x</span>
 <span style="color:#75715e">#y = x**2</span>
 <span style="color:#75715e">#y = x**3</span>
-y <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>sin(x)
-y <span style="color:#f92672">/=</span> y<span style="color:#f92672">.</span>max()
+<span style="color:#111">y</span> <span style="color:#f92672">=</span> <span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">sin</span><span style="color:#111">(</span><span style="color:#111">x</span><span style="color:#111">)</span>
+<span style="color:#111">y</span> <span style="color:#f92672">/=</span> <span style="color:#111">y</span><span style="color:#f92672">.</span><span style="color:#111">max</span><span style="color:#111">()</span>
 </code></pre></div><p>Now create an array of normally distributed noise</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">rand <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>randn(<span style="color:#f92672">*</span>y<span style="color:#f92672">.</span>shape)<span style="color:#f92672">/</span><span style="color:#ae81ff">10</span>
-y_rand <span style="color:#f92672">=</span> y<span style="color:#f92672">+</span>rand
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">rand</span> <span style="color:#f92672">=</span> <span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">random</span><span style="color:#f92672">.</span><span style="color:#111">randn</span><span style="color:#111">(</span><span style="color:#f92672">*</span><span style="color:#111">y</span><span style="color:#f92672">.</span><span style="color:#111">shape</span><span style="color:#111">)</span><span style="color:#f92672">/</span><span style="color:#ae81ff">10</span>
+<span style="color:#111">y_rand</span> <span style="color:#f92672">=</span> <span style="color:#111">y</span><span style="color:#f92672">+</span><span style="color:#111">rand</span>
 </code></pre></div><p>Plot y against the random vector</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plt<span style="color:#f92672">.</span>plot(x,y)
-plt<span style="color:#f92672">.</span>plot(x,y_rand,<span style="color:#e6db74">&#39;o&#39;</span>)
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">(</span><span style="color:#111">x</span><span style="color:#111">,</span><span style="color:#111">y</span><span style="color:#111">)</span>
+<span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">(</span><span style="color:#111">x</span><span style="color:#111">,</span><span style="color:#111">y_rand</span><span style="color:#111">,</span><span style="color:#d88200">&#39;o&#39;</span><span style="color:#111">)</span>
 </code></pre></div><pre><code>[&lt;matplotlib.lines.Line2D at 0x1a76ccd0eb0&gt;]
 </code></pre>
 <p><div class="text-center">
-  <a href="output_9_1.png" target="_blank"><img src="output_9_1.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_9_1.png"><img src="output_9_1.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <p>Now assume you create a model of the form $y(k)^<em>$ where k are your model coefficients.  You want to pick your model in such a way that the error from $y-y^</em>$ is minimized.  The residual error, or just residual can be expressed as</p>
 <p>$$r=y-y^*$$</p>
@@ -254,8 +254,8 @@ a_1(x_n) &amp; a_2(x_n)&amp; \ldots&amp; a_m(x_n)\<br>
 \right]$$</p>
 <h3 id="example">Example</h3>
 <p>In our case we will try to model our data with $A(x) = \left[\begin{matrix}x&amp;x^2&amp;x^3&amp;\sin(x)\end{matrix}\right]$</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">A <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>array([x,x<span style="color:#f92672">**</span><span style="color:#ae81ff">2</span>,x<span style="color:#f92672">**</span><span style="color:#ae81ff">3</span>,numpy<span style="color:#f92672">.</span>sin(x)])<span style="color:#f92672">.</span>T
-A<span style="color:#f92672">.</span>shape
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">A</span> <span style="color:#f92672">=</span> <span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">array</span><span style="color:#111">([</span><span style="color:#111">x</span><span style="color:#111">,</span><span style="color:#111">x</span><span style="color:#f92672">**</span><span style="color:#ae81ff">2</span><span style="color:#111">,</span><span style="color:#111">x</span><span style="color:#f92672">**</span><span style="color:#ae81ff">3</span><span style="color:#111">,</span><span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">sin</span><span style="color:#111">(</span><span style="color:#111">x</span><span style="color:#111">)])</span><span style="color:#f92672">.</span><span style="color:#111">T</span>
+<span style="color:#111">A</span><span style="color:#f92672">.</span><span style="color:#111">shape</span>
 </code></pre></div><pre><code>(40, 4)
 </code></pre>
 <p>With the model stated, we may now expand the sum of squared error with our model:</p>
@@ -271,46 +271,46 @@ $$ (A^T A)^{-1}(A^T A)k=  (A^T A)^{-1}A^Ty$$</p>
 <p>The optimimum value for k is thus</p>
 <p>$$ k=  (A^T A)^{-1}A^Ty$$</p>
 <h3 id="example-1">Example</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">B <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>linalg<span style="color:#f92672">.</span>inv(A<span style="color:#f92672">.</span>T<span style="color:#f92672">.</span>dot(A))
-coeff <span style="color:#f92672">=</span> B<span style="color:#f92672">.</span>dot(A<span style="color:#f92672">.</span>T<span style="color:#f92672">.</span>dot(y_rand))
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">B</span> <span style="color:#f92672">=</span> <span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">linalg</span><span style="color:#f92672">.</span><span style="color:#111">inv</span><span style="color:#111">(</span><span style="color:#111">A</span><span style="color:#f92672">.</span><span style="color:#111">T</span><span style="color:#f92672">.</span><span style="color:#111">dot</span><span style="color:#111">(</span><span style="color:#111">A</span><span style="color:#111">))</span>
+<span style="color:#111">coeff</span> <span style="color:#f92672">=</span> <span style="color:#111">B</span><span style="color:#f92672">.</span><span style="color:#111">dot</span><span style="color:#111">(</span><span style="color:#111">A</span><span style="color:#f92672">.</span><span style="color:#111">T</span><span style="color:#f92672">.</span><span style="color:#111">dot</span><span style="color:#111">(</span><span style="color:#111">y_rand</span><span style="color:#111">))</span>
 </code></pre></div><p>Plotting the coefficients, we see that the weights for $x^3$ are near 1 while all other weights are quite small.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">xx <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>r_[:<span style="color:#ae81ff">4</span>]
-labels <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;$x$&#39;</span>,<span style="color:#e6db74">&#39;$x^2$&#39;</span>,<span style="color:#e6db74">&#39;$x^3$&#39;</span>,<span style="color:#e6db74">&#39;$\sin(x)$&#39;</span>
-f <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>figure()
-ax <span style="color:#f92672">=</span> f<span style="color:#f92672">.</span>add_subplot()
-ax<span style="color:#f92672">.</span>bar(xx,coeff)
-ax<span style="color:#f92672">.</span>set_xticks(xx)
-ax<span style="color:#f92672">.</span>set_xticklabels(labels)
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">xx</span> <span style="color:#f92672">=</span> <span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">r_</span><span style="color:#111">[:</span><span style="color:#ae81ff">4</span><span style="color:#111">]</span>
+<span style="color:#111">labels</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#39;$x$&#39;</span><span style="color:#111">,</span><span style="color:#d88200">&#39;$x^2$&#39;</span><span style="color:#111">,</span><span style="color:#d88200">&#39;$x^3$&#39;</span><span style="color:#111">,</span><span style="color:#d88200">&#39;$\sin(x)$&#39;</span>
+<span style="color:#111">f</span> <span style="color:#f92672">=</span> <span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">figure</span><span style="color:#111">()</span>
+<span style="color:#111">ax</span> <span style="color:#f92672">=</span> <span style="color:#111">f</span><span style="color:#f92672">.</span><span style="color:#111">add_subplot</span><span style="color:#111">()</span>
+<span style="color:#111">ax</span><span style="color:#f92672">.</span><span style="color:#111">bar</span><span style="color:#111">(</span><span style="color:#111">xx</span><span style="color:#111">,</span><span style="color:#111">coeff</span><span style="color:#111">)</span>
+<span style="color:#111">ax</span><span style="color:#f92672">.</span><span style="color:#111">set_xticks</span><span style="color:#111">(</span><span style="color:#111">xx</span><span style="color:#111">)</span>
+<span style="color:#111">ax</span><span style="color:#f92672">.</span><span style="color:#111">set_xticklabels</span><span style="color:#111">(</span><span style="color:#111">labels</span><span style="color:#111">)</span>
 </code></pre></div><pre><code>[Text(0, 0, '$x$'),
  Text(1, 0, '$x^2$'),
  Text(2, 0, '$x^3$'),
  Text(3, 0, '$\\sin(x)$')]
 </code></pre>
 <p><div class="text-center">
-  <a href="output_16_1.png" target="_blank"><img src="output_16_1.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_16_1.png"><img src="output_16_1.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <p>To return $y^*$,</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">y_model <span style="color:#f92672">=</span> A<span style="color:#f92672">.</span>dot(coeff)
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">y_model</span> <span style="color:#f92672">=</span> <span style="color:#111">A</span><span style="color:#f92672">.</span><span style="color:#111">dot</span><span style="color:#111">(</span><span style="color:#111">coeff</span><span style="color:#111">)</span>
 </code></pre></div><p>Plotting the noisy data against the model, we get</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>figure()
-ax <span style="color:#f92672">=</span> fig<span style="color:#f92672">.</span>add_subplot()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">fig</span> <span style="color:#f92672">=</span> <span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">figure</span><span style="color:#111">()</span>
+<span style="color:#111">ax</span> <span style="color:#f92672">=</span> <span style="color:#111">fig</span><span style="color:#f92672">.</span><span style="color:#111">add_subplot</span><span style="color:#111">()</span>
 
-a <span style="color:#f92672">=</span> ax<span style="color:#f92672">.</span>plot(x,y_rand,<span style="color:#e6db74">&#39;o&#39;</span>)
-b <span style="color:#f92672">=</span> ax<span style="color:#f92672">.</span>plot(x,y_model)
+<span style="color:#111">a</span> <span style="color:#f92672">=</span> <span style="color:#111">ax</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">(</span><span style="color:#111">x</span><span style="color:#111">,</span><span style="color:#111">y_rand</span><span style="color:#111">,</span><span style="color:#d88200">&#39;o&#39;</span><span style="color:#111">)</span>
+<span style="color:#111">b</span> <span style="color:#f92672">=</span> <span style="color:#111">ax</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">(</span><span style="color:#111">x</span><span style="color:#111">,</span><span style="color:#111">y_model</span><span style="color:#111">)</span>
 
-ax<span style="color:#f92672">.</span>legend(a<span style="color:#f92672">+</span>b,[<span style="color:#e6db74">&#39;data&#39;</span>,<span style="color:#e6db74">&#39;model&#39;</span>])
+<span style="color:#111">ax</span><span style="color:#f92672">.</span><span style="color:#111">legend</span><span style="color:#111">(</span><span style="color:#111">a</span><span style="color:#f92672">+</span><span style="color:#111">b</span><span style="color:#111">,[</span><span style="color:#d88200">&#39;data&#39;</span><span style="color:#111">,</span><span style="color:#d88200">&#39;model&#39;</span><span style="color:#111">])</span>
 </code></pre></div><pre><code>&lt;matplotlib.legend.Legend at 0x1a76d2404f0&gt;
 </code></pre>
 <p><div class="text-center">
-  <a href="output_20_1.png" target="_blank"><img src="output_20_1.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_20_1.png"><img src="output_20_1.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <p>And finally, to plot the residual</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plt<span style="color:#f92672">.</span>figure()
-plt<span style="color:#f92672">.</span>plot(x,y_model<span style="color:#f92672">-</span>y_rand)
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">figure</span><span style="color:#111">()</span>
+<span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">(</span><span style="color:#111">x</span><span style="color:#111">,</span><span style="color:#111">y_model</span><span style="color:#f92672">-</span><span style="color:#111">y_rand</span><span style="color:#111">)</span>
 </code></pre></div><pre><code>[&lt;matplotlib.lines.Line2D at 0x1a76d32fa30&gt;]
 </code></pre>
 <p><div class="text-center">
-  <a href="output_22_1.png" target="_blank"><img src="output_22_1.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_22_1.png"><img src="output_22_1.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <p>Now try other models, higher resolution data, and different domains</p>
 

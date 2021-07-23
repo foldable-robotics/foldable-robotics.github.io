@@ -214,9 +214,11 @@ The Fabrication Process | Foldable Robotics
 <main class="container">
   <article>
   <h1 id="the-fabrication-process">The Fabrication Process</h1>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!--You should also cut out alignment holes for your jig.-->
+<!--
+## Executing your design in one layer
+This workflow has been integrated into a class taught at Arizona State University, titled Foldable Robotics.
+-->
 <h2 id="5-layer-design">5-Layer Design</h2>
 <p>A typical five layer design consists of</p>
 <ol>
@@ -233,7 +235,7 @@ The Fabrication Process | Foldable Robotics
 <p>Another good idea is to use the color of your vector art to control whether something is used as a placement guide or is actually cut.  Often you can set red to be cut, while blue is ignored by the laser-cutter software.  This will be used later.</p>
 <h4 id="first-pass-cut-considerations">First-pass cut considerations</h4>
 <p><div class="text-center">
-  <a href="/figures/design/adhesive_down.png" target="_blank"><img src="/figures/design/adhesive_down.png" alt="adhesive facing down"  class="img-fluid"/></a>
+  <a href="/figures/design/adhesive_down.png"><img src="/figures/design/adhesive_down.png" alt="adhesive facing down"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <p>For single-material sheets which are cut out in the laser by themselves, there is freedom in how you rotate and orient your cut pattern when sending it to the laser.  It can be a mirror image of itself, and when you remove that material, you can flip it back over to use it.  Materials with a backing, however, must be cut so that the orientation of the artwork matches the process of manufacturing.</p>
 <p>If you are using a paper-backed adhesive, for example, its backing enforces which layer gets adhered to first, an important manufacturability consideration.  For example, if you cut a pattern with the adhesive down and backing up in the laser, the adhesive layer must be bonded to the layer <em>below</em> it in the stack order.  If you cut the material with the adhesive up and backing down, it must first be bonded to the layer <em>above</em> it before the backing can be removed.  In addition, you must consider ease of cutting as well.  For  standard paper-backed acrylic adhesive, it is sometimes easier to place it adhesive-side down in the laser, as the tacky adhesive holds itself down and prevents curling.  Thus, any adhesive which must be bonded to the material above it in the stack order must have its artwork mirrored if it is to be placed adhesive-facing down in the laser cutter.</p>
@@ -260,7 +262,7 @@ The Fabrication Process | Foldable Robotics
 <p>Turn the air on.</p>
 <p>Ensure the bed is homed and that home is set to the same coordinate system as your artwork is defined.  This is often the top, left-hand corner of the printer bed.</p>
 <p><div class="text-center">
-  <a href="/figures/design/artwork-bed-prep.png" target="_blank"><img src="/figures/design/artwork-bed-prep.png" alt="&lt;!-- raw HTML omitted --&gt; Caption"  class="img-fluid"/></a>
+  <a href="/figures/design/artwork-bed-prep.png"><img src="/figures/design/artwork-bed-prep.png" alt="&lt;!--TODO--&gt; Caption"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <h4 id="cut-settings25w-universal-laser">Cut Settings(25W Universal Laser)</h4>
 <table>
@@ -323,7 +325,7 @@ The Fabrication Process | Foldable Robotics
 <p>There is a trick to this.  Since soft materials bend and flex a lot, if you try and push it down in an alignment jig, there will inevitably be one area which makes initial contact, and the flexibiliy of the layer may not ensure that you get proper alignment.  You can do several things to fix this, including using a rigid backing to place a thin, flexible layer in better alignment.  The simplest method is to lay the soft material in the jig first, and then push it flat against the surface of the jig.  You can then proceed to push down the more rigid layer without the same risk of misalignment.</p>
 <p><strong>Sequence:</strong></p>
 <p><div class="text-center">
-  <a href="/figures/design/laminate1.png" target="_blank"><img src="/figures/design/laminate1.png" alt="&lt;!-- raw HTML omitted --&gt; Caption"  class="img-fluid"/></a>
+  <a href="/figures/design/laminate1.png"><img src="/figures/design/laminate1.png" alt="&lt;!--TODO--&gt; Caption"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <ol>
 <li>Place alignment pins in jig at spacing proper for your design</li>
@@ -355,7 +357,7 @@ The Fabrication Process | Foldable Robotics
 <li>Laminate layers together, keeping on the press to securely bond all layers.</li>
 </ol>
 <p><div class="text-center">
-  <a href="/figures/design/laminate2.png" target="_blank"><img src="/figures/design/laminate2.png" alt="steps 16-27"  class="img-fluid"/></a>
+  <a href="/figures/design/laminate2.png"><img src="/figures/design/laminate2.png" alt="steps 16-27"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <h3 id="step-3-second-pass-cut">Step 3: Second-Pass Cut</h3>
 <p>If you followed these instructions, the rigid material scrap should still be taped in place in the bed of the laser, with the second pass cut aligned with the hole created by the first-pass cut.</p>

@@ -310,115 +310,115 @@ Frames, Basis Vectors, and Vectors | Foldable Robotics
 <pre><code class="language-{.python}" data-lang="{.python}">v/s
 </code></pre><p>is not possible.  Instead, simply invert the scalar and then multiply, as with</p>
 <pre><code class="language-{.python}" data-lang="{.python}">(1/s)*v
-</code></pre><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pynamics
-<span style="color:#f92672">from</span> pynamics.system <span style="color:#f92672">import</span> System
-<span style="color:#f92672">from</span> pynamics.frame <span style="color:#f92672">import</span> Frame
+</code></pre><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> <span style="color:#111">pynamics</span>
+<span style="color:#f92672">from</span> <span style="color:#111">pynamics.system</span> <span style="color:#f92672">import</span> <span style="color:#111">System</span>
+<span style="color:#f92672">from</span> <span style="color:#111">pynamics.frame</span> <span style="color:#f92672">import</span> <span style="color:#111">Frame</span>
 
-system <span style="color:#f92672">=</span> System()
-pynamics<span style="color:#f92672">.</span>set_system(__name__,system)
+<span style="color:#111">system</span> <span style="color:#f92672">=</span> <span style="color:#111">System</span><span style="color:#111">()</span>
+<span style="color:#111">pynamics</span><span style="color:#f92672">.</span><span style="color:#111">set_system</span><span style="color:#111">(</span><span style="color:#111">__name__</span><span style="color:#111">,</span><span style="color:#111">system</span><span style="color:#111">)</span>
 
-A <span style="color:#f92672">=</span> Frame(<span style="color:#e6db74">&#39;A&#39;</span>);
-B <span style="color:#f92672">=</span> Frame(<span style="color:#e6db74">&#39;B&#39;</span>);
-C <span style="color:#f92672">=</span> Frame(<span style="color:#e6db74">&#39;C&#39;</span>);
+<span style="color:#111">A</span> <span style="color:#f92672">=</span> <span style="color:#111">Frame</span><span style="color:#111">(</span><span style="color:#d88200">&#39;A&#39;</span><span style="color:#111">);</span>
+<span style="color:#111">B</span> <span style="color:#f92672">=</span> <span style="color:#111">Frame</span><span style="color:#111">(</span><span style="color:#d88200">&#39;B&#39;</span><span style="color:#111">);</span>
+<span style="color:#111">C</span> <span style="color:#f92672">=</span> <span style="color:#111">Frame</span><span style="color:#111">(</span><span style="color:#d88200">&#39;C&#39;</span><span style="color:#111">);</span>
 </code></pre></div><p>Vector addition works out of the box because vectors don&rsquo;t necessarily need to be represented using each others' basis vectors</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">v <span style="color:#f92672">=</span> A<span style="color:#f92672">.</span>x <span style="color:#f92672">+</span> B<span style="color:#f92672">.</span>y <span style="color:#f92672">+</span> C<span style="color:#f92672">.</span>z;
-v
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">v</span> <span style="color:#f92672">=</span> <span style="color:#111">A</span><span style="color:#f92672">.</span><span style="color:#111">x</span> <span style="color:#f92672">+</span> <span style="color:#111">B</span><span style="color:#f92672">.</span><span style="color:#111">y</span> <span style="color:#f92672">+</span> <span style="color:#111">C</span><span style="color:#f92672">.</span><span style="color:#111">z</span><span style="color:#111">;</span>
+<span style="color:#111">v</span>
 </code></pre></div><pre><code>A.x + B.y + C.z
 </code></pre>
 <p>Additionally, multiplication with a scalar works well:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">s <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
-<span style="color:#66d9ef">print</span>(s<span style="color:#f92672">*</span>v)
-<span style="color:#66d9ef">print</span>(v<span style="color:#f92672">*</span>s)
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">s</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+<span style="color:#00a8c8">print</span><span style="color:#111">(</span><span style="color:#111">s</span><span style="color:#f92672">*</span><span style="color:#111">v</span><span style="color:#111">)</span>
+<span style="color:#00a8c8">print</span><span style="color:#111">(</span><span style="color:#111">v</span><span style="color:#f92672">*</span><span style="color:#111">s</span><span style="color:#111">)</span>
 </code></pre></div><pre><code>3*A.x + 3*B.y + 3*C.z
 3*A.x + 3*B.y + 3*C.z
 </code></pre>
 <p>Furthermore, dot and cross product works well for vectors expressed by the same basis vectors:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">v1 <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">*</span>A<span style="color:#f92672">.</span>x<span style="color:#f92672">+</span><span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>A<span style="color:#f92672">.</span>y
-v2 <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">*</span>A<span style="color:#f92672">.</span>z<span style="color:#f92672">+</span><span style="color:#ae81ff">4</span><span style="color:#f92672">*</span>A<span style="color:#f92672">.</span>x
-<span style="color:#66d9ef">print</span>(v1<span style="color:#f92672">.</span>dot(v2))
-<span style="color:#66d9ef">print</span>(v1<span style="color:#f92672">.</span>cross(v2))
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">v1</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">*</span><span style="color:#111">A</span><span style="color:#f92672">.</span><span style="color:#111">x</span><span style="color:#f92672">+</span><span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#111">A</span><span style="color:#f92672">.</span><span style="color:#111">y</span>
+<span style="color:#111">v2</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">*</span><span style="color:#111">A</span><span style="color:#f92672">.</span><span style="color:#111">z</span><span style="color:#f92672">+</span><span style="color:#ae81ff">4</span><span style="color:#f92672">*</span><span style="color:#111">A</span><span style="color:#f92672">.</span><span style="color:#111">x</span>
+<span style="color:#00a8c8">print</span><span style="color:#111">(</span><span style="color:#111">v1</span><span style="color:#f92672">.</span><span style="color:#111">dot</span><span style="color:#111">(</span><span style="color:#111">v2</span><span style="color:#111">))</span>
+<span style="color:#00a8c8">print</span><span style="color:#111">(</span><span style="color:#111">v1</span><span style="color:#f92672">.</span><span style="color:#111">cross</span><span style="color:#111">(</span><span style="color:#111">v2</span><span style="color:#111">))</span>
 </code></pre></div><pre><code>4
 6*A.x - 3*A.y - 8*A.z
 </code></pre>
 <p>However, out of the box, performing a dot or cross product with vectors composed of different basis vectors will not work, because a relationship needs to be established between them.  For example, the following code will produce a custom error saying, &ldquo;Frames don&rsquo;t share a common parent&rdquo;</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">v1 <span style="color:#f92672">=</span> A<span style="color:#f92672">.</span>x<span style="color:#f92672">+</span>B<span style="color:#f92672">.</span>y
-v2 <span style="color:#f92672">=</span> B<span style="color:#f92672">.</span>z<span style="color:#f92672">+</span>C<span style="color:#f92672">.</span>x
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;v1.dot(v2)=&#34;</span>,v1<span style="color:#f92672">.</span>dot(v2))
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;v1.cross(v2)=&#34;</span>,v1<span style="color:#f92672">.</span>cross(v2))
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">v1</span> <span style="color:#f92672">=</span> <span style="color:#111">A</span><span style="color:#f92672">.</span><span style="color:#111">x</span><span style="color:#f92672">+</span><span style="color:#111">B</span><span style="color:#f92672">.</span><span style="color:#111">y</span>
+<span style="color:#111">v2</span> <span style="color:#f92672">=</span> <span style="color:#111">B</span><span style="color:#f92672">.</span><span style="color:#111">z</span><span style="color:#f92672">+</span><span style="color:#111">C</span><span style="color:#f92672">.</span><span style="color:#111">x</span>
+<span style="color:#00a8c8">print</span><span style="color:#111">(</span><span style="color:#d88200">&#34;v1.dot(v2)=&#34;</span><span style="color:#111">,</span><span style="color:#111">v1</span><span style="color:#f92672">.</span><span style="color:#111">dot</span><span style="color:#111">(</span><span style="color:#111">v2</span><span style="color:#111">))</span>
+<span style="color:#00a8c8">print</span><span style="color:#111">(</span><span style="color:#d88200">&#34;v1.cross(v2)=&#34;</span><span style="color:#111">,</span><span style="color:#111">v1</span><span style="color:#f92672">.</span><span style="color:#111">cross</span><span style="color:#111">(</span><span style="color:#111">v2</span><span style="color:#111">))</span>
 </code></pre></div><p>This can be addressed by defining a relationship between frames through rotations.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> sympy
-a <span style="color:#f92672">=</span> sympy<span style="color:#f92672">.</span>symbols(<span style="color:#e6db74">&#39;a&#39;</span>)
-b <span style="color:#f92672">=</span> sympy<span style="color:#f92672">.</span>symbols(<span style="color:#e6db74">&#39;b&#39;</span>)
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> <span style="color:#111">sympy</span>
+<span style="color:#111">a</span> <span style="color:#f92672">=</span> <span style="color:#111">sympy</span><span style="color:#f92672">.</span><span style="color:#111">symbols</span><span style="color:#111">(</span><span style="color:#d88200">&#39;a&#39;</span><span style="color:#111">)</span>
+<span style="color:#111">b</span> <span style="color:#f92672">=</span> <span style="color:#111">sympy</span><span style="color:#f92672">.</span><span style="color:#111">symbols</span><span style="color:#111">(</span><span style="color:#d88200">&#39;b&#39;</span><span style="color:#111">)</span>
 
-B<span style="color:#f92672">.</span>rotate_fixed_axis_directed(A,[<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>],a,system)
-C<span style="color:#f92672">.</span>rotate_fixed_axis_directed(B,[<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>],b,system)
+<span style="color:#111">B</span><span style="color:#f92672">.</span><span style="color:#111">rotate_fixed_axis_directed</span><span style="color:#111">(</span><span style="color:#111">A</span><span style="color:#111">,[</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span><span style="color:#ae81ff">1</span><span style="color:#111">],</span><span style="color:#111">a</span><span style="color:#111">,</span><span style="color:#111">system</span><span style="color:#111">)</span>
+<span style="color:#111">C</span><span style="color:#f92672">.</span><span style="color:#111">rotate_fixed_axis_directed</span><span style="color:#111">(</span><span style="color:#111">B</span><span style="color:#111">,[</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">],</span><span style="color:#111">b</span><span style="color:#111">,</span><span style="color:#111">system</span><span style="color:#111">)</span>
 </code></pre></div><p>Now the following code should work</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">v1 <span style="color:#f92672">=</span> A<span style="color:#f92672">.</span>x<span style="color:#f92672">+</span>B<span style="color:#f92672">.</span>y
-v2 <span style="color:#f92672">=</span> B<span style="color:#f92672">.</span>z<span style="color:#f92672">+</span>C<span style="color:#f92672">.</span>x
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;v1.dot(v2)=&#34;</span>,v1<span style="color:#f92672">.</span>dot(v2))
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#34;v1.cross(v2)=&#34;</span>,v1<span style="color:#f92672">.</span>cross(v2))
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">v1</span> <span style="color:#f92672">=</span> <span style="color:#111">A</span><span style="color:#f92672">.</span><span style="color:#111">x</span><span style="color:#f92672">+</span><span style="color:#111">B</span><span style="color:#f92672">.</span><span style="color:#111">y</span>
+<span style="color:#111">v2</span> <span style="color:#f92672">=</span> <span style="color:#111">B</span><span style="color:#f92672">.</span><span style="color:#111">z</span><span style="color:#f92672">+</span><span style="color:#111">C</span><span style="color:#f92672">.</span><span style="color:#111">x</span>
+<span style="color:#00a8c8">print</span><span style="color:#111">(</span><span style="color:#d88200">&#34;v1.dot(v2)=&#34;</span><span style="color:#111">,</span><span style="color:#111">v1</span><span style="color:#f92672">.</span><span style="color:#111">dot</span><span style="color:#111">(</span><span style="color:#111">v2</span><span style="color:#111">))</span>
+<span style="color:#00a8c8">print</span><span style="color:#111">(</span><span style="color:#d88200">&#34;v1.cross(v2)=&#34;</span><span style="color:#111">,</span><span style="color:#111">v1</span><span style="color:#f92672">.</span><span style="color:#111">cross</span><span style="color:#111">(</span><span style="color:#111">v2</span><span style="color:#111">))</span>
 </code></pre></div><pre><code>v1.dot(v2)= cos(a)*cos(b)
 v1.cross(v2)= -A.y + B.x*(sin(a)*sin(b) - sin(b) + 1) + B.y*sin(b)*cos(a) + B.z*(sin(a)*cos(b) - cos(b))
 </code></pre>
 <h2 id="other-functions">Other Functions</h2>
 <h3 id="express">Express</h3>
 <p>If enough information is supplied, vectors can also be expressed in other reference frames.  This uses the rotation information stored when the frame rotations are defined to transform all basis vectors stored within a vector type into a desired type.  This can be useful for finding the shortest representation of a vector, or the resulting math.  For example,</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(v1<span style="color:#f92672">.</span>express(B))
-<span style="color:#66d9ef">print</span>(v1<span style="color:#f92672">.</span>express(A))
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a8c8">print</span><span style="color:#111">(</span><span style="color:#111">v1</span><span style="color:#f92672">.</span><span style="color:#111">express</span><span style="color:#111">(</span><span style="color:#111">B</span><span style="color:#111">))</span>
+<span style="color:#00a8c8">print</span><span style="color:#111">(</span><span style="color:#111">v1</span><span style="color:#f92672">.</span><span style="color:#111">express</span><span style="color:#111">(</span><span style="color:#111">A</span><span style="color:#111">))</span>
 </code></pre></div><pre><code>B.x*cos(a) + B.y*(1 - sin(a))
 A.x*(1 - sin(a)) + A.y*cos(a)
 </code></pre>
 <p>produces quite similar size representations, but complex expressions may benefit from shorter representations.  Take this example where v is the cross product of vectors expressed in frames separated by two separate rotations.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">v <span style="color:#f92672">=</span> (A<span style="color:#f92672">.</span>x<span style="color:#f92672">+</span>A<span style="color:#f92672">.</span>y<span style="color:#f92672">+</span>A<span style="color:#f92672">.</span>z)<span style="color:#f92672">.</span>cross(C<span style="color:#f92672">.</span>x<span style="color:#f92672">+</span>C<span style="color:#f92672">.</span>y<span style="color:#f92672">+</span>C<span style="color:#f92672">.</span>z)
-v
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">v</span> <span style="color:#f92672">=</span> <span style="color:#111">(</span><span style="color:#111">A</span><span style="color:#f92672">.</span><span style="color:#111">x</span><span style="color:#f92672">+</span><span style="color:#111">A</span><span style="color:#f92672">.</span><span style="color:#111">y</span><span style="color:#f92672">+</span><span style="color:#111">A</span><span style="color:#f92672">.</span><span style="color:#111">z</span><span style="color:#111">)</span><span style="color:#f92672">.</span><span style="color:#111">cross</span><span style="color:#111">(</span><span style="color:#111">C</span><span style="color:#f92672">.</span><span style="color:#111">x</span><span style="color:#f92672">+</span><span style="color:#111">C</span><span style="color:#f92672">.</span><span style="color:#111">y</span><span style="color:#f92672">+</span><span style="color:#111">C</span><span style="color:#f92672">.</span><span style="color:#111">z</span><span style="color:#111">)</span>
+<span style="color:#111">v</span>
 </code></pre></div><pre><code>B.x*((-sin(a) + cos(a))*(-sin(b) + cos(b)) - 1) + B.y*(-(sin(a) + cos(a))*(-sin(b) + cos(b)) + sin(b) + cos(b)) + B.z*(-(-sin(a) + cos(a))*(sin(b) + cos(b)) + sin(a) + cos(a))
 </code></pre>
 <p>When you express v in A, B, and C basis vectors, you will see that the middle frame is by far the shortest representation</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">v<span style="color:#f92672">.</span>express(A)
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">v</span><span style="color:#f92672">.</span><span style="color:#111">express</span><span style="color:#111">(</span><span style="color:#111">A</span><span style="color:#111">)</span>
 </code></pre></div><pre><code>A.x*(((-sin(a) + cos(a))*(-sin(b) + cos(b)) - 1)*cos(a) - (-(sin(a) + cos(a))*(-sin(b) + cos(b)) + sin(b) + cos(b))*sin(a)) + A.y*(((-sin(a) + cos(a))*(-sin(b) + cos(b)) - 1)*sin(a) + (-(sin(a) + cos(a))*(-sin(b) + cos(b)) + sin(b) + cos(b))*cos(a)) + A.z*(-(-sin(a) + cos(a))*(sin(b) + cos(b)) + sin(a) + cos(a))
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">v<span style="color:#f92672">.</span>express(B)
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">v</span><span style="color:#f92672">.</span><span style="color:#111">express</span><span style="color:#111">(</span><span style="color:#111">B</span><span style="color:#111">)</span>
 </code></pre></div><pre><code>B.x*((-sin(a) + cos(a))*(-sin(b) + cos(b)) - 1) + B.y*(-(sin(a) + cos(a))*(-sin(b) + cos(b)) + sin(b) + cos(b)) + B.z*(-(-sin(a) + cos(a))*(sin(b) + cos(b)) + sin(a) + cos(a))
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">v<span style="color:#f92672">.</span>express(C)
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">v</span><span style="color:#f92672">.</span><span style="color:#111">express</span><span style="color:#111">(</span><span style="color:#111">C</span><span style="color:#111">)</span>
 </code></pre></div><pre><code>C.x*(((-sin(a) + cos(a))*(-sin(b) + cos(b)) - 1)*cos(b) - (-(-sin(a) + cos(a))*(sin(b) + cos(b)) + sin(a) + cos(a))*sin(b)) + C.y*(-(sin(a) + cos(a))*(-sin(b) + cos(b)) + sin(b) + cos(b)) + C.z*(((-sin(a) + cos(a))*(-sin(b) + cos(b)) - 1)*sin(b) + (-(-sin(a) + cos(a))*(sin(b) + cos(b)) + sin(a) + cos(a))*cos(b))
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">del</span> v,v1,v2,A,B,C,a,b,system
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a8c8">del</span> <span style="color:#111">v</span><span style="color:#111">,</span><span style="color:#111">v1</span><span style="color:#111">,</span><span style="color:#111">v2</span><span style="color:#111">,</span><span style="color:#111">A</span><span style="color:#111">,</span><span style="color:#111">B</span><span style="color:#111">,</span><span style="color:#111">C</span><span style="color:#111">,</span><span style="color:#111">a</span><span style="color:#111">,</span><span style="color:#111">b</span><span style="color:#111">,</span><span style="color:#111">system</span>
 </code></pre></div><p>This can have a real-world impact on the time to compute and integrate pynamics expressions</p>
 <h3 id="derivatives">Derivatives</h3>
 <p>Vectors can also have their time derivatives taken.  For this to be possible, the variables that define the magnitude and direction of vectors need to be explicitly defined if they are time-differentiable.  For more information on time-differentiable variables, see the variable-types module.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> pynamics
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> <span style="color:#111">pynamics</span>
 
-<span style="color:#f92672">from</span> pynamics.frame <span style="color:#f92672">import</span> Frame
-<span style="color:#f92672">from</span> pynamics.variable_types <span style="color:#f92672">import</span> Differentiable,Constant,Variable
-<span style="color:#f92672">from</span> pynamics.system <span style="color:#f92672">import</span> System
+<span style="color:#f92672">from</span> <span style="color:#111">pynamics.frame</span> <span style="color:#f92672">import</span> <span style="color:#111">Frame</span>
+<span style="color:#f92672">from</span> <span style="color:#111">pynamics.variable_types</span> <span style="color:#f92672">import</span> <span style="color:#111">Differentiable</span><span style="color:#111">,</span><span style="color:#111">Constant</span><span style="color:#111">,</span><span style="color:#111">Variable</span>
+<span style="color:#f92672">from</span> <span style="color:#111">pynamics.system</span> <span style="color:#f92672">import</span> <span style="color:#111">System</span>
 
-system <span style="color:#f92672">=</span> System()
-pynamics<span style="color:#f92672">.</span>set_system(__name__,system)
+<span style="color:#111">system</span> <span style="color:#f92672">=</span> <span style="color:#111">System</span><span style="color:#111">()</span>
+<span style="color:#111">pynamics</span><span style="color:#f92672">.</span><span style="color:#111">set_system</span><span style="color:#111">(</span><span style="color:#111">__name__</span><span style="color:#111">,</span><span style="color:#111">system</span><span style="color:#111">)</span>
 
-N <span style="color:#f92672">=</span> Frame(<span style="color:#e6db74">&#39;N&#39;</span>);
-A <span style="color:#f92672">=</span> Frame(<span style="color:#e6db74">&#39;A&#39;</span>);
+<span style="color:#111">N</span> <span style="color:#f92672">=</span> <span style="color:#111">Frame</span><span style="color:#111">(</span><span style="color:#d88200">&#39;N&#39;</span><span style="color:#111">);</span>
+<span style="color:#111">A</span> <span style="color:#f92672">=</span> <span style="color:#111">Frame</span><span style="color:#111">(</span><span style="color:#d88200">&#39;A&#39;</span><span style="color:#111">);</span>
 
-qA,qA_d,qA_dd <span style="color:#f92672">=</span> Differentiable(<span style="color:#e6db74">&#39;qA&#39;</span>,system)
-x,x_d,x_dd <span style="color:#f92672">=</span> Differentiable(<span style="color:#e6db74">&#39;x&#39;</span>,system)
+<span style="color:#111">qA</span><span style="color:#111">,</span><span style="color:#111">qA_d</span><span style="color:#111">,</span><span style="color:#111">qA_dd</span> <span style="color:#f92672">=</span> <span style="color:#111">Differentiable</span><span style="color:#111">(</span><span style="color:#d88200">&#39;qA&#39;</span><span style="color:#111">,</span><span style="color:#111">system</span><span style="color:#111">)</span>
+<span style="color:#111">x</span><span style="color:#111">,</span><span style="color:#111">x_d</span><span style="color:#111">,</span><span style="color:#111">x_dd</span> <span style="color:#f92672">=</span> <span style="color:#111">Differentiable</span><span style="color:#111">(</span><span style="color:#d88200">&#39;x&#39;</span><span style="color:#111">,</span><span style="color:#111">system</span><span style="color:#111">)</span>
 
-system<span style="color:#f92672">.</span>set_newtonian(N)
-A<span style="color:#f92672">.</span>rotate_fixed_axis_directed(N,[<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>],qA,system)
+<span style="color:#111">system</span><span style="color:#f92672">.</span><span style="color:#111">set_newtonian</span><span style="color:#111">(</span><span style="color:#111">N</span><span style="color:#111">)</span>
+<span style="color:#111">A</span><span style="color:#f92672">.</span><span style="color:#111">rotate_fixed_axis_directed</span><span style="color:#111">(</span><span style="color:#111">N</span><span style="color:#111">,[</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span><span style="color:#ae81ff">1</span><span style="color:#111">],</span><span style="color:#111">qA</span><span style="color:#111">,</span><span style="color:#111">system</span><span style="color:#111">)</span>
 
-pos <span style="color:#f92672">=</span> x<span style="color:#f92672">*</span>A<span style="color:#f92672">.</span>x
-vel<span style="color:#f92672">=</span>pos<span style="color:#f92672">.</span>time_derivative(N)
-acc<span style="color:#f92672">=</span>vel<span style="color:#f92672">.</span>time_derivative(N)
+<span style="color:#111">pos</span> <span style="color:#f92672">=</span> <span style="color:#111">x</span><span style="color:#f92672">*</span><span style="color:#111">A</span><span style="color:#f92672">.</span><span style="color:#111">x</span>
+<span style="color:#111">vel</span><span style="color:#f92672">=</span><span style="color:#111">pos</span><span style="color:#f92672">.</span><span style="color:#111">time_derivative</span><span style="color:#111">(</span><span style="color:#111">N</span><span style="color:#111">)</span>
+<span style="color:#111">acc</span><span style="color:#f92672">=</span><span style="color:#111">vel</span><span style="color:#f92672">.</span><span style="color:#111">time_derivative</span><span style="color:#111">(</span><span style="color:#111">N</span><span style="color:#111">)</span>
 
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;pos = &#39;</span>,pos)
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;vel = &#39;</span>,vel)
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;acc = &#39;</span>,acc)
+<span style="color:#00a8c8">print</span><span style="color:#111">(</span><span style="color:#d88200">&#39;pos = &#39;</span><span style="color:#111">,</span><span style="color:#111">pos</span><span style="color:#111">)</span>
+<span style="color:#00a8c8">print</span><span style="color:#111">(</span><span style="color:#d88200">&#39;vel = &#39;</span><span style="color:#111">,</span><span style="color:#111">vel</span><span style="color:#111">)</span>
+<span style="color:#00a8c8">print</span><span style="color:#111">(</span><span style="color:#d88200">&#39;acc = &#39;</span><span style="color:#111">,</span><span style="color:#111">acc</span><span style="color:#111">)</span>
 </code></pre></div><pre><code>pos =  x*A.x
 vel =  qA_d*x*A.y + x_d*A.x
 acc =  A.x*(-qA_d**2*x + x_dd) + A.y*(2*qA_d*x_d + qA_dd*x)
 </code></pre>
 <p>You can combine derivatives with the express function to print the derivative in other frames</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">vel<span style="color:#f92672">.</span>express(N)
-acc<span style="color:#f92672">.</span>express(N)
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">vel</span><span style="color:#f92672">.</span><span style="color:#111">express</span><span style="color:#111">(</span><span style="color:#111">N</span><span style="color:#111">)</span>
+<span style="color:#111">acc</span><span style="color:#f92672">.</span><span style="color:#111">express</span><span style="color:#111">(</span><span style="color:#111">N</span><span style="color:#111">)</span>
 </code></pre></div><h2 id="use-cases">Use Cases</h2>
 <p>Vectors are typically used in a number of cases</p>
 <ul>

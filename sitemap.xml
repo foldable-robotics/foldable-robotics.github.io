@@ -4,8 +4,6 @@
   <url>
     <loc>https://danaukes.com/</loc>
   </url><url>
-    <loc>https://danaukes.com/modules/kinematics/generated/symbolic-kinematics-with-pynamics/</loc>
-  </url><url>
     <loc>https://danaukes.com/modules/python/generated/conditionals/</loc>
   </url><url>
     <loc>https://danaukes.com/modules/validation/actuator-fitting/</loc>
@@ -24,7 +22,7 @@
   </url><url>
     <loc>https://danaukes.com/modules/biomechanics/</loc>
   </url><url>
-    <loc>https://danaukes.com/assignments/biomechanics-background-and-initial-specificaitons/</loc>
+    <loc>https://danaukes.com/assignments/biomechanics-background-and-initial-specifications/</loc>
   </url><url>
     <loc>https://danaukes.com/modules/compliance/cantilever-beams/</loc>
   </url><url>
@@ -262,8 +260,6 @@
   </url><url>
     <loc>https://danaukes.com/assignments/sarrus-kinematics/</loc>
   </url><url>
-    <loc>https://danaukes.com/modules/biomechanics/scaling/</loc>
-  </url><url>
     <loc>https://danaukes.com/modules/optimization/generated/02-scipy-optimization-example/</loc>
   </url><url>
     <loc>https://danaukes.com/modules/kinematics/singularities-and-solver-problems/</loc>
@@ -311,6 +307,8 @@
     <loc>https://danaukes.com/modules/dynamics/generated/08-triple-pendulum-example/</loc>
   </url><url>
     <loc>https://danaukes.com/modules/dynamics/generated/07-unit-scaling/</loc>
+  </url><url>
+    <loc>https://danaukes.com/modules/python/updating-python-packages/</loc>
   </url><url>
     <loc>https://danaukes.com/modules/python/using-jupyter-notebook/</loc>
   </url><url>

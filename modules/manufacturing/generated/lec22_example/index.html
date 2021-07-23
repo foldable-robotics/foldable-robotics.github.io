@@ -213,159 +213,159 @@ Lecture 22 Code | Foldable Robotics
     
 <main class="container">
   <article>
-  <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> shapely.geometry <span style="color:#f92672">as</span> sg
-<span style="color:#f92672">from</span> foldable_robotics.layer <span style="color:#f92672">import</span> Layer
-<span style="color:#f92672">from</span> foldable_robotics.laminate <span style="color:#f92672">import</span> Laminate
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> sg<span style="color:#f92672">.</span>Point(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>)
-a
+  <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> <span style="color:#111">shapely.geometry</span> <span style="color:#f92672">as</span> <span style="color:#111">sg</span>
+<span style="color:#f92672">from</span> <span style="color:#111">foldable_robotics.layer</span> <span style="color:#f92672">import</span> <span style="color:#111">Layer</span>
+<span style="color:#f92672">from</span> <span style="color:#111">foldable_robotics.laminate</span> <span style="color:#f92672">import</span> <span style="color:#111">Laminate</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">a</span> <span style="color:#f92672">=</span> <span style="color:#111">sg</span><span style="color:#f92672">.</span><span style="color:#111">Point</span><span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">)</span>
+<span style="color:#111">a</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_2_0.svg" target="_blank"><img src="output_2_0.svg" alt="svg"  class="img-fluid"/></a>
+  <a href="output_2_0.svg"><img src="output_2_0.svg" alt="svg"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">b <span style="color:#f92672">=</span> sg<span style="color:#f92672">.</span>box(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>)
-b
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">b</span> <span style="color:#f92672">=</span> <span style="color:#111">sg</span><span style="color:#f92672">.</span><span style="color:#111">box</span><span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span><span style="color:#ae81ff">1</span><span style="color:#111">)</span>
+<span style="color:#111">b</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_3_0.svg" target="_blank"><img src="output_3_0.svg" alt="svg"  class="img-fluid"/></a>
+  <a href="output_3_0.svg"><img src="output_3_0.svg" alt="svg"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">c <span style="color:#f92672">=</span> Layer(b)
-c
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">c</span> <span style="color:#f92672">=</span> <span style="color:#111">Layer</span><span style="color:#111">(</span><span style="color:#111">b</span><span style="color:#111">)</span>
+<span style="color:#111">c</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_4_0.svg" target="_blank"><img src="output_4_0.svg" alt="svg"  class="img-fluid"/></a>
+  <a href="output_4_0.svg"><img src="output_4_0.svg" alt="svg"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">c<span style="color:#f92672">.</span>translate(<span style="color:#f92672">.</span><span style="color:#ae81ff">5</span>,<span style="color:#f92672">.</span><span style="color:#ae81ff">5</span>)
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">c</span><span style="color:#f92672">.</span><span style="color:#111">translate</span><span style="color:#111">(</span><span style="color:#f92672">.</span><span style="color:#ae81ff">5</span><span style="color:#111">,</span><span style="color:#f92672">.</span><span style="color:#ae81ff">5</span><span style="color:#111">)</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_5_0.svg" target="_blank"><img src="output_5_0.svg" alt="svg"  class="img-fluid"/></a>
+  <a href="output_5_0.svg"><img src="output_5_0.svg" alt="svg"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">c<span style="color:#f92672">|</span>(c<span style="color:#f92672">.</span>translate(<span style="color:#f92672">.</span><span style="color:#ae81ff">5</span>,<span style="color:#f92672">.</span><span style="color:#ae81ff">5</span>))
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">c</span><span style="color:#f92672">|</span><span style="color:#111">(</span><span style="color:#111">c</span><span style="color:#f92672">.</span><span style="color:#111">translate</span><span style="color:#111">(</span><span style="color:#f92672">.</span><span style="color:#ae81ff">5</span><span style="color:#111">,</span><span style="color:#f92672">.</span><span style="color:#ae81ff">5</span><span style="color:#111">))</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_6_0.svg" target="_blank"><img src="output_6_0.svg" alt="svg"  class="img-fluid"/></a>
+  <a href="output_6_0.svg"><img src="output_6_0.svg" alt="svg"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">c<span style="color:#f92672">.</span>union((c<span style="color:#f92672">.</span>translate(<span style="color:#f92672">.</span><span style="color:#ae81ff">5</span>,<span style="color:#f92672">.</span><span style="color:#ae81ff">5</span>)))
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">c</span><span style="color:#f92672">.</span><span style="color:#111">union</span><span style="color:#111">((</span><span style="color:#111">c</span><span style="color:#f92672">.</span><span style="color:#111">translate</span><span style="color:#111">(</span><span style="color:#f92672">.</span><span style="color:#ae81ff">5</span><span style="color:#111">,</span><span style="color:#f92672">.</span><span style="color:#ae81ff">5</span><span style="color:#111">)))</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_7_0.svg" target="_blank"><img src="output_7_0.svg" alt="svg"  class="img-fluid"/></a>
+  <a href="output_7_0.svg"><img src="output_7_0.svg" alt="svg"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">d <span style="color:#f92672">=</span> Layer(a<span style="color:#f92672">.</span>buffer(<span style="color:#f92672">.</span><span style="color:#ae81ff">25</span>))
-d
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">d</span> <span style="color:#f92672">=</span> <span style="color:#111">Layer</span><span style="color:#111">(</span><span style="color:#111">a</span><span style="color:#f92672">.</span><span style="color:#111">buffer</span><span style="color:#111">(</span><span style="color:#f92672">.</span><span style="color:#ae81ff">25</span><span style="color:#111">))</span>
+<span style="color:#111">d</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_8_0.svg" target="_blank"><img src="output_8_0.svg" alt="svg"  class="img-fluid"/></a>
+  <a href="output_8_0.svg"><img src="output_8_0.svg" alt="svg"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">e <span style="color:#f92672">=</span> c<span style="color:#f92672">-</span>d<span style="color:#f92672">.</span>translate(<span style="color:#f92672">.</span><span style="color:#ae81ff">5</span>,<span style="color:#f92672">.</span><span style="color:#ae81ff">5</span>)
-e
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">e</span> <span style="color:#f92672">=</span> <span style="color:#111">c</span><span style="color:#f92672">-</span><span style="color:#111">d</span><span style="color:#f92672">.</span><span style="color:#111">translate</span><span style="color:#111">(</span><span style="color:#f92672">.</span><span style="color:#ae81ff">5</span><span style="color:#111">,</span><span style="color:#f92672">.</span><span style="color:#ae81ff">5</span><span style="color:#111">)</span>
+<span style="color:#111">e</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_9_0.svg" target="_blank"><img src="output_9_0.svg" alt="svg"  class="img-fluid"/></a>
+  <a href="output_9_0.svg"><img src="output_9_0.svg" alt="svg"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> foldable_robotics
-foldable_robotics<span style="color:#f92672">.</span>resolution<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>
-e<span style="color:#f92672">.</span>dilate(<span style="color:#f92672">.</span><span style="color:#ae81ff">2</span>)
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> <span style="color:#111">foldable_robotics</span>
+<span style="color:#111">foldable_robotics</span><span style="color:#f92672">.</span><span style="color:#111">resolution</span><span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>
+<span style="color:#111">e</span><span style="color:#f92672">.</span><span style="color:#111">dilate</span><span style="color:#111">(</span><span style="color:#f92672">.</span><span style="color:#ae81ff">2</span><span style="color:#111">)</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_10_0.svg" target="_blank"><img src="output_10_0.svg" alt="svg"  class="img-fluid"/></a>
+  <a href="output_10_0.svg"><img src="output_10_0.svg" alt="svg"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">e<span style="color:#f92672">.</span>erode(<span style="color:#f92672">.</span><span style="color:#ae81ff">1</span>)
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">e</span><span style="color:#f92672">.</span><span style="color:#111">erode</span><span style="color:#111">(</span><span style="color:#f92672">.</span><span style="color:#ae81ff">1</span><span style="color:#111">)</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_11_0.svg" target="_blank"><img src="output_11_0.svg" alt="svg"  class="img-fluid"/></a>
+  <a href="output_11_0.svg"><img src="output_11_0.svg" alt="svg"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">e<span style="color:#f92672">.</span>plot()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">e</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_12_0.png" target="_blank"><img src="output_12_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_12_0.png"><img src="output_12_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">e<span style="color:#f92672">.</span>erode(<span style="color:#f92672">.</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">.</span>plot()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">e</span><span style="color:#f92672">.</span><span style="color:#111">erode</span><span style="color:#111">(</span><span style="color:#f92672">.</span><span style="color:#ae81ff">1</span><span style="color:#111">)</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_13_0.png" target="_blank"><img src="output_13_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_13_0.png"><img src="output_13_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">list(b<span style="color:#f92672">.</span>centroid<span style="color:#f92672">.</span>coords)
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">list</span><span style="color:#111">(</span><span style="color:#111">b</span><span style="color:#f92672">.</span><span style="color:#111">centroid</span><span style="color:#f92672">.</span><span style="color:#111">coords</span><span style="color:#111">)</span>
 </code></pre></div><pre><code>[(0.5, 0.5)]
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">d<span style="color:#f92672">.</span>bounding_box()<span style="color:#f92672">.</span>plot()
-d<span style="color:#f92672">.</span>plot()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">d</span><span style="color:#f92672">.</span><span style="color:#111">bounding_box</span><span style="color:#111">()</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
+<span style="color:#111">d</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_15_0.png" target="_blank"><img src="output_15_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_15_0.png"><img src="output_15_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">e<span style="color:#f92672">&lt;&lt;</span>(<span style="color:#f92672">.</span><span style="color:#ae81ff">1</span>)
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">e</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#111">(</span><span style="color:#f92672">.</span><span style="color:#ae81ff">1</span><span style="color:#111">)</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_16_0.svg" target="_blank"><img src="output_16_0.svg" alt="svg"  class="img-fluid"/></a>
+  <a href="output_16_0.svg"><img src="output_16_0.svg" alt="svg"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">e<span style="color:#f92672">&gt;&gt;.</span><span style="color:#ae81ff">1</span>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">e</span><span style="color:#f92672">&gt;&gt;.</span><span style="color:#ae81ff">1</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_17_0.svg" target="_blank"><img src="output_17_0.svg" alt="svg"  class="img-fluid"/></a>
+  <a href="output_17_0.svg"><img src="output_17_0.svg" alt="svg"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">f <span style="color:#f92672">=</span> Laminate(e<span style="color:#f92672">&lt;&lt;.</span><span style="color:#ae81ff">1</span>,e, e<span style="color:#f92672">&gt;&gt;.</span><span style="color:#ae81ff">1</span>)
-f
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">f</span> <span style="color:#f92672">=</span> <span style="color:#111">Laminate</span><span style="color:#111">(</span><span style="color:#111">e</span><span style="color:#f92672">&lt;&lt;.</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span><span style="color:#111">e</span><span style="color:#111">,</span> <span style="color:#111">e</span><span style="color:#f92672">&gt;&gt;.</span><span style="color:#ae81ff">1</span><span style="color:#111">)</span>
+<span style="color:#111">f</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_18_0.svg" target="_blank"><img src="output_18_0.svg" alt="svg"  class="img-fluid"/></a>
+  <a href="output_18_0.svg"><img src="output_18_0.svg" alt="svg"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">g <span style="color:#f92672">=</span> [<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>]
-g
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">g</span> <span style="color:#f92672">=</span> <span style="color:#111">[</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span><span style="color:#ae81ff">2</span><span style="color:#111">,</span><span style="color:#ae81ff">3</span><span style="color:#111">]</span>
+<span style="color:#111">g</span>
 </code></pre></div><pre><code>[1, 2, 3]
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">g[::<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">g</span><span style="color:#111">[::</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#111">]</span>
 </code></pre></div><pre><code>[3, 2, 1]
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">f[<span style="color:#ae81ff">0</span>]
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">f</span><span style="color:#111">[</span><span style="color:#ae81ff">0</span><span style="color:#111">]</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_21_0.svg" target="_blank"><img src="output_21_0.svg" alt="svg"  class="img-fluid"/></a>
+  <a href="output_21_0.svg"><img src="output_21_0.svg" alt="svg"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">f[<span style="color:#ae81ff">1</span>]
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">f</span><span style="color:#111">[</span><span style="color:#ae81ff">1</span><span style="color:#111">]</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_22_0.svg" target="_blank"><img src="output_22_0.svg" alt="svg"  class="img-fluid"/></a>
+  <a href="output_22_0.svg"><img src="output_22_0.svg" alt="svg"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">f[<span style="color:#ae81ff">2</span>]
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">f</span><span style="color:#111">[</span><span style="color:#ae81ff">2</span><span style="color:#111">]</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_23_0.svg" target="_blank"><img src="output_23_0.svg" alt="svg"  class="img-fluid"/></a>
+  <a href="output_23_0.svg"><img src="output_23_0.svg" alt="svg"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">f[::<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">f</span><span style="color:#111">[::</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#111">]</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_24_0.svg" target="_blank"><img src="output_24_0.svg" alt="svg"  class="img-fluid"/></a>
+  <a href="output_24_0.svg"><img src="output_24_0.svg" alt="svg"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">len(f<span style="color:#f92672">+</span>f)
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">len</span><span style="color:#111">(</span><span style="color:#111">f</span><span style="color:#f92672">+</span><span style="color:#111">f</span><span style="color:#111">)</span>
 </code></pre></div><pre><code>6
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">[<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>]<span style="color:#f92672">+</span>[<span style="color:#ae81ff">4</span>,<span style="color:#ae81ff">5</span>,<span style="color:#ae81ff">6</span>]
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">[</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span><span style="color:#ae81ff">2</span><span style="color:#111">,</span><span style="color:#ae81ff">3</span><span style="color:#111">]</span><span style="color:#f92672">+</span><span style="color:#111">[</span><span style="color:#ae81ff">4</span><span style="color:#111">,</span><span style="color:#ae81ff">5</span><span style="color:#111">,</span><span style="color:#ae81ff">6</span><span style="color:#111">]</span>
 </code></pre></div><pre><code>[1, 2, 3, 4, 5, 6]
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">f<span style="color:#f92672">&lt;&lt;.</span><span style="color:#ae81ff">1</span>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">f</span><span style="color:#f92672">&lt;&lt;.</span><span style="color:#ae81ff">1</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_27_0.svg" target="_blank"><img src="output_27_0.svg" alt="svg"  class="img-fluid"/></a>
+  <a href="output_27_0.svg"><img src="output_27_0.svg" alt="svg"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">g <span style="color:#f92672">=</span> f<span style="color:#f92672">.</span>rotate(<span style="color:#ae81ff">30</span>)
-g
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">g</span> <span style="color:#f92672">=</span> <span style="color:#111">f</span><span style="color:#f92672">.</span><span style="color:#111">rotate</span><span style="color:#111">(</span><span style="color:#ae81ff">30</span><span style="color:#111">)</span>
+<span style="color:#111">g</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_28_0.svg" target="_blank"><img src="output_28_0.svg" alt="svg"  class="img-fluid"/></a>
+  <a href="output_28_0.svg"><img src="output_28_0.svg" alt="svg"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">h <span style="color:#f92672">=</span> g<span style="color:#f92672">.</span>translate(<span style="color:#f92672">.</span><span style="color:#ae81ff">5</span>,<span style="color:#f92672">.</span><span style="color:#ae81ff">5</span>)
-h
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">h</span> <span style="color:#f92672">=</span> <span style="color:#111">g</span><span style="color:#f92672">.</span><span style="color:#111">translate</span><span style="color:#111">(</span><span style="color:#f92672">.</span><span style="color:#ae81ff">5</span><span style="color:#111">,</span><span style="color:#f92672">.</span><span style="color:#ae81ff">5</span><span style="color:#111">)</span>
+<span style="color:#111">h</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_29_0.svg" target="_blank"><img src="output_29_0.svg" alt="svg"  class="img-fluid"/></a>
+  <a href="output_29_0.svg"><img src="output_29_0.svg" alt="svg"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">f<span style="color:#f92672">|</span>h
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">f</span><span style="color:#f92672">|</span><span style="color:#111">h</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_30_0.svg" target="_blank"><img src="output_30_0.svg" alt="svg"  class="img-fluid"/></a>
+  <a href="output_30_0.svg"><img src="output_30_0.svg" alt="svg"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">f<span style="color:#f92672">&amp;</span>h
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">f</span><span style="color:#f92672">&amp;</span><span style="color:#111">h</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_31_0.svg" target="_blank"><img src="output_31_0.svg" alt="svg"  class="img-fluid"/></a>
+  <a href="output_31_0.svg"><img src="output_31_0.svg" alt="svg"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">f<span style="color:#f92672">.</span>symmetric_difference(h)
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">f</span><span style="color:#f92672">.</span><span style="color:#111">symmetric_difference</span><span style="color:#111">(</span><span style="color:#111">h</span><span style="color:#111">)</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_32_0.svg" target="_blank"><img src="output_32_0.svg" alt="svg"  class="img-fluid"/></a>
+  <a href="output_32_0.svg"><img src="output_32_0.svg" alt="svg"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> foldable_robotics.manufacturing <span style="color:#f92672">as</span> fm
-k  <span style="color:#f92672">=</span> fm<span style="color:#f92672">.</span>unary_union(f)
-k
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> <span style="color:#111">foldable_robotics.manufacturing</span> <span style="color:#f92672">as</span> <span style="color:#111">fm</span>
+<span style="color:#111">k</span>  <span style="color:#f92672">=</span> <span style="color:#111">fm</span><span style="color:#f92672">.</span><span style="color:#111">unary_union</span><span style="color:#111">(</span><span style="color:#111">f</span><span style="color:#111">)</span>
+<span style="color:#111">k</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_33_0.svg" target="_blank"><img src="output_33_0.svg" alt="svg"  class="img-fluid"/></a>
+  <a href="output_33_0.svg"><img src="output_33_0.svg" alt="svg"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">l <span style="color:#f92672">=</span> (k<span style="color:#f92672">&lt;&lt;.</span><span style="color:#ae81ff">2</span>)<span style="color:#f92672">.</span>bounding_box()
-m <span style="color:#f92672">=</span> Laminate(l,l,l)
-m
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">l</span> <span style="color:#f92672">=</span> <span style="color:#111">(</span><span style="color:#111">k</span><span style="color:#f92672">&lt;&lt;.</span><span style="color:#ae81ff">2</span><span style="color:#111">)</span><span style="color:#f92672">.</span><span style="color:#111">bounding_box</span><span style="color:#111">()</span>
+<span style="color:#111">m</span> <span style="color:#f92672">=</span> <span style="color:#111">Laminate</span><span style="color:#111">(</span><span style="color:#111">l</span><span style="color:#111">,</span><span style="color:#111">l</span><span style="color:#111">,</span><span style="color:#111">l</span><span style="color:#111">)</span>
+<span style="color:#111">m</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_34_0.svg" target="_blank"><img src="output_34_0.svg" alt="svg"  class="img-fluid"/></a>
+  <a href="output_34_0.svg"><img src="output_34_0.svg" alt="svg"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">n <span style="color:#f92672">=</span> m<span style="color:#f92672">-</span>f
-n
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">n</span> <span style="color:#f92672">=</span> <span style="color:#111">m</span><span style="color:#f92672">-</span><span style="color:#111">f</span>
+<span style="color:#111">n</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_35_0.svg" target="_blank"><img src="output_35_0.svg" alt="svg"  class="img-fluid"/></a>
+  <a href="output_35_0.svg"><img src="output_35_0.svg" alt="svg"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># this can kill jupyter so do it last in your script or comment it out</span>
-f<span style="color:#f92672">.</span>plot_3d()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># this can kill jupyter so do it last in your script or comment it out</span>
+<span style="color:#111">f</span><span style="color:#f92672">.</span><span style="color:#111">plot_3d</span><span style="color:#111">()</span>
 </code></pre></div><pre><code>An exception has occurred, use %tb to see the full traceback.
 
 
@@ -373,7 +373,7 @@ SystemExit: 0
 
 
 
-/home/danaukes/anaconda3/lib/python3.7/site-packages/IPython/core/interactiveshell.py:3435: UserWarning: To exit: use 'exit', 'quit', or Ctrl-D.
+C:\Anaconda3\lib\site-packages\IPython\core\interactiveshell.py:3445: UserWarning: To exit: use 'exit', 'quit', or Ctrl-D.
   warn(&quot;To exit: use 'exit', 'quit', or Ctrl-D.&quot;, stacklevel=1)
 </code></pre>
 

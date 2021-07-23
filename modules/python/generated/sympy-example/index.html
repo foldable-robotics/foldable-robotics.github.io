@@ -213,50 +213,50 @@ Sympy Example | Foldable Robotics
     
 <main class="container">
   <article>
-  <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> sympy
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a <span style="color:#f92672">=</span> sympy<span style="color:#f92672">.</span>Symbol(<span style="color:#e6db74">&#39;a&#39;</span>)
-b <span style="color:#f92672">=</span> sympy<span style="color:#f92672">.</span>Symbol(<span style="color:#e6db74">&#39;b&#39;</span>)
-x <span style="color:#f92672">=</span> sympy<span style="color:#f92672">.</span>Symbol(<span style="color:#e6db74">&#39;x&#39;</span>)
-y <span style="color:#f92672">=</span> sympy<span style="color:#f92672">.</span>Symbol(<span style="color:#e6db74">&#39;y&#39;</span>)
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">a
+  <div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> <span style="color:#111">sympy</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">a</span> <span style="color:#f92672">=</span> <span style="color:#111">sympy</span><span style="color:#f92672">.</span><span style="color:#111">Symbol</span><span style="color:#111">(</span><span style="color:#d88200">&#39;a&#39;</span><span style="color:#111">)</span>
+<span style="color:#111">b</span> <span style="color:#f92672">=</span> <span style="color:#111">sympy</span><span style="color:#f92672">.</span><span style="color:#111">Symbol</span><span style="color:#111">(</span><span style="color:#d88200">&#39;b&#39;</span><span style="color:#111">)</span>
+<span style="color:#111">x</span> <span style="color:#f92672">=</span> <span style="color:#111">sympy</span><span style="color:#f92672">.</span><span style="color:#111">Symbol</span><span style="color:#111">(</span><span style="color:#d88200">&#39;x&#39;</span><span style="color:#111">)</span>
+<span style="color:#111">y</span> <span style="color:#f92672">=</span> <span style="color:#111">sympy</span><span style="color:#f92672">.</span><span style="color:#111">Symbol</span><span style="color:#111">(</span><span style="color:#d88200">&#39;y&#39;</span><span style="color:#111">)</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">a</span>
 </code></pre></div><p>$\displaystyle a$</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">f <span style="color:#f92672">=</span> a<span style="color:#f92672">*</span>x<span style="color:#f92672">+</span>b<span style="color:#f92672">*</span>y
-f
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">f</span> <span style="color:#f92672">=</span> <span style="color:#111">a</span><span style="color:#f92672">*</span><span style="color:#111">x</span><span style="color:#f92672">+</span><span style="color:#111">b</span><span style="color:#f92672">*</span><span style="color:#111">y</span>
+<span style="color:#111">f</span>
 </code></pre></div><p>$\displaystyle a x + b y$</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">f <span style="color:#f92672">=</span> a<span style="color:#f92672">*</span>(x<span style="color:#f92672">+</span>y)
-f
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">f</span> <span style="color:#f92672">=</span> <span style="color:#111">a</span><span style="color:#f92672">*</span><span style="color:#111">(</span><span style="color:#111">x</span><span style="color:#f92672">+</span><span style="color:#111">y</span><span style="color:#111">)</span>
+<span style="color:#111">f</span>
 </code></pre></div><p>$\displaystyle a \left(x + y\right)$</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">g <span style="color:#f92672">=</span> f<span style="color:#f92672">.</span>expand()
-g
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">g</span> <span style="color:#f92672">=</span> <span style="color:#111">f</span><span style="color:#f92672">.</span><span style="color:#111">expand</span><span style="color:#111">()</span>
+<span style="color:#111">g</span>
 </code></pre></div><p>$\displaystyle a x + a y$</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">g<span style="color:#f92672">.</span>diff(x)
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">g</span><span style="color:#f92672">.</span><span style="color:#111">diff</span><span style="color:#111">(</span><span style="color:#111">x</span><span style="color:#111">)</span>
 </code></pre></div><p>$\displaystyle a$</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">g<span style="color:#f92672">.</span>simplify()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">g</span><span style="color:#f92672">.</span><span style="color:#111">simplify</span><span style="color:#111">()</span>
 </code></pre></div><p>$\displaystyle a \left(x + y\right)$</p>
 <p>factor, collect are two other useful functions</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">g<span style="color:#f92672">.</span>subs({x:b})
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">g</span><span style="color:#f92672">.</span><span style="color:#111">subs</span><span style="color:#111">({</span><span style="color:#111">x</span><span style="color:#111">:</span><span style="color:#111">b</span><span style="color:#111">})</span>
 </code></pre></div><p>$\displaystyle a b + a y$</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">h <span style="color:#f92672">=</span> g<span style="color:#f92672">.</span>subs({x:(<span style="color:#ae81ff">3</span><span style="color:#f92672">*</span>b<span style="color:#f92672">+</span><span style="color:#ae81ff">5</span>)})
-h
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">h</span> <span style="color:#f92672">=</span> <span style="color:#111">g</span><span style="color:#f92672">.</span><span style="color:#111">subs</span><span style="color:#111">({</span><span style="color:#111">x</span><span style="color:#111">:(</span><span style="color:#ae81ff">3</span><span style="color:#f92672">*</span><span style="color:#111">b</span><span style="color:#f92672">+</span><span style="color:#ae81ff">5</span><span style="color:#111">)})</span>
+<span style="color:#111">h</span>
 </code></pre></div><p>$\displaystyle a y + a \left(3 b + 5\right)$</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">eq <span style="color:#f92672">=</span> []
-eq<span style="color:#f92672">.</span>append(x<span style="color:#f92672">+</span><span style="color:#ae81ff">5</span><span style="color:#f92672">*</span>y)
-eq<span style="color:#f92672">.</span>append(x<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>)
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">solution <span style="color:#f92672">=</span> sympy<span style="color:#f92672">.</span>solve(eq,[x,y])
-solution
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">eq</span> <span style="color:#f92672">=</span> <span style="color:#111">[]</span>
+<span style="color:#111">eq</span><span style="color:#f92672">.</span><span style="color:#111">append</span><span style="color:#111">(</span><span style="color:#111">x</span><span style="color:#f92672">+</span><span style="color:#ae81ff">5</span><span style="color:#f92672">*</span><span style="color:#111">y</span><span style="color:#111">)</span>
+<span style="color:#111">eq</span><span style="color:#f92672">.</span><span style="color:#111">append</span><span style="color:#111">(</span><span style="color:#111">x</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#111">)</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">solution</span> <span style="color:#f92672">=</span> <span style="color:#111">sympy</span><span style="color:#f92672">.</span><span style="color:#111">solve</span><span style="color:#111">(</span><span style="color:#111">eq</span><span style="color:#111">,[</span><span style="color:#111">x</span><span style="color:#111">,</span><span style="color:#111">y</span><span style="color:#111">])</span>
+<span style="color:#111">solution</span>
 </code></pre></div><pre><code>{x: 1, y: -1/5}
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">i <span style="color:#f92672">=</span> x<span style="color:#f92672">+</span><span style="color:#ae81ff">5</span><span style="color:#f92672">*</span>y
-j <span style="color:#f92672">=</span> i<span style="color:#f92672">.</span>subs(solution)
-j
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">i</span> <span style="color:#f92672">=</span> <span style="color:#111">x</span><span style="color:#f92672">+</span><span style="color:#ae81ff">5</span><span style="color:#f92672">*</span><span style="color:#111">y</span>
+<span style="color:#111">j</span> <span style="color:#f92672">=</span> <span style="color:#111">i</span><span style="color:#f92672">.</span><span style="color:#111">subs</span><span style="color:#111">(</span><span style="color:#111">solution</span><span style="color:#111">)</span>
+<span style="color:#111">j</span>
 </code></pre></div><p>$\displaystyle 0$</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">type(j)
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">type</span><span style="color:#111">(</span><span style="color:#111">j</span><span style="color:#111">)</span>
 </code></pre></div><pre><code>sympy.core.numbers.Zero
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">type(j<span style="color:#f92672">.</span>evalf(<span style="color:#ae81ff">5</span>))
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">type</span><span style="color:#111">(</span><span style="color:#111">j</span><span style="color:#f92672">.</span><span style="color:#111">evalf</span><span style="color:#111">(</span><span style="color:#ae81ff">5</span><span style="color:#111">))</span>
 </code></pre></div><pre><code>sympy.core.numbers.Zero
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
 </code></pre></div>
   </article>
 </main>

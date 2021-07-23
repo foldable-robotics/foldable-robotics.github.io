@@ -211,10 +211,23 @@ Tracker Tutorial | Foldable Robotics
     </div>
 
     
+
 <main class="container">
-  <article>
-  <h1 id="basic-tracker-tutorial">Basic Tracker Tutorial</h1>
-<p><em>Thanks to Chien-Wen Pan for his screenshots and assistance.</em></p>
+<h1>Tracker Tutorial</h1>
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="introduction">Introduction</h2>
+<p>The purpose of this module is to show you how to track position data using a low-cost camera such as a smartphone.</p>
 <h2 id="external-resources">External Resources</h2>
 <p><a href="https://physlets.org/tracker/">Tracker Software</a></p>
 <h2 id="procedure">Procedure</h2>
@@ -269,7 +282,7 @@ Tracker Tutorial | Foldable Robotics
 <li>
 <p>Open Tracker, then load a new video.</p>
 <p><div class="text-center">
-  <a href="image3.jpg" target="_blank"><img src="image3.jpg" alt=""  class="img-fluid"/></a>
+  <a href="image3.jpg"><img src="image3.jpg" alt=""  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <ol>
 <li>Adjust the markers on the left and right of the timeline to select a portion of the video</li>
@@ -278,16 +291,16 @@ Tracker Tutorial | Foldable Robotics
 <li>
 <p>Create a &ldquo;coordinate system&rdquo;.</p>
 <p><div class="text-center">
-  <a href="image4.jpg" target="_blank"><img src="image4.jpg" alt=""  class="img-fluid"/></a>
+  <a href="image4.jpg"><img src="image4.jpg" alt=""  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <p><div class="text-center">
-  <a href="image1.jpg" target="_blank"><img src="image1.jpg" alt=""  class="img-fluid"/></a>
+  <a href="image1.jpg"><img src="image1.jpg" alt=""  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 </li>
 <li>
 <p>Create a Calibration Stick.  Use shift+left click to place two points, then enter the length</p>
 <p><div class="text-center">
-  <a href="image8.jpg" target="_blank"><img src="image8.jpg" alt=""  class="img-fluid"/></a>
+  <a href="image8.jpg"><img src="image8.jpg" alt=""  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 </li>
 <li>
@@ -296,16 +309,16 @@ Tracker Tutorial | Foldable Robotics
 <li>
 <p>Create a new point mass</p>
 <p><div class="text-center">
-  <a href="image2.jpg" target="_blank"><img src="image2.jpg" alt=""  class="img-fluid"/></a>
+  <a href="image2.jpg"><img src="image2.jpg" alt=""  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 </li>
 <li>
 <p>Using ctrl+shift+left click, select an identifiable object in the scene to create a keyframe</p>
 <p><div class="text-center">
-  <a href="image5.jpg" target="_blank"><img src="image5.jpg" alt=""  class="img-fluid"/></a>
+  <a href="image5.jpg"><img src="image5.jpg" alt=""  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <p><div class="text-center">
-  <a href="image6.jpg" target="_blank"><img src="image6.jpg" alt=""  class="img-fluid"/></a>
+  <a href="image6.jpg"><img src="image6.jpg" alt=""  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <ul>
 <li>you can also adjust the size of the search box</li>
@@ -317,7 +330,7 @@ Tracker Tutorial | Foldable Robotics
 <li>if you select a point in the plot, you can delete all points after and reselect the marker, or redefine the keyframe.</li>
 </ul>
 <p><div class="text-center">
-  <a href="image7.jpg" target="_blank"><img src="image7.jpg" alt=""  class="img-fluid"/></a>
+  <a href="image7.jpg"><img src="image7.jpg" alt=""  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 </li>
 </ol>
@@ -328,44 +341,47 @@ Tracker Tutorial | Foldable Robotics
 </li>
 <li>
 <p>Use the following code to extract your data and interpolate it:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
-<span style="color:#e6db74">&#34;&#34;&#34;
-</span><span style="color:#e6db74">Created on Wed Mar  3 13:54:15 2021
-</span><span style="color:#e6db74">
-</span><span style="color:#e6db74">@author: danaukes
-</span><span style="color:#e6db74">&#34;&#34;&#34;</span>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e"># -*- coding: utf-8 -*-</span>
+<span style="color:#d88200">&#34;&#34;&#34;
+</span><span style="color:#d88200">Created on Wed Mar  3 13:54:15 2021
+</span><span style="color:#d88200">
+</span><span style="color:#d88200">@author: danaukes
+</span><span style="color:#d88200">&#34;&#34;&#34;</span>
 
-<span style="color:#f92672">import</span> pandas <span style="color:#f92672">as</span> pd
-<span style="color:#f92672">import</span> numpy
-<span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
-<span style="color:#f92672">import</span> scipy.interpolate <span style="color:#f92672">as</span> si
+<span style="color:#f92672">import</span> <span style="color:#111">pandas</span> <span style="color:#f92672">as</span> <span style="color:#111">pd</span>
+<span style="color:#f92672">import</span> <span style="color:#111">numpy</span>
+<span style="color:#f92672">import</span> <span style="color:#111">matplotlib.pyplot</span> <span style="color:#f92672">as</span> <span style="color:#111">plt</span>
+<span style="color:#f92672">import</span> <span style="color:#111">scipy.interpolate</span> <span style="color:#f92672">as</span> <span style="color:#111">si</span>
 
-df<span style="color:#f92672">=</span>pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">r</span><span style="color:#e6db74">&#39;C:\Users\danaukes\Documents\Tracker\mydata.csv&#39;</span>, sep<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;,&#39;</span>)
+<span style="color:#111">df</span><span style="color:#f92672">=</span><span style="color:#111">pd</span><span style="color:#f92672">.</span><span style="color:#111">read_csv</span><span style="color:#111">(</span><span style="color:#d88200">r</span><span style="color:#d88200">&#39;C:\Users\danaukes\Documents\Tracker\mydata.csv&#39;</span><span style="color:#111">,</span> <span style="color:#111">sep</span><span style="color:#f92672">=</span><span style="color:#d88200">&#39;,&#39;</span><span style="color:#111">)</span>
 
 <span style="color:#75715e">#x = df.x.astype(&#39;float64&#39;).to_numpy()</span>
-x <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>x<span style="color:#f92672">.</span>to_numpy()
-y <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>y<span style="color:#f92672">.</span>to_numpy()
-t <span style="color:#f92672">=</span> df<span style="color:#f92672">.</span>t<span style="color:#f92672">.</span>to_numpy()
+<span style="color:#111">x</span> <span style="color:#f92672">=</span> <span style="color:#111">df</span><span style="color:#f92672">.</span><span style="color:#111">x</span><span style="color:#f92672">.</span><span style="color:#111">to_numpy</span><span style="color:#111">()</span>
+<span style="color:#111">y</span> <span style="color:#f92672">=</span> <span style="color:#111">df</span><span style="color:#f92672">.</span><span style="color:#111">y</span><span style="color:#f92672">.</span><span style="color:#111">to_numpy</span><span style="color:#111">()</span>
+<span style="color:#111">t</span> <span style="color:#f92672">=</span> <span style="color:#111">df</span><span style="color:#f92672">.</span><span style="color:#111">t</span><span style="color:#f92672">.</span><span style="color:#111">to_numpy</span><span style="color:#111">()</span>
 
 
-xy <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>array([x,y])<span style="color:#f92672">.</span>T
-f <span style="color:#f92672">=</span> si<span style="color:#f92672">.</span>interp1d(t,xy<span style="color:#f92672">.</span>T,fill_value<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;extrapolate&#39;</span>,kind<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;quadratic&#39;</span>)
-new_t <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>r_[<span style="color:#ae81ff">0</span>:t[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]:<span style="color:#f92672">.</span><span style="color:#ae81ff">1</span>]
+<span style="color:#111">xy</span> <span style="color:#f92672">=</span> <span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">array</span><span style="color:#111">([</span><span style="color:#111">x</span><span style="color:#111">,</span><span style="color:#111">y</span><span style="color:#111">])</span><span style="color:#f92672">.</span><span style="color:#111">T</span>
+<span style="color:#111">f</span> <span style="color:#f92672">=</span> <span style="color:#111">si</span><span style="color:#f92672">.</span><span style="color:#111">interp1d</span><span style="color:#111">(</span><span style="color:#111">t</span><span style="color:#111">,</span><span style="color:#111">xy</span><span style="color:#f92672">.</span><span style="color:#111">T</span><span style="color:#111">,</span><span style="color:#111">fill_value</span><span style="color:#f92672">=</span><span style="color:#d88200">&#39;extrapolate&#39;</span><span style="color:#111">,</span><span style="color:#111">kind</span><span style="color:#f92672">=</span><span style="color:#d88200">&#39;quadratic&#39;</span><span style="color:#111">)</span>
+<span style="color:#111">new_t</span> <span style="color:#f92672">=</span> <span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">r_</span><span style="color:#111">[</span><span style="color:#ae81ff">0</span><span style="color:#111">:</span><span style="color:#111">t</span><span style="color:#111">[</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#111">]:</span><span style="color:#f92672">.</span><span style="color:#ae81ff">1</span><span style="color:#111">]</span>
 
-plt<span style="color:#f92672">.</span>figure()
-plt<span style="color:#f92672">.</span>plot(t,x)
-plt<span style="color:#f92672">.</span>plot(new_t,f(new_t)[<span style="color:#ae81ff">0</span>])
+<span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">figure</span><span style="color:#111">()</span>
+<span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">(</span><span style="color:#111">t</span><span style="color:#111">,</span><span style="color:#111">x</span><span style="color:#111">)</span>
+<span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">(</span><span style="color:#111">new_t</span><span style="color:#111">,</span><span style="color:#111">f</span><span style="color:#111">(</span><span style="color:#111">new_t</span><span style="color:#111">)[</span><span style="color:#ae81ff">0</span><span style="color:#111">])</span>
 
-plt<span style="color:#f92672">.</span>figure()
-plt<span style="color:#f92672">.</span>plot(t,y)
-plt<span style="color:#f92672">.</span>plot(new_t,f(new_t)[<span style="color:#ae81ff">1</span>])
-plt<span style="color:#f92672">.</span>figure()
-plt<span style="color:#f92672">.</span>plot(x,y)
+<span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">figure</span><span style="color:#111">()</span>
+<span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">(</span><span style="color:#111">t</span><span style="color:#111">,</span><span style="color:#111">y</span><span style="color:#111">)</span>
+<span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">(</span><span style="color:#111">new_t</span><span style="color:#111">,</span><span style="color:#111">f</span><span style="color:#111">(</span><span style="color:#111">new_t</span><span style="color:#111">)[</span><span style="color:#ae81ff">1</span><span style="color:#111">])</span>
+<span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">figure</span><span style="color:#111">()</span>
+<span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">(</span><span style="color:#111">x</span><span style="color:#111">,</span><span style="color:#111">y</span><span style="color:#111">)</span>
 </code></pre></div></li>
 </ol>
-<pre><code></code></pre>
-  </article>
+<pre><code>
+_Thanks to Chien-Wen Pan for his screenshots and assistance._
+</code></pre>
+
 </main>
+
 
 
     

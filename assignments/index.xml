@@ -8,13 +8,13 @@
     <language>en-us</language><atom:link href="https://danaukes.com/assignments/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Biomechanics Background and Initial Specifications</title>
-      <link>https://danaukes.com/assignments/biomechanics-background-and-initial-specificaitons/</link>
+      <link>https://danaukes.com/assignments/biomechanics-background-and-initial-specifications/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>https://danaukes.com/assignments/biomechanics-background-and-initial-specificaitons/</guid>
+      <guid>https://danaukes.com/assignments/biomechanics-background-and-initial-specifications/</guid>
       <description>&lt;h1 id=&#34;biomechanics-background-and-initial-specifications&#34;&gt;Biomechanics Background and Initial Specifications&lt;/h1&gt;
 &lt;h2 id=&#34;assignment-overview&#34;&gt;Assignment Overview&lt;/h2&gt;
-&lt;p&gt;The goal of this part is to encourage you to get &amp;ldquo;bio-inspired&amp;rdquo;, to get you thinking about the scale of your robot, and to think about how to replicate the efficiencies of biological systems.  You may refer to the &lt;a href=&#34;../modules/biomechanics/developing-specifications.html&#34;&gt;developing specifications&lt;/a&gt; page for more information&lt;/p&gt;
+&lt;p&gt;The goal of this part is to encourage you to get &amp;ldquo;bio-inspired&amp;rdquo;, to get you thinking about the scale of your robot, and to think about how to replicate the efficiencies of biological systems.  You may refer to the &lt;a href=&#34;https://danaukes.com/modules/biomechanics/developing-specifications/&#34;&gt;developing specifications&lt;/a&gt; page for more information&lt;/p&gt;
 &lt;p&gt;&lt;em&gt;Please Read this whole assignment first.&lt;/em&gt;&lt;/p&gt;
 &lt;h2 id=&#34;suggestions&#34;&gt;Suggestions&lt;/h2&gt;
 &lt;ul&gt;
@@ -60,7 +60,7 @@
     S.&lt;/span&gt;
   &amp;#32;
     (&lt;span itemprop=&#34;datePublished&#34;&gt;2000&lt;/span&gt;).
-  &amp;#32;&lt;span itemprop=&#34;name&#34;&gt;&lt;!-- raw HTML omitted --&gt;How animals move: an integrative view.&lt;!-- raw HTML omitted --&gt;&lt;/span&gt;.&lt;i&gt;
+  &amp;#32;&lt;span itemprop=&#34;name&#34;&gt;&lt;span class=&#34;nocase&#34;&gt;How animals move: an integrative view.&lt;/span&gt;&lt;/span&gt;.&lt;i&gt;
     &lt;span itemprop=&#34;about&#34;&gt;Science (New York, N.Y.)&lt;/span&gt;,&amp;#32;288(5463)&lt;/i&gt;.&amp;#32;&lt;span itemprop=&#34;pagination&#34;&gt;100–6&lt;/span&gt;.
   &lt;a href=&#34;https://doi.org/10.1126/science.288.5463.100&#34;
      itemprop=&#34;identifier&#34;
@@ -133,9 +133,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://danaukes.com/assignments/catme-i/</guid>
-      <description>CATME I Assignment Overview Please use the link provided in the email sent from CATME to complete an assessment of your teammates.
-Please remember that feedback to teammates will be released to them, so keep your criticism constructive
-Rubric    Description Points     Total 200    </description>
+      <description>CATME I Assignment Overview Please use the link provided in the email sent from CATME to complete an assessment of your teammates.</description>
     </item>
     
     <item>
@@ -144,9 +142,25 @@ Rubric    Description Points     Total 200    </description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://danaukes.com/assignments/catme-ii/</guid>
-      <description>CATME II Assignment Overview Please use the link provided in the email sent from CATME to complete an assessment of your teammates.
-Please remember that feedback to teammates will be released to them, so keep your criticism constructive
-Rubric    Description Points     Total 200    </description>
+      <description>&lt;h1 id=&#34;catme-ii&#34;&gt;CATME II&lt;/h1&gt;
+&lt;h2 id=&#34;assignment-overview&#34;&gt;Assignment Overview&lt;/h2&gt;
+&lt;p&gt;Please use the link provided in the email sent from CATME to complete an assessment of your teammates.&lt;/p&gt;
+&lt;p&gt;Please remember that feedback to teammates will be released to them, so keep your criticism constructive&lt;/p&gt;
+&lt;h2 id=&#34;rubric&#34;&gt;Rubric&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Description&lt;/th&gt;
+&lt;th style=&#34;text-align:right&#34;&gt;Points&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;strong&gt;Total&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;200&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;</description>
     </item>
     
     <item>
@@ -438,7 +452,7 @@ Rubric    Description Points     Total 200    </description>
 &lt;/table&gt;
 &lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;The associated module on &lt;a href=&#34;../modules/project/developing-a-research-question.html&#34;&gt;developing a research question&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;The associated module on &lt;a href=&#34;https://danaukes.com/modules/project/developing-a-research-question&#34;&gt;developing a research question&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://www.mendeley.com/download-desktop-new/&#34;&gt;Mendeley Desktop&lt;/a&gt;, a useful citation manager&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;instructions&#34;&gt;Instructions&lt;/h2&gt;</description>
@@ -450,9 +464,7 @@ Rubric    Description Points     Total 200    </description>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://danaukes.com/assignments/dynamics-ii-plan/</guid>
-      <description>Dynamics II Plan Introduction The purpose of this assignment is to decide as a team how you will split up the various Parameter ID tasks individually
-Rubric    Description Points     Total 0    Instructions   Identify and discuss the materials you plan to use in fabrication. Decide who will be obtaining those materials and distributing them.
-  Identify and Discuss the various parameters you plan to model in your simulation, including</description>
+      <description>Dynamics II Plan Introduction The purpose of this assignment is to decide as a team how you will split up the various Parameter ID tasks individually</description>
     </item>
     
     <item>
@@ -542,8 +554,8 @@ Rubric    Description Points     Total 0    Instructions   Identify and discuss 
 &lt;/table&gt;
 &lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;../modules/python/installing-anaconda.html&#34;&gt;Installing Anaconda Python Tutorial&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;../modules/misc/add-folder-to-system-path.html&#34;&gt;Add folder to system path (Windows)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://danaukes.com/modules/python/installing-anaconda&#34;&gt;Installing Anaconda Python Tutorial&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://danaukes.com/modules/misc/add-folder-to-system-path&#34;&gt;Add folder to system path (Windows)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;instructions&#34;&gt;Instructions&lt;/h2&gt;</description>
     </item>
@@ -770,7 +782,7 @@ Rubric    Description Points     Total 0    Instructions   Identify and discuss 
 &lt;/table&gt;
 &lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;../modules/project/make-a-website.html&#34;&gt;Make a Project Repository and Website&lt;/a&gt; Tutorial&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://danaukes.com/modules/project/make-a-website&#34;&gt;Make a Project Repository and Website&lt;/a&gt; Tutorial&lt;/li&gt;
 &lt;li&gt;&lt;a href=&#34;https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet&#34;&gt;https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id=&#34;instructions&#34;&gt;Instructions&lt;/h2&gt;</description>
@@ -1160,9 +1172,9 @@ Rubric    Description Points     Total 0    Instructions   Identify and discuss 
 &lt;h2 id=&#34;assignment-overview&#34;&gt;Assignment Overview&lt;/h2&gt;
 &lt;p&gt;The purpose of this assignment is to get you comfortable using the numerical computational capabilities of Python to start estimating the performance of your design.&lt;/p&gt;
 &lt;p&gt;&lt;div class=&#34;text-center&#34;&gt;
-  &lt;a href=&#34;https://danaukes.com/figures/kinematics/sarrus.png&#34; target=&#34;_blank&#34;&gt;&lt;img src=&#34;https://danaukes.com/figures/kinematics/sarrus.png&#34; alt=&#34;mechanism&#34;  class=&#34;img-fluid&#34;/&gt;&lt;/a&gt;
+  &lt;a href=&#34;https://danaukes.com/figures/kinematics/sarrus.png&#34;&gt;&lt;img src=&#34;https://danaukes.com/figures/kinematics/sarrus.png&#34; alt=&#34;mechanism&#34;  style=&#34;max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;&#34;/&gt;&lt;/a&gt;
 &lt;/div&gt;&lt;/p&gt;
-&lt;!-- raw HTML omitted --&gt;
+&lt;!--![two views of the same folded spherical mechanism](/figures/spherical-mechanism.png)--&gt;
 &lt;h2 id=&#34;rubric&#34;&gt;Rubric&lt;/h2&gt;
 &lt;table&gt;
 &lt;thead&gt;
@@ -1361,7 +1373,141 @@ Rubric    Description Points     Total 0    Instructions   Identify and discuss 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://danaukes.com/assignments/system-kinematics/</guid>
-      <description></description>
+      <description>&lt;h1 id=&#34;create-and-plot-kinematics&#34;&gt;Create and Plot Kinematics&lt;/h1&gt;
+&lt;h2 id=&#34;assignment-overview&#34;&gt;Assignment Overview&lt;/h2&gt;
+&lt;p&gt;The purpose of this assignment is to model the kinematics so that you can estimate the forces, and torques, power requirements, and speed of your system.  This will be done using a symbolic approach with the pynamics package&lt;/p&gt;
+&lt;h2 id=&#34;rubric&#34;&gt;Rubric&lt;/h2&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th style=&#34;text-align:left&#34;&gt;Description&lt;/th&gt;
+&lt;th style=&#34;text-align:right&#34;&gt;Points&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Draft&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;30&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Step 1&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;30&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Step 2&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Step 3&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;30&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Step 4&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Step 5&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Step 6&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Step 7&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Step 8&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Step 9&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Discussion 1&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Discussion 2&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Discussion 3&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;Discussion 4&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;10&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td style=&#34;text-align:left&#34;&gt;&lt;strong&gt;Total&lt;/strong&gt;&lt;/td&gt;
+&lt;td style=&#34;text-align:right&#34;&gt;&lt;strong&gt;200&lt;/strong&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
+&lt;!--* []()--&gt;
+&lt;ul&gt;
+&lt;li&gt;Triple Pendulum Example&lt;/li&gt;
+&lt;li&gt;EGR557 Kinematics Module&lt;/li&gt;
+&lt;li&gt;EGR557 Dynamics Module&lt;/li&gt;
+&lt;li&gt;pynamics repository&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;instructions&#34;&gt;Instructions&lt;/h2&gt;
+&lt;p&gt;Meet with your team to go over each of the prototypes and mockups you have individually created through past homework assignments.  As a team, come up with a mechanism that satisfies your team&amp;rsquo;s need for scope/tractability, manufacturability, and cost.&lt;/p&gt;
+&lt;p&gt;Decide as a team whether you will be using powered actuator(s) or passive energy storage device(s).  This will impact data collection assignments, how much your team spends, the complexity of your prototype, and the strength of the materials you use (you may need to upgrade from light cardboard to stiffer posterboard or even fiberglass)&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;Create a figure (either in python, in a vector-based drawing program like inkscape or illustrator, or as a solidworks rendering) of your system kinematics.  Annotate the image to include:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Names for each rotational reference frame.  You will need one for each rigid body (that moves independently), as well as one for the Newtonian reference frame (N).  Use the convention of a capital letter (A,B,C,&amp;hellip;)&lt;/li&gt;
+&lt;li&gt;Labeled joint locations, such as $\vec{p}_{AB}$&lt;/li&gt;
+&lt;li&gt;A set of orthonormal basis vectors for each frame $(\hat{n}_x,\hat{n}_y,\hat{n}_z),(\hat{a}_x,\hat{a}_y,\hat{a}_z)$. It is best practice to align one of the basis vectors (like $\hat{a}_x$) with each rigid link.&lt;/li&gt;
+&lt;li&gt;variable names for each state variable $(q_1,q_2,x_1,y_1,\ldots)$&lt;/li&gt;
+&lt;li&gt;geometric constants such as link lengths (like $l_1,l_2$)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Save this figure for reuse later.  You will need to add mass and inertial information as well as system stiffness information, so make sure you do your work in a way that permits reusing and modifying the figure.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Make the device in paper or cardboard.  You need an up-to-date model if it has changed from your individual assignments.  The paper model should dimensionally match your code.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Using a pynamics-based script, develop a kinematic model for your device.  Following the triple pendulum example,&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Import packages&lt;/li&gt;
+&lt;li&gt;Define variables and constants (you may want to add, remove, or rename variables to match your figure)&lt;/li&gt;
+&lt;li&gt;Declare frames (you may need to add frames or rename them)&lt;/li&gt;
+&lt;li&gt;Define frame rotations (you may want to switch the axis about which frames rotate)&lt;/li&gt;
+&lt;li&gt;Compose kinematics (this depends entirely on the geometry of your system)&lt;/li&gt;
+&lt;li&gt;Take time-derivatives of position vectors&lt;/li&gt;
+&lt;li&gt;Assemble into a Jacobian that maps input velocities to output velocities.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Select or Solve for a valid initial condition that represents the system in the middle of a typical gait, when it is both moving and when forces are being applied to it (or to the world by it)&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Despite the fact that you will be using a symbolic representation, you still need to solve for a valid initial condition if your device is a &amp;ldquo;parallel mechanism&amp;rdquo;.  This may be done using a nonlinear solver such as &lt;code&gt;scipy.optimize.minimize&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Plot the system in this position.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;From your biomechanics-based specifications, define one or more force vector estimates (one for each end effector) that the system should be expected to experience.  Consider including, based on your research&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;the force of gravity exerted by the mass of a &amp;ldquo;payload&amp;rdquo; or the main body of the robot.&lt;/li&gt;
+&lt;li&gt;the acceleration the  system experiences during a typical gait&lt;/li&gt;
+&lt;li&gt;ground reaction forces measured from biomechanics studies.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Calculate the force or torque required at the input to satisfy the end-effector force requirements&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Estimate the velocity of the end-effector in this configuration.  Using the Jacobian, calculate the speed required by the input(s) to achieve that output motion.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;This may not be directly solvable based on your device kinematics; an iterative guess-and-check approach is ok.&lt;/em&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;</description>
     </item>
     
     <item>

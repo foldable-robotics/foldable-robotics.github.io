@@ -218,14 +218,17 @@ Manufacturing Computation for Multi-layer Devices | Foldable Robotics
 <p>The first thing to think about is how the thickness of your laminate will impact and alter the ideal kinematics you have been assuming up to this point. Let&rsquo;s first discuss hinges</p>
 <p>A multilayer hinge typically is made by exposing a softer layer of material which is embedded in a multilayer laminate. IT is typically exposed along a straight line, and the cut away materail usually spans a straight line across the width of a material. In this way, once exposed, the soft material may bend and flex easily along an axis defined by that imaginary line.</p>
 <p><div class="text-center">
-  <a href="/figures/design/rom_comparison.png" target="_blank"><img src="/figures/design/rom_comparison.png" alt="Range of Motion Comparision"  class="img-fluid"/></a>
+  <a href="/figures/design/rom_comparison.png"><img src="/figures/design/rom_comparison.png" alt="Range of Motion Comparision"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
+</div>
+<div class="text-center">
+  <a href="../../../../static/figures/design/rom_comparison.png"><img src="../../../../static/figures/design/rom_comparison.png" alt="Range of Motion Comparision"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">%</span>matplotlib inline
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> foldable_robotics
-<span style="color:#f92672">from</span> foldable_robotics.layer <span style="color:#f92672">import</span> Layer
-<span style="color:#f92672">from</span> foldable_robotics.laminate <span style="color:#f92672">import</span> Laminate
-<span style="color:#f92672">import</span> shapely.geometry <span style="color:#f92672">as</span> sg
-foldable_robotics<span style="color:#f92672">.</span>resolution<span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">%</span><span style="color:#111">matplotlib</span> <span style="color:#111">inline</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> <span style="color:#111">foldable_robotics</span>
+<span style="color:#f92672">from</span> <span style="color:#111">foldable_robotics.layer</span> <span style="color:#f92672">import</span> <span style="color:#111">Layer</span>
+<span style="color:#f92672">from</span> <span style="color:#111">foldable_robotics.laminate</span> <span style="color:#f92672">import</span> <span style="color:#111">Laminate</span>
+<span style="color:#f92672">import</span> <span style="color:#111">shapely.geometry</span> <span style="color:#f92672">as</span> <span style="color:#111">sg</span>
+<span style="color:#111">foldable_robotics</span><span style="color:#f92672">.</span><span style="color:#111">resolution</span><span style="color:#f92672">=</span><span style="color:#ae81ff">4</span>
 
 </code></pre></div><p>The first assumption we make for narrow hinges is that the hinge actually rotates about one line. This is not necessarily a valid assumption in all cases, because by exposing an area of soft material we have essentially formed a cantilever beam which bends along its entire length. However, when the length of a hinge is small in comparison to other design geometries, it makes the computation of kinematics much simpler. So whenever possible we make that assumption. Some have attempted to create models which account for this behavior 
 
@@ -255,7 +258,7 @@ foldable_robotics<span style="color:#f92672">.</span>resolution<span style="colo
     A.</span>
   &#32;
     (<span itemprop="datePublished">2012</span>).
-  &#32;<span itemprop="name"><!-- raw HTML omitted -->The Smooth Curvature Model: An Efficient Representation of Euler–Bernoulli Flexures as Robot Joints<!-- raw HTML omitted --></span>.<i>
+  &#32;<span itemprop="name"><span class="nocase">The Smooth Curvature Model: An Efficient Representation of Euler–Bernoulli Flexures as Robot Joints</span></span>.<i>
     <span itemprop="about">IEEE Transactions on Robotics</span>,&#32;28(4)</i>.&#32;<span itemprop="pagination">761–772</span>.
   <a href="https://doi.org/10.1109/TRO.2012.2193232"
      itemprop="identifier"
@@ -266,11 +269,13 @@ foldable_robotics<span style="color:#f92672">.</span>resolution<span style="colo
 
 </span></span>)</span>
  in similar flexure joints.</p>
-<p>The second problem is that the thickness of the material can interfere with itself at and around joints. Figure X highlights the problem. As the material rotates about a virtual joint defined by the midpoint of the flexure material, it can come into contact with itself much earlier than anticipated by the ideal, infinitely thin assumption. To determine the needed hinge length given a desired range of motion(b) and laminate thickness(t), you can use the equation (<!-- raw HTML omitted -->), or conversely, (<!-- raw HTML omitted -->).</p>
+<p>The second problem is that the thickness of the material can interfere with itself at and around joints. Figure X highlights the problem. As the material rotates about a virtual joint defined by the midpoint of the flexure material, it can come into contact with itself much earlier than anticipated by the ideal, infinitely thin assumption. To determine the needed hinge length given a desired range of motion(b) and laminate thickness(t), you can use the equation (<!--\ref{eqn:lengthrule}-->), or conversely, (<!--\ref{eqn:rotationrule}-->).</p>
 <p><div class="text-center">
-  <a href="/figures/design/thickness_rom_calc.png" target="_blank"><img src="/figures/design/thickness_rom_calc.png" alt="Thickness to Range of Motion Calc"  class="img-fluid"/></a>
+  <a href="../../../../static/figures/design/thickness_rom_calc.png"><img src="../../../../static/figures/design/thickness_rom_calc.png" alt="Thickness to Range of Motion Calc"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
+</div>
+<div class="text-center">
+  <a href="/figures/design/thickness_rom_calc.png"><img src="/figures/design/thickness_rom_calc.png" alt="Thickness to Range of Motion Calc"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<!-- raw HTML omitted -->
 <p>\begin{align}
 \tan a &amp;= \frac{\frac{t}{2}}{\frac{l}{2}} = \frac{t}{l}\<br>
 a&amp;=\tan^{-1} \left(\frac{t}{l}\right)\<br>
@@ -280,25 +285,25 @@ a&amp;=\tan^{-1} \left(\frac{t}{l}\right)\<br>
 l&amp;=\frac{t}{\tan(a)}\<br>
 l&amp;=\frac{t}{\tan\left(\frac{\pi-\theta}{2}\right)}
 \end{align}</p>
-<!-- raw HTML omitted -->
+<!--\label{eqn:rotationrule} \label{eqn:lengthrule}-->
 <h4 id="selective-reinforcement">Selective reinforcement</h4>
 <p>This is really the simplest form of mitigation you can do. Use a thin material and reinforce as needed with extra material. This is an entirely customized process though, and assumes your original design was good enough to get you close enough to see what elements needed reinforcing.</p>
 <p>You can reinforce in a couple ways. You can glue reinforcing material, from a coffee stirrer or piece of hand-cut balsa, to creating a fiberglass or carbon fiber reinforcement which gets laminated on</p>
 <p>One of the benefits of this method is that you only have to reinforce where you need it. This is more of a guess and check strategy, and not too formulaic, which may not be too efficient, and for the novice, might</p>
 <h4 id="castellated-hinges">&ldquo;Castellated&rdquo; hinges</h4>
 <p>Castellated hinges address the material conflict issue by removing alternating portions of material near the joint so the radius of curvature remains small.  This only works with stiff rigid materials that are strong enough not to bend or break under the added stress of such small bend radii.  It does not typicallly work for cardboard.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> foldable_robotics.parts.castellated_hinge1
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> <span style="color:#111">foldable_robotics.parts.castellated_hinge1</span>
 
-hinge <span style="color:#f92672">=</span> foldable_robotics<span style="color:#f92672">.</span>parts<span style="color:#f92672">.</span>castellated_hinge1<span style="color:#f92672">.</span>generate()
-hinge <span style="color:#f92672">=</span> hinge<span style="color:#f92672">.</span>scale(<span style="color:#ae81ff">1</span>,<span style="color:#f92672">.</span><span style="color:#ae81ff">1</span>)
-hinge<span style="color:#f92672">.</span>plot()
+<span style="color:#111">hinge</span> <span style="color:#f92672">=</span> <span style="color:#111">foldable_robotics</span><span style="color:#f92672">.</span><span style="color:#111">parts</span><span style="color:#f92672">.</span><span style="color:#111">castellated_hinge1</span><span style="color:#f92672">.</span><span style="color:#111">generate</span><span style="color:#111">()</span>
+<span style="color:#111">hinge</span> <span style="color:#f92672">=</span> <span style="color:#111">hinge</span><span style="color:#f92672">.</span><span style="color:#111">scale</span><span style="color:#111">(</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span><span style="color:#f92672">.</span><span style="color:#ae81ff">1</span><span style="color:#111">)</span>
+<span style="color:#111">hinge</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
 
 </code></pre></div><p><div class="text-center">
-  <a href="output_4_0.png" target="_blank"><img src="output_4_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_4_0.png"><img src="output_4_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <h4 id="alternating-hinge-locations">Alternating Hinge locations</h4>
 <p><div class="text-center">
-  <a href="/figures/design/alternating_hinges.png" target="_blank"><img src="/figures/design/alternating_hinges.png" alt="Alternating Hinges"  class="img-fluid"/></a>
+  <a href="/figures/design/alternating_hinges.png"><img src="/figures/design/alternating_hinges.png" alt="Alternating Hinges"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <p>One way to address the problem of material thickness is to have joints which are asymmetrically located in the laminate stack. By having joints on the outer edges, rather than the inner edges of the laminate, you can make your laminate flat foldable at both 0 and 180 degrees. There are some underlying problems to this technique, however. Having your soft hinge material on the outside of your rigid material is an invitiation for delamination &ndash; the material will just peel away unless you have sufficiently bonded your layers. If you are doing this in one material and simply scored the material from one side or another, this may help but you have also potentially created a stress concentration. A good way of doing this strategy would be via molding, where you can build in good flexure design practices ala howell in order to minimize stress while also locating a hinge along the top or bottom of a thick link. But then if you&rsquo;re doing that, hopefully you have exhausted your other, cheaper and easier options first.</p>
 <h3 id="dxf-creation">DXF creation</h3>
@@ -334,93 +339,93 @@ hinge<span style="color:#f92672">.</span>plot()
 <p>All of these things need to either be simplified to a simple polygonal representation or eliminated from a layer.</p>
 <p>Another assumption which arises from this assumption is that layers are not interesting in the third dimension; this is not always true with laser cutters, water-jet cutters, etc. Sometimes they are capable of producing high draft angles (the profiles they cut are not perfectly straight in the z direction) A layer cannot account for that on its own. Additionally, a layer does not know or care what the thickness of the layer is. Nor does it matter.</p>
 <p>For the purposes of the next exercise, we will introduce two geometries, a circle and a triangle</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">circle <span style="color:#f92672">=</span> Layer(sg<span style="color:#f92672">.</span>Point(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>)) <span style="color:#f92672">&lt;&lt;</span> <span style="color:#f92672">.</span><span style="color:#ae81ff">5</span>
-circle <span style="color:#f92672">=</span> circle<span style="color:#f92672">.</span>translate(<span style="color:#f92672">.</span><span style="color:#ae81ff">3</span>,<span style="color:#f92672">.</span><span style="color:#ae81ff">3</span>)
-circle<span style="color:#f92672">.</span>plot()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">circle</span> <span style="color:#f92672">=</span> <span style="color:#111">Layer</span><span style="color:#111">(</span><span style="color:#111">sg</span><span style="color:#f92672">.</span><span style="color:#111">Point</span><span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">))</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#f92672">.</span><span style="color:#ae81ff">5</span>
+<span style="color:#111">circle</span> <span style="color:#f92672">=</span> <span style="color:#111">circle</span><span style="color:#f92672">.</span><span style="color:#111">translate</span><span style="color:#111">(</span><span style="color:#f92672">.</span><span style="color:#ae81ff">3</span><span style="color:#111">,</span><span style="color:#f92672">.</span><span style="color:#ae81ff">3</span><span style="color:#111">)</span>
+<span style="color:#111">circle</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_6_0.png" target="_blank"><img src="output_6_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_6_0.png"><img src="output_6_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">triangle <span style="color:#f92672">=</span> Layer(sg<span style="color:#f92672">.</span>Polygon([(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>),(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>),(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>)]))
-triangle <span style="color:#f92672">=</span> triangle<span style="color:#f92672">.</span>translate(<span style="color:#f92672">.</span><span style="color:#ae81ff">3</span>,<span style="color:#f92672">.</span><span style="color:#ae81ff">3</span>)
-triangle<span style="color:#f92672">.</span>plot()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">triangle</span> <span style="color:#f92672">=</span> <span style="color:#111">Layer</span><span style="color:#111">(</span><span style="color:#111">sg</span><span style="color:#f92672">.</span><span style="color:#111">Polygon</span><span style="color:#111">([(</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">),(</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">),(</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span><span style="color:#ae81ff">1</span><span style="color:#111">)]))</span>
+<span style="color:#111">triangle</span> <span style="color:#f92672">=</span> <span style="color:#111">triangle</span><span style="color:#f92672">.</span><span style="color:#111">translate</span><span style="color:#111">(</span><span style="color:#f92672">.</span><span style="color:#ae81ff">3</span><span style="color:#111">,</span><span style="color:#f92672">.</span><span style="color:#ae81ff">3</span><span style="color:#111">)</span>
+<span style="color:#111">triangle</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_7_0.png" target="_blank"><img src="output_7_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_7_0.png"><img src="output_7_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">square <span style="color:#f92672">=</span> Layer(sg<span style="color:#f92672">.</span>Polygon([(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>),(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>),(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>),(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>)]))
-square<span style="color:#f92672">.</span>plot()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">square</span> <span style="color:#f92672">=</span> <span style="color:#111">Layer</span><span style="color:#111">(</span><span style="color:#111">sg</span><span style="color:#f92672">.</span><span style="color:#111">Polygon</span><span style="color:#111">([(</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">),(</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">),(</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span><span style="color:#ae81ff">1</span><span style="color:#111">),(</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span><span style="color:#ae81ff">1</span><span style="color:#111">)]))</span>
+<span style="color:#111">square</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_8_0.png" target="_blank"><img src="output_8_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_8_0.png"><img src="output_8_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <p>Transformations</p>
 <h4 id="operations">Operations</h4>
 <p>Union</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">result <span style="color:#f92672">=</span> circle <span style="color:#f92672">|</span> triangle
-result<span style="color:#f92672">.</span>plot()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">result</span> <span style="color:#f92672">=</span> <span style="color:#111">circle</span> <span style="color:#f92672">|</span> <span style="color:#111">triangle</span>
+<span style="color:#111">result</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_12_0.png" target="_blank"><img src="output_12_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_12_0.png"><img src="output_12_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <p>Unary Union</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">result <span style="color:#f92672">=</span> circle<span style="color:#f92672">.</span>unary_union(triangle,square)
-result<span style="color:#f92672">.</span>plot()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">result</span> <span style="color:#f92672">=</span> <span style="color:#111">circle</span><span style="color:#f92672">.</span><span style="color:#111">unary_union</span><span style="color:#111">(</span><span style="color:#111">triangle</span><span style="color:#111">,</span><span style="color:#111">square</span><span style="color:#111">)</span>
+<span style="color:#111">result</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_14_0.png" target="_blank"><img src="output_14_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_14_0.png"><img src="output_14_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <p>Intersection</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">result <span style="color:#f92672">=</span> circle <span style="color:#f92672">&amp;</span> triangle
-result<span style="color:#f92672">.</span>plot()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">result</span> <span style="color:#f92672">=</span> <span style="color:#111">circle</span> <span style="color:#f92672">&amp;</span> <span style="color:#111">triangle</span>
+<span style="color:#111">result</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_16_0.png" target="_blank"><img src="output_16_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_16_0.png"><img src="output_16_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <p>Symmetric Difference</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">result <span style="color:#f92672">=</span> circle <span style="color:#f92672">^</span> triangle
-result<span style="color:#f92672">.</span>plot()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">result</span> <span style="color:#f92672">=</span> <span style="color:#111">circle</span> <span style="color:#f92672">^</span> <span style="color:#111">triangle</span>
+<span style="color:#111">result</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_18_0.png" target="_blank"><img src="output_18_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_18_0.png"><img src="output_18_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <p>Difference</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">result <span style="color:#f92672">=</span> circle <span style="color:#f92672">-</span> triangle
-result<span style="color:#f92672">.</span>plot()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">result</span> <span style="color:#f92672">=</span> <span style="color:#111">circle</span> <span style="color:#f92672">-</span> <span style="color:#111">triangle</span>
+<span style="color:#111">result</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_20_0.png" target="_blank"><img src="output_20_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_20_0.png"><img src="output_20_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">result <span style="color:#f92672">=</span> triangle <span style="color:#f92672">-</span> circle
-result<span style="color:#f92672">.</span>plot()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">result</span> <span style="color:#f92672">=</span> <span style="color:#111">triangle</span> <span style="color:#f92672">-</span> <span style="color:#111">circle</span>
+<span style="color:#111">result</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_21_0.png" target="_blank"><img src="output_21_0.png" alt="png"  class="img-fluid"/></a>
-</div></p>
-<p>Transformations</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">result <span style="color:#f92672">=</span> triangle <span style="color:#f92672">|</span> triangle<span style="color:#f92672">.</span>translate(<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">0</span>)
-result<span style="color:#f92672">.</span>plot()
-</code></pre></div><p><div class="text-center">
-  <a href="output_23_0.png" target="_blank"><img src="output_23_0.png" alt="png"  class="img-fluid"/></a>
-</div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">result <span style="color:#f92672">=</span> triangle <span style="color:#f92672">|</span>triangle<span style="color:#f92672">.</span>translate(<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">0</span>)<span style="color:#f92672">.</span>rotate(<span style="color:#ae81ff">30</span>,(<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">0</span>))
-result<span style="color:#f92672">.</span>plot()
-</code></pre></div><p><div class="text-center">
-  <a href="output_24_0.png" target="_blank"><img src="output_24_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_21_0.png"><img src="output_21_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <p>Transformations</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">result <span style="color:#f92672">=</span> square <span style="color:#f92672">|</span> square<span style="color:#f92672">.</span>affine_transform([<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#f92672">.</span><span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">0</span>])
-result<span style="color:#f92672">.</span>plot()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">result</span> <span style="color:#f92672">=</span> <span style="color:#111">triangle</span> <span style="color:#f92672">|</span> <span style="color:#111">triangle</span><span style="color:#f92672">.</span><span style="color:#111">translate</span><span style="color:#111">(</span><span style="color:#ae81ff">2</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">)</span>
+<span style="color:#111">result</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_26_0.png" target="_blank"><img src="output_26_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_23_0.png"><img src="output_23_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">result <span style="color:#f92672">=</span> square <span style="color:#f92672">|</span> square<span style="color:#f92672">.</span>affine_transform([<span style="color:#ae81ff">1</span>,<span style="color:#f92672">.</span><span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">0</span>])
-result<span style="color:#f92672">.</span>plot()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">result</span> <span style="color:#f92672">=</span> <span style="color:#111">triangle</span> <span style="color:#f92672">|</span><span style="color:#111">triangle</span><span style="color:#f92672">.</span><span style="color:#111">translate</span><span style="color:#111">(</span><span style="color:#ae81ff">2</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">)</span><span style="color:#f92672">.</span><span style="color:#111">rotate</span><span style="color:#111">(</span><span style="color:#ae81ff">30</span><span style="color:#111">,(</span><span style="color:#ae81ff">2</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">))</span>
+<span style="color:#111">result</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_27_0.png" target="_blank"><img src="output_27_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_24_0.png"><img src="output_24_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
+</div></p>
+<p>Transformations</p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">result</span> <span style="color:#f92672">=</span> <span style="color:#111">square</span> <span style="color:#f92672">|</span> <span style="color:#111">square</span><span style="color:#f92672">.</span><span style="color:#111">affine_transform</span><span style="color:#111">([</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span><span style="color:#f92672">.</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span><span style="color:#ae81ff">2</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">])</span>
+<span style="color:#111">result</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
+</code></pre></div><p><div class="text-center">
+  <a href="output_26_0.png"><img src="output_26_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
+</div></p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">result</span> <span style="color:#f92672">=</span> <span style="color:#111">square</span> <span style="color:#f92672">|</span> <span style="color:#111">square</span><span style="color:#f92672">.</span><span style="color:#111">affine_transform</span><span style="color:#111">([</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span><span style="color:#f92672">.</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span><span style="color:#ae81ff">2</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">])</span>
+<span style="color:#111">result</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
+</code></pre></div><p><div class="text-center">
+  <a href="output_27_0.png"><img src="output_27_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <p>Dilation</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">result <span style="color:#f92672">=</span> triangle <span style="color:#f92672">|</span> (triangle<span style="color:#f92672">.</span>translate(<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">0</span>) <span style="color:#f92672">&lt;&lt;</span> <span style="color:#f92672">.</span><span style="color:#ae81ff">1</span>)
-result<span style="color:#f92672">.</span>plot()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">result</span> <span style="color:#f92672">=</span> <span style="color:#111">triangle</span> <span style="color:#f92672">|</span> <span style="color:#111">(</span><span style="color:#111">triangle</span><span style="color:#f92672">.</span><span style="color:#111">translate</span><span style="color:#111">(</span><span style="color:#ae81ff">2</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">)</span> <span style="color:#f92672">&lt;&lt;</span> <span style="color:#f92672">.</span><span style="color:#ae81ff">1</span><span style="color:#111">)</span>
+<span style="color:#111">result</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_29_0.png" target="_blank"><img src="output_29_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_29_0.png"><img src="output_29_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <p>Erosion</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">result <span style="color:#f92672">=</span> triangle <span style="color:#f92672">|</span> (triangle<span style="color:#f92672">.</span>translate(<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">0</span>) <span style="color:#f92672">&gt;&gt;</span> <span style="color:#f92672">.</span><span style="color:#ae81ff">1</span>)
-result<span style="color:#f92672">.</span>plot()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">result</span> <span style="color:#f92672">=</span> <span style="color:#111">triangle</span> <span style="color:#f92672">|</span> <span style="color:#111">(</span><span style="color:#111">triangle</span><span style="color:#f92672">.</span><span style="color:#111">translate</span><span style="color:#111">(</span><span style="color:#ae81ff">2</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">)</span> <span style="color:#f92672">&gt;&gt;</span> <span style="color:#f92672">.</span><span style="color:#ae81ff">1</span><span style="color:#111">)</span>
+<span style="color:#111">result</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_31_0.png" target="_blank"><img src="output_31_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_31_0.png"><img src="output_31_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <h3 id="laminate">Laminate</h3>
 <p>A Laminate is a collection of layers. A laminate enforces a particular ordering of layers, and a particular number of layers. This is established as a geometric ordering, rather than a time based ordering, etc. Therefore two polygons which overlap at the same x, y point, and exist the same layer in two laminates of the same size are assumed to be , thus can be operated upon. This means that laminates of idfferent numbers o flayers produce indeterminate results, thus there are no operations defined for them.</p>
@@ -432,67 +437,67 @@ result<span style="color:#f92672">.</span>plot()
 <p>You can create an empty laminate of an arbitrary number by joining several empty layers together. You can augment an existing laminate with empty layers to make it operable against a laminate of a different size. You can eliminate layers to make it smaller and operable against a smaller laminate.</p>
 <p>Laminate specific operations</p>
 <p>Create</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">circle_lam <span style="color:#f92672">=</span> Laminate(circle,circle,circle)
-circle_lam<span style="color:#f92672">.</span>plot()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">circle_lam</span> <span style="color:#f92672">=</span> <span style="color:#111">Laminate</span><span style="color:#111">(</span><span style="color:#111">circle</span><span style="color:#111">,</span><span style="color:#111">circle</span><span style="color:#111">,</span><span style="color:#111">circle</span><span style="color:#111">)</span>
+<span style="color:#111">circle_lam</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_35_0.png" target="_blank"><img src="output_35_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_35_0.png"><img src="output_35_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">triangle_lam <span style="color:#f92672">=</span> Laminate(triangle,triangle,triangle)
-triangle_lam<span style="color:#f92672">.</span>plot()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">triangle_lam</span> <span style="color:#f92672">=</span> <span style="color:#111">Laminate</span><span style="color:#111">(</span><span style="color:#111">triangle</span><span style="color:#111">,</span><span style="color:#111">triangle</span><span style="color:#111">,</span><span style="color:#111">triangle</span><span style="color:#111">)</span>
+<span style="color:#111">triangle_lam</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_36_0.png" target="_blank"><img src="output_36_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_36_0.png"><img src="output_36_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">square_lam <span style="color:#f92672">=</span> Laminate(square,square,square)
-square_lam<span style="color:#f92672">.</span>plot()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">square_lam</span> <span style="color:#f92672">=</span> <span style="color:#111">Laminate</span><span style="color:#111">(</span><span style="color:#111">square</span><span style="color:#111">,</span><span style="color:#111">square</span><span style="color:#111">,</span><span style="color:#111">square</span><span style="color:#111">)</span>
+<span style="color:#111">square_lam</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_37_0.png" target="_blank"><img src="output_37_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_37_0.png"><img src="output_37_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <p>Select</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">print</span>(type(circle_lam[<span style="color:#ae81ff">0</span>]))
-circle_lam[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>plot()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a8c8">print</span><span style="color:#111">(</span><span style="color:#111">type</span><span style="color:#111">(</span><span style="color:#111">circle_lam</span><span style="color:#111">[</span><span style="color:#ae81ff">0</span><span style="color:#111">]))</span>
+<span style="color:#111">circle_lam</span><span style="color:#111">[</span><span style="color:#ae81ff">0</span><span style="color:#111">]</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
 </code></pre></div><pre><code>&lt;class 'foldable_robotics.layer.Layer'&gt;
 </code></pre>
 <p><div class="text-center">
-  <a href="output_39_1.png" target="_blank"><img src="output_39_1.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_39_1.png"><img src="output_39_1.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <p>All layer operations can be applied to laminates. This includes</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">result <span style="color:#f92672">=</span> circle_lam<span style="color:#f92672">|</span>triangle_lam
-result<span style="color:#f92672">.</span>plot()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">result</span> <span style="color:#f92672">=</span> <span style="color:#111">circle_lam</span><span style="color:#f92672">|</span><span style="color:#111">triangle_lam</span>
+<span style="color:#111">result</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_41_0.png" target="_blank"><img src="output_41_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_41_0.png"><img src="output_41_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <p>Append / Expand</p>
 <p>Layer-specific extensions</p>
 <p>Unary operations</p>
 <p>Binary operations</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">lam <span style="color:#f92672">=</span> Laminate(circle,triangle,square)
-lam<span style="color:#f92672">.</span>plot()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">lam</span> <span style="color:#f92672">=</span> <span style="color:#111">Laminate</span><span style="color:#111">(</span><span style="color:#111">circle</span><span style="color:#111">,</span><span style="color:#111">triangle</span><span style="color:#111">,</span><span style="color:#111">square</span><span style="color:#111">)</span>
+<span style="color:#111">lam</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_46_0.png" target="_blank"><img src="output_46_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_46_0.png"><img src="output_46_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <p>Shift Up</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">result <span style="color:#f92672">=</span> Laminate(Layer(),<span style="color:#f92672">*</span>lam[:<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>])
-result<span style="color:#f92672">.</span>plot()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">result</span> <span style="color:#f92672">=</span> <span style="color:#111">Laminate</span><span style="color:#111">(</span><span style="color:#111">Layer</span><span style="color:#111">(),</span><span style="color:#f92672">*</span><span style="color:#111">lam</span><span style="color:#111">[:</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#111">])</span>
+<span style="color:#111">result</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_48_0.png" target="_blank"><img src="output_48_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_48_0.png"><img src="output_48_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <p>Shift Down</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">result <span style="color:#f92672">=</span> Laminate(<span style="color:#f92672">*</span>lam[<span style="color:#ae81ff">1</span>:],Layer())
-result<span style="color:#f92672">.</span>plot()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">result</span> <span style="color:#f92672">=</span> <span style="color:#111">Laminate</span><span style="color:#111">(</span><span style="color:#f92672">*</span><span style="color:#111">lam</span><span style="color:#111">[</span><span style="color:#ae81ff">1</span><span style="color:#111">:],</span><span style="color:#111">Layer</span><span style="color:#111">())</span>
+<span style="color:#111">result</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_50_0.png" target="_blank"><img src="output_50_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_50_0.png"><img src="output_50_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <p>Rotate Up</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">result <span style="color:#f92672">=</span> Laminate(<span style="color:#f92672">*</span>lam[:<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>],<span style="color:#f92672">*</span>lam[<span style="color:#ae81ff">1</span>:])
-result<span style="color:#f92672">.</span>plot()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">result</span> <span style="color:#f92672">=</span> <span style="color:#111">Laminate</span><span style="color:#111">(</span><span style="color:#f92672">*</span><span style="color:#111">lam</span><span style="color:#111">[:</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#111">],</span><span style="color:#f92672">*</span><span style="color:#111">lam</span><span style="color:#111">[</span><span style="color:#ae81ff">1</span><span style="color:#111">:])</span>
+<span style="color:#111">result</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_52_0.png" target="_blank"><img src="output_52_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_52_0.png"><img src="output_52_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <p>Rotate Down</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">result <span style="color:#f92672">=</span> Laminate(<span style="color:#f92672">*</span>lam[<span style="color:#ae81ff">1</span>:],<span style="color:#f92672">*</span>lam[:<span style="color:#ae81ff">1</span>])
-result<span style="color:#f92672">.</span>plot()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">result</span> <span style="color:#f92672">=</span> <span style="color:#111">Laminate</span><span style="color:#111">(</span><span style="color:#f92672">*</span><span style="color:#111">lam</span><span style="color:#111">[</span><span style="color:#ae81ff">1</span><span style="color:#111">:],</span><span style="color:#f92672">*</span><span style="color:#111">lam</span><span style="color:#111">[:</span><span style="color:#ae81ff">1</span><span style="color:#111">])</span>
+<span style="color:#111">result</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_54_0.png" target="_blank"><img src="output_54_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_54_0.png"><img src="output_54_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <h2 id="bibliography">Bibliography</h2>
 
@@ -541,7 +546,7 @@ result<span style="color:#f92672">.</span>plot()
     A.</span>
   &#32;
     (<span itemprop="datePublished">2012</span>).
-  &#32;<span itemprop="name"><!-- raw HTML omitted -->The Smooth Curvature Model: An Efficient Representation of Euler–Bernoulli Flexures as Robot Joints<!-- raw HTML omitted --></span>.<i>
+  &#32;<span itemprop="name"><span class="nocase">The Smooth Curvature Model: An Efficient Representation of Euler–Bernoulli Flexures as Robot Joints</span></span>.<i>
     <span itemprop="about">IEEE Transactions on Robotics</span>,&#32;28(4)</i>.&#32;<span itemprop="pagination">761–772</span>.
   <a href="https://doi.org/10.1109/TRO.2012.2193232"
      itemprop="identifier"

@@ -12,8 +12,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://danaukes.com/modules/misc/add-folder-to-system-path/</guid>
-      <description>Add Folder to System Path These are the Windows 10 instructions. Different operating systems, including older versions of Windows act slightly differently. Please find OS specific instructions
- Open file explorer Right click on &amp;ldquo;This PC&amp;rdquo;&amp;ndash;&amp;gt;&amp;ldquo;properties&amp;rdquo; On the left menu select &amp;ldquo;advanced system settings&amp;rdquo; Click on &amp;ldquo;Environment Variables&amp;hellip;&amp;rdquo; A dialog box will pop up with two windows. The top window is the user-level settings, while the lower box controls globals settings.</description>
+      <description>Add Folder to System Path These are the Windows 10 instructions.</description>
     </item>
     
     <item>
@@ -22,9 +21,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://danaukes.com/modules/misc/excel-to-markdown/</guid>
-      <description>Introduction Often you are working in excel and want to output to a markdown table.
-  In excel, add a row under the top row. fill each element with a dash character, -.
-  To the right of the table, add a new formula to concatenate each column of that row together, separated by a vertical line character, |. For the first row composed of three columns, it should look like this:</description>
+      <description>Introduction Often you are working in excel and want to output to a markdown table.</description>
     </item>
     
     <item>
@@ -33,7 +30,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://danaukes.com/modules/misc/installing-git/</guid>
-      <description>In Windows  Download and install Git  keep default install location I prefer to disable shell integration I prefer to use notepad++ as a text editor, but you must install it separately. keep &amp;ldquo;git from the command line and also from 3rd-party software&amp;rdquo; use openssh use openssl checkout windows-style, commit unix-style use mintty on the next page, check  enable file system caching enable git credential manager   Install   Download and install Kdiff.</description>
+      <description>In Windows  Download and install Git  keep default install location I prefer to disable shell integration I prefer to use notepad++ as a text editor, but you must install it separately.</description>
     </item>
     
     <item>
@@ -42,7 +39,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://danaukes.com/modules/misc/software/</guid>
-      <description>Drawing Software    Title Description Availability     [Inkscape][[Inkscape]] Recommended. Open source, cross-platform drawing program that can produce vector drawings in many formats https://inkscape.org/   Draw.Io Recommended. Add-on to google drive documents, free http://draw.io   Adobe Illustrator Recommended. Professional Vector-based Drawing Software, part of Adobe Creative Cloud Available through ASU: http://links.asu.edu/adobestudent   [CorelDraw][[CorelDraw]] Professional Vector-based Drawing Software Available in Innovation Hub (for laser cutting).</description>
+      <description>Drawing Software    Title Description Availability     [Inkscape][[Inkscape]] Recommended.</description>
     </item>
     
     <item>
@@ -51,8 +48,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://danaukes.com/modules/misc/library-proxy/</guid>
-      <description>Introduction Accessing journal and conference papers off-campus can be a chore, made more difficult by having to use VPN&amp;rsquo;s or navigate ASU Library&amp;rsquo;s search tool. But there&amp;rsquo;s an easier way!
-Drag this link into your bookmark toolbar and click whenever you want to sign in to a specific page through the library&amp;rsquo;s proxy server. It will reload the page you are on, often giving you access to the paper you are seeking.</description>
+      <description>Introduction Accessing journal and conference papers off-campus can be a chore, made more difficult by having to use VPN&amp;rsquo;s or navigate ASU Library&amp;rsquo;s search tool.</description>
     </item>
     
   </channel>

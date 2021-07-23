@@ -214,72 +214,72 @@ Hinges | Foldable Robotics
 <main class="container">
   <article>
   <h1 id="hinges">Hinges</h1>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> shapely.geometry <span style="color:#f92672">as</span> sg
-<span style="color:#f92672">from</span> foldable_robotics.layer <span style="color:#f92672">import</span> Layer
-<span style="color:#f92672">from</span> foldable_robotics.laminate <span style="color:#f92672">import</span> Laminate
-<span style="color:#f92672">import</span> numpy
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> <span style="color:#111">shapely.geometry</span> <span style="color:#f92672">as</span> <span style="color:#111">sg</span>
+<span style="color:#f92672">from</span> <span style="color:#111">foldable_robotics.layer</span> <span style="color:#f92672">import</span> <span style="color:#111">Layer</span>
+<span style="color:#f92672">from</span> <span style="color:#111">foldable_robotics.laminate</span> <span style="color:#f92672">import</span> <span style="color:#111">Laminate</span>
+<span style="color:#f92672">import</span> <span style="color:#111">numpy</span>
 
 </code></pre></div><p>Hinges are portions of a laminate device where the stiff material has been removed to permit the remaining flexible material to rotate.</p>
 <p>The simplest hinge in a one-layer laminate is a perforated line</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">radius <span style="color:#f92672">=</span> <span style="color:#f92672">.</span><span style="color:#ae81ff">01</span>
-num_perforations <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
-num_segments <span style="color:#f92672">=</span> num_perforations<span style="color:#f92672">*</span><span style="color:#ae81ff">2</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>
-num_points <span style="color:#f92672">=</span> num_segments<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>
-a<span style="color:#f92672">=</span>numpy<span style="color:#f92672">.</span>r_[<span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">1</span>:num_points<span style="color:#f92672">*</span><span style="color:#ae81ff">1j</span>]
-lines <span style="color:#f92672">=</span> []
-<span style="color:#66d9ef">for</span> ii <span style="color:#f92672">in</span> range(int(len(a)<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>):
-    p1 <span style="color:#f92672">=</span> sg<span style="color:#f92672">.</span>Point(a[<span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>ii<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">+</span>radius,<span style="color:#ae81ff">0</span>)
-    p2 <span style="color:#f92672">=</span> sg<span style="color:#f92672">.</span>Point(a[<span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>ii<span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>]<span style="color:#f92672">-</span>radius,<span style="color:#ae81ff">0</span>)
-    lines<span style="color:#f92672">.</span>append(sg<span style="color:#f92672">.</span>LineString((p1,p2)))
-hinge <span style="color:#f92672">=</span> Layer(<span style="color:#f92672">*</span>lines)
-hinge<span style="color:#f92672">&lt;&lt;=</span>radius
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">hinge<span style="color:#f92672">.</span>plot()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">radius</span> <span style="color:#f92672">=</span> <span style="color:#f92672">.</span><span style="color:#ae81ff">01</span>
+<span style="color:#111">num_perforations</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
+<span style="color:#111">num_segments</span> <span style="color:#f92672">=</span> <span style="color:#111">num_perforations</span><span style="color:#f92672">*</span><span style="color:#ae81ff">2</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>
+<span style="color:#111">num_points</span> <span style="color:#f92672">=</span> <span style="color:#111">num_segments</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>
+<span style="color:#111">a</span><span style="color:#f92672">=</span><span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">r_</span><span style="color:#111">[</span><span style="color:#ae81ff">0</span><span style="color:#111">:</span><span style="color:#ae81ff">1</span><span style="color:#111">:</span><span style="color:#111">num_points</span><span style="color:#f92672">*</span><span style="color:#ae81ff">1j</span><span style="color:#111">]</span>
+<span style="color:#111">lines</span> <span style="color:#f92672">=</span> <span style="color:#111">[]</span>
+<span style="color:#00a8c8">for</span> <span style="color:#111">ii</span> <span style="color:#f92672">in</span> <span style="color:#111">range</span><span style="color:#111">(</span><span style="color:#111">int</span><span style="color:#111">(</span><span style="color:#111">len</span><span style="color:#111">(</span><span style="color:#111">a</span><span style="color:#111">)</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span><span style="color:#111">)</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#111">):</span>
+    <span style="color:#111">p1</span> <span style="color:#f92672">=</span> <span style="color:#111">sg</span><span style="color:#f92672">.</span><span style="color:#111">Point</span><span style="color:#111">(</span><span style="color:#111">a</span><span style="color:#111">[</span><span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#111">ii</span><span style="color:#f92672">+</span><span style="color:#ae81ff">1</span><span style="color:#111">]</span><span style="color:#f92672">+</span><span style="color:#111">radius</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">)</span>
+    <span style="color:#111">p2</span> <span style="color:#f92672">=</span> <span style="color:#111">sg</span><span style="color:#f92672">.</span><span style="color:#111">Point</span><span style="color:#111">(</span><span style="color:#111">a</span><span style="color:#111">[</span><span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#111">ii</span><span style="color:#f92672">+</span><span style="color:#ae81ff">2</span><span style="color:#111">]</span><span style="color:#f92672">-</span><span style="color:#111">radius</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">)</span>
+    <span style="color:#111">lines</span><span style="color:#f92672">.</span><span style="color:#111">append</span><span style="color:#111">(</span><span style="color:#111">sg</span><span style="color:#f92672">.</span><span style="color:#111">LineString</span><span style="color:#111">((</span><span style="color:#111">p1</span><span style="color:#111">,</span><span style="color:#111">p2</span><span style="color:#111">)))</span>
+<span style="color:#111">hinge</span> <span style="color:#f92672">=</span> <span style="color:#111">Layer</span><span style="color:#111">(</span><span style="color:#f92672">*</span><span style="color:#111">lines</span><span style="color:#111">)</span>
+<span style="color:#111">hinge</span><span style="color:#f92672">&lt;&lt;=</span><span style="color:#111">radius</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">hinge</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_4_0.png" target="_blank"><img src="output_4_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_4_0.png"><img src="output_4_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <p>When you remove a perforated line from a material, it produces a weakened joint along that line:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">body <span style="color:#f92672">=</span> Layer(sg<span style="color:#f92672">.</span>box(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>))
-joint <span style="color:#f92672">=</span> body<span style="color:#f92672">-</span>hinge<span style="color:#f92672">.</span>translate(<span style="color:#ae81ff">0</span>,<span style="color:#f92672">.</span><span style="color:#ae81ff">5</span>)
-joint<span style="color:#f92672">.</span>plot()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">body</span> <span style="color:#f92672">=</span> <span style="color:#111">Layer</span><span style="color:#111">(</span><span style="color:#111">sg</span><span style="color:#f92672">.</span><span style="color:#111">box</span><span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span><span style="color:#ae81ff">1</span><span style="color:#111">))</span>
+<span style="color:#111">joint</span> <span style="color:#f92672">=</span> <span style="color:#111">body</span><span style="color:#f92672">-</span><span style="color:#111">hinge</span><span style="color:#f92672">.</span><span style="color:#111">translate</span><span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span><span style="color:#f92672">.</span><span style="color:#ae81ff">5</span><span style="color:#111">)</span>
+<span style="color:#111">joint</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_6_0.png" target="_blank"><img src="output_6_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_6_0.png"><img src="output_6_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <p>In a multilayer laminate with a flexible center layer and two rigid outer layers, the simplest hinge is simply all the other layers removed except the flexible layer:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">line <span style="color:#f92672">=</span> Layer(sg<span style="color:#f92672">.</span>LineString(((<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>),(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>))))
-line<span style="color:#f92672">&lt;&lt;=</span>radius
-line<span style="color:#f92672">.</span>plot()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">line</span> <span style="color:#f92672">=</span> <span style="color:#111">Layer</span><span style="color:#111">(</span><span style="color:#111">sg</span><span style="color:#f92672">.</span><span style="color:#111">LineString</span><span style="color:#111">(((</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">),(</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">))))</span>
+<span style="color:#111">line</span><span style="color:#f92672">&lt;&lt;=</span><span style="color:#111">radius</span>
+<span style="color:#111">line</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_8_0.png" target="_blank"><img src="output_8_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_8_0.png"><img src="output_8_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">multilayer_hinge <span style="color:#f92672">=</span> Laminate(line,line,Layer(),line,line)
-multilayer_body <span style="color:#f92672">=</span> Laminate(body,body,body,body,body)
-joint <span style="color:#f92672">=</span> multilayer_body <span style="color:#f92672">-</span> multilayer_hinge<span style="color:#f92672">.</span>translate(<span style="color:#ae81ff">0</span>,<span style="color:#f92672">.</span><span style="color:#ae81ff">5</span>)
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">joint<span style="color:#f92672">.</span>plot()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">multilayer_hinge</span> <span style="color:#f92672">=</span> <span style="color:#111">Laminate</span><span style="color:#111">(</span><span style="color:#111">line</span><span style="color:#111">,</span><span style="color:#111">line</span><span style="color:#111">,</span><span style="color:#111">Layer</span><span style="color:#111">(),</span><span style="color:#111">line</span><span style="color:#111">,</span><span style="color:#111">line</span><span style="color:#111">)</span>
+<span style="color:#111">multilayer_body</span> <span style="color:#f92672">=</span> <span style="color:#111">Laminate</span><span style="color:#111">(</span><span style="color:#111">body</span><span style="color:#111">,</span><span style="color:#111">body</span><span style="color:#111">,</span><span style="color:#111">body</span><span style="color:#111">,</span><span style="color:#111">body</span><span style="color:#111">,</span><span style="color:#111">body</span><span style="color:#111">)</span>
+<span style="color:#111">joint</span> <span style="color:#f92672">=</span> <span style="color:#111">multilayer_body</span> <span style="color:#f92672">-</span> <span style="color:#111">multilayer_hinge</span><span style="color:#f92672">.</span><span style="color:#111">translate</span><span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span><span style="color:#f92672">.</span><span style="color:#ae81ff">5</span><span style="color:#111">)</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">joint</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_10_0.png" target="_blank"><img src="output_10_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_10_0.png"><img src="output_10_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <h3 id="castellated-joints">Castellated Joints</h3>
 <p>A castellated joint is often preferred because it permits tight radii of curvature.  It puts stresses on the rigid layers, though</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">num_segments <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">num_segments</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
 
-b1 <span style="color:#f92672">=</span> Layer(sg<span style="color:#f92672">.</span>box(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>))
+<span style="color:#111">b1</span> <span style="color:#f92672">=</span> <span style="color:#111">Layer</span><span style="color:#111">(</span><span style="color:#111">sg</span><span style="color:#f92672">.</span><span style="color:#111">box</span><span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span><span style="color:#ae81ff">1</span><span style="color:#111">))</span>
 
-<span style="color:#66d9ef">for</span> ii <span style="color:#f92672">in</span> range(int(num_segments<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>))[<span style="color:#ae81ff">1</span>:]:
-    <span style="color:#66d9ef">print</span>(ii)
-    b1<span style="color:#f92672">|</span>b1<span style="color:#f92672">.</span>translate(ii<span style="color:#f92672">*</span><span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">0</span>)
-b1<span style="color:#f92672">.</span>plot()
+<span style="color:#00a8c8">for</span> <span style="color:#111">ii</span> <span style="color:#f92672">in</span> <span style="color:#111">range</span><span style="color:#111">(</span><span style="color:#111">int</span><span style="color:#111">(</span><span style="color:#111">num_segments</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span><span style="color:#111">))[</span><span style="color:#ae81ff">1</span><span style="color:#111">:]:</span>
+    <span style="color:#00a8c8">print</span><span style="color:#111">(</span><span style="color:#111">ii</span><span style="color:#111">)</span>
+    <span style="color:#111">b1</span><span style="color:#f92672">|</span><span style="color:#111">b1</span><span style="color:#f92672">.</span><span style="color:#111">translate</span><span style="color:#111">(</span><span style="color:#111">ii</span><span style="color:#f92672">*</span><span style="color:#ae81ff">2</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">)</span>
+<span style="color:#111">b1</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
 </code></pre></div><pre><code>1
 </code></pre>
 <p><div class="text-center">
-  <a href="output_12_1.png" target="_blank"><img src="output_12_1.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_12_1.png"><img src="output_12_1.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">num_segments<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">num_segments</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>
 </code></pre></div><pre><code>2.5
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">list(range(int(num_segments<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>)))
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">list</span><span style="color:#111">(</span><span style="color:#111">range</span><span style="color:#111">(</span><span style="color:#111">int</span><span style="color:#111">(</span><span style="color:#111">num_segments</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span><span style="color:#111">)))</span>
 </code></pre></div><pre><code>[0, 1]
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
 </code></pre></div>
   </article>
 </main>

@@ -218,16 +218,35 @@ Derivatives and the Golden Rule | Foldable Robotics
 \frac{ {}^N{d\vec{v}}}{dt} = \frac{ {}^A{d\vec{v}}}{dt} + {}^N{\vec{w}}^{A} \times \vec{v}
 $$</p>
 <p><div class="text-center">
-  <a href="/figures/dynamics/double_pendulum.png" target="_blank"><img src="/figures/dynamics/double_pendulum.png" alt="double pendulum"  class="img-fluid"/></a>
+  <a href="/figures/dynamics/double_pendulum.png"><img src="/figures/dynamics/double_pendulum.png" alt="double pendulum"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <p><div class="text-center">
-  <a href="/figures/dynamics/body_in_space.png" target="_blank"><img src="/figures/dynamics/body_in_space.png" alt="body moving through space"  class="img-fluid"/></a>
+  <a href="/figures/dynamics/body_in_space.png"><img src="/figures/dynamics/body_in_space.png" alt="body moving through space"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!--
+find the cartesian velocity of point q
+
+$$\begin{aligned}
+\vec{r}_1 &= x_1 \hat{n}_x + y_1 \hat{n}_y + z_1 \hat{n}_z \\
+\vec{r}_2 &= x_2 \hat{n}_x + y_2 \hat{n}_y + z_2 \hat{n}_z \\
+{}^N{\vec{\omega}}^{A} &= \omega_x \hat{n}_x + \omega_y \hat{n}_y + \omega_z \hat{n}_z
+\end{aligned}$$
+
+
+
+$$
+\begin{array}{c|c c c}
+  {}^N{R}^{A} & \hat{a}_x & \hat{a}_y & \hat{a}_z \\
+  \hline
+  \hat{n}_x &r_{11}&  r_{12}&r_{13} \\
+  \hat{n}_y &r_{21}& r_{22} &r_{23} \\
+  \hat{n}_z &r_{31}&r_{32}&r_{33}
+ \end{array}
+$$
+-->
 <h2 id="example">Example</h2>
 <p><div class="text-center">
-  <a href="/figures/dynamics/pendulum.png" target="_blank"><img src="/figures/dynamics/pendulum.png" alt="pendulum"  class="img-fluid"/></a>
+  <a href="/figures/dynamics/pendulum.png"><img src="/figures/dynamics/pendulum.png" alt="pendulum"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <p>$$
 \vec{r} = -l\hat{a}_y

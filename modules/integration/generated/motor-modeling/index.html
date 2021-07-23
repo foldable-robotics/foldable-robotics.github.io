@@ -214,10 +214,10 @@ Motor Modeling Process | Foldable Robotics
 <main class="container">
   <article>
   <h1 id="motor-modeling-process">Motor Modeling Process</h1>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> math <span style="color:#f92672">import</span> sin, cos, pi
-<span style="color:#f92672">import</span> numpy
-<span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
-<span style="color:#f92672">%</span>matplotlib inline  
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> <span style="color:#111">math</span> <span style="color:#f92672">import</span> <span style="color:#111">sin</span><span style="color:#111">,</span> <span style="color:#111">cos</span><span style="color:#111">,</span> <span style="color:#111">pi</span>
+<span style="color:#f92672">import</span> <span style="color:#111">numpy</span>
+<span style="color:#f92672">import</span> <span style="color:#111">matplotlib.pyplot</span> <span style="color:#f92672">as</span> <span style="color:#111">plt</span>
+<span style="color:#f92672">%</span><span style="color:#111">matplotlib</span> <span style="color:#111">inline</span>  
 </code></pre></div><h2 id="part-0-module-overview">Part 0: Module Overview</h2>
 <p>The purpose of this writeup is to familiarize you with the level of engineering required for selecting a motor and geartrain for your project.  In this writup you will learn about the modeling, experimental, and design parameters you need in order to understand how to utilize a permanent-magnet DC motor in your project, how to pair it with a geartrain whose ratios you select, how to understand loss in your system, and how to select a battery</p>
 <h3 id="example-problem-description">Example problem description</h3>
@@ -230,7 +230,7 @@ Motor Modeling Process | Foldable Robotics
 <li>the belt drive pulley sizes.</li>
 </ol>
 <p><div class="text-center">
-  <a href="/figures/motor_modeling/h1-cat.png" target="_blank"><img src="/figures/motor_modeling/h1-cat.png" alt="hoverboard and kitty-rider"  class="img-fluid"/></a>
+  <a href="/figures/motor_modeling/h1-cat.png"><img src="/figures/motor_modeling/h1-cat.png" alt="hoverboard and kitty-rider"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <h3 id="list-of-variables">List of Variables</h3>
 <p>These variables may be needed in your equations.  Please do not substitute the supplied values till the last step of your solution, to verify that your expression is correct.</p>
@@ -318,13 +318,13 @@ Motor Modeling Process | Foldable Robotics
 </tr>
 </tbody>
 </table>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">r <span style="color:#f92672">=</span> <span style="color:#f92672">.</span><span style="color:#ae81ff">04</span>
-mass <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
-gravity <span style="color:#f92672">=</span> <span style="color:#ae81ff">9.81</span>
-velocity <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
-distance <span style="color:#f92672">=</span> <span style="color:#ae81ff">1000</span>
-q <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">*</span> pi<span style="color:#f92672">/</span><span style="color:#ae81ff">180</span>
-time <span style="color:#f92672">=</span> distance<span style="color:#f92672">/</span>velocity
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">r</span> <span style="color:#f92672">=</span> <span style="color:#f92672">.</span><span style="color:#ae81ff">04</span>
+<span style="color:#111">mass</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+<span style="color:#111">gravity</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">9.81</span>
+<span style="color:#111">velocity</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+<span style="color:#111">distance</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1000</span>
+<span style="color:#111">q</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">*</span> <span style="color:#111">pi</span><span style="color:#f92672">/</span><span style="color:#ae81ff">180</span>
+<span style="color:#111">time</span> <span style="color:#f92672">=</span> <span style="color:#111">distance</span><span style="color:#f92672">/</span><span style="color:#111">velocity</span>
 </code></pre></div><h3 id="assumptions-and-notes">Assumptions and Notes</h3>
 <ul>
 <li>there are 180 degrees in each $\pi$ radians</li>
@@ -363,7 +363,7 @@ Please expand these equations, using all forces and torques acting upon the whee
 <h3 id="numerical-solution">Numerical Solution</h3>
 <h4 id="1-2">(1-2)</h4>
 <p><div class="text-center">
-  <a href="/figures/motor_modeling/fbd.png" target="_blank"><img src="/figures/motor_modeling/fbd.png" alt="Free Body Diagram"  class="img-fluid"/></a>
+  <a href="/figures/motor_modeling/fbd.png"><img src="/figures/motor_modeling/fbd.png" alt="Free Body Diagram"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <h4 id="3---4">(3 - 4)</h4>
 <p>In front wheel, using the B frame, since it is free spinning, the ground can only supply a reaction force normal to the wheels, and no moments can be transmitted.</p>
@@ -391,8 +391,8 @@ $$\begin{aligned}
 0 &amp;= f_{T} - mg \sin(q)\<br>
 f_{T} &amp;= mg \sin(q)\<br>
 \end{aligned}$$</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">ft <span style="color:#f92672">=</span> mass<span style="color:#f92672">*</span>gravity<span style="color:#f92672">*</span>sin(q)
-ft
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">ft</span> <span style="color:#f92672">=</span> <span style="color:#111">mass</span><span style="color:#f92672">*</span><span style="color:#111">gravity</span><span style="color:#f92672">*</span><span style="color:#111">sin</span><span style="color:#111">(</span><span style="color:#111">q</span><span style="color:#111">)</span>
+<span style="color:#111">ft</span>
 </code></pre></div><pre><code>5.1104658687377595
 </code></pre>
 <p>summing forces along $b_y$:
@@ -402,8 +402,8 @@ $$\begin{aligned}
 0 &amp;= \vec{f}</em>{N} -\frac{ mg \cos(q)}{2} \<br>
 f</em>{N} &amp;= mg \cos(q)\<br>
 \end{aligned}$$</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fn <span style="color:#f92672">=</span> mass<span style="color:#f92672">*</span>gravity<span style="color:#f92672">*</span>cos(q)
-fn
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">fn</span> <span style="color:#f92672">=</span> <span style="color:#111">mass</span><span style="color:#f92672">*</span><span style="color:#111">gravity</span><span style="color:#f92672">*</span><span style="color:#111">cos</span><span style="color:#111">(</span><span style="color:#111">q</span><span style="color:#111">)</span>
+<span style="color:#111">fn</span>
 </code></pre></div><pre><code>28.98289217114928
 </code></pre>
 <h4 id="5">(5)</h4>
@@ -417,16 +417,16 @@ $$\begin{aligned}
 0&amp;= -\tau_{wheels}  + rf_T\<br>
 \tau_{wheels}&amp;= rf_T\<br>
 \end{aligned}$$</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">t_wheels <span style="color:#f92672">=</span> r<span style="color:#f92672">*</span>ft
-t_wheels
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">t_wheels</span> <span style="color:#f92672">=</span> <span style="color:#111">r</span><span style="color:#f92672">*</span><span style="color:#111">ft</span>
+<span style="color:#111">t_wheels</span>
 </code></pre></div><pre><code>0.2044186347495104
 </code></pre>
 <h4 id="6">(6)</h4>
 <p>$$ v=\omega_{wheels}r $$
 $$ \omega_{wheels}r =v$$
 $$ \omega_{wheels}=\frac{v}{r} $$</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">w_wheels <span style="color:#f92672">=</span> velocity<span style="color:#f92672">/</span>r
-w_wheels
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">w_wheels</span> <span style="color:#f92672">=</span> <span style="color:#111">velocity</span><span style="color:#f92672">/</span><span style="color:#111">r</span>
+<span style="color:#111">w_wheels</span>
 </code></pre></div><pre><code>75.0
 </code></pre>
 <h4 id="7">(7)</h4>
@@ -447,8 +447,8 @@ P &amp;= \frac{mgh}{d/v}\<br>
 P &amp;= \frac{mgdsin(q)v}{d}\<br>
 P &amp;= mgsin(q)v
 \end{aligned}$$</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">power_mechanical <span style="color:#f92672">=</span> ft<span style="color:#f92672">*</span>velocity
-power_mechanical
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">power_mechanical</span> <span style="color:#f92672">=</span> <span style="color:#111">ft</span><span style="color:#f92672">*</span><span style="color:#111">velocity</span>
+<span style="color:#111">power_mechanical</span>
 </code></pre></div><pre><code>15.33139760621328
 </code></pre>
 <h2 id="part-ii-friction--loss">Part II: Friction &amp; Loss</h2>
@@ -473,7 +473,7 @@ $$f_{damping} = b ||\vec{v}||$$</p>
 <p>The purpose of this assignment is to select an operating speed which can achieve your power  requirements in delivering torque at the right velocity to your wheels.  While you already calculated $w_{wheels}$ and $\tau_{wheels}$, you have not yet selected a geartrain, permitting you to identify the best speed for delivering mechanical power to your system.  Your system has one motor mounted at each of the two wheels, permitting you to halve the amount of power required for each motor(but not the total power required for the system)</p>
 <h3 id="motor-model">Motor Model</h3>
 <p><div class="text-center">
-  <a href="/figures/motor_modeling/motor_model.png" target="_blank"><img src="/figures/motor_modeling/motor_model.png" alt="typical linear speed-torque curve"  class="img-fluid"/></a>
+  <a href="/figures/motor_modeling/motor_model.png"><img src="/figures/motor_modeling/motor_model.png" alt="typical linear speed-torque curve"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <p>Typically, motors are tested at a specified voltage under various loads.  The resulting current, torque, and angular velocity are then experimentally found and recorded.  From these values, a wealth of information can be gleaned about the motor.  Typical permanent-magnet DC motors exhibit a torque-speed relationship that can be modeled as linear, as seen above.</p>
 <h3 id="motor-modeling-equations">Motor Modeling Equations</h3>
@@ -578,76 +578,76 @@ $$eff = \frac{P_{mechanical}}{P_{electrical}}$$</p>
 <h3 id="numerical-solution-1">Numerical Solution</h3>
 <h4 id="1">(1)</h4>
 <p>Using motor constants from <a href="https://www.pololu.com/product/2269">this</a> Pololu motor:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">w_max_rpm  <span style="color:#f92672">=</span> <span style="color:#ae81ff">10000</span>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">w_max_rpm</span>  <span style="color:#f92672">=</span> <span style="color:#ae81ff">10000</span>
 <span style="color:#75715e">#Convert to rad/sec</span>
-w_max <span style="color:#f92672">=</span> w_max_rpm  <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span>pi<span style="color:#f92672">/</span><span style="color:#ae81ff">60</span>
+<span style="color:#111">w_max</span> <span style="color:#f92672">=</span> <span style="color:#111">w_max_rpm</span>  <span style="color:#f92672">*</span> <span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#111">pi</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60</span>
 
-torque_stall_ozin<span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
+<span style="color:#111">torque_stall_ozin</span><span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
 <span style="color:#75715e">#convert to N-m</span>
-torque_stall <span style="color:#f92672">=</span> torque_stall_ozin <span style="color:#f92672">*</span> <span style="color:#ae81ff">0.0070615518333333</span>
+<span style="color:#111">torque_stall</span> <span style="color:#f92672">=</span> <span style="color:#111">torque_stall_ozin</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">0.0070615518333333</span>
 
-current_stall <span style="color:#f92672">=</span> <span style="color:#ae81ff">6.5</span>
-current_free_running  <span style="color:#f92672">=</span> <span style="color:#f92672">.</span><span style="color:#ae81ff">275</span>
+<span style="color:#111">current_stall</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">6.5</span>
+<span style="color:#111">current_free_running</span>  <span style="color:#f92672">=</span> <span style="color:#f92672">.</span><span style="color:#ae81ff">275</span>
 
-voltage_run <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>
-voltage_free_stall <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+<span style="color:#111">voltage_run</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>
+<span style="color:#111">voltage_free_stall</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
 </code></pre></div><p>Find the range of the current from stall to free-running</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">i_range <span style="color:#f92672">=</span> current_stall<span style="color:#f92672">-</span>current_free_running
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">i_range</span> <span style="color:#f92672">=</span> <span style="color:#111">current_stall</span><span style="color:#f92672">-</span><span style="color:#111">current_free_running</span>
 </code></pre></div><h4 id="2">(2)</h4>
 <p>Find $k_t$ and $k_v$ , the torque and voltage constants</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">kt <span style="color:#f92672">=</span> torque_stall<span style="color:#f92672">/</span>i_range
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">voltage_range <span style="color:#f92672">=</span> voltage_run <span style="color:#f92672">-</span> voltage_free_stall
-kv <span style="color:#f92672">=</span> w_max<span style="color:#f92672">/</span>voltage_range
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">voltage_run <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>
-ii <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>r_[<span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">1</span>:<span style="color:#ae81ff">21j</span>]
-w <span style="color:#f92672">=</span> ii <span style="color:#f92672">*</span> w_max
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">kt</span> <span style="color:#f92672">=</span> <span style="color:#111">torque_stall</span><span style="color:#f92672">/</span><span style="color:#111">i_range</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">voltage_range</span> <span style="color:#f92672">=</span> <span style="color:#111">voltage_run</span> <span style="color:#f92672">-</span> <span style="color:#111">voltage_free_stall</span>
+<span style="color:#111">kv</span> <span style="color:#f92672">=</span> <span style="color:#111">w_max</span><span style="color:#f92672">/</span><span style="color:#111">voltage_range</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">voltage_run</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">6</span>
+<span style="color:#111">ii</span> <span style="color:#f92672">=</span> <span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">r_</span><span style="color:#111">[</span><span style="color:#ae81ff">0</span><span style="color:#111">:</span><span style="color:#ae81ff">1</span><span style="color:#111">:</span><span style="color:#ae81ff">21j</span><span style="color:#111">]</span>
+<span style="color:#111">w</span> <span style="color:#f92672">=</span> <span style="color:#111">ii</span> <span style="color:#f92672">*</span> <span style="color:#111">w_max</span>
 </code></pre></div><h4 id="3-4">(3-4)</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">calc_motor</span>(kt,torque_stall,w_max,current_free_running,voltage_run,w_motor):
-    torque <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span><span style="color:#f92672">-</span>(w_motor<span style="color:#f92672">/</span>w_max))<span style="color:#f92672">*</span>torque_stall
-    current <span style="color:#f92672">=</span> torque<span style="color:#f92672">/</span>kt<span style="color:#f92672">+</span>current_free_running
-    motor_power_mechanical<span style="color:#f92672">=</span> w_motor<span style="color:#f92672">*</span>torque
-    motor_power_electrical <span style="color:#f92672">=</span> current<span style="color:#f92672">*</span>voltage_run
-    motor_efficiency <span style="color:#f92672">=</span> motor_power_mechanical<span style="color:#f92672">/</span>motor_power_electrical
-    <span style="color:#66d9ef">return</span> torque,motor_power_mechanical, motor_power_electrical, motor_efficiency
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">torque,motor_power_mechanical_t, motor_power_electrical_t, motor_efficiency <span style="color:#f92672">=</span> calc_motor(kt,torque_stall,w_max,current_free_running,voltage_run,w)
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a8c8">def</span> <span style="color:#75af00">calc_motor</span><span style="color:#111">(</span><span style="color:#111">kt</span><span style="color:#111">,</span><span style="color:#111">torque_stall</span><span style="color:#111">,</span><span style="color:#111">w_max</span><span style="color:#111">,</span><span style="color:#111">current_free_running</span><span style="color:#111">,</span><span style="color:#111">voltage_run</span><span style="color:#111">,</span><span style="color:#111">w_motor</span><span style="color:#111">):</span>
+    <span style="color:#111">torque</span> <span style="color:#f92672">=</span> <span style="color:#111">(</span><span style="color:#ae81ff">1</span><span style="color:#f92672">-</span><span style="color:#111">(</span><span style="color:#111">w_motor</span><span style="color:#f92672">/</span><span style="color:#111">w_max</span><span style="color:#111">))</span><span style="color:#f92672">*</span><span style="color:#111">torque_stall</span>
+    <span style="color:#111">current</span> <span style="color:#f92672">=</span> <span style="color:#111">torque</span><span style="color:#f92672">/</span><span style="color:#111">kt</span><span style="color:#f92672">+</span><span style="color:#111">current_free_running</span>
+    <span style="color:#111">motor_power_mechanical</span><span style="color:#f92672">=</span> <span style="color:#111">w_motor</span><span style="color:#f92672">*</span><span style="color:#111">torque</span>
+    <span style="color:#111">motor_power_electrical</span> <span style="color:#f92672">=</span> <span style="color:#111">current</span><span style="color:#f92672">*</span><span style="color:#111">voltage_run</span>
+    <span style="color:#111">motor_efficiency</span> <span style="color:#f92672">=</span> <span style="color:#111">motor_power_mechanical</span><span style="color:#f92672">/</span><span style="color:#111">motor_power_electrical</span>
+    <span style="color:#00a8c8">return</span> <span style="color:#111">torque</span><span style="color:#111">,</span><span style="color:#111">motor_power_mechanical</span><span style="color:#111">,</span> <span style="color:#111">motor_power_electrical</span><span style="color:#111">,</span> <span style="color:#111">motor_efficiency</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">torque</span><span style="color:#111">,</span><span style="color:#111">motor_power_mechanical_t</span><span style="color:#111">,</span> <span style="color:#111">motor_power_electrical_t</span><span style="color:#111">,</span> <span style="color:#111">motor_efficiency</span> <span style="color:#f92672">=</span> <span style="color:#111">calc_motor</span><span style="color:#111">(</span><span style="color:#111">kt</span><span style="color:#111">,</span><span style="color:#111">torque_stall</span><span style="color:#111">,</span><span style="color:#111">w_max</span><span style="color:#111">,</span><span style="color:#111">current_free_running</span><span style="color:#111">,</span><span style="color:#111">voltage_run</span><span style="color:#111">,</span><span style="color:#111">w</span><span style="color:#111">)</span>
 </code></pre></div><h4 id="5-1">(5)</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plt<span style="color:#f92672">.</span>figure()
-plt<span style="color:#f92672">.</span>plot(w,torque)
-plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;$\omega$ (rad/sec)&#39;</span>)
-plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;$</span><span style="color:#ae81ff">\\</span><span style="color:#e6db74">tau$ (Nm)&#39;</span>)
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">figure</span><span style="color:#111">()</span>
+<span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">(</span><span style="color:#111">w</span><span style="color:#111">,</span><span style="color:#111">torque</span><span style="color:#111">)</span>
+<span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">xlabel</span><span style="color:#111">(</span><span style="color:#d88200">&#39;$\omega$ (rad/sec)&#39;</span><span style="color:#111">)</span>
+<span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">ylabel</span><span style="color:#111">(</span><span style="color:#d88200">&#39;$</span><span style="color:#8045ff">\\</span><span style="color:#d88200">tau$ (Nm)&#39;</span><span style="color:#111">)</span>
 </code></pre></div><pre><code>Text(0, 0.5, '$\\tau$ (Nm)')
 </code></pre>
 <p><div class="text-center">
-  <a href="output_28_1.png" target="_blank"><img src="output_28_1.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_28_1.png"><img src="output_28_1.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <h4 id="6-1">(6)</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plt<span style="color:#f92672">.</span>figure()
-plt<span style="color:#f92672">.</span>plot(w,motor_power_mechanical_t)
-plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;$\omega$ (rad/sec)&#39;</span>)
-plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;$Power$ (W)&#39;</span>)
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">figure</span><span style="color:#111">()</span>
+<span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">(</span><span style="color:#111">w</span><span style="color:#111">,</span><span style="color:#111">motor_power_mechanical_t</span><span style="color:#111">)</span>
+<span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">xlabel</span><span style="color:#111">(</span><span style="color:#d88200">&#39;$\omega$ (rad/sec)&#39;</span><span style="color:#111">)</span>
+<span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">ylabel</span><span style="color:#111">(</span><span style="color:#d88200">&#39;$Power$ (W)&#39;</span><span style="color:#111">)</span>
 </code></pre></div><pre><code>Text(0, 0.5, '$Power$ (W)')
 </code></pre>
 <p><div class="text-center">
-  <a href="output_30_1.png" target="_blank"><img src="output_30_1.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_30_1.png"><img src="output_30_1.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <p>As you can see, the maximum power occurs at w_max/2</p>
 <h4 id="7-9">(7-9)</h4>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">plt<span style="color:#f92672">.</span>figure()
-plt<span style="color:#f92672">.</span>plot(w,motor_efficiency<span style="color:#f92672">*</span><span style="color:#ae81ff">100</span>)
-plt<span style="color:#f92672">.</span>xlabel(<span style="color:#e6db74">&#39;$\omega$ (rad/sec)&#39;</span>)
-plt<span style="color:#f92672">.</span>ylabel(<span style="color:#e6db74">&#39;$Eff$ (%)&#39;</span>)
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">figure</span><span style="color:#111">()</span>
+<span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">(</span><span style="color:#111">w</span><span style="color:#111">,</span><span style="color:#111">motor_efficiency</span><span style="color:#f92672">*</span><span style="color:#ae81ff">100</span><span style="color:#111">)</span>
+<span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">xlabel</span><span style="color:#111">(</span><span style="color:#d88200">&#39;$\omega$ (rad/sec)&#39;</span><span style="color:#111">)</span>
+<span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">ylabel</span><span style="color:#111">(</span><span style="color:#d88200">&#39;$Eff$ (%)&#39;</span><span style="color:#111">)</span>
 </code></pre></div><pre><code>Text(0, 0.5, '$Eff$ (%)')
 </code></pre>
 <p><div class="text-center">
-  <a href="output_32_1.png" target="_blank"><img src="output_32_1.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_32_1.png"><img src="output_32_1.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <p>I have selected 710 rad/sec as my operating point.  Now I need to compute the mechancial power, electrical power, and effeciency once again</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">w_motor <span style="color:#f92672">=</span> <span style="color:#ae81ff">710</span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">torque1,motor_power_mechanical1, motor_power_electrical1, motor_efficiency1 <span style="color:#f92672">=</span> calc_motor(kt,torque_stall,w_max,current_free_running,voltage_run,w_motor)
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;torque = &#39;</span>, torque1)
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;motor_power_mechanical = &#39;</span>, motor_power_mechanical1)
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;motor_power_electrical = &#39;</span>, motor_power_electrical1)
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;motor_efficiency = &#39;</span>, motor_efficiency1)
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">w_motor</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">710</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">torque1</span><span style="color:#111">,</span><span style="color:#111">motor_power_mechanical1</span><span style="color:#111">,</span> <span style="color:#111">motor_power_electrical1</span><span style="color:#111">,</span> <span style="color:#111">motor_efficiency1</span> <span style="color:#f92672">=</span> <span style="color:#111">calc_motor</span><span style="color:#111">(</span><span style="color:#111">kt</span><span style="color:#111">,</span><span style="color:#111">torque_stall</span><span style="color:#111">,</span><span style="color:#111">w_max</span><span style="color:#111">,</span><span style="color:#111">current_free_running</span><span style="color:#111">,</span><span style="color:#111">voltage_run</span><span style="color:#111">,</span><span style="color:#111">w_motor</span><span style="color:#111">)</span>
+<span style="color:#00a8c8">print</span><span style="color:#111">(</span><span style="color:#d88200">&#39;torque = &#39;</span><span style="color:#111">,</span> <span style="color:#111">torque1</span><span style="color:#111">)</span>
+<span style="color:#00a8c8">print</span><span style="color:#111">(</span><span style="color:#d88200">&#39;motor_power_mechanical = &#39;</span><span style="color:#111">,</span> <span style="color:#111">motor_power_mechanical1</span><span style="color:#111">)</span>
+<span style="color:#00a8c8">print</span><span style="color:#111">(</span><span style="color:#d88200">&#39;motor_power_electrical = &#39;</span><span style="color:#111">,</span> <span style="color:#111">motor_power_electrical1</span><span style="color:#111">)</span>
+<span style="color:#00a8c8">print</span><span style="color:#111">(</span><span style="color:#d88200">&#39;motor_efficiency = &#39;</span><span style="color:#111">,</span> <span style="color:#111">motor_efficiency1</span><span style="color:#111">)</span>
 
 </code></pre></div><pre><code>torque =  0.011369096418946867
 motor_power_mechanical =  8.072058457452275
@@ -655,38 +655,38 @@ motor_power_electrical =  13.676697849705437
 motor_efficiency =  0.5902052195754348
 </code></pre>
 <p>The full model in one plot, with the design point selected:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">fig <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>figure()
-ax1 <span style="color:#f92672">=</span> fig<span style="color:#f92672">.</span>add_subplot(<span style="color:#ae81ff">111</span>)
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">fig</span> <span style="color:#f92672">=</span> <span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">figure</span><span style="color:#111">()</span>
+<span style="color:#111">ax1</span> <span style="color:#f92672">=</span> <span style="color:#111">fig</span><span style="color:#f92672">.</span><span style="color:#111">add_subplot</span><span style="color:#111">(</span><span style="color:#ae81ff">111</span><span style="color:#111">)</span>
 
-p1 <span style="color:#f92672">=</span> ax1<span style="color:#f92672">.</span>plot(w,torque, <span style="color:#e6db74">&#39;b-&#39;</span>)
-p11 <span style="color:#f92672">=</span> ax1<span style="color:#f92672">.</span>plot(w_motor,torque1,<span style="color:#e6db74">&#39;bo&#39;</span>)
-ax1<span style="color:#f92672">.</span>set_xlabel(<span style="color:#e6db74">&#39;speed (rad/sec)&#39;</span>)
+<span style="color:#111">p1</span> <span style="color:#f92672">=</span> <span style="color:#111">ax1</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">(</span><span style="color:#111">w</span><span style="color:#111">,</span><span style="color:#111">torque</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;b-&#39;</span><span style="color:#111">)</span>
+<span style="color:#111">p11</span> <span style="color:#f92672">=</span> <span style="color:#111">ax1</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">(</span><span style="color:#111">w_motor</span><span style="color:#111">,</span><span style="color:#111">torque1</span><span style="color:#111">,</span><span style="color:#d88200">&#39;bo&#39;</span><span style="color:#111">)</span>
+<span style="color:#111">ax1</span><span style="color:#f92672">.</span><span style="color:#111">set_xlabel</span><span style="color:#111">(</span><span style="color:#d88200">&#39;speed (rad/sec)&#39;</span><span style="color:#111">)</span>
 <span style="color:#75715e"># Make the y-axis label, ticks and tick labels match the line color.</span>
-ax1<span style="color:#f92672">.</span>set_ylabel(<span style="color:#e6db74">&#39;torque (N-m)&#39;</span>, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;b&#39;</span>)
-ax1<span style="color:#f92672">.</span>tick_params(<span style="color:#e6db74">&#39;y&#39;</span>, colors<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;b&#39;</span>)
+<span style="color:#111">ax1</span><span style="color:#f92672">.</span><span style="color:#111">set_ylabel</span><span style="color:#111">(</span><span style="color:#d88200">&#39;torque (N-m)&#39;</span><span style="color:#111">,</span> <span style="color:#111">color</span><span style="color:#f92672">=</span><span style="color:#d88200">&#39;b&#39;</span><span style="color:#111">)</span>
+<span style="color:#111">ax1</span><span style="color:#f92672">.</span><span style="color:#111">tick_params</span><span style="color:#111">(</span><span style="color:#d88200">&#39;y&#39;</span><span style="color:#111">,</span> <span style="color:#111">colors</span><span style="color:#f92672">=</span><span style="color:#d88200">&#39;b&#39;</span><span style="color:#111">)</span>
 
-ax2 <span style="color:#f92672">=</span> ax1<span style="color:#f92672">.</span>twinx()
-p2 <span style="color:#f92672">=</span> ax2<span style="color:#f92672">.</span>plot(w, motor_power_mechanical_t, <span style="color:#e6db74">&#39;r-.&#39;</span>)
-p22 <span style="color:#f92672">=</span> ax2<span style="color:#f92672">.</span>plot(w_motor, motor_power_mechanical1, <span style="color:#e6db74">&#39;ro&#39;</span>)
-ax2<span style="color:#f92672">.</span>set_ylabel(<span style="color:#e6db74">&#39;power (W)&#39;</span>, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;r&#39;</span>)
-ax2<span style="color:#f92672">.</span>tick_params(<span style="color:#e6db74">&#39;y&#39;</span>, colors<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;r&#39;</span>)
+<span style="color:#111">ax2</span> <span style="color:#f92672">=</span> <span style="color:#111">ax1</span><span style="color:#f92672">.</span><span style="color:#111">twinx</span><span style="color:#111">()</span>
+<span style="color:#111">p2</span> <span style="color:#f92672">=</span> <span style="color:#111">ax2</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">(</span><span style="color:#111">w</span><span style="color:#111">,</span> <span style="color:#111">motor_power_mechanical_t</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;r-.&#39;</span><span style="color:#111">)</span>
+<span style="color:#111">p22</span> <span style="color:#f92672">=</span> <span style="color:#111">ax2</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">(</span><span style="color:#111">w_motor</span><span style="color:#111">,</span> <span style="color:#111">motor_power_mechanical1</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;ro&#39;</span><span style="color:#111">)</span>
+<span style="color:#111">ax2</span><span style="color:#f92672">.</span><span style="color:#111">set_ylabel</span><span style="color:#111">(</span><span style="color:#d88200">&#39;power (W)&#39;</span><span style="color:#111">,</span> <span style="color:#111">color</span><span style="color:#f92672">=</span><span style="color:#d88200">&#39;r&#39;</span><span style="color:#111">)</span>
+<span style="color:#111">ax2</span><span style="color:#f92672">.</span><span style="color:#111">tick_params</span><span style="color:#111">(</span><span style="color:#d88200">&#39;y&#39;</span><span style="color:#111">,</span> <span style="color:#111">colors</span><span style="color:#f92672">=</span><span style="color:#d88200">&#39;r&#39;</span><span style="color:#111">)</span>
 
-ax3 <span style="color:#f92672">=</span> ax1<span style="color:#f92672">.</span>twinx()
-p3 <span style="color:#f92672">=</span> ax3<span style="color:#f92672">.</span>plot(w, motor_efficiency<span style="color:#f92672">*</span><span style="color:#ae81ff">100</span>, <span style="color:#e6db74">&#39;g-.&#39;</span>)
-p3 <span style="color:#f92672">=</span> ax3<span style="color:#f92672">.</span>plot(w_motor, motor_efficiency1<span style="color:#f92672">*</span><span style="color:#ae81ff">100</span>, <span style="color:#e6db74">&#39;go&#39;</span>)
-ax3<span style="color:#f92672">.</span>set_ylabel(<span style="color:#e6db74">&#39;efficiency (%)&#39;</span>, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;g&#39;</span>)
-ax3<span style="color:#f92672">.</span>tick_params(<span style="color:#e6db74">&#39;y&#39;</span>, colors<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;g&#39;</span>)
+<span style="color:#111">ax3</span> <span style="color:#f92672">=</span> <span style="color:#111">ax1</span><span style="color:#f92672">.</span><span style="color:#111">twinx</span><span style="color:#111">()</span>
+<span style="color:#111">p3</span> <span style="color:#f92672">=</span> <span style="color:#111">ax3</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">(</span><span style="color:#111">w</span><span style="color:#111">,</span> <span style="color:#111">motor_efficiency</span><span style="color:#f92672">*</span><span style="color:#ae81ff">100</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;g-.&#39;</span><span style="color:#111">)</span>
+<span style="color:#111">p3</span> <span style="color:#f92672">=</span> <span style="color:#111">ax3</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">(</span><span style="color:#111">w_motor</span><span style="color:#111">,</span> <span style="color:#111">motor_efficiency1</span><span style="color:#f92672">*</span><span style="color:#ae81ff">100</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;go&#39;</span><span style="color:#111">)</span>
+<span style="color:#111">ax3</span><span style="color:#f92672">.</span><span style="color:#111">set_ylabel</span><span style="color:#111">(</span><span style="color:#d88200">&#39;efficiency (%)&#39;</span><span style="color:#111">,</span> <span style="color:#111">color</span><span style="color:#f92672">=</span><span style="color:#d88200">&#39;g&#39;</span><span style="color:#111">)</span>
+<span style="color:#111">ax3</span><span style="color:#f92672">.</span><span style="color:#111">tick_params</span><span style="color:#111">(</span><span style="color:#d88200">&#39;y&#39;</span><span style="color:#111">,</span> <span style="color:#111">colors</span><span style="color:#f92672">=</span><span style="color:#d88200">&#39;g&#39;</span><span style="color:#111">)</span>
 
 <span style="color:#75715e">#lns = [p1, p2, p3]</span>
 <span style="color:#75715e">#ax1.legend(handles=lns, loc=&#39;bevst&#39;)</span>
 
 <span style="color:#75715e"># right, left, top, bottom</span>
-ax3<span style="color:#f92672">.</span>spines[<span style="color:#e6db74">&#39;right&#39;</span>]<span style="color:#f92672">.</span>set_position((<span style="color:#e6db74">&#39;outward&#39;</span>, <span style="color:#ae81ff">60</span>))  
+<span style="color:#111">ax3</span><span style="color:#f92672">.</span><span style="color:#111">spines</span><span style="color:#111">[</span><span style="color:#d88200">&#39;right&#39;</span><span style="color:#111">]</span><span style="color:#f92672">.</span><span style="color:#111">set_position</span><span style="color:#111">((</span><span style="color:#d88200">&#39;outward&#39;</span><span style="color:#111">,</span> <span style="color:#ae81ff">60</span><span style="color:#111">))</span>  
 
-ax1<span style="color:#f92672">.</span>set_title(<span style="color:#e6db74">&#39;Motor Model&#39;</span>)
-plt<span style="color:#f92672">.</span>show()
+<span style="color:#111">ax1</span><span style="color:#f92672">.</span><span style="color:#111">set_title</span><span style="color:#111">(</span><span style="color:#d88200">&#39;Motor Model&#39;</span><span style="color:#111">)</span>
+<span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">show</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_37_0.png" target="_blank"><img src="output_37_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_37_0.png"><img src="output_37_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <h2 id="part-iv-geartrain-selection">Part IV: Geartrain Selection</h2>
 <h3 id="overview">Overview</h3>
@@ -777,29 +777,29 @@ t_{motor}&amp;= \frac{r_{pm}}{ r_{pw}}t_{wheel}\<br>
 4. 
 There are several things to check.  First, the wheel pulley should not be larger than the wheel, otherwise it will hit the ground.  Second, the belts should</p>
 <p>Compute the gear ratio required between motor and wheel</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">G <span style="color:#f92672">=</span> w_wheels<span style="color:#f92672">/</span>w_motor
-G
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">G</span> <span style="color:#f92672">=</span> <span style="color:#111">w_wheels</span><span style="color:#f92672">/</span><span style="color:#111">w_motor</span>
+<span style="color:#111">G</span>
 </code></pre></div><pre><code>0.1056338028169014
 </code></pre>
 <p>Selecting a pulley radius of .01m allows me to calculate the wheel pulley radius</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">rpm <span style="color:#f92672">=</span> <span style="color:#f92672">.</span><span style="color:#ae81ff">01</span>
-rpw <span style="color:#f92672">=</span> rpm<span style="color:#f92672">/</span>G
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;radius motor pulley = {:.4f}&#39;</span><span style="color:#f92672">.</span>format(rpm))
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;radius wheel pulley = {:.4f}&#39;</span><span style="color:#f92672">.</span>format(rpw))
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">rpm</span> <span style="color:#f92672">=</span> <span style="color:#f92672">.</span><span style="color:#ae81ff">01</span>
+<span style="color:#111">rpw</span> <span style="color:#f92672">=</span> <span style="color:#111">rpm</span><span style="color:#f92672">/</span><span style="color:#111">G</span>
+<span style="color:#00a8c8">print</span><span style="color:#111">(</span><span style="color:#d88200">&#39;radius motor pulley = {:.4f}&#39;</span><span style="color:#f92672">.</span><span style="color:#111">format</span><span style="color:#111">(</span><span style="color:#111">rpm</span><span style="color:#111">))</span>
+<span style="color:#00a8c8">print</span><span style="color:#111">(</span><span style="color:#d88200">&#39;radius wheel pulley = {:.4f}&#39;</span><span style="color:#f92672">.</span><span style="color:#111">format</span><span style="color:#111">(</span><span style="color:#111">rpw</span><span style="color:#111">))</span>
 
 </code></pre></div><pre><code>radius motor pulley = 0.0100
 radius wheel pulley = 0.0947
 </code></pre>
 <p>using the supplied equations I can calulate the wheel torque</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#w_motor = rpw/rpm * w_wheels</span>
-t_wheel <span style="color:#f92672">=</span> t_wheels<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>
-t_motor <span style="color:#f92672">=</span> rpm<span style="color:#f92672">/</span>rpw <span style="color:#f92672">*</span> t_wheel
-<span style="color:#66d9ef">print</span>(<span style="color:#e6db74">&#39;t_motor= {:.2f}&#39;</span><span style="color:#f92672">.</span>format(t_motor))
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#w_motor = rpw/rpm * w_wheels</span>
+<span style="color:#111">t_wheel</span> <span style="color:#f92672">=</span> <span style="color:#111">t_wheels</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>
+<span style="color:#111">t_motor</span> <span style="color:#f92672">=</span> <span style="color:#111">rpm</span><span style="color:#f92672">/</span><span style="color:#111">rpw</span> <span style="color:#f92672">*</span> <span style="color:#111">t_wheel</span>
+<span style="color:#00a8c8">print</span><span style="color:#111">(</span><span style="color:#d88200">&#39;t_motor= {:.2f}&#39;</span><span style="color:#f92672">.</span><span style="color:#111">format</span><span style="color:#111">(</span><span style="color:#111">t_motor</span><span style="color:#111">))</span>
 </code></pre></div><pre><code>t_motor= 0.01
 </code></pre>
 <p>Using the power required vs the power supplied allows me to calculate the extra power available to overcome loss forces:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">friction_force <span style="color:#f92672">=</span> (motor_power_mechanical1<span style="color:#f92672">*</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">-</span> power_mechanical)<span style="color:#f92672">/</span>velocity
-friction_force
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">friction_force</span> <span style="color:#f92672">=</span> <span style="color:#111">(</span><span style="color:#111">motor_power_mechanical1</span><span style="color:#f92672">*</span><span style="color:#ae81ff">2</span> <span style="color:#f92672">-</span> <span style="color:#111">power_mechanical</span><span style="color:#111">)</span><span style="color:#f92672">/</span><span style="color:#111">velocity</span>
+<span style="color:#111">friction_force</span>
 </code></pre></div><pre><code>0.2709064362304237
 </code></pre>
 <h2 id="part-v-battery-selection">Part V: Battery Selection</h2>
@@ -820,25 +820,25 @@ friction_force
 </ul>
 <h2 id="battery-selection">Battery Selection</h2>
 <p>Lithium Polymer cells are typically 3.7V</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">voltage_battery <span style="color:#f92672">=</span> <span style="color:#ae81ff">3.7</span>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">voltage_battery</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">3.7</span>
 </code></pre></div><p>The total electrical power from both motors is twice each one:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">total_electrical_power <span style="color:#f92672">=</span> motor_power_electrical1<span style="color:#f92672">*</span><span style="color:#ae81ff">2</span>
-total_electrical_power
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">total_electrical_power</span> <span style="color:#f92672">=</span> <span style="color:#111">motor_power_electrical1</span><span style="color:#f92672">*</span><span style="color:#ae81ff">2</span>
+<span style="color:#111">total_electrical_power</span>
 </code></pre></div><pre><code>27.353395699410875
 </code></pre>
 <p>the total energy $E$ related to power$P$ and time $t$ is equal $E=\int P\partial t$.  When P is constant, this simplifies to $E=Pt$</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">total_electrical_energy <span style="color:#f92672">=</span> total_electrical_power<span style="color:#f92672">*</span>time
-total_electrical_energy
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">total_electrical_energy</span> <span style="color:#f92672">=</span> <span style="color:#111">total_electrical_power</span><span style="color:#f92672">*</span><span style="color:#111">time</span>
+<span style="color:#111">total_electrical_energy</span>
 </code></pre></div><pre><code>9117.798566470292
 </code></pre>
 <p>The battery current required use the electrical power equation $P=IV$ where $P$ is power, $I$ is current, and $V$ is voltage.  Using the battery voltage established earlier:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">battery_current <span style="color:#f92672">=</span> total_electrical_power<span style="color:#f92672">/</span>voltage_battery 
-battery_current
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">battery_current</span> <span style="color:#f92672">=</span> <span style="color:#111">total_electrical_power</span><span style="color:#f92672">/</span><span style="color:#111">voltage_battery</span> 
+<span style="color:#111">battery_current</span>
 </code></pre></div><pre><code>7.3928096484894255
 </code></pre>
 <p>Batteries are often rated in mAh, or milli-Amp-hours, which is a measure of total charge. This can be obtained by dividing by battery voltage and changing the units from coulombs to A-h</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">battery_rating_mAh <span style="color:#f92672">=</span> total_electrical_energy<span style="color:#f92672">/</span>voltage_battery <span style="color:#f92672">/</span><span style="color:#ae81ff">60</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60</span><span style="color:#f92672">*</span><span style="color:#ae81ff">1000</span>
-battery_rating_mAh
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">battery_rating_mAh</span> <span style="color:#f92672">=</span> <span style="color:#111">total_electrical_energy</span><span style="color:#f92672">/</span><span style="color:#111">voltage_battery</span> <span style="color:#f92672">/</span><span style="color:#ae81ff">60</span><span style="color:#f92672">/</span><span style="color:#ae81ff">60</span><span style="color:#f92672">*</span><span style="color:#ae81ff">1000</span>
+<span style="color:#111">battery_rating_mAh</span>
 </code></pre></div><pre><code>684.519411897169
 </code></pre>
 <h2 id="part-vi-testing">Part VI: Testing</h2>
@@ -863,41 +863,41 @@ Find an expression for torque($\tau$) as a function of speed ($\omega$)</li>
 <li>Select a battery which meets both power and energy requirements.</li>
 </ol>
 <h3 id="numerical-solution-2">Numerical Solution</h3>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">%</span>matplotlib inline
-<span style="color:#f92672">import</span> numpy 
-<span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">%</span><span style="color:#111">matplotlib</span> <span style="color:#111">inline</span>
+<span style="color:#f92672">import</span> <span style="color:#111">numpy</span> 
+<span style="color:#f92672">import</span> <span style="color:#111">matplotlib.pyplot</span> <span style="color:#f92672">as</span> <span style="color:#111">plt</span>
 </code></pre></div><p>From the data, we can correlate the max speed and voltage together.  From steady state at max speed,</p>
 <h4 id="1-1">(1)</h4>
 <p><div class="text-center">
-  <a href="/figures/motor_modeling/system.png" target="_blank"><img src="/figures/motor_modeling/system.png" alt="System Overview"  class="img-fluid"/></a>
+  <a href="/figures/motor_modeling/system.png"><img src="/figures/motor_modeling/system.png" alt="System Overview"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <h4 id="2-3">(2-3)</h4>
 <p>Data plotted in excel to obtain linear fitted models during acceleration</p>
 <p><div class="text-center">
-  <a href="/figures/motor_modeling/torque-vs-current.png" target="_blank"><img src="/figures/motor_modeling/torque-vs-current.png" alt="Torque vs Current"  class="img-fluid"/></a>
+  <a href="/figures/motor_modeling/torque-vs-current.png"><img src="/figures/motor_modeling/torque-vs-current.png" alt="Torque vs Current"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <p><div class="text-center">
-  <a href="/figures/motor_modeling/speed-vs-voltage.png" target="_blank"><img src="/figures/motor_modeling/speed-vs-voltage.png" alt="Speed vs Voltage"  class="img-fluid"/></a>
+  <a href="/figures/motor_modeling/speed-vs-voltage.png"><img src="/figures/motor_modeling/speed-vs-voltage.png" alt="Speed vs Voltage"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <p><div class="text-center">
-  <a href="/figures/motor_modeling/torque_efficiency_speed.png" target="_blank"><img src="/figures/motor_modeling/torque_efficiency_speed.png" alt="Torque &amp;amp; Efficiency vs Speed"  class="img-fluid"/></a>
+  <a href="/figures/motor_modeling/torque_efficiency_speed.png"><img src="/figures/motor_modeling/torque_efficiency_speed.png" alt="Torque &amp;amp; Efficiency vs Speed"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#w_max_rpm = 10000</span>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#w_max_rpm = 10000</span>
 <span style="color:#75715e">#w_max = w_max_rpm*2*pi/60</span>
-w_max <span style="color:#f92672">=</span> <span style="color:#ae81ff">212.6146</span>
+<span style="color:#111">w_max</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">212.6146</span>
 
-<span style="color:#f92672">%</span>matplotlib inline
-<span style="color:#f92672">import</span> numpy 
-<span style="color:#f92672">import</span> matplotlib.pyplot <span style="color:#f92672">as</span> plt
+<span style="color:#f92672">%</span><span style="color:#111">matplotlib</span> <span style="color:#111">inline</span>
+<span style="color:#f92672">import</span> <span style="color:#111">numpy</span> 
+<span style="color:#f92672">import</span> <span style="color:#111">matplotlib.pyplot</span> <span style="color:#f92672">as</span> <span style="color:#111">plt</span>
 </code></pre></div><p>From the data, we can correlate the max speed and voltage together.  From steady state at max speed,</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">V_nominal <span style="color:#f92672">=</span> <span style="color:#ae81ff">6.15</span>
-w_max <span style="color:#f92672">=</span> <span style="color:#ae81ff">211</span>
-k_v <span style="color:#f92672">=</span> w_max<span style="color:#f92672">/</span>V_nominal
-k_v
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">V_nominal</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">6.15</span>
+<span style="color:#111">w_max</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">211</span>
+<span style="color:#111">k_v</span> <span style="color:#f92672">=</span> <span style="color:#111">w_max</span><span style="color:#f92672">/</span><span style="color:#111">V_nominal</span>
+<span style="color:#111">k_v</span>
 </code></pre></div><pre><code>34.30894308943089
 </code></pre>
 <p>Or you can use the fitted model above</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">k_v <span style="color:#f92672">=</span> <span style="color:#ae81ff">34.658</span>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">k_v</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">34.658</span>
 </code></pre></div><p>The Resistance was obtained by holding the motor fixed at a nonzero voltage and recording the current.</p>
 <p>Ohm&rsquo;s Law: 
 $$V=IR$$</p>
@@ -905,18 +905,18 @@ $$V=IR$$</p>
 <p>$$V = 2.62$$
 $$I = 2.48$$
 $$R=V/I$$</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">R <span style="color:#f92672">=</span> <span style="color:#ae81ff">2.62</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2.48</span>
-R
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">R</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2.62</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2.48</span>
+<span style="color:#111">R</span>
 
-i_stall <span style="color:#f92672">=</span> V_nominal <span style="color:#f92672">/</span> R
-i_stall
+<span style="color:#111">i_stall</span> <span style="color:#f92672">=</span> <span style="color:#111">V_nominal</span> <span style="color:#f92672">/</span> <span style="color:#111">R</span>
+<span style="color:#111">i_stall</span>
 </code></pre></div><pre><code>5.8213740458015275
 </code></pre>
 <p>Free running current was obtained from the data</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">i_free_running <span style="color:#f92672">=</span> <span style="color:#f92672">.</span><span style="color:#ae81ff">07</span>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">i_free_running</span> <span style="color:#f92672">=</span> <span style="color:#f92672">.</span><span style="color:#ae81ff">07</span>
 
-kt <span style="color:#f92672">=</span> <span style="color:#f92672">.</span><span style="color:#ae81ff">021</span>
-t_stall <span style="color:#f92672">=</span> kt<span style="color:#f92672">*</span>i_stall
+<span style="color:#111">kt</span> <span style="color:#f92672">=</span> <span style="color:#f92672">.</span><span style="color:#ae81ff">021</span>
+<span style="color:#111">t_stall</span> <span style="color:#f92672">=</span> <span style="color:#111">kt</span><span style="color:#f92672">*</span><span style="color:#111">i_stall</span>
 </code></pre></div><h4 id="4">(4)</h4>
 <p>Given $V = iR+\frac{\omega}{k_v}$, we can solve for $i$
 $$i = \frac{V-\frac{\omega}{k_v} }{R}$$
@@ -935,98 +935,98 @@ $$\frac{2\omega_{Pmax}}{k_v}=V$$
 $$\omega_{Pmax} = \frac{k_v V}{2}$$</p>
 <p>using the relation that $k_v V = \omega_{unloaded}$, the unloaded motor speed, 
 $$\omega_{Pmax} = \frac{\omega_{unloaded}}{2}$$</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">ii <span style="color:#f92672">=</span> numpy<span style="color:#f92672">.</span>r_[<span style="color:#ae81ff">0</span>:<span style="color:#ae81ff">1</span>:<span style="color:#ae81ff">21j</span>]
-w<span style="color:#f92672">=</span>ii<span style="color:#f92672">*</span>w_max
-w
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">ii</span> <span style="color:#f92672">=</span> <span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">r_</span><span style="color:#111">[</span><span style="color:#ae81ff">0</span><span style="color:#111">:</span><span style="color:#ae81ff">1</span><span style="color:#111">:</span><span style="color:#ae81ff">21j</span><span style="color:#111">]</span>
+<span style="color:#111">w</span><span style="color:#f92672">=</span><span style="color:#111">ii</span><span style="color:#f92672">*</span><span style="color:#111">w_max</span>
+<span style="color:#111">w</span>
 
-t <span style="color:#f92672">=</span> (<span style="color:#ae81ff">1</span><span style="color:#f92672">-</span>ii)<span style="color:#f92672">*</span>t_stall
-t
+<span style="color:#111">t</span> <span style="color:#f92672">=</span> <span style="color:#111">(</span><span style="color:#ae81ff">1</span><span style="color:#f92672">-</span><span style="color:#111">ii</span><span style="color:#111">)</span><span style="color:#f92672">*</span><span style="color:#111">t_stall</span>
+<span style="color:#111">t</span>
 
-t2 <span style="color:#f92672">=</span> (w_max<span style="color:#f92672">-</span>w)<span style="color:#f92672">/</span>w_max <span style="color:#f92672">*</span> t_stall
-t2
+<span style="color:#111">t2</span> <span style="color:#f92672">=</span> <span style="color:#111">(</span><span style="color:#111">w_max</span><span style="color:#f92672">-</span><span style="color:#111">w</span><span style="color:#111">)</span><span style="color:#f92672">/</span><span style="color:#111">w_max</span> <span style="color:#f92672">*</span> <span style="color:#111">t_stall</span>
+<span style="color:#111">t2</span>
 
-i <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">/</span>kt<span style="color:#f92672">*</span>t<span style="color:#f92672">+</span>i_free_running
+<span style="color:#111">i</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">/</span><span style="color:#111">kt</span><span style="color:#f92672">*</span><span style="color:#111">t</span><span style="color:#f92672">+</span><span style="color:#111">i_free_running</span>
 
-p_mech <span style="color:#f92672">=</span> t<span style="color:#f92672">*</span> w
-p_mech
+<span style="color:#111">p_mech</span> <span style="color:#f92672">=</span> <span style="color:#111">t</span><span style="color:#f92672">*</span> <span style="color:#111">w</span>
+<span style="color:#111">p_mech</span>
 
-p_elec <span style="color:#f92672">=</span> i<span style="color:#f92672">*</span> V_nominal
-p_elec
+<span style="color:#111">p_elec</span> <span style="color:#f92672">=</span> <span style="color:#111">i</span><span style="color:#f92672">*</span> <span style="color:#111">V_nominal</span>
+<span style="color:#111">p_elec</span>
 
-eff <span style="color:#f92672">=</span> p_mech<span style="color:#f92672">/</span>p_elec <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span>
-eff
+<span style="color:#111">eff</span> <span style="color:#f92672">=</span> <span style="color:#111">p_mech</span><span style="color:#f92672">/</span><span style="color:#111">p_elec</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">100</span>
+<span style="color:#111">eff</span>
 
-G<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
+<span style="color:#111">G</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>
 
-t_output <span style="color:#f92672">=</span> G<span style="color:#f92672">*</span>t
-w_output <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">/</span>G<span style="color:#f92672">*</span>w
+<span style="color:#111">t_output</span> <span style="color:#f92672">=</span> <span style="color:#111">G</span><span style="color:#f92672">*</span><span style="color:#111">t</span>
+<span style="color:#111">w_output</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">/</span><span style="color:#111">G</span><span style="color:#f92672">*</span><span style="color:#111">w</span>
 
-fig <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>figure()
-ax1 <span style="color:#f92672">=</span> fig<span style="color:#f92672">.</span>add_subplot(<span style="color:#ae81ff">111</span>)
+<span style="color:#111">fig</span> <span style="color:#f92672">=</span> <span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">figure</span><span style="color:#111">()</span>
+<span style="color:#111">ax1</span> <span style="color:#f92672">=</span> <span style="color:#111">fig</span><span style="color:#f92672">.</span><span style="color:#111">add_subplot</span><span style="color:#111">(</span><span style="color:#ae81ff">111</span><span style="color:#111">)</span>
 
-p1 <span style="color:#f92672">=</span> ax1<span style="color:#f92672">.</span>plot(w_output,t_output, <span style="color:#e6db74">&#39;b-&#39;</span>)
-ax1<span style="color:#f92672">.</span>set_xlabel(<span style="color:#e6db74">&#39;speed (rad/sec)&#39;</span>)
+<span style="color:#111">p1</span> <span style="color:#f92672">=</span> <span style="color:#111">ax1</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">(</span><span style="color:#111">w_output</span><span style="color:#111">,</span><span style="color:#111">t_output</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;b-&#39;</span><span style="color:#111">)</span>
+<span style="color:#111">ax1</span><span style="color:#f92672">.</span><span style="color:#111">set_xlabel</span><span style="color:#111">(</span><span style="color:#d88200">&#39;speed (rad/sec)&#39;</span><span style="color:#111">)</span>
 <span style="color:#75715e"># Make the y-axis label, ticks and tick labels match the line color.</span>
-ax1<span style="color:#f92672">.</span>set_ylabel(<span style="color:#e6db74">&#39;torque (N-m)&#39;</span>, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;b&#39;</span>)
-ax1<span style="color:#f92672">.</span>tick_params(<span style="color:#e6db74">&#39;y&#39;</span>, colors<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;b&#39;</span>)
+<span style="color:#111">ax1</span><span style="color:#f92672">.</span><span style="color:#111">set_ylabel</span><span style="color:#111">(</span><span style="color:#d88200">&#39;torque (N-m)&#39;</span><span style="color:#111">,</span> <span style="color:#111">color</span><span style="color:#f92672">=</span><span style="color:#d88200">&#39;b&#39;</span><span style="color:#111">)</span>
+<span style="color:#111">ax1</span><span style="color:#f92672">.</span><span style="color:#111">tick_params</span><span style="color:#111">(</span><span style="color:#d88200">&#39;y&#39;</span><span style="color:#111">,</span> <span style="color:#111">colors</span><span style="color:#f92672">=</span><span style="color:#d88200">&#39;b&#39;</span><span style="color:#111">)</span>
 
-ax2 <span style="color:#f92672">=</span> ax1<span style="color:#f92672">.</span>twinx()
-p2 <span style="color:#f92672">=</span> ax2<span style="color:#f92672">.</span>plot(w_output, p_mech, <span style="color:#e6db74">&#39;ro-.&#39;</span>)
-ax2<span style="color:#f92672">.</span>set_ylabel(<span style="color:#e6db74">&#39;power (W)&#39;</span>, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;r&#39;</span>)
-ax2<span style="color:#f92672">.</span>tick_params(<span style="color:#e6db74">&#39;y&#39;</span>, colors<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;r&#39;</span>)
+<span style="color:#111">ax2</span> <span style="color:#f92672">=</span> <span style="color:#111">ax1</span><span style="color:#f92672">.</span><span style="color:#111">twinx</span><span style="color:#111">()</span>
+<span style="color:#111">p2</span> <span style="color:#f92672">=</span> <span style="color:#111">ax2</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">(</span><span style="color:#111">w_output</span><span style="color:#111">,</span> <span style="color:#111">p_mech</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;ro-.&#39;</span><span style="color:#111">)</span>
+<span style="color:#111">ax2</span><span style="color:#f92672">.</span><span style="color:#111">set_ylabel</span><span style="color:#111">(</span><span style="color:#d88200">&#39;power (W)&#39;</span><span style="color:#111">,</span> <span style="color:#111">color</span><span style="color:#f92672">=</span><span style="color:#d88200">&#39;r&#39;</span><span style="color:#111">)</span>
+<span style="color:#111">ax2</span><span style="color:#f92672">.</span><span style="color:#111">tick_params</span><span style="color:#111">(</span><span style="color:#d88200">&#39;y&#39;</span><span style="color:#111">,</span> <span style="color:#111">colors</span><span style="color:#f92672">=</span><span style="color:#d88200">&#39;r&#39;</span><span style="color:#111">)</span>
 
-ax3 <span style="color:#f92672">=</span> ax1<span style="color:#f92672">.</span>twinx()
-p3 <span style="color:#f92672">=</span> ax3<span style="color:#f92672">.</span>plot(w_output, eff, <span style="color:#e6db74">&#39;gx-.&#39;</span>)
-ax3<span style="color:#f92672">.</span>set_ylabel(<span style="color:#e6db74">&#39;efficiency (%)&#39;</span>, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;g&#39;</span>)
-ax3<span style="color:#f92672">.</span>tick_params(<span style="color:#e6db74">&#39;y&#39;</span>, colors<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;g&#39;</span>)
+<span style="color:#111">ax3</span> <span style="color:#f92672">=</span> <span style="color:#111">ax1</span><span style="color:#f92672">.</span><span style="color:#111">twinx</span><span style="color:#111">()</span>
+<span style="color:#111">p3</span> <span style="color:#f92672">=</span> <span style="color:#111">ax3</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">(</span><span style="color:#111">w_output</span><span style="color:#111">,</span> <span style="color:#111">eff</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;gx-.&#39;</span><span style="color:#111">)</span>
+<span style="color:#111">ax3</span><span style="color:#f92672">.</span><span style="color:#111">set_ylabel</span><span style="color:#111">(</span><span style="color:#d88200">&#39;efficiency (%)&#39;</span><span style="color:#111">,</span> <span style="color:#111">color</span><span style="color:#f92672">=</span><span style="color:#d88200">&#39;g&#39;</span><span style="color:#111">)</span>
+<span style="color:#111">ax3</span><span style="color:#f92672">.</span><span style="color:#111">tick_params</span><span style="color:#111">(</span><span style="color:#d88200">&#39;y&#39;</span><span style="color:#111">,</span> <span style="color:#111">colors</span><span style="color:#f92672">=</span><span style="color:#d88200">&#39;g&#39;</span><span style="color:#111">)</span>
 
 <span style="color:#75715e">#lns = [p1, p2, p3]</span>
 <span style="color:#75715e">#ax1.legend(handles=lns, loc=&#39;bevst&#39;)</span>
 
 <span style="color:#75715e"># right, left, top, bottom</span>
-ax3<span style="color:#f92672">.</span>spines[<span style="color:#e6db74">&#39;right&#39;</span>]<span style="color:#f92672">.</span>set_position((<span style="color:#e6db74">&#39;outward&#39;</span>, <span style="color:#ae81ff">60</span>))  
+<span style="color:#111">ax3</span><span style="color:#f92672">.</span><span style="color:#111">spines</span><span style="color:#111">[</span><span style="color:#d88200">&#39;right&#39;</span><span style="color:#111">]</span><span style="color:#f92672">.</span><span style="color:#111">set_position</span><span style="color:#111">((</span><span style="color:#d88200">&#39;outward&#39;</span><span style="color:#111">,</span> <span style="color:#ae81ff">60</span><span style="color:#111">))</span>  
 
-ax1<span style="color:#f92672">.</span>set_title(<span style="color:#e6db74">&#39;Motor Model&#39;</span>)
-plt<span style="color:#f92672">.</span>show()
+<span style="color:#111">ax1</span><span style="color:#f92672">.</span><span style="color:#111">set_title</span><span style="color:#111">(</span><span style="color:#d88200">&#39;Motor Model&#39;</span><span style="color:#111">)</span>
+<span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">show</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_73_0.png" target="_blank"><img src="output_73_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_73_0.png"><img src="output_73_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <h4 id="8">(8)</h4>
 <p>From the model above, the maximum power can be achieved at 105 rad/sec.  The angular velocity of the wheel, previously calculated, was 75 rad/sec.  Therefore:</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">G<span style="color:#f92672">=</span><span style="color:#ae81ff">105</span><span style="color:#f92672">/</span><span style="color:#ae81ff">75</span>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">G</span><span style="color:#f92672">=</span><span style="color:#ae81ff">105</span><span style="color:#f92672">/</span><span style="color:#ae81ff">75</span>
 
-t_output <span style="color:#f92672">=</span> G<span style="color:#f92672">*</span>t
-w_output <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">/</span>G<span style="color:#f92672">*</span>w
+<span style="color:#111">t_output</span> <span style="color:#f92672">=</span> <span style="color:#111">G</span><span style="color:#f92672">*</span><span style="color:#111">t</span>
+<span style="color:#111">w_output</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">/</span><span style="color:#111">G</span><span style="color:#f92672">*</span><span style="color:#111">w</span>
 
-fig <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>figure()
-ax1 <span style="color:#f92672">=</span> fig<span style="color:#f92672">.</span>add_subplot(<span style="color:#ae81ff">111</span>)
+<span style="color:#111">fig</span> <span style="color:#f92672">=</span> <span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">figure</span><span style="color:#111">()</span>
+<span style="color:#111">ax1</span> <span style="color:#f92672">=</span> <span style="color:#111">fig</span><span style="color:#f92672">.</span><span style="color:#111">add_subplot</span><span style="color:#111">(</span><span style="color:#ae81ff">111</span><span style="color:#111">)</span>
 
-p1 <span style="color:#f92672">=</span> ax1<span style="color:#f92672">.</span>plot(w_output,t_output, <span style="color:#e6db74">&#39;b-&#39;</span>)
-ax1<span style="color:#f92672">.</span>set_xlabel(<span style="color:#e6db74">&#39;speed (rad/sec)&#39;</span>)
+<span style="color:#111">p1</span> <span style="color:#f92672">=</span> <span style="color:#111">ax1</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">(</span><span style="color:#111">w_output</span><span style="color:#111">,</span><span style="color:#111">t_output</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;b-&#39;</span><span style="color:#111">)</span>
+<span style="color:#111">ax1</span><span style="color:#f92672">.</span><span style="color:#111">set_xlabel</span><span style="color:#111">(</span><span style="color:#d88200">&#39;speed (rad/sec)&#39;</span><span style="color:#111">)</span>
 <span style="color:#75715e"># Make the y-axis label, ticks and tick labels match the line color.</span>
-ax1<span style="color:#f92672">.</span>set_ylabel(<span style="color:#e6db74">&#39;torque (N-m)&#39;</span>, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;b&#39;</span>)
-ax1<span style="color:#f92672">.</span>tick_params(<span style="color:#e6db74">&#39;y&#39;</span>, colors<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;b&#39;</span>)
+<span style="color:#111">ax1</span><span style="color:#f92672">.</span><span style="color:#111">set_ylabel</span><span style="color:#111">(</span><span style="color:#d88200">&#39;torque (N-m)&#39;</span><span style="color:#111">,</span> <span style="color:#111">color</span><span style="color:#f92672">=</span><span style="color:#d88200">&#39;b&#39;</span><span style="color:#111">)</span>
+<span style="color:#111">ax1</span><span style="color:#f92672">.</span><span style="color:#111">tick_params</span><span style="color:#111">(</span><span style="color:#d88200">&#39;y&#39;</span><span style="color:#111">,</span> <span style="color:#111">colors</span><span style="color:#f92672">=</span><span style="color:#d88200">&#39;b&#39;</span><span style="color:#111">)</span>
 
-ax2 <span style="color:#f92672">=</span> ax1<span style="color:#f92672">.</span>twinx()
-p2 <span style="color:#f92672">=</span> ax2<span style="color:#f92672">.</span>plot(w_output, p_mech, <span style="color:#e6db74">&#39;ro-.&#39;</span>)
-ax2<span style="color:#f92672">.</span>set_ylabel(<span style="color:#e6db74">&#39;power (W)&#39;</span>, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;r&#39;</span>)
-ax2<span style="color:#f92672">.</span>tick_params(<span style="color:#e6db74">&#39;y&#39;</span>, colors<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;r&#39;</span>)
+<span style="color:#111">ax2</span> <span style="color:#f92672">=</span> <span style="color:#111">ax1</span><span style="color:#f92672">.</span><span style="color:#111">twinx</span><span style="color:#111">()</span>
+<span style="color:#111">p2</span> <span style="color:#f92672">=</span> <span style="color:#111">ax2</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">(</span><span style="color:#111">w_output</span><span style="color:#111">,</span> <span style="color:#111">p_mech</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;ro-.&#39;</span><span style="color:#111">)</span>
+<span style="color:#111">ax2</span><span style="color:#f92672">.</span><span style="color:#111">set_ylabel</span><span style="color:#111">(</span><span style="color:#d88200">&#39;power (W)&#39;</span><span style="color:#111">,</span> <span style="color:#111">color</span><span style="color:#f92672">=</span><span style="color:#d88200">&#39;r&#39;</span><span style="color:#111">)</span>
+<span style="color:#111">ax2</span><span style="color:#f92672">.</span><span style="color:#111">tick_params</span><span style="color:#111">(</span><span style="color:#d88200">&#39;y&#39;</span><span style="color:#111">,</span> <span style="color:#111">colors</span><span style="color:#f92672">=</span><span style="color:#d88200">&#39;r&#39;</span><span style="color:#111">)</span>
 
-ax3 <span style="color:#f92672">=</span> ax1<span style="color:#f92672">.</span>twinx()
-p3 <span style="color:#f92672">=</span> ax3<span style="color:#f92672">.</span>plot(w_output, eff, <span style="color:#e6db74">&#39;gx-.&#39;</span>)
-ax3<span style="color:#f92672">.</span>set_ylabel(<span style="color:#e6db74">&#39;efficiency (%)&#39;</span>, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;g&#39;</span>)
-ax3<span style="color:#f92672">.</span>tick_params(<span style="color:#e6db74">&#39;y&#39;</span>, colors<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;g&#39;</span>)
+<span style="color:#111">ax3</span> <span style="color:#f92672">=</span> <span style="color:#111">ax1</span><span style="color:#f92672">.</span><span style="color:#111">twinx</span><span style="color:#111">()</span>
+<span style="color:#111">p3</span> <span style="color:#f92672">=</span> <span style="color:#111">ax3</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">(</span><span style="color:#111">w_output</span><span style="color:#111">,</span> <span style="color:#111">eff</span><span style="color:#111">,</span> <span style="color:#d88200">&#39;gx-.&#39;</span><span style="color:#111">)</span>
+<span style="color:#111">ax3</span><span style="color:#f92672">.</span><span style="color:#111">set_ylabel</span><span style="color:#111">(</span><span style="color:#d88200">&#39;efficiency (%)&#39;</span><span style="color:#111">,</span> <span style="color:#111">color</span><span style="color:#f92672">=</span><span style="color:#d88200">&#39;g&#39;</span><span style="color:#111">)</span>
+<span style="color:#111">ax3</span><span style="color:#f92672">.</span><span style="color:#111">tick_params</span><span style="color:#111">(</span><span style="color:#d88200">&#39;y&#39;</span><span style="color:#111">,</span> <span style="color:#111">colors</span><span style="color:#f92672">=</span><span style="color:#d88200">&#39;g&#39;</span><span style="color:#111">)</span>
 
 <span style="color:#75715e">#lns = [p1, p2, p3]</span>
 <span style="color:#75715e">#ax1.legend(handles=lns, loc=&#39;bevst&#39;)</span>
 
 <span style="color:#75715e"># right, left, top, bottom</span>
-ax3<span style="color:#f92672">.</span>spines[<span style="color:#e6db74">&#39;right&#39;</span>]<span style="color:#f92672">.</span>set_position((<span style="color:#e6db74">&#39;outward&#39;</span>, <span style="color:#ae81ff">60</span>))  
+<span style="color:#111">ax3</span><span style="color:#f92672">.</span><span style="color:#111">spines</span><span style="color:#111">[</span><span style="color:#d88200">&#39;right&#39;</span><span style="color:#111">]</span><span style="color:#f92672">.</span><span style="color:#111">set_position</span><span style="color:#111">((</span><span style="color:#d88200">&#39;outward&#39;</span><span style="color:#111">,</span> <span style="color:#ae81ff">60</span><span style="color:#111">))</span>  
 
-ax1<span style="color:#f92672">.</span>set_title(<span style="color:#e6db74">&#39;Motor Model&#39;</span>)
-plt<span style="color:#f92672">.</span>show()
+<span style="color:#111">ax1</span><span style="color:#f92672">.</span><span style="color:#111">set_title</span><span style="color:#111">(</span><span style="color:#d88200">&#39;Motor Model&#39;</span><span style="color:#111">)</span>
+<span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">show</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_75_0.png" target="_blank"><img src="output_75_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_75_0.png"><img src="output_75_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <h4 id="9">(9)</h4>
 <p>As you can see from the adjusted plot, the efficiency at the optimal speed is 35%</p>

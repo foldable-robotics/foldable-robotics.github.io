@@ -214,350 +214,356 @@ Full Design Pipeline | Foldable Robotics
 <main class="container">
   <article>
   <h1 id="full-design-pipeline">Full Design Pipeline</h1>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">%</span>matplotlib inline
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> foldable_robotics
-<span style="color:#f92672">import</span> foldable_robotics.dxf 
-<span style="color:#f92672">import</span> numpy
-<span style="color:#f92672">import</span> shapely.geometry <span style="color:#f92672">as</span> sg
-<span style="color:#f92672">from</span> foldable_robotics.layer <span style="color:#f92672">import</span> Layer
-<span style="color:#f92672">from</span> foldable_robotics.laminate <span style="color:#f92672">import</span> Laminate
-<span style="color:#f92672">import</span> foldable_robotics.manufacturing
-<span style="color:#f92672">import</span> foldable_robotics.parts.castellated_hinge1
-<span style="color:#f92672">import</span> idealab_tools.plot_tris
-<span style="color:#f92672">from</span> math <span style="color:#f92672">import</span> pi, sin,cos,tan
-<span style="color:#f92672">import</span> idealab_tools.text_to_polygons
-foldable_robotics<span style="color:#f92672">.</span>display_height<span style="color:#f92672">=</span><span style="color:#ae81ff">200</span>
-foldable_robotics<span style="color:#f92672">.</span>line_width<span style="color:#f92672">=.</span><span style="color:#ae81ff">5</span>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">%</span><span style="color:#111">matplotlib</span> <span style="color:#111">inline</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> <span style="color:#111">foldable_robotics</span>
+<span style="color:#f92672">import</span> <span style="color:#111">foldable_robotics.dxf</span> 
+<span style="color:#f92672">import</span> <span style="color:#111">numpy</span>
+<span style="color:#f92672">import</span> <span style="color:#111">shapely.geometry</span> <span style="color:#f92672">as</span> <span style="color:#111">sg</span>
+<span style="color:#f92672">from</span> <span style="color:#111">foldable_robotics.layer</span> <span style="color:#f92672">import</span> <span style="color:#111">Layer</span>
+<span style="color:#f92672">from</span> <span style="color:#111">foldable_robotics.laminate</span> <span style="color:#f92672">import</span> <span style="color:#111">Laminate</span>
+<span style="color:#f92672">import</span> <span style="color:#111">foldable_robotics.manufacturing</span>
+<span style="color:#f92672">import</span> <span style="color:#111">foldable_robotics.parts.castellated_hinge1</span>
+<span style="color:#f92672">import</span> <span style="color:#111">idealab_tools.plot_tris</span>
+<span style="color:#f92672">from</span> <span style="color:#111">math</span> <span style="color:#f92672">import</span> <span style="color:#111">pi</span><span style="color:#111">,</span> <span style="color:#111">sin</span><span style="color:#111">,</span><span style="color:#111">cos</span><span style="color:#111">,</span><span style="color:#111">tan</span>
+<span style="color:#f92672">import</span> <span style="color:#111">idealab_tools.text_to_polygons</span>
+<span style="color:#111">foldable_robotics</span><span style="color:#f92672">.</span><span style="color:#111">display_height</span><span style="color:#f92672">=</span><span style="color:#ae81ff">200</span>
+<span style="color:#111">foldable_robotics</span><span style="color:#f92672">.</span><span style="color:#111">line_width</span><span style="color:#f92672">=.</span><span style="color:#ae81ff">5</span>
 
-<span style="color:#f92672">from</span> foldable_robotics.layer <span style="color:#f92672">import</span> Layer
-<span style="color:#f92672">from</span> foldable_robotics.laminate <span style="color:#f92672">import</span> Laminate
-<span style="color:#f92672">import</span> foldable_robotics
-<span style="color:#f92672">import</span> foldable_robotics.dxf 
-<span style="color:#f92672">import</span> foldable_robotics.manufacturing
-<span style="color:#f92672">import</span> foldable_robotics.parts.castellated_hinge1
-foldable_robotics<span style="color:#f92672">.</span>display_height<span style="color:#f92672">=</span><span style="color:#ae81ff">200</span>
-foldable_robotics<span style="color:#f92672">.</span>line_width<span style="color:#f92672">=.</span><span style="color:#ae81ff">5</span>
+<span style="color:#f92672">from</span> <span style="color:#111">foldable_robotics.layer</span> <span style="color:#f92672">import</span> <span style="color:#111">Layer</span>
+<span style="color:#f92672">from</span> <span style="color:#111">foldable_robotics.laminate</span> <span style="color:#f92672">import</span> <span style="color:#111">Laminate</span>
+<span style="color:#f92672">import</span> <span style="color:#111">foldable_robotics</span>
+<span style="color:#f92672">import</span> <span style="color:#111">foldable_robotics.dxf</span> 
+<span style="color:#f92672">import</span> <span style="color:#111">foldable_robotics.manufacturing</span>
+<span style="color:#f92672">import</span> <span style="color:#111">foldable_robotics.parts.castellated_hinge1</span>
+<span style="color:#111">foldable_robotics</span><span style="color:#f92672">.</span><span style="color:#111">display_height</span><span style="color:#f92672">=</span><span style="color:#ae81ff">200</span>
+<span style="color:#111">foldable_robotics</span><span style="color:#f92672">.</span><span style="color:#111">line_width</span><span style="color:#f92672">=.</span><span style="color:#ae81ff">5</span>
 <span style="color:#75715e">#import workflow_support as ws</span>
 
-<span style="color:#f92672">import</span> os
-<span style="color:#f92672">import</span> foldable_robotics.solidworks_support
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_bodies</span>(filename, layername, num_layers):
-    body <span style="color:#f92672">=</span> foldable_robotics<span style="color:#f92672">.</span>dxf<span style="color:#f92672">.</span>read_lwpolylines(filename,layer<span style="color:#f92672">=</span>layername, arc_approx <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>)
+<span style="color:#f92672">import</span> <span style="color:#111">os</span>
+<span style="color:#f92672">import</span> <span style="color:#111">foldable_robotics.solidworks_support</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a8c8">def</span> <span style="color:#75af00">get_bodies</span><span style="color:#111">(</span><span style="color:#111">filename</span><span style="color:#111">,</span> <span style="color:#111">layername</span><span style="color:#111">,</span> <span style="color:#111">num_layers</span><span style="color:#111">):</span>
+    <span style="color:#111">body</span> <span style="color:#f92672">=</span> <span style="color:#111">foldable_robotics</span><span style="color:#f92672">.</span><span style="color:#111">dxf</span><span style="color:#f92672">.</span><span style="color:#111">read_lwpolylines</span><span style="color:#111">(</span><span style="color:#111">filename</span><span style="color:#111">,</span><span style="color:#111">layer</span><span style="color:#f92672">=</span><span style="color:#111">layername</span><span style="color:#111">,</span> <span style="color:#111">arc_approx</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span><span style="color:#111">)</span>
 
-    bodies <span style="color:#f92672">=</span> [Layer(sg<span style="color:#f92672">.</span>Polygon(item)) <span style="color:#66d9ef">for</span> item <span style="color:#f92672">in</span> body]
-    body <span style="color:#f92672">=</span> bodies<span style="color:#f92672">.</span>pop(<span style="color:#ae81ff">0</span>)
-    <span style="color:#66d9ef">for</span> item <span style="color:#f92672">in</span> bodies:
-        body <span style="color:#f92672">^=</span> item
-    body <span style="color:#f92672">=</span> body<span style="color:#f92672">.</span>to_laminate(num_layers)
-    <span style="color:#66d9ef">return</span> body
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_hinge_lines</span>(filename,layername):
-    hinge_lines1 <span style="color:#f92672">=</span> foldable_robotics<span style="color:#f92672">.</span>dxf<span style="color:#f92672">.</span>read_lines(filename,layer<span style="color:#f92672">=</span>layername)
-    hinge_lines2 <span style="color:#f92672">=</span> foldable_robotics<span style="color:#f92672">.</span>dxf<span style="color:#f92672">.</span>read_lwpolylines(filename,layer<span style="color:#f92672">=</span>layername)
-    hinge_lines3 <span style="color:#f92672">=</span> []
-    <span style="color:#66d9ef">for</span> points <span style="color:#f92672">in</span> hinge_lines2:
-        hinge_lines3<span style="color:#f92672">.</span>append(points[:<span style="color:#ae81ff">2</span>])
-    hinge_lines <span style="color:#f92672">=</span> hinge_lines1 <span style="color:#f92672">+</span>hinge_lines3
-    <span style="color:#66d9ef">return</span> hinge_lines
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">hinge_lines_to_hinges</span>(hinge_lines,hinge):
-    lam <span style="color:#f92672">=</span> Layer()<span style="color:#f92672">.</span>to_laminate(len(hinge))
-    all_hinges <span style="color:#f92672">=</span> []    
-    <span style="color:#66d9ef">for</span> p3,p4 <span style="color:#f92672">in</span> hinge_lines:
-        all_hinges<span style="color:#f92672">.</span>append(hinge<span style="color:#f92672">.</span>map_line_stretch((<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>),(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">0</span>),p3,p4))
-    all_hinges <span style="color:#f92672">=</span> lam<span style="color:#f92672">.</span>unary_union(<span style="color:#f92672">*</span>all_hinges)
-    <span style="color:#66d9ef">return</span> all_hinges
+    <span style="color:#111">bodies</span> <span style="color:#f92672">=</span> <span style="color:#111">[</span><span style="color:#111">Layer</span><span style="color:#111">(</span><span style="color:#111">sg</span><span style="color:#f92672">.</span><span style="color:#111">Polygon</span><span style="color:#111">(</span><span style="color:#111">item</span><span style="color:#111">))</span> <span style="color:#00a8c8">for</span> <span style="color:#111">item</span> <span style="color:#f92672">in</span> <span style="color:#111">body</span><span style="color:#111">]</span>
+    <span style="color:#111">body</span> <span style="color:#f92672">=</span> <span style="color:#111">bodies</span><span style="color:#f92672">.</span><span style="color:#111">pop</span><span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#111">)</span>
+    <span style="color:#00a8c8">for</span> <span style="color:#111">item</span> <span style="color:#f92672">in</span> <span style="color:#111">bodies</span><span style="color:#111">:</span>
+        <span style="color:#111">body</span> <span style="color:#f92672">^=</span> <span style="color:#111">item</span>
+    <span style="color:#111">body</span> <span style="color:#f92672">=</span> <span style="color:#111">body</span><span style="color:#f92672">.</span><span style="color:#111">to_laminate</span><span style="color:#111">(</span><span style="color:#111">num_layers</span><span style="color:#111">)</span>
+    <span style="color:#00a8c8">return</span> <span style="color:#111">body</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a8c8">def</span> <span style="color:#75af00">get_hinge_lines</span><span style="color:#111">(</span><span style="color:#111">filename</span><span style="color:#111">,</span><span style="color:#111">layername</span><span style="color:#111">):</span>
+    <span style="color:#111">hinge_lines1</span> <span style="color:#f92672">=</span> <span style="color:#111">foldable_robotics</span><span style="color:#f92672">.</span><span style="color:#111">dxf</span><span style="color:#f92672">.</span><span style="color:#111">read_lines</span><span style="color:#111">(</span><span style="color:#111">filename</span><span style="color:#111">,</span><span style="color:#111">layer</span><span style="color:#f92672">=</span><span style="color:#111">layername</span><span style="color:#111">)</span>
+    <span style="color:#111">hinge_lines2</span> <span style="color:#f92672">=</span> <span style="color:#111">foldable_robotics</span><span style="color:#f92672">.</span><span style="color:#111">dxf</span><span style="color:#f92672">.</span><span style="color:#111">read_lwpolylines</span><span style="color:#111">(</span><span style="color:#111">filename</span><span style="color:#111">,</span><span style="color:#111">layer</span><span style="color:#f92672">=</span><span style="color:#111">layername</span><span style="color:#111">)</span>
+    <span style="color:#111">hinge_lines3</span> <span style="color:#f92672">=</span> <span style="color:#111">[]</span>
+    <span style="color:#00a8c8">for</span> <span style="color:#111">points</span> <span style="color:#f92672">in</span> <span style="color:#111">hinge_lines2</span><span style="color:#111">:</span>
+        <span style="color:#111">hinge_lines3</span><span style="color:#f92672">.</span><span style="color:#111">append</span><span style="color:#111">(</span><span style="color:#111">points</span><span style="color:#111">[:</span><span style="color:#ae81ff">2</span><span style="color:#111">])</span>
+    <span style="color:#111">hinge_lines</span> <span style="color:#f92672">=</span> <span style="color:#111">hinge_lines1</span> <span style="color:#f92672">+</span><span style="color:#111">hinge_lines3</span>
+    <span style="color:#00a8c8">return</span> <span style="color:#111">hinge_lines</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a8c8">def</span> <span style="color:#75af00">hinge_lines_to_hinges</span><span style="color:#111">(</span><span style="color:#111">hinge_lines</span><span style="color:#111">,</span><span style="color:#111">hinge</span><span style="color:#111">):</span>
+    <span style="color:#111">lam</span> <span style="color:#f92672">=</span> <span style="color:#111">Layer</span><span style="color:#111">()</span><span style="color:#f92672">.</span><span style="color:#111">to_laminate</span><span style="color:#111">(</span><span style="color:#111">len</span><span style="color:#111">(</span><span style="color:#111">hinge</span><span style="color:#111">))</span>
+    <span style="color:#111">all_hinges</span> <span style="color:#f92672">=</span> <span style="color:#111">[]</span>    
+    <span style="color:#00a8c8">for</span> <span style="color:#111">p3</span><span style="color:#111">,</span><span style="color:#111">p4</span> <span style="color:#f92672">in</span> <span style="color:#111">hinge_lines</span><span style="color:#111">:</span>
+        <span style="color:#111">all_hinges</span><span style="color:#f92672">.</span><span style="color:#111">append</span><span style="color:#111">(</span><span style="color:#111">hinge</span><span style="color:#f92672">.</span><span style="color:#111">map_line_stretch</span><span style="color:#111">((</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">),(</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">),</span><span style="color:#111">p3</span><span style="color:#111">,</span><span style="color:#111">p4</span><span style="color:#111">))</span>
+    <span style="color:#111">all_hinges</span> <span style="color:#f92672">=</span> <span style="color:#111">lam</span><span style="color:#f92672">.</span><span style="color:#111">unary_union</span><span style="color:#111">(</span><span style="color:#f92672">*</span><span style="color:#111">all_hinges</span><span style="color:#111">)</span>
+    <span style="color:#00a8c8">return</span> <span style="color:#111">all_hinges</span>
         
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_cuts</span>(filename,layername,thickness,num_layers):
-    cut_lines <span style="color:#f92672">=</span> foldable_robotics<span style="color:#f92672">.</span>dxf<span style="color:#f92672">.</span>read_lines(filename,layer<span style="color:#f92672">=</span>layername)
-    cut_lines <span style="color:#f92672">+=</span> foldable_robotics<span style="color:#f92672">.</span>dxf<span style="color:#f92672">.</span>read_lwpolylines(filename,layer<span style="color:#f92672">=</span>layername, arc_approx <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>)
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a8c8">def</span> <span style="color:#75af00">get_cuts</span><span style="color:#111">(</span><span style="color:#111">filename</span><span style="color:#111">,</span><span style="color:#111">layername</span><span style="color:#111">,</span><span style="color:#111">thickness</span><span style="color:#111">,</span><span style="color:#111">num_layers</span><span style="color:#111">):</span>
+    <span style="color:#111">cut_lines</span> <span style="color:#f92672">=</span> <span style="color:#111">foldable_robotics</span><span style="color:#f92672">.</span><span style="color:#111">dxf</span><span style="color:#f92672">.</span><span style="color:#111">read_lines</span><span style="color:#111">(</span><span style="color:#111">filename</span><span style="color:#111">,</span><span style="color:#111">layer</span><span style="color:#f92672">=</span><span style="color:#111">layername</span><span style="color:#111">)</span>
+    <span style="color:#111">cut_lines</span> <span style="color:#f92672">+=</span> <span style="color:#111">foldable_robotics</span><span style="color:#f92672">.</span><span style="color:#111">dxf</span><span style="color:#f92672">.</span><span style="color:#111">read_lwpolylines</span><span style="color:#111">(</span><span style="color:#111">filename</span><span style="color:#111">,</span><span style="color:#111">layer</span><span style="color:#f92672">=</span><span style="color:#111">layername</span><span style="color:#111">,</span> <span style="color:#111">arc_approx</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span><span style="color:#111">)</span>
     
-    cuts <span style="color:#f92672">=</span> []
-    <span style="color:#66d9ef">for</span> item <span style="color:#f92672">in</span> cut_lines:
-        cuts<span style="color:#f92672">.</span>append(Layer(sg<span style="color:#f92672">.</span>LineString(item)))
-    cuts <span style="color:#f92672">=</span> Layer()<span style="color:#f92672">.</span>unary_union(<span style="color:#f92672">*</span>cuts)
-    cuts<span style="color:#f92672">&lt;&lt;=</span>thickness<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>
-    cuts <span style="color:#f92672">=</span> cuts<span style="color:#f92672">.</span>to_laminate(num_layers)
-    <span style="color:#66d9ef">return</span> cuts    
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_holes</span>(filename, layername,num_layers):
-    holes <span style="color:#f92672">=</span> foldable_robotics<span style="color:#f92672">.</span>dxf<span style="color:#f92672">.</span>read_circles(filename,layer<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;holes&#39;</span>)
+    <span style="color:#111">cuts</span> <span style="color:#f92672">=</span> <span style="color:#111">[]</span>
+    <span style="color:#00a8c8">for</span> <span style="color:#111">item</span> <span style="color:#f92672">in</span> <span style="color:#111">cut_lines</span><span style="color:#111">:</span>
+        <span style="color:#111">cuts</span><span style="color:#f92672">.</span><span style="color:#111">append</span><span style="color:#111">(</span><span style="color:#111">Layer</span><span style="color:#111">(</span><span style="color:#111">sg</span><span style="color:#f92672">.</span><span style="color:#111">LineString</span><span style="color:#111">(</span><span style="color:#111">item</span><span style="color:#111">)))</span>
+    <span style="color:#111">cuts</span> <span style="color:#f92672">=</span> <span style="color:#111">Layer</span><span style="color:#111">()</span><span style="color:#f92672">.</span><span style="color:#111">unary_union</span><span style="color:#111">(</span><span style="color:#f92672">*</span><span style="color:#111">cuts</span><span style="color:#111">)</span>
+    <span style="color:#111">cuts</span><span style="color:#f92672">&lt;&lt;=</span><span style="color:#111">thickness</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>
+    <span style="color:#111">cuts</span> <span style="color:#f92672">=</span> <span style="color:#111">cuts</span><span style="color:#f92672">.</span><span style="color:#111">to_laminate</span><span style="color:#111">(</span><span style="color:#111">num_layers</span><span style="color:#111">)</span>
+    <span style="color:#00a8c8">return</span> <span style="color:#111">cuts</span>    
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a8c8">def</span> <span style="color:#75af00">get_holes</span><span style="color:#111">(</span><span style="color:#111">filename</span><span style="color:#111">,</span> <span style="color:#111">layername</span><span style="color:#111">,</span><span style="color:#111">num_layers</span><span style="color:#111">):</span>
+    <span style="color:#111">holes</span> <span style="color:#f92672">=</span> <span style="color:#111">foldable_robotics</span><span style="color:#f92672">.</span><span style="color:#111">dxf</span><span style="color:#f92672">.</span><span style="color:#111">read_circles</span><span style="color:#111">(</span><span style="color:#111">filename</span><span style="color:#111">,</span><span style="color:#111">layer</span><span style="color:#f92672">=</span><span style="color:#d88200">&#39;holes&#39;</span><span style="color:#111">)</span>
     
-    holes2 <span style="color:#f92672">=</span> []
-    <span style="color:#66d9ef">for</span> center, radius <span style="color:#f92672">in</span> holes:
-        holes2<span style="color:#f92672">.</span>append(sg<span style="color:#f92672">.</span>Point(<span style="color:#f92672">*</span>center)<span style="color:#f92672">.</span>buffer(radius))
-    holes_layer <span style="color:#f92672">=</span> Layer(<span style="color:#f92672">*</span>holes2)
-    holes_lam <span style="color:#f92672">=</span> holes_layer<span style="color:#f92672">.</span>to_laminate(num_layers)  
-    <span style="color:#66d9ef">return</span> holes_lam
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">hinge_width_calculator</span>(desired_degrees,thickness):
-    theta <span style="color:#f92672">=</span> (<span style="color:#ae81ff">180</span><span style="color:#f92672">-</span>desired_degrees)<span style="color:#f92672">*</span>pi<span style="color:#f92672">/</span><span style="color:#ae81ff">180</span>
-    w<span style="color:#f92672">=</span>thickness<span style="color:#f92672">/</span>tan(theta)
-    <span style="color:#66d9ef">return</span> w
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">polys_to_layer</span>(l1):
-    l1 <span style="color:#f92672">=</span> [sg<span style="color:#f92672">.</span>Polygon(item) <span style="color:#66d9ef">for</span> item <span style="color:#f92672">in</span> l1]
-    l11 <span style="color:#f92672">=</span> Layer(l1<span style="color:#f92672">.</span>pop(<span style="color:#ae81ff">0</span>))
-    <span style="color:#66d9ef">for</span> item <span style="color:#f92672">in</span> l1:
-        l11 <span style="color:#f92672">^=</span> Layer(item)
-    <span style="color:#66d9ef">return</span> l11
+    <span style="color:#111">holes2</span> <span style="color:#f92672">=</span> <span style="color:#111">[]</span>
+    <span style="color:#00a8c8">for</span> <span style="color:#111">center</span><span style="color:#111">,</span> <span style="color:#111">radius</span> <span style="color:#f92672">in</span> <span style="color:#111">holes</span><span style="color:#111">:</span>
+        <span style="color:#111">holes2</span><span style="color:#f92672">.</span><span style="color:#111">append</span><span style="color:#111">(</span><span style="color:#111">sg</span><span style="color:#f92672">.</span><span style="color:#111">Point</span><span style="color:#111">(</span><span style="color:#f92672">*</span><span style="color:#111">center</span><span style="color:#111">)</span><span style="color:#f92672">.</span><span style="color:#111">buffer</span><span style="color:#111">(</span><span style="color:#111">radius</span><span style="color:#111">))</span>
+    <span style="color:#111">holes_layer</span> <span style="color:#f92672">=</span> <span style="color:#111">Layer</span><span style="color:#111">(</span><span style="color:#f92672">*</span><span style="color:#111">holes2</span><span style="color:#111">)</span>
+    <span style="color:#111">holes_lam</span> <span style="color:#f92672">=</span> <span style="color:#111">holes_layer</span><span style="color:#f92672">.</span><span style="color:#111">to_laminate</span><span style="color:#111">(</span><span style="color:#111">num_layers</span><span style="color:#111">)</span>  
+    <span style="color:#00a8c8">return</span> <span style="color:#111">holes_lam</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a8c8">def</span> <span style="color:#75af00">hinge_width_calculator</span><span style="color:#111">(</span><span style="color:#111">desired_degrees</span><span style="color:#111">,</span><span style="color:#111">thickness</span><span style="color:#111">):</span>
+    <span style="color:#111">theta</span> <span style="color:#f92672">=</span> <span style="color:#111">(</span><span style="color:#ae81ff">180</span><span style="color:#f92672">-</span><span style="color:#111">desired_degrees</span><span style="color:#111">)</span><span style="color:#f92672">*</span><span style="color:#111">pi</span><span style="color:#f92672">/</span><span style="color:#ae81ff">180</span>
+    <span style="color:#111">w</span><span style="color:#f92672">=</span><span style="color:#111">thickness</span><span style="color:#f92672">/</span><span style="color:#111">tan</span><span style="color:#111">(</span><span style="color:#111">theta</span><span style="color:#111">)</span>
+    <span style="color:#00a8c8">return</span> <span style="color:#111">w</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a8c8">def</span> <span style="color:#75af00">polys_to_layer</span><span style="color:#111">(</span><span style="color:#111">l1</span><span style="color:#111">):</span>
+    <span style="color:#111">l1</span> <span style="color:#f92672">=</span> <span style="color:#111">[</span><span style="color:#111">sg</span><span style="color:#f92672">.</span><span style="color:#111">Polygon</span><span style="color:#111">(</span><span style="color:#111">item</span><span style="color:#111">)</span> <span style="color:#00a8c8">for</span> <span style="color:#111">item</span> <span style="color:#f92672">in</span> <span style="color:#111">l1</span><span style="color:#111">]</span>
+    <span style="color:#111">l11</span> <span style="color:#f92672">=</span> <span style="color:#111">Layer</span><span style="color:#111">(</span><span style="color:#111">l1</span><span style="color:#f92672">.</span><span style="color:#111">pop</span><span style="color:#111">(</span><span style="color:#ae81ff">0</span><span style="color:#111">))</span>
+    <span style="color:#00a8c8">for</span> <span style="color:#111">item</span> <span style="color:#f92672">in</span> <span style="color:#111">l1</span><span style="color:#111">:</span>
+        <span style="color:#111">l11</span> <span style="color:#f92672">^=</span> <span style="color:#111">Layer</span><span style="color:#111">(</span><span style="color:#111">item</span><span style="color:#111">)</span>
+    <span style="color:#00a8c8">return</span> <span style="color:#111">l11</span>
     
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">output_pdf</span>(filename,design2,x,y,layers_separate <span style="color:#f92672">=</span> True):
-    design2 <span style="color:#f92672">=</span> design2<span style="color:#f92672">.</span>translate(x,y)
-    design2<span style="color:#f92672">=</span>design2<span style="color:#f92672">.</span>scale(<span style="color:#ae81ff">1</span><span style="color:#f92672">/</span><span style="color:#ae81ff">25.4</span>,<span style="color:#ae81ff">1</span><span style="color:#f92672">/</span><span style="color:#ae81ff">25.4</span>)
-    design2<span style="color:#f92672">=</span>design2<span style="color:#f92672">.</span>scale(foldable_robotics<span style="color:#f92672">.</span>pdf<span style="color:#f92672">.</span>ppi,foldable_robotics<span style="color:#f92672">.</span>pdf<span style="color:#f92672">.</span>ppi)
-    <span style="color:#66d9ef">if</span> isinstance(design2,Laminate):
-        <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> layers_separate:
-            p<span style="color:#f92672">=</span>foldable_robotics<span style="color:#f92672">.</span>pdf<span style="color:#f92672">.</span>Page(filename<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;.pdf&#39;</span>)
-            <span style="color:#66d9ef">for</span> d <span style="color:#f92672">in</span> design2:
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a8c8">def</span> <span style="color:#75af00">output_pdf</span><span style="color:#111">(</span><span style="color:#111">filename</span><span style="color:#111">,</span><span style="color:#111">design2</span><span style="color:#111">,</span><span style="color:#111">x</span><span style="color:#111">,</span><span style="color:#111">y</span><span style="color:#111">,</span><span style="color:#111">layers_separate</span> <span style="color:#f92672">=</span> <span style="color:#111">True</span><span style="color:#111">):</span>
+    <span style="color:#111">design2</span> <span style="color:#f92672">=</span> <span style="color:#111">design2</span><span style="color:#f92672">.</span><span style="color:#111">translate</span><span style="color:#111">(</span><span style="color:#111">x</span><span style="color:#111">,</span><span style="color:#111">y</span><span style="color:#111">)</span>
+    <span style="color:#111">design2</span><span style="color:#f92672">=</span><span style="color:#111">design2</span><span style="color:#f92672">.</span><span style="color:#111">scale</span><span style="color:#111">(</span><span style="color:#ae81ff">1</span><span style="color:#f92672">/</span><span style="color:#ae81ff">25.4</span><span style="color:#111">,</span><span style="color:#ae81ff">1</span><span style="color:#f92672">/</span><span style="color:#ae81ff">25.4</span><span style="color:#111">)</span>
+    <span style="color:#111">design2</span><span style="color:#f92672">=</span><span style="color:#111">design2</span><span style="color:#f92672">.</span><span style="color:#111">scale</span><span style="color:#111">(</span><span style="color:#111">foldable_robotics</span><span style="color:#f92672">.</span><span style="color:#111">pdf</span><span style="color:#f92672">.</span><span style="color:#111">ppi</span><span style="color:#111">,</span><span style="color:#111">foldable_robotics</span><span style="color:#f92672">.</span><span style="color:#111">pdf</span><span style="color:#f92672">.</span><span style="color:#111">ppi</span><span style="color:#111">)</span>
+    <span style="color:#00a8c8">if</span> <span style="color:#111">isinstance</span><span style="color:#111">(</span><span style="color:#111">design2</span><span style="color:#111">,</span><span style="color:#111">Laminate</span><span style="color:#111">):</span>
+        <span style="color:#00a8c8">if</span> <span style="color:#f92672">not</span> <span style="color:#111">layers_separate</span><span style="color:#111">:</span>
+            <span style="color:#111">p</span><span style="color:#f92672">=</span><span style="color:#111">foldable_robotics</span><span style="color:#f92672">.</span><span style="color:#111">pdf</span><span style="color:#f92672">.</span><span style="color:#111">Page</span><span style="color:#111">(</span><span style="color:#111">filename</span><span style="color:#f92672">+</span><span style="color:#d88200">&#39;.pdf&#39;</span><span style="color:#111">)</span>
+            <span style="color:#00a8c8">for</span> <span style="color:#111">d</span> <span style="color:#f92672">in</span> <span style="color:#111">design2</span><span style="color:#111">:</span>
     <span style="color:#75715e">#        d = design2[0]</span>
-                <span style="color:#66d9ef">for</span> item <span style="color:#f92672">in</span> d<span style="color:#f92672">.</span>exteriors()<span style="color:#f92672">+</span>d<span style="color:#f92672">.</span>interiors():
-                    p<span style="color:#f92672">.</span>draw_poly(item)
-            p<span style="color:#f92672">.</span>close()
-        <span style="color:#66d9ef">else</span>:
-            <span style="color:#66d9ef">for</span> ii,d <span style="color:#f92672">in</span> enumerate(design2):
-                p<span style="color:#f92672">=</span>foldable_robotics<span style="color:#f92672">.</span>pdf<span style="color:#f92672">.</span>Page(filename<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;{0:03f}.pdf&#39;</span><span style="color:#f92672">.</span>format(ii))
-                <span style="color:#66d9ef">for</span> item <span style="color:#f92672">in</span> d<span style="color:#f92672">.</span>exteriors()<span style="color:#f92672">+</span>d<span style="color:#f92672">.</span>interiors():
-                    p<span style="color:#f92672">.</span>draw_poly(item)
-                p<span style="color:#f92672">.</span>close()
+                <span style="color:#00a8c8">for</span> <span style="color:#111">item</span> <span style="color:#f92672">in</span> <span style="color:#111">d</span><span style="color:#f92672">.</span><span style="color:#111">exteriors</span><span style="color:#111">()</span><span style="color:#f92672">+</span><span style="color:#111">d</span><span style="color:#f92672">.</span><span style="color:#111">interiors</span><span style="color:#111">():</span>
+                    <span style="color:#111">p</span><span style="color:#f92672">.</span><span style="color:#111">draw_poly</span><span style="color:#111">(</span><span style="color:#111">item</span><span style="color:#111">)</span>
+            <span style="color:#111">p</span><span style="color:#f92672">.</span><span style="color:#111">close</span><span style="color:#111">()</span>
+        <span style="color:#00a8c8">else</span><span style="color:#111">:</span>
+            <span style="color:#00a8c8">for</span> <span style="color:#111">ii</span><span style="color:#111">,</span><span style="color:#111">d</span> <span style="color:#f92672">in</span> <span style="color:#111">enumerate</span><span style="color:#111">(</span><span style="color:#111">design2</span><span style="color:#111">):</span>
+                <span style="color:#111">p</span><span style="color:#f92672">=</span><span style="color:#111">foldable_robotics</span><span style="color:#f92672">.</span><span style="color:#111">pdf</span><span style="color:#f92672">.</span><span style="color:#111">Page</span><span style="color:#111">(</span><span style="color:#111">filename</span><span style="color:#f92672">+</span><span style="color:#d88200">&#39;{0:03f}.pdf&#39;</span><span style="color:#f92672">.</span><span style="color:#111">format</span><span style="color:#111">(</span><span style="color:#111">ii</span><span style="color:#111">))</span>
+                <span style="color:#00a8c8">for</span> <span style="color:#111">item</span> <span style="color:#f92672">in</span> <span style="color:#111">d</span><span style="color:#f92672">.</span><span style="color:#111">exteriors</span><span style="color:#111">()</span><span style="color:#f92672">+</span><span style="color:#111">d</span><span style="color:#f92672">.</span><span style="color:#111">interiors</span><span style="color:#111">():</span>
+                    <span style="color:#111">p</span><span style="color:#f92672">.</span><span style="color:#111">draw_poly</span><span style="color:#111">(</span><span style="color:#111">item</span><span style="color:#111">)</span>
+                <span style="color:#111">p</span><span style="color:#f92672">.</span><span style="color:#111">close</span><span style="color:#111">()</span>
 
-    <span style="color:#66d9ef">elif</span> isinstance(design2,Layer):
-        p<span style="color:#f92672">=</span>foldable_robotics<span style="color:#f92672">.</span>pdf<span style="color:#f92672">.</span>Page(filename<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;.pdf&#39;</span>)
-        <span style="color:#66d9ef">for</span> item <span style="color:#f92672">in</span> design2<span style="color:#f92672">.</span>exteriors()<span style="color:#f92672">+</span>design2<span style="color:#f92672">.</span>interiors():
-            p<span style="color:#f92672">.</span>draw_poly(item)
-        p<span style="color:#f92672">.</span>close()
+    <span style="color:#00a8c8">elif</span> <span style="color:#111">isinstance</span><span style="color:#111">(</span><span style="color:#111">design2</span><span style="color:#111">,</span><span style="color:#111">Layer</span><span style="color:#111">):</span>
+        <span style="color:#111">p</span><span style="color:#f92672">=</span><span style="color:#111">foldable_robotics</span><span style="color:#f92672">.</span><span style="color:#111">pdf</span><span style="color:#f92672">.</span><span style="color:#111">Page</span><span style="color:#111">(</span><span style="color:#111">filename</span><span style="color:#f92672">+</span><span style="color:#d88200">&#39;.pdf&#39;</span><span style="color:#111">)</span>
+        <span style="color:#00a8c8">for</span> <span style="color:#111">item</span> <span style="color:#f92672">in</span> <span style="color:#111">design2</span><span style="color:#f92672">.</span><span style="color:#111">exteriors</span><span style="color:#111">()</span><span style="color:#f92672">+</span><span style="color:#111">design2</span><span style="color:#f92672">.</span><span style="color:#111">interiors</span><span style="color:#111">():</span>
+            <span style="color:#111">p</span><span style="color:#f92672">.</span><span style="color:#111">draw_poly</span><span style="color:#111">(</span><span style="color:#111">item</span><span style="color:#111">)</span>
+        <span style="color:#111">p</span><span style="color:#f92672">.</span><span style="color:#111">close</span><span style="color:#111">()</span>
         
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">build_layer_numbers</span>(num_layers, text_size <span style="color:#f92672">=</span> None, prop<span style="color:#f92672">=</span>None):
-    text_size <span style="color:#f92672">=</span> text_size <span style="color:#f92672">or</span> <span style="color:#ae81ff">1</span>
-    prop <span style="color:#f92672">=</span> prop <span style="color:#f92672">or</span> {<span style="color:#e6db74">&#39;family&#39;</span>:<span style="color:#e6db74">&#39;Arial&#39;</span>,<span style="color:#e6db74">&#39;size&#39;</span>:text_size}
-    layer_ids <span style="color:#f92672">=</span> []
-    <span style="color:#66d9ef">for</span> ii <span style="color:#f92672">in</span> range(num_layers): 
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a8c8">def</span> <span style="color:#75af00">build_layer_numbers</span><span style="color:#111">(</span><span style="color:#111">num_layers</span><span style="color:#111">,</span> <span style="color:#111">text_size</span> <span style="color:#f92672">=</span> <span style="color:#111">None</span><span style="color:#111">,</span> <span style="color:#111">prop</span><span style="color:#f92672">=</span><span style="color:#111">None</span><span style="color:#111">):</span>
+    <span style="color:#111">text_size</span> <span style="color:#f92672">=</span> <span style="color:#111">text_size</span> <span style="color:#f92672">or</span> <span style="color:#ae81ff">1</span>
+    <span style="color:#111">prop</span> <span style="color:#f92672">=</span> <span style="color:#111">prop</span> <span style="color:#f92672">or</span> <span style="color:#111">{</span><span style="color:#d88200">&#39;family&#39;</span><span style="color:#111">:</span><span style="color:#d88200">&#39;Arial&#39;</span><span style="color:#111">,</span><span style="color:#d88200">&#39;size&#39;</span><span style="color:#111">:</span><span style="color:#111">text_size</span><span style="color:#111">}</span>
+    <span style="color:#111">layer_ids</span> <span style="color:#f92672">=</span> <span style="color:#111">[]</span>
+    <span style="color:#00a8c8">for</span> <span style="color:#111">ii</span> <span style="color:#f92672">in</span> <span style="color:#111">range</span><span style="color:#111">(</span><span style="color:#111">num_layers</span><span style="color:#111">):</span> 
     
-        l <span style="color:#f92672">=</span> idealab_tools<span style="color:#f92672">.</span>text_to_polygons<span style="color:#f92672">.</span>text_to_polygons(<span style="color:#e6db74">&#39;Layer &#39;</span><span style="color:#f92672">+</span>str(ii),prop<span style="color:#f92672">=</span>prop)
-        layer_ids<span style="color:#f92672">.</span>append(l)
+        <span style="color:#111">l</span> <span style="color:#f92672">=</span> <span style="color:#111">idealab_tools</span><span style="color:#f92672">.</span><span style="color:#111">text_to_polygons</span><span style="color:#f92672">.</span><span style="color:#111">text_to_polygons</span><span style="color:#111">(</span><span style="color:#d88200">&#39;Layer &#39;</span><span style="color:#f92672">+</span><span style="color:#111">str</span><span style="color:#111">(</span><span style="color:#111">ii</span><span style="color:#111">),</span><span style="color:#111">prop</span><span style="color:#f92672">=</span><span style="color:#111">prop</span><span style="color:#111">)</span>
+        <span style="color:#111">layer_ids</span><span style="color:#f92672">.</span><span style="color:#111">append</span><span style="color:#111">(</span><span style="color:#111">l</span><span style="color:#111">)</span>
     
-    layer_ids <span style="color:#f92672">=</span> [polys_to_layer(item) <span style="color:#66d9ef">for</span> item <span style="color:#f92672">in</span> layer_ids]
-    layer_id <span style="color:#f92672">=</span> Laminate(<span style="color:#f92672">*</span>layer_ids)
-    <span style="color:#66d9ef">return</span> layer_id
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">build_web</span>(design2,keepout,support_width,jig_diameter,jig_hole_spacing,is_adhesive):
-    num_layers <span style="color:#f92672">=</span> len(design2)
+    <span style="color:#111">layer_ids</span> <span style="color:#f92672">=</span> <span style="color:#111">[</span><span style="color:#111">polys_to_layer</span><span style="color:#111">(</span><span style="color:#111">item</span><span style="color:#111">)</span> <span style="color:#00a8c8">for</span> <span style="color:#111">item</span> <span style="color:#f92672">in</span> <span style="color:#111">layer_ids</span><span style="color:#111">]</span>
+    <span style="color:#111">layer_id</span> <span style="color:#f92672">=</span> <span style="color:#111">Laminate</span><span style="color:#111">(</span><span style="color:#f92672">*</span><span style="color:#111">layer_ids</span><span style="color:#111">)</span>
+    <span style="color:#00a8c8">return</span> <span style="color:#111">layer_id</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a8c8">def</span> <span style="color:#75af00">build_web</span><span style="color:#111">(</span><span style="color:#111">design2</span><span style="color:#111">,</span><span style="color:#111">keepout</span><span style="color:#111">,</span><span style="color:#111">support_width</span><span style="color:#111">,</span><span style="color:#111">jig_diameter</span><span style="color:#111">,</span><span style="color:#111">jig_hole_spacing</span><span style="color:#111">,</span><span style="color:#111">is_adhesive</span><span style="color:#111">):</span>
+    <span style="color:#111">num_layers</span> <span style="color:#f92672">=</span> <span style="color:#111">len</span><span style="color:#111">(</span><span style="color:#111">design2</span><span style="color:#111">)</span>
 
-    layer_id <span style="color:#f92672">=</span> build_layer_numbers(num_layers,text_size<span style="color:#f92672">=</span>jig_diameter)
+    <span style="color:#111">layer_id</span> <span style="color:#f92672">=</span> <span style="color:#111">build_layer_numbers</span><span style="color:#111">(</span><span style="color:#111">num_layers</span><span style="color:#111">,</span><span style="color:#111">text_size</span><span style="color:#f92672">=</span><span style="color:#111">jig_diameter</span><span style="color:#111">)</span>
 
-    design_outer <span style="color:#f92672">=</span> foldable_robotics<span style="color:#f92672">.</span>manufacturing<span style="color:#f92672">.</span>unary_union(design2)
-    bb1<span style="color:#f92672">=</span> (design_outer<span style="color:#f92672">&lt;&lt;</span>jig_hole_spacing<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>)<span style="color:#f92672">.</span>bounding_box()
-    (x1,y1),p2 <span style="color:#f92672">=</span> bb1<span style="color:#f92672">.</span>bounding_box_coords()
-    w,h <span style="color:#f92672">=</span> bb1<span style="color:#f92672">.</span>get_dimensions()
-    w2 <span style="color:#f92672">=</span> round(w<span style="color:#f92672">/</span>jig_hole_spacing)<span style="color:#f92672">*</span>jig_hole_spacing
-    h2 <span style="color:#f92672">=</span> round(h<span style="color:#f92672">/</span>jig_hole_spacing)<span style="color:#f92672">*</span>jig_hole_spacing
+    <span style="color:#111">design_outer</span> <span style="color:#f92672">=</span> <span style="color:#111">foldable_robotics</span><span style="color:#f92672">.</span><span style="color:#111">manufacturing</span><span style="color:#f92672">.</span><span style="color:#111">unary_union</span><span style="color:#111">(</span><span style="color:#111">design2</span><span style="color:#111">)</span>
+    <span style="color:#111">bb1</span><span style="color:#f92672">=</span> <span style="color:#111">(</span><span style="color:#111">design_outer</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#111">jig_hole_spacing</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span><span style="color:#111">)</span><span style="color:#f92672">.</span><span style="color:#111">bounding_box</span><span style="color:#111">()</span>
+    <span style="color:#111">(</span><span style="color:#111">x1</span><span style="color:#111">,</span><span style="color:#111">y1</span><span style="color:#111">),</span><span style="color:#111">p2</span> <span style="color:#f92672">=</span> <span style="color:#111">bb1</span><span style="color:#f92672">.</span><span style="color:#111">bounding_box_coords</span><span style="color:#111">()</span>
+    <span style="color:#111">w</span><span style="color:#111">,</span><span style="color:#111">h</span> <span style="color:#f92672">=</span> <span style="color:#111">bb1</span><span style="color:#f92672">.</span><span style="color:#111">get_dimensions</span><span style="color:#111">()</span>
+    <span style="color:#111">w2</span> <span style="color:#f92672">=</span> <span style="color:#111">round</span><span style="color:#111">(</span><span style="color:#111">w</span><span style="color:#f92672">/</span><span style="color:#111">jig_hole_spacing</span><span style="color:#111">)</span><span style="color:#f92672">*</span><span style="color:#111">jig_hole_spacing</span>
+    <span style="color:#111">h2</span> <span style="color:#f92672">=</span> <span style="color:#111">round</span><span style="color:#111">(</span><span style="color:#111">h</span><span style="color:#f92672">/</span><span style="color:#111">jig_hole_spacing</span><span style="color:#111">)</span><span style="color:#f92672">*</span><span style="color:#111">jig_hole_spacing</span>
     
-    points <span style="color:#f92672">=</span> []
-    points<span style="color:#f92672">.</span>append(sg<span style="color:#f92672">.</span>Point(x1,y1))
-    points<span style="color:#f92672">.</span>append(sg<span style="color:#f92672">.</span>Point(x1<span style="color:#f92672">+</span>w2,y1))
-    points<span style="color:#f92672">.</span>append(sg<span style="color:#f92672">.</span>Point(x1,y1<span style="color:#f92672">+</span>h2))
-    points<span style="color:#f92672">.</span>append(sg<span style="color:#f92672">.</span>Point(x1<span style="color:#f92672">+</span>w2,y1<span style="color:#f92672">+</span>h2))
+    <span style="color:#111">points</span> <span style="color:#f92672">=</span> <span style="color:#111">[]</span>
+    <span style="color:#111">points</span><span style="color:#f92672">.</span><span style="color:#111">append</span><span style="color:#111">(</span><span style="color:#111">sg</span><span style="color:#f92672">.</span><span style="color:#111">Point</span><span style="color:#111">(</span><span style="color:#111">x1</span><span style="color:#111">,</span><span style="color:#111">y1</span><span style="color:#111">))</span>
+    <span style="color:#111">points</span><span style="color:#f92672">.</span><span style="color:#111">append</span><span style="color:#111">(</span><span style="color:#111">sg</span><span style="color:#f92672">.</span><span style="color:#111">Point</span><span style="color:#111">(</span><span style="color:#111">x1</span><span style="color:#f92672">+</span><span style="color:#111">w2</span><span style="color:#111">,</span><span style="color:#111">y1</span><span style="color:#111">))</span>
+    <span style="color:#111">points</span><span style="color:#f92672">.</span><span style="color:#111">append</span><span style="color:#111">(</span><span style="color:#111">sg</span><span style="color:#f92672">.</span><span style="color:#111">Point</span><span style="color:#111">(</span><span style="color:#111">x1</span><span style="color:#111">,</span><span style="color:#111">y1</span><span style="color:#f92672">+</span><span style="color:#111">h2</span><span style="color:#111">))</span>
+    <span style="color:#111">points</span><span style="color:#f92672">.</span><span style="color:#111">append</span><span style="color:#111">(</span><span style="color:#111">sg</span><span style="color:#f92672">.</span><span style="color:#111">Point</span><span style="color:#111">(</span><span style="color:#111">x1</span><span style="color:#f92672">+</span><span style="color:#111">w2</span><span style="color:#111">,</span><span style="color:#111">y1</span><span style="color:#f92672">+</span><span style="color:#111">h2</span><span style="color:#111">))</span>
     
-    layer_id <span style="color:#f92672">=</span> layer_id<span style="color:#f92672">.</span>translate(x1<span style="color:#f92672">+</span>jig_diameter,y1<span style="color:#f92672">-</span>jig_diameter<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>)
-    placement_holes2 <span style="color:#f92672">=</span> Layer(<span style="color:#f92672">*</span>points)
-    placement_holes2<span style="color:#f92672">&lt;&lt;=</span>(jig_diameter<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>)
-    sheet <span style="color:#f92672">=</span> (placement_holes2<span style="color:#f92672">&lt;&lt;</span><span style="color:#ae81ff">10</span>)<span style="color:#f92672">.</span>bounding_box()
-    placement_holes2<span style="color:#f92672">=</span>placement_holes2<span style="color:#f92672">.</span>to_laminate(num_layers)
-    sheet<span style="color:#f92672">=</span>sheet<span style="color:#f92672">.</span>to_laminate(num_layers)
+    <span style="color:#111">layer_id</span> <span style="color:#f92672">=</span> <span style="color:#111">layer_id</span><span style="color:#f92672">.</span><span style="color:#111">translate</span><span style="color:#111">(</span><span style="color:#111">x1</span><span style="color:#f92672">+</span><span style="color:#111">jig_diameter</span><span style="color:#111">,</span><span style="color:#111">y1</span><span style="color:#f92672">-</span><span style="color:#111">jig_diameter</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span><span style="color:#111">)</span>
+    <span style="color:#111">placement_holes2</span> <span style="color:#f92672">=</span> <span style="color:#111">Layer</span><span style="color:#111">(</span><span style="color:#f92672">*</span><span style="color:#111">points</span><span style="color:#111">)</span>
+    <span style="color:#111">placement_holes2</span><span style="color:#f92672">&lt;&lt;=</span><span style="color:#111">(</span><span style="color:#111">jig_diameter</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span><span style="color:#111">)</span>
+    <span style="color:#111">sheet</span> <span style="color:#f92672">=</span> <span style="color:#111">(</span><span style="color:#111">placement_holes2</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#ae81ff">10</span><span style="color:#111">)</span><span style="color:#f92672">.</span><span style="color:#111">bounding_box</span><span style="color:#111">()</span>
+    <span style="color:#111">placement_holes2</span><span style="color:#f92672">=</span><span style="color:#111">placement_holes2</span><span style="color:#f92672">.</span><span style="color:#111">to_laminate</span><span style="color:#111">(</span><span style="color:#111">num_layers</span><span style="color:#111">)</span>
+    <span style="color:#111">sheet</span><span style="color:#f92672">=</span><span style="color:#111">sheet</span><span style="color:#f92672">.</span><span style="color:#111">to_laminate</span><span style="color:#111">(</span><span style="color:#111">num_layers</span><span style="color:#111">)</span>
     
-    removable_scrap <span style="color:#f92672">=</span> calculate_removable_scrap(design2,sheet,support_width,is_adhesive)
+    <span style="color:#111">removable_scrap</span> <span style="color:#f92672">=</span> <span style="color:#111">calculate_removable_scrap</span><span style="color:#111">(</span><span style="color:#111">design2</span><span style="color:#111">,</span><span style="color:#111">sheet</span><span style="color:#111">,</span><span style="color:#111">support_width</span><span style="color:#111">,</span><span style="color:#111">is_adhesive</span><span style="color:#111">)</span>
     
-    web <span style="color:#f92672">=</span> (removable_scrap<span style="color:#f92672">-</span>placement_holes2)<span style="color:#f92672">-</span>layer_id
-    <span style="color:#66d9ef">return</span> web,sheet
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">calculate_removable_scrap</span>(design,sheet,width,is_adhesive):
-    <span style="color:#e6db74">&#39;&#39;&#39;this computes all removable scrap given a sheet, a design, and a clearance width&#39;&#39;&#39;</span>
-    all_scrap <span style="color:#f92672">=</span> sheet<span style="color:#f92672">-</span>design
+    <span style="color:#111">web</span> <span style="color:#f92672">=</span> <span style="color:#111">(</span><span style="color:#111">removable_scrap</span><span style="color:#f92672">-</span><span style="color:#111">placement_holes2</span><span style="color:#111">)</span><span style="color:#f92672">-</span><span style="color:#111">layer_id</span>
+    <span style="color:#00a8c8">return</span> <span style="color:#111">web</span><span style="color:#111">,</span><span style="color:#111">sheet</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a8c8">def</span> <span style="color:#75af00">calculate_removable_scrap</span><span style="color:#111">(</span><span style="color:#111">design</span><span style="color:#111">,</span><span style="color:#111">sheet</span><span style="color:#111">,</span><span style="color:#111">width</span><span style="color:#111">,</span><span style="color:#111">is_adhesive</span><span style="color:#111">):</span>
+    <span style="color:#d88200">&#39;&#39;&#39;this computes all removable scrap given a sheet, a design, and a clearance width&#39;&#39;&#39;</span>
+    <span style="color:#111">all_scrap</span> <span style="color:#f92672">=</span> <span style="color:#111">sheet</span><span style="color:#f92672">-</span><span style="color:#111">design</span>
 
-    ru <span style="color:#f92672">=</span> foldable_robotics<span style="color:#f92672">.</span>manufacturing<span style="color:#f92672">.</span>not_removable_up(design,is_adhesive)
-    rd <span style="color:#f92672">=</span> foldable_robotics<span style="color:#f92672">.</span>manufacturing<span style="color:#f92672">.</span>not_removable_down(design,is_adhesive)
+    <span style="color:#111">ru</span> <span style="color:#f92672">=</span> <span style="color:#111">foldable_robotics</span><span style="color:#f92672">.</span><span style="color:#111">manufacturing</span><span style="color:#f92672">.</span><span style="color:#111">not_removable_up</span><span style="color:#111">(</span><span style="color:#111">design</span><span style="color:#111">,</span><span style="color:#111">is_adhesive</span><span style="color:#111">)</span>
+    <span style="color:#111">rd</span> <span style="color:#f92672">=</span> <span style="color:#111">foldable_robotics</span><span style="color:#f92672">.</span><span style="color:#111">manufacturing</span><span style="color:#f92672">.</span><span style="color:#111">not_removable_down</span><span style="color:#111">(</span><span style="color:#111">design</span><span style="color:#111">,</span><span style="color:#111">is_adhesive</span><span style="color:#111">)</span>
     
-    removable_scrap_up <span style="color:#f92672">=</span> all_scrap<span style="color:#f92672">-</span>(ru<span style="color:#f92672">&lt;&lt;</span>width)
-    removable_scrap_down <span style="color:#f92672">=</span> all_scrap<span style="color:#f92672">-</span>(rd<span style="color:#f92672">&lt;&lt;</span>width)
+    <span style="color:#111">removable_scrap_up</span> <span style="color:#f92672">=</span> <span style="color:#111">all_scrap</span><span style="color:#f92672">-</span><span style="color:#111">(</span><span style="color:#111">ru</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#111">width</span><span style="color:#111">)</span>
+    <span style="color:#111">removable_scrap_down</span> <span style="color:#f92672">=</span> <span style="color:#111">all_scrap</span><span style="color:#f92672">-</span><span style="color:#111">(</span><span style="color:#111">rd</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#111">width</span><span style="color:#111">)</span>
 
-    removable_scrap <span style="color:#f92672">=</span> removable_scrap_up<span style="color:#f92672">|</span>removable_scrap_down
-    <span style="color:#66d9ef">return</span> removable_scrap
+    <span style="color:#111">removable_scrap</span> <span style="color:#f92672">=</span> <span style="color:#111">removable_scrap_up</span><span style="color:#f92672">|</span><span style="color:#111">removable_scrap_down</span>
+    <span style="color:#00a8c8">return</span> <span style="color:#111">removable_scrap</span>
 </code></pre></div><p>user_path = os.path.abspath(os.path.expanduser('~'))
 user_path</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">folder <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;../../../_cad/spherical_example/&#39;</span>
-input_filename <span style="color:#f92672">=</span> folder<span style="color:#f92672">+</span><span style="color:#e6db74">&#39;spherical - Sheet1_Drawing View2.yaml&#39;</span>
-output_file_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;design.dxf&#39;</span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">round_digits <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
-prescale<span style="color:#f92672">=</span><span style="color:#ae81ff">1000</span>
-jig_diameter <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
-support_width <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
-kerf <span style="color:#f92672">=</span> <span style="color:#f92672">.</span><span style="color:#ae81ff">05</span>
-jig_hole_spacing<span style="color:#f92672">=</span><span style="color:#ae81ff">20</span>
-is_adhesive <span style="color:#f92672">=</span> [False,True,False,True,False]
-arc_approx <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">foldable_robotics<span style="color:#f92672">.</span>solidworks_support<span style="color:#f92672">.</span>process(input_filename,output_file_name,prescale,round_digits)
-</code></pre></div><pre><code>(&lt;foldable_robotics.layer.Layer at 0x1eec0e0a550&gt;,
- &lt;foldable_robotics.layer.Layer at 0x1eebaf57310&gt;,
- [&lt;foldable_robotics.solidworks_support.Component at 0x1eec0e0ad60&gt;,
-  &lt;foldable_robotics.solidworks_support.Component at 0x1eec0e0a220&gt;,
-  &lt;foldable_robotics.solidworks_support.Component at 0x1eec0e0a190&gt;,
-  &lt;foldable_robotics.solidworks_support.Component at 0x1eec0e0a6d0&gt;,
-  &lt;foldable_robotics.solidworks_support.Component at 0x1eec0e0a850&gt;])
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">folder</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#39;../../../../ignore/_cad/spherical_example/&#39;</span>
+<span style="color:#111">input_filename</span> <span style="color:#f92672">=</span> <span style="color:#111">folder</span><span style="color:#f92672">+</span><span style="color:#d88200">&#39;spherical - Sheet1_Drawing View2.yaml&#39;</span>
+<span style="color:#111">output_file_name</span> <span style="color:#f92672">=</span> <span style="color:#d88200">&#39;design.dxf&#39;</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">round_digits</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
+<span style="color:#111">prescale</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1000</span>
+<span style="color:#111">body_prebuffer</span><span style="color:#f92672">=-.</span><span style="color:#ae81ff">01</span>
+<span style="color:#111">joint_tolerance</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1e-5</span>
+
+<span style="color:#111">round_digits</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">2</span>
+<span style="color:#111">prescale</span><span style="color:#f92672">=</span><span style="color:#ae81ff">1000</span>
+<span style="color:#111">jig_diameter</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">5</span>
+<span style="color:#111">support_width</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+<span style="color:#111">kerf</span> <span style="color:#f92672">=</span> <span style="color:#f92672">.</span><span style="color:#ae81ff">05</span>
+<span style="color:#111">jig_hole_spacing</span><span style="color:#f92672">=</span><span style="color:#ae81ff">20</span>
+<span style="color:#111">is_adhesive</span> <span style="color:#f92672">=</span> <span style="color:#111">[</span><span style="color:#111">False</span><span style="color:#111">,</span><span style="color:#111">True</span><span style="color:#111">,</span><span style="color:#111">False</span><span style="color:#111">,</span><span style="color:#111">True</span><span style="color:#111">,</span><span style="color:#111">False</span><span style="color:#111">]</span>
+<span style="color:#111">arc_approx</span> <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">foldable_robotics</span><span style="color:#f92672">.</span><span style="color:#111">solidworks_support</span><span style="color:#f92672">.</span><span style="color:#111">process</span><span style="color:#111">(</span><span style="color:#111">input_filename</span><span style="color:#111">,</span><span style="color:#111">output_file_name</span><span style="color:#111">,</span><span style="color:#111">prescale</span><span style="color:#111">,</span><span style="color:#111">round_digits</span><span style="color:#111">,</span><span style="color:#111">body_prebuffer</span><span style="color:#111">,</span><span style="color:#111">joint_tolerance</span><span style="color:#111">)</span>
+</code></pre></div><pre><code>(&lt;foldable_robotics.layer.Layer at 0x1de03ad0c40&gt;,
+ &lt;foldable_robotics.layer.Layer at 0x1de03ae2580&gt;,
+ [&lt;foldable_robotics.solidworks_support.Component at 0x1de03aac6d0&gt;,
+  &lt;foldable_robotics.solidworks_support.Component at 0x1de03ad0040&gt;,
+  &lt;foldable_robotics.solidworks_support.Component at 0x1de03ad0400&gt;,
+  &lt;foldable_robotics.solidworks_support.Component at 0x1de03ad0460&gt;,
+  &lt;foldable_robotics.solidworks_support.Component at 0x1de03ad0310&gt;])
 </code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">hinge <span style="color:#f92672">=</span> foldable_robotics<span style="color:#f92672">.</span>parts<span style="color:#f92672">.</span>castellated_hinge1<span style="color:#f92672">.</span>generate()
-w<span style="color:#f92672">=</span>hinge_width_calculator(<span style="color:#ae81ff">150</span>,<span style="color:#ae81ff">1.1</span>)
-hinge <span style="color:#f92672">=</span> hinge<span style="color:#f92672">.</span>scale(<span style="color:#ae81ff">1</span>,w)
-hinge<span style="color:#f92672">.</span>plot()
-</code></pre></div><p><div class="text-center">
-  <a href="output_18_0.png" target="_blank"><img src="output_18_0.png" alt="png"  class="img-fluid"/></a>
+<p><div class="text-center">
+  <a href="output_17_1.png"><img src="output_17_1.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">NUMLAYERS <span style="color:#f92672">=</span> len(hinge)
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">body <span style="color:#f92672">=</span> get_bodies(output_file_name,<span style="color:#e6db74">&#39;body&#39;</span>,NUMLAYERS)
-body <span style="color:#f92672">=</span> foldable_robotics<span style="color:#f92672">.</span>manufacturing<span style="color:#f92672">.</span>cleanup(body,<span style="color:#f92672">.</span><span style="color:#ae81ff">01</span>)
-body<span style="color:#f92672">.</span>plot()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">hinge</span> <span style="color:#f92672">=</span> <span style="color:#111">foldable_robotics</span><span style="color:#f92672">.</span><span style="color:#111">parts</span><span style="color:#f92672">.</span><span style="color:#111">castellated_hinge1</span><span style="color:#f92672">.</span><span style="color:#111">generate</span><span style="color:#111">()</span>
+<span style="color:#111">w</span><span style="color:#f92672">=</span><span style="color:#111">hinge_width_calculator</span><span style="color:#111">(</span><span style="color:#ae81ff">150</span><span style="color:#111">,</span><span style="color:#ae81ff">1.1</span><span style="color:#111">)</span>
+<span style="color:#111">hinge</span> <span style="color:#f92672">=</span> <span style="color:#111">hinge</span><span style="color:#f92672">.</span><span style="color:#111">scale</span><span style="color:#111">(</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span><span style="color:#111">w</span><span style="color:#111">)</span>
+<span style="color:#111">hinge</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_20_0.png" target="_blank"><img src="output_20_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_18_0.png"><img src="output_18_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">joint_lines<span style="color:#f92672">=</span> get_hinge_lines(output_file_name,<span style="color:#e6db74">&#39;joints&#39;</span>)
-joints <span style="color:#f92672">=</span> hinge_lines_to_hinges(joint_lines,hinge)
-joints <span style="color:#f92672">=</span> foldable_robotics<span style="color:#f92672">.</span>manufacturing<span style="color:#f92672">.</span>cleanup(joints,<span style="color:#f92672">.</span><span style="color:#ae81ff">02</span>)
-joints<span style="color:#f92672">.</span>plot()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">NUMLAYERS</span> <span style="color:#f92672">=</span> <span style="color:#111">len</span><span style="color:#111">(</span><span style="color:#111">hinge</span><span style="color:#111">)</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">body</span> <span style="color:#f92672">=</span> <span style="color:#111">get_bodies</span><span style="color:#111">(</span><span style="color:#111">output_file_name</span><span style="color:#111">,</span><span style="color:#d88200">&#39;body&#39;</span><span style="color:#111">,</span><span style="color:#111">NUMLAYERS</span><span style="color:#111">)</span>
+<span style="color:#111">body</span> <span style="color:#f92672">=</span> <span style="color:#111">foldable_robotics</span><span style="color:#f92672">.</span><span style="color:#111">manufacturing</span><span style="color:#f92672">.</span><span style="color:#111">cleanup</span><span style="color:#111">(</span><span style="color:#111">body</span><span style="color:#111">,</span><span style="color:#f92672">.</span><span style="color:#ae81ff">02</span><span style="color:#111">)</span>
+<span style="color:#111">body</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_21_0.png" target="_blank"><img src="output_21_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_20_0.png"><img src="output_20_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">cuts <span style="color:#f92672">=</span> get_cuts(output_file_name,<span style="color:#e6db74">&#39;cuts&#39;</span>,<span style="color:#f92672">.</span><span style="color:#ae81ff">02</span>,NUMLAYERS)
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">joint_lines</span><span style="color:#f92672">=</span> <span style="color:#111">get_hinge_lines</span><span style="color:#111">(</span><span style="color:#111">output_file_name</span><span style="color:#111">,</span><span style="color:#d88200">&#39;joints&#39;</span><span style="color:#111">)</span>
+<span style="color:#111">joints</span> <span style="color:#f92672">=</span> <span style="color:#111">hinge_lines_to_hinges</span><span style="color:#111">(</span><span style="color:#111">joint_lines</span><span style="color:#111">,</span><span style="color:#111">hinge</span><span style="color:#111">)</span>
+<span style="color:#111">joints</span> <span style="color:#f92672">=</span> <span style="color:#111">foldable_robotics</span><span style="color:#f92672">.</span><span style="color:#111">manufacturing</span><span style="color:#f92672">.</span><span style="color:#111">cleanup</span><span style="color:#111">(</span><span style="color:#111">joints</span><span style="color:#111">,</span><span style="color:#f92672">.</span><span style="color:#ae81ff">02</span><span style="color:#111">)</span>
+<span style="color:#111">joints</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
+</code></pre></div><p><div class="text-center">
+  <a href="output_21_0.png"><img src="output_21_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
+</div></p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">cuts</span> <span style="color:#f92672">=</span> <span style="color:#111">get_cuts</span><span style="color:#111">(</span><span style="color:#111">output_file_name</span><span style="color:#111">,</span><span style="color:#d88200">&#39;cuts&#39;</span><span style="color:#111">,</span><span style="color:#f92672">.</span><span style="color:#ae81ff">02</span><span style="color:#111">,</span><span style="color:#111">NUMLAYERS</span><span style="color:#111">)</span>
 <span style="color:#75715e">#cuts.plot()</span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">holes <span style="color:#f92672">=</span> get_holes(output_file_name,<span style="color:#e6db74">&#39;holes&#39;</span>,NUMLAYERS)
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">holes</span> <span style="color:#f92672">=</span> <span style="color:#111">get_holes</span><span style="color:#111">(</span><span style="color:#111">output_file_name</span><span style="color:#111">,</span><span style="color:#d88200">&#39;holes&#39;</span><span style="color:#111">,</span><span style="color:#111">NUMLAYERS</span><span style="color:#111">)</span>
 <span style="color:#75715e">#holes.plot()</span>
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">hole,dummy <span style="color:#f92672">=</span> foldable_robotics<span style="color:#f92672">.</span>manufacturing<span style="color:#f92672">.</span>calc_hole(joint_lines,w)
-hole <span style="color:#f92672">=</span> hole<span style="color:#f92672">.</span>to_laminate(NUMLAYERS)
-hole<span style="color:#f92672">&lt;&lt;=.</span><span style="color:#ae81ff">2</span>
-hole<span style="color:#f92672">.</span>plot()
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">hole</span><span style="color:#111">,</span><span style="color:#111">dummy</span> <span style="color:#f92672">=</span> <span style="color:#111">foldable_robotics</span><span style="color:#f92672">.</span><span style="color:#111">manufacturing</span><span style="color:#f92672">.</span><span style="color:#111">calc_hole</span><span style="color:#111">(</span><span style="color:#111">joint_lines</span><span style="color:#111">,</span><span style="color:#111">w</span><span style="color:#111">)</span>
+<span style="color:#111">hole</span> <span style="color:#f92672">=</span> <span style="color:#111">hole</span><span style="color:#f92672">.</span><span style="color:#111">to_laminate</span><span style="color:#111">(</span><span style="color:#111">NUMLAYERS</span><span style="color:#111">)</span>
+<span style="color:#111">hole</span><span style="color:#f92672">&lt;&lt;=.</span><span style="color:#ae81ff">2</span>
+<span style="color:#111">hole</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_24_0.png" target="_blank"><img src="output_24_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_24_0.png"><img src="output_24_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">design2 <span style="color:#f92672">=</span> body<span style="color:#f92672">-</span> hole <span style="color:#f92672">-</span> joints <span style="color:#f92672">-</span> cuts <span style="color:#f92672">-</span> holes
-design2<span style="color:#f92672">.</span>plot()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">design2</span> <span style="color:#f92672">=</span> <span style="color:#111">body</span><span style="color:#f92672">-</span> <span style="color:#111">hole</span> <span style="color:#f92672">-</span> <span style="color:#111">joints</span> <span style="color:#f92672">-</span> <span style="color:#111">cuts</span> <span style="color:#f92672">-</span> <span style="color:#111">holes</span>
+<span style="color:#111">design2</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_25_0.png" target="_blank"><img src="output_25_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_25_0.png"><img src="output_25_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">keepout <span style="color:#f92672">=</span>  foldable_robotics<span style="color:#f92672">.</span>manufacturing<span style="color:#f92672">.</span>keepout_laser(design2)
-keepout<span style="color:#f92672">.</span>plot()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">keepout</span> <span style="color:#f92672">=</span>  <span style="color:#111">foldable_robotics</span><span style="color:#f92672">.</span><span style="color:#111">manufacturing</span><span style="color:#f92672">.</span><span style="color:#111">keepout_laser</span><span style="color:#111">(</span><span style="color:#111">design2</span><span style="color:#111">)</span>
+<span style="color:#111">keepout</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_26_0.png" target="_blank"><img src="output_26_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_26_0.png"><img src="output_26_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">web,sheet<span style="color:#f92672">=</span>build_web(design2,keepout,support_width,jig_diameter,jig_hole_spacing,is_adhesive)
-web<span style="color:#f92672">.</span>plot()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">web</span><span style="color:#111">,</span><span style="color:#111">sheet</span><span style="color:#f92672">=</span><span style="color:#111">build_web</span><span style="color:#111">(</span><span style="color:#111">design2</span><span style="color:#111">,</span><span style="color:#111">keepout</span><span style="color:#111">,</span><span style="color:#111">support_width</span><span style="color:#111">,</span><span style="color:#111">jig_diameter</span><span style="color:#111">,</span><span style="color:#111">jig_hole_spacing</span><span style="color:#111">,</span><span style="color:#111">is_adhesive</span><span style="color:#111">)</span>
+<span style="color:#111">web</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_27_0.png" target="_blank"><img src="output_27_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_27_0.png"><img src="output_27_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">sheet<span style="color:#f92672">.</span>plot()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">sheet</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_28_0.png" target="_blank"><img src="output_28_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_28_0.png"><img src="output_28_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">second_pass_scrap <span style="color:#f92672">=</span> sheet<span style="color:#f92672">-</span>keepout
-first_pass_scrap <span style="color:#f92672">=</span> sheet <span style="color:#f92672">-</span> design2<span style="color:#f92672">-</span>second_pass_scrap
-first_pass_scrap <span style="color:#f92672">=</span> foldable_robotics<span style="color:#f92672">.</span>manufacturing<span style="color:#f92672">.</span>cleanup(first_pass_scrap,<span style="color:#f92672">.</span><span style="color:#ae81ff">00001</span>)
-first_pass_scrap<span style="color:#f92672">.</span>plot()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">second_pass_scrap</span> <span style="color:#f92672">=</span> <span style="color:#111">sheet</span><span style="color:#f92672">-</span><span style="color:#111">keepout</span>
+<span style="color:#111">first_pass_scrap</span> <span style="color:#f92672">=</span> <span style="color:#111">sheet</span> <span style="color:#f92672">-</span> <span style="color:#111">design2</span><span style="color:#f92672">-</span><span style="color:#111">second_pass_scrap</span>
+<span style="color:#111">first_pass_scrap</span> <span style="color:#f92672">=</span> <span style="color:#111">foldable_robotics</span><span style="color:#f92672">.</span><span style="color:#111">manufacturing</span><span style="color:#f92672">.</span><span style="color:#111">cleanup</span><span style="color:#111">(</span><span style="color:#111">first_pass_scrap</span><span style="color:#111">,</span><span style="color:#f92672">.</span><span style="color:#ae81ff">00001</span><span style="color:#111">)</span>
+<span style="color:#111">first_pass_scrap</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_29_0.png" target="_blank"><img src="output_29_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_29_0.png"><img src="output_29_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">support <span style="color:#f92672">=</span> foldable_robotics<span style="color:#f92672">.</span>manufacturing<span style="color:#f92672">.</span>support(design2,foldable_robotics<span style="color:#f92672">.</span>manufacturing<span style="color:#f92672">.</span>keepout_laser,support_width,support_width<span style="color:#f92672">/</span><span style="color:#ae81ff">2</span>)
-support<span style="color:#f92672">.</span>plot()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">support</span> <span style="color:#f92672">=</span> <span style="color:#111">foldable_robotics</span><span style="color:#f92672">.</span><span style="color:#111">manufacturing</span><span style="color:#f92672">.</span><span style="color:#111">support</span><span style="color:#111">(</span><span style="color:#111">design2</span><span style="color:#111">,</span><span style="color:#111">foldable_robotics</span><span style="color:#f92672">.</span><span style="color:#111">manufacturing</span><span style="color:#f92672">.</span><span style="color:#111">keepout_laser</span><span style="color:#111">,</span><span style="color:#111">support_width</span><span style="color:#111">,</span><span style="color:#111">support_width</span><span style="color:#f92672">/</span><span style="color:#ae81ff">2</span><span style="color:#111">)</span>
+<span style="color:#111">support</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_30_0.png" target="_blank"><img src="output_30_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_30_0.png"><img src="output_30_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#Calculate the web by using only the material which can be cut, minus a gap determined by the support width.  Is that the only material you can use?</span>
-supported_design <span style="color:#f92672">=</span> web<span style="color:#f92672">|</span>design2<span style="color:#f92672">|</span>support
-supported_design<span style="color:#f92672">.</span>plot()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#Calculate the web by using only the material which can be cut, minus a gap determined by the support width.  Is that the only material you can use?</span>
+<span style="color:#111">supported_design</span> <span style="color:#f92672">=</span> <span style="color:#111">web</span><span style="color:#f92672">|</span><span style="color:#111">design2</span><span style="color:#f92672">|</span><span style="color:#111">support</span>
+<span style="color:#111">supported_design</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_31_0.png" target="_blank"><img src="output_31_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_31_0.png"><img src="output_31_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#cut_line = keepout&lt;&lt;kerf</span>
-cut_material <span style="color:#f92672">=</span> (keepout<span style="color:#f92672">&lt;&lt;</span>kerf)<span style="color:#f92672">-</span>keepout
-cut_material<span style="color:#f92672">.</span>plot()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#75715e">#cut_line = keepout&lt;&lt;kerf</span>
+<span style="color:#111">cut_material</span> <span style="color:#f92672">=</span> <span style="color:#111">(</span><span style="color:#111">keepout</span><span style="color:#f92672">&lt;&lt;</span><span style="color:#111">kerf</span><span style="color:#111">)</span><span style="color:#f92672">-</span><span style="color:#111">keepout</span>
+<span style="color:#111">cut_material</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_32_0.png" target="_blank"><img src="output_32_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_32_0.png"><img src="output_32_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">final_cut <span style="color:#f92672">=</span> sheet <span style="color:#f92672">-</span> keepout
-final_cut <span style="color:#f92672">=</span> final_cut[<span style="color:#ae81ff">0</span>]
-final_cut<span style="color:#f92672">.</span>plot()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">final_cut</span> <span style="color:#f92672">=</span> <span style="color:#111">sheet</span> <span style="color:#f92672">-</span> <span style="color:#111">keepout</span>
+<span style="color:#111">final_cut</span> <span style="color:#f92672">=</span> <span style="color:#111">final_cut</span><span style="color:#111">[</span><span style="color:#ae81ff">0</span><span style="color:#111">]</span>
+<span style="color:#111">final_cut</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_33_0.png" target="_blank"><img src="output_33_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_33_0.png"><img src="output_33_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">remaining_material <span style="color:#f92672">=</span> supported_design<span style="color:#f92672">-</span>cut_material
-remaining_material<span style="color:#f92672">.</span>plot()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">remaining_material</span> <span style="color:#f92672">=</span> <span style="color:#111">supported_design</span><span style="color:#f92672">-</span><span style="color:#111">cut_material</span>
+<span style="color:#111">remaining_material</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_34_0.png" target="_blank"><img src="output_34_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_34_0.png"><img src="output_34_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">remaining_parts <span style="color:#f92672">=</span> foldable_robotics<span style="color:#f92672">.</span>manufacturing<span style="color:#f92672">.</span>find_connected(remaining_material,is_adhesive)
-<span style="color:#66d9ef">for</span> item <span style="color:#f92672">in</span> remaining_parts:
-    item<span style="color:#f92672">.</span>plot(new<span style="color:#f92672">=</span>True)
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">remaining_parts</span> <span style="color:#f92672">=</span> <span style="color:#111">foldable_robotics</span><span style="color:#f92672">.</span><span style="color:#111">manufacturing</span><span style="color:#f92672">.</span><span style="color:#111">find_connected</span><span style="color:#111">(</span><span style="color:#111">remaining_material</span><span style="color:#111">,</span><span style="color:#111">is_adhesive</span><span style="color:#111">)</span>
+<span style="color:#00a8c8">for</span> <span style="color:#111">item</span> <span style="color:#f92672">in</span> <span style="color:#111">remaining_parts</span><span style="color:#111">:</span>
+    <span style="color:#111">item</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">(</span><span style="color:#111">new</span><span style="color:#f92672">=</span><span style="color:#111">True</span><span style="color:#111">)</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_35_0.png" target="_blank"><img src="output_35_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_35_0.png"><img src="output_35_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <p><div class="text-center">
-  <a href="output_35_1.png" target="_blank"><img src="output_35_1.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_35_1.png"><img src="output_35_1.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <p><div class="text-center">
-  <a href="output_35_2.png" target="_blank"><img src="output_35_2.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_35_2.png"><img src="output_35_2.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <p><div class="text-center">
-  <a href="output_35_3.png" target="_blank"><img src="output_35_3.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_35_3.png"><img src="output_35_3.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <p><div class="text-center">
-  <a href="output_35_4.png" target="_blank"><img src="output_35_4.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_35_4.png"><img src="output_35_4.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <p><div class="text-center">
-  <a href="output_35_5.png" target="_blank"><img src="output_35_5.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_35_5.png"><img src="output_35_5.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <p><div class="text-center">
-  <a href="output_35_6.png" target="_blank"><img src="output_35_6.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_35_6.png"><img src="output_35_6.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <p><div class="text-center">
-  <a href="output_35_7.png" target="_blank"><img src="output_35_7.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_35_7.png"><img src="output_35_7.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <p><div class="text-center">
-  <a href="output_35_8.png" target="_blank"><img src="output_35_8.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_35_8.png"><img src="output_35_8.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <p><div class="text-center">
-  <a href="output_35_9.png" target="_blank"><img src="output_35_9.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_35_9.png"><img src="output_35_9.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <p><div class="text-center">
-  <a href="output_35_10.png" target="_blank"><img src="output_35_10.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_35_10.png"><img src="output_35_10.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
 <p><div class="text-center">
-  <a href="output_35_11.png" target="_blank"><img src="output_35_11.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_35_11.png"><img src="output_35_11.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">d3<span style="color:#f92672">=</span>design2<span style="color:#f92672">&gt;&gt;</span><span style="color:#ae81ff">1</span>
-<span style="color:#66d9ef">for</span> item <span style="color:#f92672">in</span> remaining_parts:
-    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> (item<span style="color:#f92672">&amp;</span>d3)<span style="color:#f92672">.</span>is_null():
-        <span style="color:#66d9ef">break</span>
-check <span style="color:#f92672">=</span> (item<span style="color:#f92672">^</span>design2)
-<span style="color:#66d9ef">print</span>(check<span style="color:#f92672">.</span>is_null())
-</code></pre></div><pre><code>False
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">d3</span><span style="color:#f92672">=</span><span style="color:#111">design2</span><span style="color:#f92672">&gt;&gt;</span><span style="color:#ae81ff">1</span>
+<span style="color:#00a8c8">for</span> <span style="color:#111">item</span> <span style="color:#f92672">in</span> <span style="color:#111">remaining_parts</span><span style="color:#111">:</span>
+    <span style="color:#00a8c8">if</span> <span style="color:#f92672">not</span> <span style="color:#111">(</span><span style="color:#111">item</span><span style="color:#f92672">&amp;</span><span style="color:#111">d3</span><span style="color:#111">)</span><span style="color:#f92672">.</span><span style="color:#111">is_null</span><span style="color:#111">():</span>
+        <span style="color:#00a8c8">break</span>
+<span style="color:#111">item</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
+</code></pre></div><p><div class="text-center">
+  <a href="output_36_0.png"><img src="output_36_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
+</div></p>
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">check</span> <span style="color:#f92672">=</span> <span style="color:#111">(</span><span style="color:#111">item</span><span style="color:#f92672">^</span><span style="color:#111">design2</span><span style="color:#111">)</span>
+<span style="color:#111">check</span><span style="color:#f92672">&gt;&gt;=</span><span style="color:#ae81ff">1e-5</span>
+<span style="color:#111">check</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
+</code></pre></div><pre><code>('zero-size array to reduction operation minimum which has no identity',)
 </code></pre>
-<p>if check.is_null():
-supported_design.export_dxf(&lsquo;first_pass&rsquo;)
-final_cut.export_dxf(&lsquo;second_pass&rsquo;)</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">w,h <span style="color:#f92672">=</span> supported_design<span style="color:#f92672">.</span>get_dimensions()
-p0,p1 <span style="color:#f92672">=</span> supported_design<span style="color:#f92672">.</span>bounding_box_coords()
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">w</span><span style="color:#111">,</span><span style="color:#111">h</span> <span style="color:#f92672">=</span> <span style="color:#111">supported_design</span><span style="color:#f92672">.</span><span style="color:#111">get_dimensions</span><span style="color:#111">()</span>
+<span style="color:#111">p0</span><span style="color:#111">,</span><span style="color:#111">p1</span> <span style="color:#f92672">=</span> <span style="color:#111">supported_design</span><span style="color:#f92672">.</span><span style="color:#111">bounding_box_coords</span><span style="color:#111">()</span>
 
-rigid_layer <span style="color:#f92672">=</span> supported_design[<span style="color:#ae81ff">0</span>] <span style="color:#f92672">|</span> (supported_design[<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]<span style="color:#f92672">.</span>translate(w<span style="color:#f92672">+</span><span style="color:#ae81ff">10</span>,<span style="color:#ae81ff">0</span>))
-rigid_layer<span style="color:#f92672">.</span>plot()
+<span style="color:#111">rigid_layer</span> <span style="color:#f92672">=</span> <span style="color:#111">supported_design</span><span style="color:#111">[</span><span style="color:#ae81ff">0</span><span style="color:#111">]</span> <span style="color:#f92672">|</span> <span style="color:#111">(</span><span style="color:#111">supported_design</span><span style="color:#111">[</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#111">]</span><span style="color:#f92672">.</span><span style="color:#111">translate</span><span style="color:#111">(</span><span style="color:#111">w</span><span style="color:#f92672">+</span><span style="color:#ae81ff">10</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">))</span>
+<span style="color:#111">rigid_layer</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_38_0.png" target="_blank"><img src="output_38_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_38_0.png"><img src="output_38_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">l4 <span style="color:#f92672">=</span> supported_design[<span style="color:#ae81ff">3</span>]<span style="color:#f92672">.</span>scale(<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">1</span>)
-p2,p3 <span style="color:#f92672">=</span> l4<span style="color:#f92672">.</span>bounding_box_coords()
-l4 <span style="color:#f92672">=</span> l4<span style="color:#f92672">.</span>translate(p0[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">-</span>p2[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">+</span><span style="color:#ae81ff">10</span><span style="color:#f92672">+</span>w,p0[<span style="color:#ae81ff">1</span>]<span style="color:#f92672">-</span>p2[<span style="color:#ae81ff">1</span>])
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">l4</span> <span style="color:#f92672">=</span> <span style="color:#111">supported_design</span><span style="color:#111">[</span><span style="color:#ae81ff">3</span><span style="color:#111">]</span><span style="color:#f92672">.</span><span style="color:#111">scale</span><span style="color:#111">(</span><span style="color:#f92672">-</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span><span style="color:#ae81ff">1</span><span style="color:#111">)</span>
+<span style="color:#111">p2</span><span style="color:#111">,</span><span style="color:#111">p3</span> <span style="color:#f92672">=</span> <span style="color:#111">l4</span><span style="color:#f92672">.</span><span style="color:#111">bounding_box_coords</span><span style="color:#111">()</span>
+<span style="color:#111">l4</span> <span style="color:#f92672">=</span> <span style="color:#111">l4</span><span style="color:#f92672">.</span><span style="color:#111">translate</span><span style="color:#111">(</span><span style="color:#111">p0</span><span style="color:#111">[</span><span style="color:#ae81ff">0</span><span style="color:#111">]</span><span style="color:#f92672">-</span><span style="color:#111">p2</span><span style="color:#111">[</span><span style="color:#ae81ff">0</span><span style="color:#111">]</span><span style="color:#f92672">+</span><span style="color:#ae81ff">10</span><span style="color:#f92672">+</span><span style="color:#111">w</span><span style="color:#111">,</span><span style="color:#111">p0</span><span style="color:#111">[</span><span style="color:#ae81ff">1</span><span style="color:#111">]</span><span style="color:#f92672">-</span><span style="color:#111">p2</span><span style="color:#111">[</span><span style="color:#ae81ff">1</span><span style="color:#111">])</span>
 
-adhesive_layer <span style="color:#f92672">=</span> supported_design[<span style="color:#ae81ff">1</span>] <span style="color:#f92672">|</span> l4
-adhesive_layer<span style="color:#f92672">.</span>plot()
+<span style="color:#111">adhesive_layer</span> <span style="color:#f92672">=</span> <span style="color:#111">supported_design</span><span style="color:#111">[</span><span style="color:#ae81ff">1</span><span style="color:#111">]</span> <span style="color:#f92672">|</span> <span style="color:#111">l4</span>
+<span style="color:#111">adhesive_layer</span><span style="color:#f92672">.</span><span style="color:#111">plot</span><span style="color:#111">()</span>
 </code></pre></div><p><div class="text-center">
-  <a href="output_39_0.png" target="_blank"><img src="output_39_0.png" alt="png"  class="img-fluid"/></a>
+  <a href="output_39_0.png"><img src="output_39_0.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
 </div></p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">first_pass <span style="color:#f92672">=</span> Laminate(rigid_layer,adhesive_layer,supported_design[<span style="color:#ae81ff">2</span>])
-<span style="color:#66d9ef">if</span> check<span style="color:#f92672">.</span>is_null():
-    first_pass<span style="color:#f92672">.</span>export_dxf(<span style="color:#e6db74">&#39;first_pass&#39;</span>)
-    final_cut<span style="color:#f92672">.</span>export_dxf(<span style="color:#e6db74">&#39;final_cut&#39;</span>)
-</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">check<span style="color:#f92672">.</span>is_null()
-</code></pre></div><pre><code>False
-</code></pre>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">
+<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">first_pass</span> <span style="color:#f92672">=</span> <span style="color:#111">Laminate</span><span style="color:#111">(</span><span style="color:#111">rigid_layer</span><span style="color:#111">,</span><span style="color:#111">adhesive_layer</span><span style="color:#111">,</span><span style="color:#111">supported_design</span><span style="color:#111">[</span><span style="color:#ae81ff">2</span><span style="color:#111">])</span>
+</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#00a8c8">if</span> <span style="color:#111">check</span><span style="color:#f92672">.</span><span style="color:#111">is_null</span><span style="color:#111">():</span>
+    <span style="color:#111">first_pass</span><span style="color:#f92672">.</span><span style="color:#111">export_dxf</span><span style="color:#111">(</span><span style="color:#d88200">&#39;first_pass&#39;</span><span style="color:#111">)</span>
+    <span style="color:#111">final_cut</span><span style="color:#f92672">.</span><span style="color:#111">export_dxf</span><span style="color:#111">(</span><span style="color:#d88200">&#39;final_cut&#39;</span><span style="color:#111">)</span>
 </code></pre></div>
   </article>
 </main>

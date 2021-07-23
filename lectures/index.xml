@@ -12,7 +12,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://danaukes.com/lectures/lecture01/</guid>
-      <description>Introduction to Foldable Robotics. Go over syllabus and course logistics. Discuss software-based tools, assignments</description>
+      <description>Introduction to Foldable Robotics.  Go over syllabus and course logistics.  Discuss software-based tools, assignments</description>
     </item>
     
     <item>
@@ -93,7 +93,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://danaukes.com/lectures/lecture18/</guid>
-      <description></description>
+      <description>Continuing topics in Dynamics</description>
     </item>
     
     <item>
@@ -111,7 +111,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://danaukes.com/lectures/lecture02/</guid>
-      <description>Foldable Robotics History. Bring popup books to class and share</description>
+      <description>Foldable Robotics History.  Bring popup books to class and share</description>
     </item>
     
     <item>
@@ -174,7 +174,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://danaukes.com/lectures/lecture26/</guid>
-      <description></description>
+      <description>In-class consulting time for compliance, actuator modeling and design optimization</description>
     </item>
     
     <item>
@@ -183,7 +183,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://danaukes.com/lectures/lecture27/</guid>
-      <description></description>
+      <description>Bring prototypes to class</description>
     </item>
     
     <item>
@@ -201,7 +201,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://danaukes.com/lectures/lecture29/</guid>
-      <description></description>
+      <description>Special Guest Seminar</description>
     </item>
     
     <item>
@@ -264,7 +264,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://danaukes.com/lectures/lecture06/</guid>
-      <description>Work on developing research question in class (teams), present out. Solidworks kinematics examples.</description>
+      <description>Work on developing research question in class (teams), present out.  Solidworks kinematics examples.</description>
     </item>
     
     <item>
@@ -273,7 +273,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://danaukes.com/lectures/lecture07/</guid>
-      <description>Biomechanics wrap-up. Origami, Kirigami Background. Introduction to kinematics and degrees of freedom. Break into teams for work time (20 min). Meet back and discuss singularities</description>
+      <description>Biomechanics wrap-up.  Origami, Kirigami Background.  Introduction to kinematics and degrees of freedom.  Break into teams for work time (20 min).  Meet back and discuss singularities</description>
     </item>
     
     <item>
@@ -282,7 +282,7 @@
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://danaukes.com/lectures/lecture08/</guid>
-      <description>Introduce Jacobian. Introduce constraint equations, plotting, numpy, nonlinear optimization, motion paths. Using motion path to determine Jacobian, estimate forces, speed, and power. Work on kinematics example in class</description>
+      <description>Introduce Jacobian.  Introduce constraint equations, plotting, numpy, nonlinear optimization, motion paths.  Using motion path to determine Jacobian, estimate forces, speed, and power.  Work on kinematics example in class.</description>
     </item>
     
     <item>
