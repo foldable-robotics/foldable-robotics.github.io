@@ -1,350 +1,257 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <title>
+<!doctype html><html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=description content>
+<title>
 Solving Four-Bar Constraints | Foldable Robotics
 </title>
-
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-
-<style>
-  .bd-placeholder-img {
-    font-size: 1.125rem;
-    text-anchor: middle;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    user-select: none;
-  }
-
-  @media (min-width: 768px) {
-    .bd-placeholder-img-lg {
-      font-size: 3.5rem;
-    }
-  }
-</style>
-
-<link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap" rel="stylesheet"> 
-<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> 
-
-
-<link href="/css/blog.css" rel="stylesheet">
-<link href="/css/features.css" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
-
-
-    <script>
-  MathJax = {
-    tex: {
-      inlineMath: [['$', '$'], ['\\(', '\\)']],
-      displayMath: [['$$','$$'], ['\\[', '\\]']],
-      processEscapes: true,
-      processEnvironments: true
-    },
-    options: {
-      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
-    }
-  };
-
-  window.addEventListener('load', (event) => {
-      document.querySelectorAll("mjx-container").forEach(function(x){
-        x.parentElement.classList += 'has-jax'})
-    });
-
-</script>
+<link href=/css/bootstrap.min.css rel=stylesheet>
+<style>.bd-placeholder-img{font-size:1.125rem;text-anchor:middle;-webkit-user-select:none;-moz-user-select:none;user-select:none}@media(min-width:768px){.bd-placeholder-img-lg{font-size:3.5rem}}</style>
+<link rel=preconnect href=https://fonts.gstatic.com>
+<link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel=stylesheet>
+<link href="https://fonts.googleapis.com/css2?family=Oleo+Script:wght@400;700&display=swap" rel=stylesheet>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel=stylesheet>
+<link href=/css/blog.css rel=stylesheet>
+<link href=/css/features.css rel=stylesheet>
+<link rel=stylesheet href=https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css>
+<script>MathJax={tex:{inlineMath:[['$','$'],['\\(','\\)']],displayMath:[['$$','$$'],['\\[','\\]']],processEscapes:!0,processEnvironments:!0},options:{skipHtmlTags:['script','noscript','style','textarea','pre']}},window.addEventListener('load',a=>{document.querySelectorAll("mjx-container").forEach(function(a){a.parentElement.classList+='has-jax'})})</script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script type="text/javascript" id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
-    <link rel="stylesheet" type="text/css" href="/hugo-cite.css" />
-
-    <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="/favicon/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
-<link rel="manifest" href="/favicon/manifest.json">
-
-
-  </head>
-  <body>
-
-    <div class="container">
-
-      <header class="blog-header py-3">
-  <div class="row flex-nowrap justify-content-between align-items-center">
-    <div class="col-2 pt-1">
-    </div>
-    <div class="col-8 text-center">
-      <a class="blog-header-logo text-dark" href="/">Foldable Robotics</a>
-    </div>
-    <div class="col-2 d-flex justify-content-end align-items-center">
-    </div>
-  </div>
+<script type=text/javascript id=MathJax-script async src=https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js></script>
+<link rel=stylesheet type=text/css href=/hugo-cite.css>
+<link rel=apple-touch-icon sizes=57x57 href=/favicon/apple-icon-57x57.png>
+<link rel=apple-touch-icon sizes=60x60 href=/favicon/apple-icon-60x60.png>
+<link rel=apple-touch-icon sizes=72x72 href=/favicon/apple-icon-72x72.png>
+<link rel=apple-touch-icon sizes=76x76 href=/favicon/apple-icon-76x76.png>
+<link rel=apple-touch-icon sizes=114x114 href=/favicon/apple-icon-114x114.png>
+<link rel=apple-touch-icon sizes=120x120 href=/favicon/apple-icon-120x120.png>
+<link rel=apple-touch-icon sizes=144x144 href=/favicon/apple-icon-144x144.png>
+<link rel=apple-touch-icon sizes=152x152 href=/favicon/apple-icon-152x152.png>
+<link rel=apple-touch-icon sizes=180x180 href=/favicon/apple-icon-180x180.png>
+<link rel=icon type=image/png sizes=192x192 href=/favicon/android-icon-192x192.png>
+<link rel=icon type=image/png sizes=32x32 href=/favicon/favicon-32x32.png>
+<link rel=icon type=image/png sizes=96x96 href=/favicon/favicon-96x96.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicon/favicon-16x16.png>
+<link rel=manifest href=/favicon/manifest.json>
+</head>
+<body>
+<div class=container>
+<header class="blog-header py-3">
+<div class="row flex-nowrap justify-content-between align-items-center">
+<div class="col-2 pt-1">
+</div>
+<div class="col-8 text-center">
+<a class="blog-header-logo text-dark" href=/>Foldable Robotics</a>
+</div>
+<div class="col-2 d-flex justify-content-end align-items-center">
+</div>
+</div>
 </header>
-
-
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="/">Home</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        
-        
-        
-        
-        
-      
-        <li class="nav-item">
-          <a class="nav-link" href="/assignments/">Assignments</a>
-        </li>
-        
-        
-        
-        
-        
-      
-        <li class="nav-item">
-          <a class="nav-link" href="/calendar/">Course Calendar</a>
-        </li>
-        
-        
-        
-        
-        
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="/course-documents/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Course Documents
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            
-            <li><a class="dropdown-item" href="/course-documents/software-list/">Software List</a></li>
-            
-            <li><a class="dropdown-item" href="/course-documents/submission-best-practices/">Submission Best Practices</a></li>
-            
-            <li><a class="dropdown-item" href="/course-documents/suggested-materials-list/">Suggested Materials List</a></li>
-            
-            <li><a class="dropdown-item" href="/course-documents/syllabus-web/">Syllabus for Foldable Robotics</a></li>
-            
-          </ul>
-        </li>
-        
-        
-        
-        
-        
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="/modules/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Course Topics
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            
-            <li><a class="dropdown-item" href="/modules/biomechanics/">Biomechanics &amp; Bio-inspiration</a></li>
-            
-            <li><a class="dropdown-item" href="/modules/dynamics/">Dynamics</a></li>
-            
-            <li><a class="dropdown-item" href="/modules/validation/">Experimental Validation</a></li>
-            
-            <li><a class="dropdown-item" href="/modules/integration/">Integration</a></li>
-            
-            <li><a class="dropdown-item" href="/modules/introduction/">Introduction</a></li>
-            
-            <li><a class="dropdown-item" href="/modules/kinematics/">Kinematics</a></li>
-            
-            <li><a class="dropdown-item" href="/modules/compliance/">Mechanics and Compliance</a></li>
-            
-            <li><a class="dropdown-item" href="/modules/misc/">Misc</a></li>
-            
-            <li><a class="dropdown-item" href="/modules/optimization/">Optimization</a></li>
-            
-            <li><a class="dropdown-item" href="/modules/project/">Project</a></li>
-            
-            <li><a class="dropdown-item" href="/modules/manufacturing/">Prototyping &amp; Manufacturing</a></li>
-            
-            <li><a class="dropdown-item" href="/modules/python/">Python</a></li>
-            
-          </ul>
-        </li>
-        
-        
-        
-        
-        
-      
-        <li class="nav-item">
-          <a class="nav-link" href="/lectures/">Lectures</a>
-        </li>
-        
-        
-        
-        
-        <li class="nav-item">
-          
-          <a class="nav-link" href="https://canvas.asu.edu/"target="_blank">Canvas <i class="bi bi-link"></i></a> 
-        </li>
-        
-        
-      </ul>
-      <span class="navbar-text">
-        Making better Foldable Robots
-      </span>
-
-    </div>
-  </div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<div class=container-fluid>
+<a class=navbar-brand href=/>Home</a>
+<button class=navbar-toggler type=button data-bs-toggle=collapse data-bs-target=#navbarSupportedContent aria-controls=navbarSupportedContent aria-expanded=false aria-label="Toggle navigation">
+<span class=navbar-toggler-icon></span>
+</button>
+<div class="collapse navbar-collapse" id=navbarSupportedContent>
+<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+<li class=nav-item>
+<a class=nav-link href=https://danaukes.com/assignments/>Assignments</a>
+</li>
+<li class=nav-item>
+<a class=nav-link href=https://danaukes.com/calendar/>Calendar</a>
+</li>
+<li class=nav-item>
+<a class=nav-link href=https://danaukes.com/lectures/>Lectures</a>
+</li>
+<li class=nav-item>
+<a class=nav-link href=https://canvas.asu.edu/>Canvas (external)</a>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href=# id=navbarDropdown role=button data-bs-toggle=dropdown aria-haspopup=true aria-expanded=false>
+Course Topics
+</a>
+<div class=dropdown-menu aria-labelledby=navbarDropdown>
+<a class=dropdown-item href=https://danaukes.com/modules/>All Topics</a>
+<a class=dropdown-item href=https://danaukes.com/modules/introduction/>Introduction</a>
+<a class=dropdown-item href=https://danaukes.com/modules/python/>Python</a>
+<a class=dropdown-item href=https://danaukes.com/modules/biomechanics/>Biomechanics</a>
+<a class=dropdown-item href=https://danaukes.com/modules/project/>Project</a>
+<a class=dropdown-item href=https://danaukes.com/modules/kinematics/>Kinematics</a>
+<a class=dropdown-item href=https://danaukes.com/modules/dynamics/>Dynamics</a>
+<a class=dropdown-item href=https://danaukes.com/modules/optimization/>Optimization</a>
+<a class=dropdown-item href=https://danaukes.com/modules/compliance/>Mechanics and Compliance</a>
+<a class=dropdown-item href=https://danaukes.com/modules/manufacturing/>Prototyping & Manufacturing</a>
+<a class=dropdown-item href=https://danaukes.com/modules/validation/>Experimental Validation</a>
+<a class=dropdown-item href=https://danaukes.com/modules/integration/>Integration</a>
+<a class=dropdown-item href=https://danaukes.com/modules/misc/>Misc</a>
+</div>
+</li>
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle" href=# id=navbarDropdown role=button data-bs-toggle=dropdown aria-haspopup=true aria-expanded=false>
+Documents
+</a>
+<div class=dropdown-menu aria-labelledby=navbarDropdown>
+<a class=dropdown-item href=https://danaukes.com/course-documents/>All Documents</a>
+<a class=dropdown-item href=https://danaukes.com/course-documents/syllabus-web/>Syllabus</a>
+<a class=dropdown-item href=https://danaukes.com/course-documents/submission-best-practices/>Submission Best Practices</a>
+<a class=dropdown-item href=https://danaukes.com/course-documents/software-list/>Software List</a>
+<a class=dropdown-item href=https://danaukes.com/course-documents/suggested-materials-list/>Suggested Materials List</a>
+</div>
+</li>
+</ul>
+<span class=navbar-text>
+Making better Foldable Robots
+</span>
+</div>
+</div>
 </nav>
-
-    </div>
-
-    
-<main class="container">
-  <article>
-  <h1 id="solving-four-bar-constraints">Solving Four-Bar Constraints</h1>
+</div>
+<main class=container>
+<div class=text-center>
+<a href=/modules>modules</a>
+|
+<a href=/modules/kinematics>kinematics</a>
+|
+<a href=/modules/kinematics/generated>generated</a>
+|
+<a href=/modules/kinematics/generated/solving-four-bar-constraints>solving-four-bar-constraints</a>
+|
+<a href=./>index</a>
+</div>
+<article>
+<h1 id=solving-four-bar-constraints>Solving Four-Bar Constraints</h1>
 <p>Turn on inline plotting</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">%</span><span style="color:#111">matplotlib</span> <span style="color:#111">inline</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>%</span><span style=color:#111>matplotlib</span> <span style=color:#111>inline</span>
 </code></pre></div><p>import required packages</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> <span style="color:#111">pynamics</span>
-<span style="color:#f92672">from</span> <span style="color:#111">pynamics.frame</span> <span style="color:#f92672">import</span> <span style="color:#111">Frame</span>
-<span style="color:#f92672">from</span> <span style="color:#111">pynamics.variable_types</span> <span style="color:#f92672">import</span> <span style="color:#111">Differentiable</span><span style="color:#111">,</span><span style="color:#111">Constant</span>
-<span style="color:#f92672">from</span> <span style="color:#111">pynamics.system</span> <span style="color:#f92672">import</span> <span style="color:#111">System</span>
-<span style="color:#75715e">#from pynamics.body import Body</span>
-<span style="color:#75715e">#from pynamics.dyadic import Dyadic</span>
-<span style="color:#f92672">from</span> <span style="color:#111">pynamics.output</span> <span style="color:#f92672">import</span> <span style="color:#111">Output</span><span style="color:#111">,</span><span style="color:#111">PointsOutput</span>
-<span style="color:#75715e">#from pynamics.particle import Particle</span>
-<span style="color:#f92672">import</span> <span style="color:#111">pynamics.integration</span>
-<span style="color:#f92672">import</span> <span style="color:#111">sympy</span>
-<span style="color:#f92672">import</span> <span style="color:#111">numpy</span>
-<span style="color:#f92672">import</span> <span style="color:#111">matplotlib.pyplot</span> <span style="color:#f92672">as</span> <span style="color:#111">plt</span>
-<span style="color:#111">plt</span><span style="color:#f92672">.</span><span style="color:#111">ion</span><span style="color:#111">()</span>
-<span style="color:#f92672">from</span> <span style="color:#111">math</span> <span style="color:#f92672">import</span> <span style="color:#111">pi</span>
-<span style="color:#75715e">#from pynamics.constraint import Constraint</span>
-<span style="color:#f92672">import</span> <span style="color:#111">scipy.optimize</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> <span style=color:#111>pynamics</span>
+<span style=color:#f92672>from</span> <span style=color:#111>pynamics.frame</span> <span style=color:#f92672>import</span> <span style=color:#111>Frame</span>
+<span style=color:#f92672>from</span> <span style=color:#111>pynamics.variable_types</span> <span style=color:#f92672>import</span> <span style=color:#111>Differentiable</span><span style=color:#111>,</span><span style=color:#111>Constant</span>
+<span style=color:#f92672>from</span> <span style=color:#111>pynamics.system</span> <span style=color:#f92672>import</span> <span style=color:#111>System</span>
+<span style=color:#75715e>#from pynamics.body import Body</span>
+<span style=color:#75715e>#from pynamics.dyadic import Dyadic</span>
+<span style=color:#f92672>from</span> <span style=color:#111>pynamics.output</span> <span style=color:#f92672>import</span> <span style=color:#111>Output</span><span style=color:#111>,</span><span style=color:#111>PointsOutput</span>
+<span style=color:#75715e>#from pynamics.particle import Particle</span>
+<span style=color:#f92672>import</span> <span style=color:#111>pynamics.integration</span>
+<span style=color:#f92672>import</span> <span style=color:#111>sympy</span>
+<span style=color:#f92672>import</span> <span style=color:#111>numpy</span>
+<span style=color:#f92672>import</span> <span style=color:#111>matplotlib.pyplot</span> <span style=color:#00a8c8>as</span> <span style=color:#111>plt</span>
+<span style=color:#111>plt</span><span style=color:#f92672>.</span><span style=color:#111>ion</span><span style=color:#111>()</span>
+<span style=color:#f92672>from</span> <span style=color:#111>math</span> <span style=color:#f92672>import</span> <span style=color:#111>pi</span>
+<span style=color:#75715e>#from pynamics.constraint import Constraint</span>
+<span style=color:#f92672>import</span> <span style=color:#111>scipy.optimize</span>
 
 </code></pre></div><p>Create a pynamics system</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">system</span> <span style="color:#f92672">=</span> <span style="color:#111">System</span><span style="color:#111">()</span>
-<span style="color:#111">pynamics</span><span style="color:#f92672">.</span><span style="color:#111">set_system</span><span style="color:#111">(</span><span style="color:#111">__name__</span><span style="color:#111">,</span><span style="color:#111">system</span><span style="color:#111">)</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>system</span> <span style=color:#f92672>=</span> <span style=color:#111>System</span><span style=color:#111>()</span>
+<span style=color:#111>pynamics</span><span style=color:#f92672>.</span><span style=color:#111>set_system</span><span style=color:#111>(</span><span style=color:#111>__name__</span><span style=color:#111>,</span><span style=color:#111>system</span><span style=color:#111>)</span>
 </code></pre></div><p>Declare constants</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">lA</span> <span style="color:#f92672">=</span> <span style="color:#111">Constant</span><span style="color:#111">(</span><span style="color:#ae81ff">2</span><span style="color:#111">,</span><span style="color:#d88200">&#39;lA&#39;</span><span style="color:#111">,</span><span style="color:#111">system</span><span style="color:#111">)</span>
-<span style="color:#111">lB</span> <span style="color:#f92672">=</span> <span style="color:#111">Constant</span><span style="color:#111">(</span><span style="color:#ae81ff">1.5</span><span style="color:#111">,</span><span style="color:#d88200">&#39;lB&#39;</span><span style="color:#111">,</span><span style="color:#111">system</span><span style="color:#111">)</span>
-<span style="color:#111">lC</span> <span style="color:#f92672">=</span> <span style="color:#111">Constant</span><span style="color:#111">(</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span><span style="color:#d88200">&#39;lC&#39;</span><span style="color:#111">,</span><span style="color:#111">system</span><span style="color:#111">)</span>
-<span style="color:#111">lD</span> <span style="color:#f92672">=</span> <span style="color:#111">Constant</span><span style="color:#111">(</span><span style="color:#ae81ff">1</span><span style="color:#111">,</span><span style="color:#d88200">&#39;lD&#39;</span><span style="color:#111">,</span><span style="color:#111">system</span><span style="color:#111">)</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>lA</span> <span style=color:#f92672>=</span> <span style=color:#111>Constant</span><span style=color:#111>(</span><span style=color:#ae81ff>2</span><span style=color:#111>,</span><span style=color:#d88200>&#39;lA&#39;</span><span style=color:#111>,</span><span style=color:#111>system</span><span style=color:#111>)</span>
+<span style=color:#111>lB</span> <span style=color:#f92672>=</span> <span style=color:#111>Constant</span><span style=color:#111>(</span><span style=color:#ae81ff>1.5</span><span style=color:#111>,</span><span style=color:#d88200>&#39;lB&#39;</span><span style=color:#111>,</span><span style=color:#111>system</span><span style=color:#111>)</span>
+<span style=color:#111>lC</span> <span style=color:#f92672>=</span> <span style=color:#111>Constant</span><span style=color:#111>(</span><span style=color:#ae81ff>1</span><span style=color:#111>,</span><span style=color:#d88200>&#39;lC&#39;</span><span style=color:#111>,</span><span style=color:#111>system</span><span style=color:#111>)</span>
+<span style=color:#111>lD</span> <span style=color:#f92672>=</span> <span style=color:#111>Constant</span><span style=color:#111>(</span><span style=color:#ae81ff>1</span><span style=color:#111>,</span><span style=color:#d88200>&#39;lD&#39;</span><span style=color:#111>,</span><span style=color:#111>system</span><span style=color:#111>)</span>
 </code></pre></div><p>Create three differentiable state variables</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">qA</span><span style="color:#111">,</span><span style="color:#111">qA_d</span><span style="color:#111">,</span><span style="color:#111">qA_dd</span> <span style="color:#f92672">=</span> <span style="color:#111">Differentiable</span><span style="color:#111">(</span><span style="color:#d88200">&#39;qA&#39;</span><span style="color:#111">,</span><span style="color:#111">system</span><span style="color:#111">)</span>
-<span style="color:#111">qB</span><span style="color:#111">,</span><span style="color:#111">qB_d</span><span style="color:#111">,</span><span style="color:#111">qB_dd</span> <span style="color:#f92672">=</span> <span style="color:#111">Differentiable</span><span style="color:#111">(</span><span style="color:#d88200">&#39;qB&#39;</span><span style="color:#111">,</span><span style="color:#111">system</span><span style="color:#111">)</span>
-<span style="color:#111">qC</span><span style="color:#111">,</span><span style="color:#111">qC_d</span><span style="color:#111">,</span><span style="color:#111">qC_dd</span> <span style="color:#f92672">=</span> <span style="color:#111">Differentiable</span><span style="color:#111">(</span><span style="color:#d88200">&#39;qC&#39;</span><span style="color:#111">,</span><span style="color:#111">system</span><span style="color:#111">)</span>
-</code></pre></div><p>Create an initial guess for their starting positions.  Note that this is not necessarily accurate given the constraint that they are supposed to be connected with given, constant length.  We will use these initial values to seed the solver that will find a valid initial state</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">initialvalues</span> <span style="color:#f92672">=</span> <span style="color:#111">{}</span>
-<span style="color:#111">initialvalues</span><span style="color:#111">[</span><span style="color:#111">qA</span><span style="color:#111">]</span><span style="color:#f92672">=-</span><span style="color:#ae81ff">90</span><span style="color:#f92672">*</span><span style="color:#111">pi</span><span style="color:#f92672">/</span><span style="color:#ae81ff">180</span>
-<span style="color:#111">initialvalues</span><span style="color:#111">[</span><span style="color:#111">qA_d</span><span style="color:#111">]</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span><span style="color:#f92672">*</span><span style="color:#111">pi</span><span style="color:#f92672">/</span><span style="color:#ae81ff">180</span>
-<span style="color:#111">initialvalues</span><span style="color:#111">[</span><span style="color:#111">qB</span><span style="color:#111">]</span><span style="color:#f92672">=</span><span style="color:#ae81ff">90</span><span style="color:#f92672">*</span><span style="color:#111">pi</span><span style="color:#f92672">/</span><span style="color:#ae81ff">180</span>
-<span style="color:#111">initialvalues</span><span style="color:#111">[</span><span style="color:#111">qB_d</span><span style="color:#111">]</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span><span style="color:#f92672">*</span><span style="color:#111">pi</span><span style="color:#f92672">/</span><span style="color:#ae81ff">180</span>
-<span style="color:#111">initialvalues</span><span style="color:#111">[</span><span style="color:#111">qC</span><span style="color:#111">]</span><span style="color:#f92672">=</span><span style="color:#ae81ff">90</span><span style="color:#f92672">*</span><span style="color:#111">pi</span><span style="color:#f92672">/</span><span style="color:#ae81ff">180</span>
-<span style="color:#111">initialvalues</span><span style="color:#111">[</span><span style="color:#111">qC_d</span><span style="color:#111">]</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span><span style="color:#f92672">*</span><span style="color:#111">pi</span><span style="color:#f92672">/</span><span style="color:#ae81ff">180</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>qA</span><span style=color:#111>,</span><span style=color:#111>qA_d</span><span style=color:#111>,</span><span style=color:#111>qA_dd</span> <span style=color:#f92672>=</span> <span style=color:#111>Differentiable</span><span style=color:#111>(</span><span style=color:#d88200>&#39;qA&#39;</span><span style=color:#111>,</span><span style=color:#111>system</span><span style=color:#111>)</span>
+<span style=color:#111>qB</span><span style=color:#111>,</span><span style=color:#111>qB_d</span><span style=color:#111>,</span><span style=color:#111>qB_dd</span> <span style=color:#f92672>=</span> <span style=color:#111>Differentiable</span><span style=color:#111>(</span><span style=color:#d88200>&#39;qB&#39;</span><span style=color:#111>,</span><span style=color:#111>system</span><span style=color:#111>)</span>
+<span style=color:#111>qC</span><span style=color:#111>,</span><span style=color:#111>qC_d</span><span style=color:#111>,</span><span style=color:#111>qC_dd</span> <span style=color:#f92672>=</span> <span style=color:#111>Differentiable</span><span style=color:#111>(</span><span style=color:#d88200>&#39;qC&#39;</span><span style=color:#111>,</span><span style=color:#111>system</span><span style=color:#111>)</span>
+</code></pre></div><p>Create an initial guess for their starting positions. Note that this is not necessarily accurate given the constraint that they are supposed to be connected with given, constant length. We will use these initial values to seed the solver that will find a valid initial state</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>initialvalues</span> <span style=color:#f92672>=</span> <span style=color:#111>{}</span>
+<span style=color:#111>initialvalues</span><span style=color:#111>[</span><span style=color:#111>qA</span><span style=color:#111>]</span><span style=color:#f92672>=-</span><span style=color:#ae81ff>90</span><span style=color:#f92672>*</span><span style=color:#111>pi</span><span style=color:#f92672>/</span><span style=color:#ae81ff>180</span>
+<span style=color:#111>initialvalues</span><span style=color:#111>[</span><span style=color:#111>qA_d</span><span style=color:#111>]</span><span style=color:#f92672>=</span><span style=color:#ae81ff>0</span><span style=color:#f92672>*</span><span style=color:#111>pi</span><span style=color:#f92672>/</span><span style=color:#ae81ff>180</span>
+<span style=color:#111>initialvalues</span><span style=color:#111>[</span><span style=color:#111>qB</span><span style=color:#111>]</span><span style=color:#f92672>=</span><span style=color:#ae81ff>90</span><span style=color:#f92672>*</span><span style=color:#111>pi</span><span style=color:#f92672>/</span><span style=color:#ae81ff>180</span>
+<span style=color:#111>initialvalues</span><span style=color:#111>[</span><span style=color:#111>qB_d</span><span style=color:#111>]</span><span style=color:#f92672>=</span><span style=color:#ae81ff>0</span><span style=color:#f92672>*</span><span style=color:#111>pi</span><span style=color:#f92672>/</span><span style=color:#ae81ff>180</span>
+<span style=color:#111>initialvalues</span><span style=color:#111>[</span><span style=color:#111>qC</span><span style=color:#111>]</span><span style=color:#f92672>=</span><span style=color:#ae81ff>90</span><span style=color:#f92672>*</span><span style=color:#111>pi</span><span style=color:#f92672>/</span><span style=color:#ae81ff>180</span>
+<span style=color:#111>initialvalues</span><span style=color:#111>[</span><span style=color:#111>qC_d</span><span style=color:#111>]</span><span style=color:#f92672>=</span><span style=color:#ae81ff>0</span><span style=color:#f92672>*</span><span style=color:#111>pi</span><span style=color:#f92672>/</span><span style=color:#ae81ff>180</span>
 </code></pre></div><p>Retrieve state variables in the order they are stored in the system</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">statevariables</span> <span style="color:#f92672">=</span> <span style="color:#111">system</span><span style="color:#f92672">.</span><span style="color:#111">get_state_variables</span><span style="color:#111">()</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>statevariables</span> <span style=color:#f92672>=</span> <span style=color:#111>system</span><span style=color:#f92672>.</span><span style=color:#111>get_state_variables</span><span style=color:#111>()</span>
 </code></pre></div><p>Create four frames</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">N</span> <span style="color:#f92672">=</span> <span style="color:#111">Frame</span><span style="color:#111">(</span><span style="color:#d88200">&#39;N&#39;</span><span style="color:#111">)</span>
-<span style="color:#111">A</span> <span style="color:#f92672">=</span> <span style="color:#111">Frame</span><span style="color:#111">(</span><span style="color:#d88200">&#39;A&#39;</span><span style="color:#111">)</span>
-<span style="color:#111">B</span> <span style="color:#f92672">=</span> <span style="color:#111">Frame</span><span style="color:#111">(</span><span style="color:#d88200">&#39;B&#39;</span><span style="color:#111">)</span>
-<span style="color:#111">C</span> <span style="color:#f92672">=</span> <span style="color:#111">Frame</span><span style="color:#111">(</span><span style="color:#d88200">&#39;C&#39;</span><span style="color:#111">)</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>N</span> <span style=color:#f92672>=</span> <span style=color:#111>Frame</span><span style=color:#111>(</span><span style=color:#d88200>&#39;N&#39;</span><span style=color:#111>)</span>
+<span style=color:#111>A</span> <span style=color:#f92672>=</span> <span style=color:#111>Frame</span><span style=color:#111>(</span><span style=color:#d88200>&#39;A&#39;</span><span style=color:#111>)</span>
+<span style=color:#111>B</span> <span style=color:#f92672>=</span> <span style=color:#111>Frame</span><span style=color:#111>(</span><span style=color:#d88200>&#39;B&#39;</span><span style=color:#111>)</span>
+<span style=color:#111>C</span> <span style=color:#f92672>=</span> <span style=color:#111>Frame</span><span style=color:#111>(</span><span style=color:#d88200>&#39;C&#39;</span><span style=color:#111>)</span>
 </code></pre></div><p>Declare N as the Newtonian (fixed) frame</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">system</span><span style="color:#f92672">.</span><span style="color:#111">set_newtonian</span><span style="color:#111">(</span><span style="color:#111">N</span><span style="color:#111">)</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>system</span><span style=color:#f92672>.</span><span style=color:#111>set_newtonian</span><span style=color:#111>(</span><span style=color:#111>N</span><span style=color:#111>)</span>
 </code></pre></div><p>Rotate A,B, and C about their local Z axes.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">A</span><span style="color:#f92672">.</span><span style="color:#111">rotate_fixed_axis_directed</span><span style="color:#111">(</span><span style="color:#111">N</span><span style="color:#111">,[</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span><span style="color:#ae81ff">1</span><span style="color:#111">],</span><span style="color:#111">qA</span><span style="color:#111">,</span><span style="color:#111">system</span><span style="color:#111">)</span>
-<span style="color:#111">B</span><span style="color:#f92672">.</span><span style="color:#111">rotate_fixed_axis_directed</span><span style="color:#111">(</span><span style="color:#111">A</span><span style="color:#111">,[</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span><span style="color:#ae81ff">1</span><span style="color:#111">],</span><span style="color:#111">qB</span><span style="color:#111">,</span><span style="color:#111">system</span><span style="color:#111">)</span>
-<span style="color:#111">C</span><span style="color:#f92672">.</span><span style="color:#111">rotate_fixed_axis_directed</span><span style="color:#111">(</span><span style="color:#111">B</span><span style="color:#111">,[</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span><span style="color:#ae81ff">1</span><span style="color:#111">],</span><span style="color:#111">qC</span><span style="color:#111">,</span><span style="color:#111">system</span><span style="color:#111">)</span>
-</code></pre></div><p>Define vectors that will be used to solve for kinematics.  Note: this can be done several possible ways as in the figure below:</p>
-<p><div class="text-center">
-  <a href="/sketches/four-bar-representations.png"><img src="/sketches/four-bar-representations.png" alt="Four Bar Representations"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>A</span><span style=color:#f92672>.</span><span style=color:#111>rotate_fixed_axis_directed</span><span style=color:#111>(</span><span style=color:#111>N</span><span style=color:#111>,[</span><span style=color:#ae81ff>0</span><span style=color:#111>,</span><span style=color:#ae81ff>0</span><span style=color:#111>,</span><span style=color:#ae81ff>1</span><span style=color:#111>],</span><span style=color:#111>qA</span><span style=color:#111>,</span><span style=color:#111>system</span><span style=color:#111>)</span>
+<span style=color:#111>B</span><span style=color:#f92672>.</span><span style=color:#111>rotate_fixed_axis_directed</span><span style=color:#111>(</span><span style=color:#111>A</span><span style=color:#111>,[</span><span style=color:#ae81ff>0</span><span style=color:#111>,</span><span style=color:#ae81ff>0</span><span style=color:#111>,</span><span style=color:#ae81ff>1</span><span style=color:#111>],</span><span style=color:#111>qB</span><span style=color:#111>,</span><span style=color:#111>system</span><span style=color:#111>)</span>
+<span style=color:#111>C</span><span style=color:#f92672>.</span><span style=color:#111>rotate_fixed_axis_directed</span><span style=color:#111>(</span><span style=color:#111>B</span><span style=color:#111>,[</span><span style=color:#ae81ff>0</span><span style=color:#111>,</span><span style=color:#ae81ff>0</span><span style=color:#111>,</span><span style=color:#ae81ff>1</span><span style=color:#111>],</span><span style=color:#111>qC</span><span style=color:#111>,</span><span style=color:#111>system</span><span style=color:#111>)</span>
+</code></pre></div><p>Define vectors that will be used to solve for kinematics. Note: this can be done several possible ways as in the figure below:</p>
+<p><div class=text-center>
+<a href=/sketches/four-bar-representations.png><img src=/sketches/four-bar-representations.png alt="Four Bar Representations" style=max-width:80%;max-height:200px;width:auto;height:auto;text-align:center></a>
 </div>
-<div class="text-center">
-  <a href="../../../../static/sketches/four-bar-representations.png"><img src="../../../../static/sketches/four-bar-representations.png" alt="Four Bar Representations"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
+<div class=text-center>
+<a href=../../../../static/sketches/four-bar-representations.png><img src=../../../../static/sketches/four-bar-representations.png alt="Four Bar Representations" style=max-width:80%;max-height:200px;width:auto;height:auto;text-align:center></a>
 </div></p>
 <p>Define my rigid body kinematics</p>
-<p><div class="text-center">
-  <a href="/figures/kinematics/fourbar2.png"><img src="/figures/kinematics/fourbar2.png" alt=""  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
+<p><div class=text-center>
+<a href=/figures/kinematics/fourbar2.png><img src=/figures/kinematics/fourbar2.png alt style=max-width:80%;max-height:200px;width:auto;height:auto;text-align:center></a>
 </div>
-<div class="text-center">
-  <a href="../../../../static/figures/kinematics/fourbar2.png"><img src="../../../../static/figures/kinematics/fourbar2.png" alt=""  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
+<div class=text-center>
+<a href=../../../../static/figures/kinematics/fourbar2.png><img src=../../../../static/figures/kinematics/fourbar2.png alt style=max-width:80%;max-height:200px;width:auto;height:auto;text-align:center></a>
 </div></p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">pNA</span><span style="color:#f92672">=</span><span style="color:#ae81ff">0</span><span style="color:#f92672">*</span><span style="color:#111">N</span><span style="color:#f92672">.</span><span style="color:#111">x</span><span style="color:#f92672">+</span><span style="color:#ae81ff">0</span><span style="color:#f92672">*</span><span style="color:#111">N</span><span style="color:#f92672">.</span><span style="color:#111">y</span><span style="color:#f92672">+</span><span style="color:#ae81ff">0</span><span style="color:#f92672">*</span><span style="color:#111">N</span><span style="color:#f92672">.</span><span style="color:#111">z</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>pNA</span><span style=color:#f92672>=</span><span style=color:#ae81ff>0</span><span style=color:#f92672>*</span><span style=color:#111>N</span><span style=color:#f92672>.</span><span style=color:#111>x</span><span style=color:#f92672>+</span><span style=color:#ae81ff>0</span><span style=color:#f92672>*</span><span style=color:#111>N</span><span style=color:#f92672>.</span><span style=color:#111>y</span><span style=color:#f92672>+</span><span style=color:#ae81ff>0</span><span style=color:#f92672>*</span><span style=color:#111>N</span><span style=color:#f92672>.</span><span style=color:#111>z</span>
 
-<span style="color:#111">pAB</span><span style="color:#f92672">=</span><span style="color:#111">pNA</span><span style="color:#f92672">+</span><span style="color:#111">lA</span><span style="color:#f92672">*</span><span style="color:#111">A</span><span style="color:#f92672">.</span><span style="color:#111">x</span>
+<span style=color:#111>pAB</span><span style=color:#f92672>=</span><span style=color:#111>pNA</span><span style=color:#f92672>+</span><span style=color:#111>lA</span><span style=color:#f92672>*</span><span style=color:#111>A</span><span style=color:#f92672>.</span><span style=color:#111>x</span>
 
-<span style="color:#111">pBC</span> <span style="color:#f92672">=</span> <span style="color:#111">pAB</span> <span style="color:#f92672">+</span> <span style="color:#111">lB</span><span style="color:#f92672">*</span><span style="color:#111">B</span><span style="color:#f92672">.</span><span style="color:#111">x</span>
+<span style=color:#111>pBC</span> <span style=color:#f92672>=</span> <span style=color:#111>pAB</span> <span style=color:#f92672>+</span> <span style=color:#111>lB</span><span style=color:#f92672>*</span><span style=color:#111>B</span><span style=color:#f92672>.</span><span style=color:#111>x</span>
 
-<span style="color:#111">pCtip</span> <span style="color:#f92672">=</span> <span style="color:#111">pBC</span> <span style="color:#f92672">+</span> <span style="color:#111">lC</span><span style="color:#f92672">*</span><span style="color:#111">C</span><span style="color:#f92672">.</span><span style="color:#111">x</span>
+<span style=color:#111>pCtip</span> <span style=color:#f92672>=</span> <span style=color:#111>pBC</span> <span style=color:#f92672>+</span> <span style=color:#111>lC</span><span style=color:#f92672>*</span><span style=color:#111>C</span><span style=color:#f92672>.</span><span style=color:#111>x</span>
 
-<span style="color:#111">pD</span> <span style="color:#f92672">=</span> <span style="color:#111">lD</span><span style="color:#f92672">*</span><span style="color:#111">N</span><span style="color:#f92672">.</span><span style="color:#111">x</span>
-</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">type</span><span style="color:#111">(</span><span style="color:#111">pNA</span><span style="color:#111">)</span>
+<span style=color:#111>pD</span> <span style=color:#f92672>=</span> <span style=color:#111>lD</span><span style=color:#f92672>*</span><span style=color:#111>N</span><span style=color:#f92672>.</span><span style=color:#111>x</span>
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>type</span><span style=color:#111>(</span><span style=color:#111>pNA</span><span style=color:#111>)</span>
 </code></pre></div><pre><code>pynamics.vector.Vector
 </code></pre>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">type</span><span style="color:#111">(</span><span style="color:#111">A</span><span style="color:#111">)</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>type</span><span style=color:#111>(</span><span style=color:#111>A</span><span style=color:#111>)</span>
 </code></pre></div><pre><code>pynamics.frame.Frame
 </code></pre>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">type</span><span style="color:#111">(</span><span style="color:#111">A</span><span style="color:#f92672">.</span><span style="color:#111">x</span><span style="color:#111">)</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>type</span><span style=color:#111>(</span><span style=color:#111>A</span><span style=color:#f92672>.</span><span style=color:#111>x</span><span style=color:#111>)</span>
 </code></pre></div><pre><code>pynamics.vector.Vector
 </code></pre>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">pout</span> <span style="color:#f92672">=</span> <span style="color:#111">pAB</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">3</span><span style="color:#f92672">*</span><span style="color:#111">B</span><span style="color:#f92672">.</span><span style="color:#111">x</span><span style="color:#f92672">-</span><span style="color:#ae81ff">2</span><span style="color:#f92672">*</span><span style="color:#111">B</span><span style="color:#f92672">.</span><span style="color:#111">y</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>pout</span> <span style=color:#f92672>=</span> <span style=color:#111>pAB</span> <span style=color:#f92672>+</span> <span style=color:#ae81ff>3</span><span style=color:#f92672>*</span><span style=color:#111>B</span><span style=color:#f92672>.</span><span style=color:#111>x</span><span style=color:#f92672>-</span><span style=color:#ae81ff>2</span><span style=color:#f92672>*</span><span style=color:#111>B</span><span style=color:#f92672>.</span><span style=color:#111>y</span>
 </code></pre></div><p>Declare a list of points that will be used for plotting</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">points</span> <span style="color:#f92672">=</span> <span style="color:#111">[</span><span style="color:#111">pNA</span><span style="color:#111">,</span><span style="color:#111">pAB</span><span style="color:#111">,</span><span style="color:#111">pBC</span><span style="color:#111">,</span><span style="color:#111">pCtip</span><span style="color:#111">]</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>points</span> <span style=color:#f92672>=</span> <span style=color:#111>[</span><span style=color:#111>pNA</span><span style=color:#111>,</span><span style=color:#111>pAB</span><span style=color:#111>,</span><span style=color:#111>pBC</span><span style=color:#111>,</span><span style=color:#111>pCtip</span><span style=color:#111>]</span>
 </code></pre></div><p>create a list of initial values ini0 in the order of the system&rsquo;s state variables</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">statevariables</span> <span style="color:#f92672">=</span> <span style="color:#111">system</span><span style="color:#f92672">.</span><span style="color:#111">get_state_variables</span><span style="color:#111">()</span>
-<span style="color:#111">ini0</span> <span style="color:#f92672">=</span> <span style="color:#111">[</span><span style="color:#111">initialvalues</span><span style="color:#111">[</span><span style="color:#111">item</span><span style="color:#111">]</span> <span style="color:#00a8c8">for</span> <span style="color:#111">item</span> <span style="color:#f92672">in</span> <span style="color:#111">statevariables</span><span style="color:#111">]</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>statevariables</span> <span style=color:#f92672>=</span> <span style=color:#111>system</span><span style=color:#f92672>.</span><span style=color:#111>get_state_variables</span><span style=color:#111>()</span>
+<span style=color:#111>ini0</span> <span style=color:#f92672>=</span> <span style=color:#111>[</span><span style=color:#111>initialvalues</span><span style=color:#111>[</span><span style=color:#111>item</span><span style=color:#111>]</span> <span style=color:#00a8c8>for</span> <span style=color:#111>item</span> <span style=color:#f92672>in</span> <span style=color:#111>statevariables</span><span style=color:#111>]</span>
 </code></pre></div><p>Define the closed loop kinematics of the four bar linkage.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">eq_vector</span> <span style="color:#f92672">=</span> <span style="color:#111">pCtip</span><span style="color:#f92672">-</span><span style="color:#111">pD</span>
-</code></pre></div><p>Dot the vector equation with N.x and N.y to create two scalar equations.  This will remove two degrees of freedom from our system.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">eq</span> <span style="color:#f92672">=</span> <span style="color:#111">[]</span>
-<span style="color:#111">eq</span><span style="color:#f92672">.</span><span style="color:#111">append</span><span style="color:#111">((</span><span style="color:#111">eq_vector</span><span style="color:#111">)</span><span style="color:#f92672">.</span><span style="color:#111">dot</span><span style="color:#111">(</span><span style="color:#111">N</span><span style="color:#f92672">.</span><span style="color:#111">x</span><span style="color:#111">))</span>
-<span style="color:#111">eq</span><span style="color:#f92672">.</span><span style="color:#111">append</span><span style="color:#111">((</span><span style="color:#111">eq_vector</span><span style="color:#111">)</span><span style="color:#f92672">.</span><span style="color:#111">dot</span><span style="color:#111">(</span><span style="color:#111">N</span><span style="color:#f92672">.</span><span style="color:#111">y</span><span style="color:#111">))</span>
-<span style="color:#111">eq_d</span><span style="color:#f92672">=</span><span style="color:#111">[(</span><span style="color:#111">system</span><span style="color:#f92672">.</span><span style="color:#111">derivative</span><span style="color:#111">(</span><span style="color:#111">item</span><span style="color:#111">))</span> <span style="color:#00a8c8">for</span> <span style="color:#111">item</span> <span style="color:#f92672">in</span> <span style="color:#111">eq</span><span style="color:#111">]</span>
-</code></pre></div><h2 id="solve-for-valid-initial-condition-determined-by-independent-variable">Solve for valid initial condition determined by independent variable</h2>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>eq_vector</span> <span style=color:#f92672>=</span> <span style=color:#111>pCtip</span><span style=color:#f92672>-</span><span style=color:#111>pD</span>
+</code></pre></div><p>Dot the vector equation with N.x and N.y to create two scalar equations. This will remove two degrees of freedom from our system.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>eq</span> <span style=color:#f92672>=</span> <span style=color:#111>[]</span>
+<span style=color:#111>eq</span><span style=color:#f92672>.</span><span style=color:#111>append</span><span style=color:#111>((</span><span style=color:#111>eq_vector</span><span style=color:#111>)</span><span style=color:#f92672>.</span><span style=color:#111>dot</span><span style=color:#111>(</span><span style=color:#111>N</span><span style=color:#f92672>.</span><span style=color:#111>x</span><span style=color:#111>))</span>
+<span style=color:#111>eq</span><span style=color:#f92672>.</span><span style=color:#111>append</span><span style=color:#111>((</span><span style=color:#111>eq_vector</span><span style=color:#111>)</span><span style=color:#f92672>.</span><span style=color:#111>dot</span><span style=color:#111>(</span><span style=color:#111>N</span><span style=color:#f92672>.</span><span style=color:#111>y</span><span style=color:#111>))</span>
+<span style=color:#111>eq_d</span><span style=color:#f92672>=</span><span style=color:#111>[(</span><span style=color:#111>system</span><span style=color:#f92672>.</span><span style=color:#111>derivative</span><span style=color:#111>(</span><span style=color:#111>item</span><span style=color:#111>))</span> <span style=color:#00a8c8>for</span> <span style=color:#111>item</span> <span style=color:#f92672>in</span> <span style=color:#111>eq</span><span style=color:#111>]</span>
+</code></pre></div><h2 id=solve-for-valid-initial-condition-determined-by-independent-variable>Solve for valid initial condition determined by independent variable</h2>
 <p>identify independent and dependent variables</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">qi</span> <span style="color:#f92672">=</span> <span style="color:#111">[</span><span style="color:#111">qA</span><span style="color:#111">]</span>
-<span style="color:#111">qd</span> <span style="color:#f92672">=</span> <span style="color:#111">[</span><span style="color:#111">qB</span><span style="color:#111">,</span><span style="color:#111">qC</span><span style="color:#111">]</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>qi</span> <span style=color:#f92672>=</span> <span style=color:#111>[</span><span style=color:#111>qA</span><span style=color:#111>]</span>
+<span style=color:#111>qd</span> <span style=color:#f92672>=</span> <span style=color:#111>[</span><span style=color:#111>qB</span><span style=color:#111>,</span><span style=color:#111>qC</span><span style=color:#111>]</span>
 </code></pre></div><p>for dependent variables, create an initial guess</p>
 <p>Create a copy of symbolic constants dictionary and add the initial value of qi to it</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">constants</span> <span style="color:#f92672">=</span> <span style="color:#111">system</span><span style="color:#f92672">.</span><span style="color:#111">constant_values</span><span style="color:#f92672">.</span><span style="color:#111">copy</span><span style="color:#111">()</span>
-<span style="color:#111">defined</span> <span style="color:#f92672">=</span> <span style="color:#111">dict</span><span style="color:#111">([(</span><span style="color:#111">item</span><span style="color:#111">,</span><span style="color:#111">initialvalues</span><span style="color:#111">[</span><span style="color:#111">item</span><span style="color:#111">])</span> <span style="color:#00a8c8">for</span> <span style="color:#111">item</span> <span style="color:#f92672">in</span> <span style="color:#111">qi</span><span style="color:#111">])</span>
-<span style="color:#111">constants</span><span style="color:#f92672">.</span><span style="color:#111">update</span><span style="color:#111">(</span><span style="color:#111">defined</span><span style="color:#111">)</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>constants</span> <span style=color:#f92672>=</span> <span style=color:#111>system</span><span style=color:#f92672>.</span><span style=color:#111>constant_values</span><span style=color:#f92672>.</span><span style=color:#111>copy</span><span style=color:#111>()</span>
+<span style=color:#111>defined</span> <span style=color:#f92672>=</span> <span style=color:#111>dict</span><span style=color:#111>([(</span><span style=color:#111>item</span><span style=color:#111>,</span><span style=color:#111>initialvalues</span><span style=color:#111>[</span><span style=color:#111>item</span><span style=color:#111>])</span> <span style=color:#00a8c8>for</span> <span style=color:#111>item</span> <span style=color:#f92672>in</span> <span style=color:#111>qi</span><span style=color:#111>])</span>
+<span style=color:#111>constants</span><span style=color:#f92672>.</span><span style=color:#111>update</span><span style=color:#111>(</span><span style=color:#111>defined</span><span style=color:#111>)</span>
 </code></pre></div><p>substitute constants in equation</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">eq</span> <span style="color:#f92672">=</span> <span style="color:#111">[</span><span style="color:#111">item</span><span style="color:#f92672">.</span><span style="color:#111">subs</span><span style="color:#111">(</span><span style="color:#111">constants</span><span style="color:#111">)</span> <span style="color:#00a8c8">for</span> <span style="color:#111">item</span> <span style="color:#f92672">in</span> <span style="color:#111">eq</span><span style="color:#111">]</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>eq</span> <span style=color:#f92672>=</span> <span style=color:#111>[</span><span style=color:#111>item</span><span style=color:#f92672>.</span><span style=color:#111>subs</span><span style=color:#111>(</span><span style=color:#111>constants</span><span style=color:#111>)</span> <span style=color:#00a8c8>for</span> <span style=color:#111>item</span> <span style=color:#f92672>in</span> <span style=color:#111>eq</span><span style=color:#111>]</span>
 </code></pre></div><p>convert to numpy array</p>
 <p>sum the error</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">error</span> <span style="color:#f92672">=</span> <span style="color:#111">(</span><span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">array</span><span style="color:#111">(</span><span style="color:#111">eq</span><span style="color:#111">)</span><span style="color:#f92672">**</span><span style="color:#ae81ff">2</span><span style="color:#111">)</span><span style="color:#f92672">.</span><span style="color:#111">sum</span><span style="color:#111">()</span>
-</code></pre></div><p>Convert to a function that scipy can use.  Sympy has a &ldquo;labmdify&rdquo; function that evaluates an expression, but scipy needs a slightly different format.</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">f</span> <span style="color:#f92672">=</span> <span style="color:#111">sympy</span><span style="color:#f92672">.</span><span style="color:#111">lambdify</span><span style="color:#111">(</span><span style="color:#111">qd</span><span style="color:#111">,</span><span style="color:#111">error</span><span style="color:#111">)</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>error</span> <span style=color:#f92672>=</span> <span style=color:#111>(</span><span style=color:#111>numpy</span><span style=color:#f92672>.</span><span style=color:#111>array</span><span style=color:#111>(</span><span style=color:#111>eq</span><span style=color:#111>)</span><span style=color:#f92672>**</span><span style=color:#ae81ff>2</span><span style=color:#111>)</span><span style=color:#f92672>.</span><span style=color:#111>sum</span><span style=color:#111>()</span>
+</code></pre></div><p>Convert to a function that scipy can use. Sympy has a &ldquo;labmdify&rdquo; function that evaluates an expression, but scipy needs a slightly different format.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>f</span> <span style=color:#f92672>=</span> <span style=color:#111>sympy</span><span style=color:#f92672>.</span><span style=color:#111>lambdify</span><span style=color:#111>(</span><span style=color:#111>qd</span><span style=color:#111>,</span><span style=color:#111>error</span><span style=color:#111>)</span>
 
-<span style="color:#00a8c8">def</span> <span style="color:#75af00">function</span><span style="color:#111">(</span><span style="color:#111">args</span><span style="color:#111">):</span>
-    <span style="color:#00a8c8">return</span> <span style="color:#111">f</span><span style="color:#111">(</span><span style="color:#f92672">*</span><span style="color:#111">args</span><span style="color:#111">)</span>
+<span style=color:#00a8c8>def</span> <span style=color:#75af00>function</span><span style=color:#111>(</span><span style=color:#111>args</span><span style=color:#111>):</span>
+    <span style=color:#00a8c8>return</span> <span style=color:#111>f</span><span style=color:#111>(</span><span style=color:#f92672>*</span><span style=color:#111>args</span><span style=color:#111>)</span>
 </code></pre></div><p>Take the derivative of the equations to linearize with regard to the velocity variables</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">guess</span> <span style="color:#f92672">=</span> <span style="color:#111">[</span><span style="color:#111">initialvalues</span><span style="color:#111">[</span><span style="color:#111">item</span><span style="color:#111">]</span> <span style="color:#00a8c8">for</span> <span style="color:#111">item</span> <span style="color:#f92672">in</span> <span style="color:#111">qd</span><span style="color:#111">]</span>
-</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">result</span> <span style="color:#f92672">=</span> <span style="color:#111">scipy</span><span style="color:#f92672">.</span><span style="color:#111">optimize</span><span style="color:#f92672">.</span><span style="color:#111">minimize</span><span style="color:#111">(</span><span style="color:#111">function</span><span style="color:#111">,</span><span style="color:#111">guess</span><span style="color:#111">)</span>
-<span style="color:#00a8c8">if</span> <span style="color:#111">result</span><span style="color:#f92672">.</span><span style="color:#111">fun</span><span style="color:#f92672">&gt;</span><span style="color:#ae81ff">1e-3</span><span style="color:#111">:</span>
-    <span style="color:#00a8c8">raise</span><span style="color:#111">(</span><span style="color:#75af00">Exception</span><span style="color:#111">(</span><span style="color:#d88200">&#34;out of tolerance&#34;</span><span style="color:#111">))</span>
-</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">ini</span> <span style="color:#f92672">=</span> <span style="color:#111">[]</span>
-<span style="color:#00a8c8">for</span> <span style="color:#111">item</span> <span style="color:#f92672">in</span> <span style="color:#111">system</span><span style="color:#f92672">.</span><span style="color:#111">get_state_variables</span><span style="color:#111">():</span>
-    <span style="color:#00a8c8">if</span> <span style="color:#111">item</span> <span style="color:#f92672">in</span> <span style="color:#111">qd</span><span style="color:#111">:</span>
-        <span style="color:#111">ini</span><span style="color:#f92672">.</span><span style="color:#111">append</span><span style="color:#111">(</span><span style="color:#111">result</span><span style="color:#f92672">.</span><span style="color:#111">x</span><span style="color:#111">[</span><span style="color:#111">qd</span><span style="color:#f92672">.</span><span style="color:#111">index</span><span style="color:#111">(</span><span style="color:#111">item</span><span style="color:#111">)])</span>
-    <span style="color:#00a8c8">else</span><span style="color:#111">:</span>
-        <span style="color:#111">ini</span><span style="color:#f92672">.</span><span style="color:#111">append</span><span style="color:#111">(</span><span style="color:#111">initialvalues</span><span style="color:#111">[</span><span style="color:#111">item</span><span style="color:#111">])</span>
-</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">points</span> <span style="color:#f92672">=</span> <span style="color:#111">PointsOutput</span><span style="color:#111">(</span><span style="color:#111">points</span><span style="color:#111">,</span> <span style="color:#111">constant_values</span><span style="color:#f92672">=</span><span style="color:#111">system</span><span style="color:#f92672">.</span><span style="color:#111">constant_values</span><span style="color:#111">)</span>
-<span style="color:#111">points</span><span style="color:#f92672">.</span><span style="color:#111">calc</span><span style="color:#111">(</span><span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">array</span><span style="color:#111">([</span><span style="color:#111">ini0</span><span style="color:#111">,</span><span style="color:#111">ini</span><span style="color:#111">]),</span><span style="color:#111">numpy</span><span style="color:#f92672">.</span><span style="color:#111">array</span><span style="color:#111">([</span><span style="color:#ae81ff">0</span><span style="color:#111">,</span><span style="color:#ae81ff">1</span><span style="color:#111">]))</span>
-<span style="color:#111">points</span><span style="color:#f92672">.</span><span style="color:#111">plot_time</span><span style="color:#111">()</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>guess</span> <span style=color:#f92672>=</span> <span style=color:#111>[</span><span style=color:#111>initialvalues</span><span style=color:#111>[</span><span style=color:#111>item</span><span style=color:#111>]</span> <span style=color:#00a8c8>for</span> <span style=color:#111>item</span> <span style=color:#f92672>in</span> <span style=color:#111>qd</span><span style=color:#111>]</span>
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>result</span> <span style=color:#f92672>=</span> <span style=color:#111>scipy</span><span style=color:#f92672>.</span><span style=color:#111>optimize</span><span style=color:#f92672>.</span><span style=color:#111>minimize</span><span style=color:#111>(</span><span style=color:#111>function</span><span style=color:#111>,</span><span style=color:#111>guess</span><span style=color:#111>)</span>
+<span style=color:#00a8c8>if</span> <span style=color:#111>result</span><span style=color:#f92672>.</span><span style=color:#111>fun</span><span style=color:#f92672>&gt;</span><span style=color:#ae81ff>1e-3</span><span style=color:#111>:</span>
+    <span style=color:#00a8c8>raise</span><span style=color:#111>(</span><span style=color:#75af00>Exception</span><span style=color:#111>(</span><span style=color:#d88200>&#34;out of tolerance&#34;</span><span style=color:#111>))</span>
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>ini</span> <span style=color:#f92672>=</span> <span style=color:#111>[]</span>
+<span style=color:#00a8c8>for</span> <span style=color:#111>item</span> <span style=color:#f92672>in</span> <span style=color:#111>system</span><span style=color:#f92672>.</span><span style=color:#111>get_state_variables</span><span style=color:#111>():</span>
+    <span style=color:#00a8c8>if</span> <span style=color:#111>item</span> <span style=color:#f92672>in</span> <span style=color:#111>qd</span><span style=color:#111>:</span>
+        <span style=color:#111>ini</span><span style=color:#f92672>.</span><span style=color:#111>append</span><span style=color:#111>(</span><span style=color:#111>result</span><span style=color:#f92672>.</span><span style=color:#111>x</span><span style=color:#111>[</span><span style=color:#111>qd</span><span style=color:#f92672>.</span><span style=color:#111>index</span><span style=color:#111>(</span><span style=color:#111>item</span><span style=color:#111>)])</span>
+    <span style=color:#00a8c8>else</span><span style=color:#111>:</span>
+        <span style=color:#111>ini</span><span style=color:#f92672>.</span><span style=color:#111>append</span><span style=color:#111>(</span><span style=color:#111>initialvalues</span><span style=color:#111>[</span><span style=color:#111>item</span><span style=color:#111>])</span>
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>points</span> <span style=color:#f92672>=</span> <span style=color:#111>PointsOutput</span><span style=color:#111>(</span><span style=color:#111>points</span><span style=color:#111>,</span> <span style=color:#111>constant_values</span><span style=color:#f92672>=</span><span style=color:#111>system</span><span style=color:#f92672>.</span><span style=color:#111>constant_values</span><span style=color:#111>)</span>
+<span style=color:#111>points</span><span style=color:#f92672>.</span><span style=color:#111>calc</span><span style=color:#111>(</span><span style=color:#111>numpy</span><span style=color:#f92672>.</span><span style=color:#111>array</span><span style=color:#111>([</span><span style=color:#111>ini0</span><span style=color:#111>,</span><span style=color:#111>ini</span><span style=color:#111>]),</span><span style=color:#111>numpy</span><span style=color:#f92672>.</span><span style=color:#111>array</span><span style=color:#111>([</span><span style=color:#ae81ff>0</span><span style=color:#111>,</span><span style=color:#ae81ff>1</span><span style=color:#111>]))</span>
+<span style=color:#111>points</span><span style=color:#f92672>.</span><span style=color:#111>plot_time</span><span style=color:#111>()</span>
 </code></pre></div><pre><code>2021-07-20 22:02:12,037 - pynamics.output - INFO - calculating outputs
 2021-07-20 22:02:12,041 - pynamics.output - INFO - done calculating outputs
 
@@ -354,29 +261,29 @@ Solving Four-Bar Constraints | Foldable Robotics
 
 &lt;AxesSubplot:&gt;
 </code></pre>
-<p><div class="text-center">
-  <a href="output_53_2.png"><img src="output_53_2.png" alt="png"  style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/></a>
+<p><div class=text-center>
+<a href=output_53_2.png><img src=output_53_2.png alt=png style=max-width:80%;max-height:200px;width:auto;height:auto;text-align:center></a>
 </div></p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">result</span><span style="color:#f92672">.</span><span style="color:#111">fun</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>result</span><span style=color:#f92672>.</span><span style=color:#111>fun</span>
 </code></pre></div><pre><code>5.147252723372451e-14
 </code></pre>
-<h2 id="find-internal-jacobian">Find Internal Jacobian</h2>
-<p>Now, given a valid configuration, solve for the linearized, velocity-based constraint equation.  If</p>
+<h2 id=find-internal-jacobian>Find Internal Jacobian</h2>
+<p>Now, given a valid configuration, solve for the linearized, velocity-based constraint equation. If</p>
 <p>$$eq = \textbf{A} q_i + \textbf{B} q_d = 0$$
 then, solving for $q_d$,
 $$-\textbf{B}q_d = \textbf{A}q_i$$
 $$q_d = -\textbf{B}^{-1}\textbf{A}q_i$$</p>
 <p>Turn constraint equations into a vector</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">eq_d</span> <span style="color:#f92672">=</span> <span style="color:#111">sympy</span><span style="color:#f92672">.</span><span style="color:#111">Matrix</span><span style="color:#111">(</span><span style="color:#111">eq_d</span><span style="color:#111">)</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>eq_d</span> <span style=color:#f92672>=</span> <span style=color:#111>sympy</span><span style=color:#f92672>.</span><span style=color:#111>Matrix</span><span style=color:#111>(</span><span style=color:#111>eq_d</span><span style=color:#111>)</span>
 </code></pre></div><p>Turn qi and qd into sympy vectors</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">qi</span> <span style="color:#f92672">=</span> <span style="color:#111">sympy</span><span style="color:#f92672">.</span><span style="color:#111">Matrix</span><span style="color:#111">([</span><span style="color:#111">qA_d</span><span style="color:#111">])</span>
-<span style="color:#111">qd</span> <span style="color:#f92672">=</span> <span style="color:#111">sympy</span><span style="color:#f92672">.</span><span style="color:#111">Matrix</span><span style="color:#111">([</span><span style="color:#111">qB_d</span><span style="color:#111">,</span><span style="color:#111">qC_d</span><span style="color:#111">])</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>qi</span> <span style=color:#f92672>=</span> <span style=color:#111>sympy</span><span style=color:#f92672>.</span><span style=color:#111>Matrix</span><span style=color:#111>([</span><span style=color:#111>qA_d</span><span style=color:#111>])</span>
+<span style=color:#111>qd</span> <span style=color:#f92672>=</span> <span style=color:#111>sympy</span><span style=color:#f92672>.</span><span style=color:#111>Matrix</span><span style=color:#111>([</span><span style=color:#111>qB_d</span><span style=color:#111>,</span><span style=color:#111>qC_d</span><span style=color:#111>])</span>
 </code></pre></div><p>take partial derivative of constraints with respect to independent and dependent variables:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">AA</span> <span style="color:#f92672">=</span> <span style="color:#111">eq_d</span><span style="color:#f92672">.</span><span style="color:#111">jacobian</span><span style="color:#111">(</span><span style="color:#111">qi</span><span style="color:#111">)</span>
-<span style="color:#111">BB</span> <span style="color:#f92672">=</span> <span style="color:#111">eq_d</span><span style="color:#f92672">.</span><span style="color:#111">jacobian</span><span style="color:#111">(</span><span style="color:#111">qd</span><span style="color:#111">)</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>AA</span> <span style=color:#f92672>=</span> <span style=color:#111>eq_d</span><span style=color:#f92672>.</span><span style=color:#111>jacobian</span><span style=color:#111>(</span><span style=color:#111>qi</span><span style=color:#111>)</span>
+<span style=color:#111>BB</span> <span style=color:#f92672>=</span> <span style=color:#111>eq_d</span><span style=color:#f92672>.</span><span style=color:#111>jacobian</span><span style=color:#111>(</span><span style=color:#111>qd</span><span style=color:#111>)</span>
 </code></pre></div><p>Solve for internal input/output Jacobian</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">J</span> <span style="color:#f92672">=</span> <span style="color:#f92672">-</span><span style="color:#111">BB</span><span style="color:#f92672">.</span><span style="color:#111">inv</span><span style="color:#111">()</span><span style="color:#f92672">*</span><span style="color:#111">AA</span>
-<span style="color:#111">J</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>J</span> <span style=color:#f92672>=</span> <span style=color:#f92672>-</span><span style=color:#111>BB</span><span style=color:#f92672>.</span><span style=color:#111>inv</span><span style=color:#111>()</span><span style=color:#f92672>*</span><span style=color:#111>AA</span>
+<span style=color:#111>J</span>
 </code></pre></div><pre><code>⎡                                                       (-sin(qA)⋅sin(qB)⋅sin(
 ⎢                                                     - ──────────────────────
 ⎢                                                                             
@@ -467,9 +374,9 @@ os(qB))⎥
        ⎥
        ⎦
 </code></pre>
-<p>That expression is quite long.  We can use the simplify function provided by sympy to shorten the expression:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">J</span><span style="color:#f92672">.</span><span style="color:#111">simplify</span><span style="color:#111">()</span>
-<span style="color:#111">J</span>
+<p>That expression is quite long. We can use the simplify function provided by sympy to shorten the expression:</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>J</span><span style=color:#f92672>.</span><span style=color:#111>simplify</span><span style=color:#111>()</span>
+<span style=color:#111>J</span>
 </code></pre></div><pre><code>⎡ ⎛lA⋅sin(qB)                  ⎞  ⎤
 ⎢-⎜────────── + lA⋅cos(qB) + lB⎟  ⎥
 ⎢ ⎝ tan(qC)                    ⎠  ⎥
@@ -481,8 +388,8 @@ os(qB))⎥
 ⎣          lB⋅lC⋅sin(qC)          ⎦
 </code></pre>
 <p>Solving for the dependent variables $q_d$:</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">qd2</span> <span style="color:#f92672">=</span> <span style="color:#111">J</span><span style="color:#f92672">*</span><span style="color:#111">qi</span>
-<span style="color:#111">qd2</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>qd2</span> <span style=color:#f92672>=</span> <span style=color:#111>J</span><span style=color:#f92672>*</span><span style=color:#111>qi</span>
+<span style=color:#111>qd2</span>
 </code></pre></div><pre><code>⎡      ⎛lA⋅sin(qB)                  ⎞  ⎤
 ⎢-qA_d⋅⎜────────── + lA⋅cos(qB) + lB⎟  ⎥
 ⎢      ⎝ tan(qC)                    ⎠  ⎥
@@ -493,9 +400,9 @@ os(qB))⎥
 ⎢──────────────────────────────────────⎥
 ⎣            lB⋅lC⋅sin(qC)             ⎦
 </code></pre>
-<p>Now we can create a substitution dictionary to replace all occurrances of $\dot{q}_b$ and  $\dot{q}_c$</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">subs</span> <span style="color:#f92672">=</span> <span style="color:#111">dict</span><span style="color:#111">([(</span><span style="color:#111">ii</span><span style="color:#111">,</span><span style="color:#111">jj</span><span style="color:#111">)</span> <span style="color:#00a8c8">for</span> <span style="color:#111">ii</span><span style="color:#111">,</span><span style="color:#111">jj</span> <span style="color:#f92672">in</span> <span style="color:#111">zip</span><span style="color:#111">(</span><span style="color:#111">qd</span><span style="color:#111">,</span><span style="color:#111">qd2</span><span style="color:#111">)])</span>
-<span style="color:#111">subs</span>
+<p>Now we can create a substitution dictionary to replace all occurrances of $\dot{q}_b$ and $\dot{q}_c$</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>subs</span> <span style=color:#f92672>=</span> <span style=color:#111>dict</span><span style=color:#111>([(</span><span style=color:#111>ii</span><span style=color:#111>,</span><span style=color:#111>jj</span><span style=color:#111>)</span> <span style=color:#00a8c8>for</span> <span style=color:#111>ii</span><span style=color:#111>,</span><span style=color:#111>jj</span> <span style=color:#f92672>in</span> <span style=color:#111>zip</span><span style=color:#111>(</span><span style=color:#111>qd</span><span style=color:#111>,</span><span style=color:#111>qd2</span><span style=color:#111>)])</span>
+<span style=color:#111>subs</span>
 </code></pre></div><pre><code>⎧            ⎛lA⋅sin(qB)                  ⎞                                   
 ⎪      -qA_d⋅⎜────────── + lA⋅cos(qB) + lB⎟                                   
 ⎨            ⎝ tan(qC)                    ⎠         lA⋅qA_d⋅(lB⋅sin(qB) + lC⋅s
@@ -509,30 +416,23 @@ in(qB + qC))⎬
             ⎭
 </code></pre>
 <p>Now pick an end-effector</p>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">pout</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>pout</span>
 </code></pre></div><pre><code>lA*A.x + 3*B.x - 2*B.y
 </code></pre>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">vout</span> <span style="color:#f92672">=</span> <span style="color:#111">pout</span><span style="color:#f92672">.</span><span style="color:#111">time_derivative</span><span style="color:#111">()</span>
-</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">vout</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>vout</span> <span style=color:#f92672>=</span> <span style=color:#111>pout</span><span style=color:#f92672>.</span><span style=color:#111>time_derivative</span><span style=color:#111>()</span>
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>vout</span>
 </code></pre></div><pre><code>lA*qA_d*A.y + B.x*(2*qA_d + 2*qB_d) + B.y*(3*qA_d + 3*qB_d)
 </code></pre>
-<div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">vout</span> <span style="color:#f92672">=</span> <span style="color:#111">vout</span><span style="color:#f92672">.</span><span style="color:#111">subs</span><span style="color:#111">(</span><span style="color:#111">subs</span><span style="color:#111">)</span>
-</code></pre></div><div class="highlight"><pre style="color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#111">vout</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>vout</span> <span style=color:#f92672>=</span> <span style=color:#111>vout</span><span style=color:#f92672>.</span><span style=color:#111>subs</span><span style=color:#111>(</span><span style=color:#111>subs</span><span style=color:#111>)</span>
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>vout</span>
 </code></pre></div><pre><code>lA*qA_d*A.y + B.x*(2*qA_d - 2*qA_d*(lA*sin(qB)/tan(qC) + lA*cos(qB) + lB)/lB) + B.y*(3*qA_d - 3*qA_d*(lA*sin(qB)/tan(qC) + lA*cos(qB) + lB)/lB)
 </code></pre>
-
-  </article>
+</article>
 </main>
-
-
-    
-    <footer class="blog-footer">
-      <p>Copyright &copy; 2021 Daniel M. Aukes.  All rights reserved.</p>
-      <p><a href="#">Back to top</a></p>
-    </footer>
-    
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
-  </body>
+<footer class=blog-footer>
+<p>Copyright &copy; 2021 Daniel M. Aukes. All rights reserved.</p>
+<p><a href=#>Back to top</a></p>
+</footer>
+<script src=https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js integrity=sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM crossorigin=anonymous></script>
+</body>
 </html>
