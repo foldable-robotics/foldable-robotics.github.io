@@ -126,7 +126,7 @@ Making better Foldable Robots
 <p>Vectors can be multiplied by scalars in order to change their magnitude while preserving their direction. The expression $a\vec{v}$ represents a vector which is $a$ times the magnitude of $\vec{v}$. Scalars may be positive or negative; negative scalars indicate an opposite orientation of the vector.</p>
 <h3 id=vector-addition-and-subtraction>Vector Addition and Subtraction</h3>
 <p>Vectors may be be added together in expressions, and are commutative and associative. $$
-\vec{u} + \vec{v} = \vec{v} + \vec{u} \<br>
+\vec{u} + \vec{v} = \vec{v} + \vec{u} \
 \vec{u} + (\vec{v}+\vec{w}) = (\vec{u}+\vec{v})+\vec{w}
 $$</p>
 <p>When multiplied by scalars, vector sums are also distributive $$
@@ -138,7 +138,7 @@ $$</p>
 $$</p>
 <p>where $\left|\vec{v}\right|$ indicates the magnitude of vector $\vec{v}$. The dot product has many uses. It can be used to determine the magnitude of a vector, as in $$
 \left|v\right| = \sqrt{\vec{v} \cdot \vec{v}}. \label{eq:vector_dot_product_magnitude}$$</p>
-<p>The result of a dot product is a scalar number. Since scalar algebra is distributive and commutative, expressions using the dot product are also distributive and commutative. $$\vec{u} \cdot \vec{v} = \vec{v} \cdot \vec{u} \<br>
+<p>The result of a dot product is a scalar number. Since scalar algebra is distributive and commutative, expressions using the dot product are also distributive and commutative. $$\vec{u} \cdot \vec{v} = \vec{v} \cdot \vec{u} \
 \vec{u} \cdot \left(\vec{v}+\vec{w}\right) = \vec{u}\cdot\vec{v} + \vec{u}\cdot\vec{w} \label{eqn:vector_dot_distributive}$$</p>
 <h3 id=cross-product>Cross Product</h3>
 <p>The cross product is defined by the expression $$
@@ -165,42 +165,42 @@ i) $\hat{a}_z\cdot\hat{a}_z = ?$</li>
 </ol>
 <h3 id=expanded-basis-vector-forms>Expanded basis vector forms</h3>
 <p>If two vectors $\vec{u}$ and $\vec{v}$ can be expanded into component basis vectors $\hat{a}_x$,$\hat{a}_y$,and $\hat{a}_z$ such that $$
-\vec{u}=u_x\hat{a}_x + u_y\hat{a}_y+u_z\hat{a}_z \text{ and}\<br>
+\vec{u}=u_x\hat{a}_x + u_y\hat{a}_y+u_z\hat{a}_z \text{ and}\
 \vec{v}=v_x\hat{a}_x + v_y\hat{a}_y+v_z\hat{a}_z,$$ can then be rewritten as $$
 \vec{v} \cdot \vec{w} = (u_x\hat{a}_x + u_y\hat{a}_y+u_z\hat{a}_z) \cdot (v_x\hat{a}_x + v_y\hat{a}_y+v_z\hat{a}_z)$$</p>
 <p>which, using the distributive property equals $$
-\vec{v} \cdot \vec{w} = u_x\hat{a}_x \cdot v_x\hat{a}_x + u_x\hat{a}_x \cdot v_y\hat{a}_y + u_x\hat{a}_x \cdot v_z\hat{a}_z + \<br>
-u_y\hat{a}_y \cdot v_x\hat{a}_x +u_y\hat{a}_y \cdot v_y\hat{a}_y + u_y\hat{a}_y \cdot v_z\hat{a}_z + \nonumber\<br>
+\vec{v} \cdot \vec{w} = u_x\hat{a}_x \cdot v_x\hat{a}_x + u_x\hat{a}_x \cdot v_y\hat{a}_y + u_x\hat{a}_x \cdot v_z\hat{a}_z + \
+u_y\hat{a}_y \cdot v_x\hat{a}_x +u_y\hat{a}_y \cdot v_y\hat{a}_y + u_y\hat{a}_y \cdot v_z\hat{a}_z + \nonumber\
 u_z\hat{a}_z \cdot v_x\hat{a}_x +u_z\hat{a}_z \cdot v_y\hat{a}_y +u_z\hat{a}_z \cdot v_z\hat{a}_z \nonumber$$</p>
 <p>grouping scalars, $$
-\vec{v} \cdot \vec{w} = u_x v_x (\hat{a}_x \cdot \hat{a}_x) + u_x v_y (\hat{a}_x \cdot \hat{a}_y) + u_x v_z(\hat{a}_x \cdot \hat{a}_z) + \label{eqn:dot_product_basis_simplification1} \<br>
-u_y v_x(\hat{a}_y \cdot \hat{a}_x) +u_y v_y(\hat{a}_y \cdot \hat{a}_y) + u_y v_z(\hat{a}_y \cdot \hat{a}_z) + \nonumber\<br>
+\vec{v} \cdot \vec{w} = u_x v_x (\hat{a}_x \cdot \hat{a}_x) + u_x v_y (\hat{a}_x \cdot \hat{a}_y) + u_x v_z(\hat{a}_x \cdot \hat{a}_z) + \label{eqn:dot_product_basis_simplification1} \
+u_y v_x(\hat{a}_y \cdot \hat{a}_x) +u_y v_y(\hat{a}_y \cdot \hat{a}_y) + u_y v_z(\hat{a}_y \cdot \hat{a}_z) + \nonumber\
 u_z v_x(\hat{a}_z \cdot \hat{a}_x) +u_z v_y(\hat{a}_z \cdot\hat{a}_y) +u_z v_z(\hat{a}_z \cdot \hat{a}_z) \nonumber$$</p>
 <p>using the definition of the dot product, we can see that the dot product of orthogonal basis unit vectors is equal to 0 while the dot product of a basis vector with itself is equal to 1. This can be summarized by $$
-\hat{a}_x\cdot\hat{a}_x = 1\<br>
-\hat{a}_x\cdot\hat{a}_y = 0\<br>
-\hat{a}_x\cdot\hat{a}_z = 0\<br>
-\hat{a}_y\cdot\hat{a}_x = 0\<br>
-\hat{a}_y\cdot\hat{a}_y = 1\<br>
-\hat{a}_y\cdot\hat{a}_z = 0\<br>
-\hat{a}_z\cdot\hat{a}_x = 0\<br>
-\hat{a}_z\cdot\hat{a}_y = 0\<br>
+\hat{a}_x\cdot\hat{a}_x = 1\
+\hat{a}_x\cdot\hat{a}_y = 0\
+\hat{a}_x\cdot\hat{a}_z = 0\
+\hat{a}_y\cdot\hat{a}_x = 0\
+\hat{a}_y\cdot\hat{a}_y = 1\
+\hat{a}_y\cdot\hat{a}_z = 0\
+\hat{a}_z\cdot\hat{a}_x = 0\
+\hat{a}_z\cdot\hat{a}_y = 0\
 \hat{a}_z\cdot\hat{a}_z = 1$$ This simplifies to $$
 \vec{v} \cdot \vec{w} = u_x v_x +u_y v_y+u_z v_z$$</p>
-<p>The expression for the cross product can similarly be simplified. Given the same $\vec{u}$ and $\vec{v}$, can be rewritten as $$\vec{v} \times \vec{w} = (u_x\hat{a}_x + u_y\hat{a}_y+u_z\hat{a}_z) \times (v_x\hat{a}_x + v_y\hat{a}_y+v_z\hat{a}_z)$$ which, using the distributive property equals $$\vec{v} \times \vec{w} = u_x\hat{a}_x \times v_x\hat{a}_x + u_x\hat{a}_x \times v_y\hat{a}_y + u_x\hat{a}_x \times v_z\hat{a}_z + \<br>
-u_y\hat{a}_y \times v_x\hat{a}_x +u_y\hat{a}_y \times v_y\hat{a}_y + u_y\hat{a}_y \times v_z\hat{a}_z + \nonumber\<br>
+<p>The expression for the cross product can similarly be simplified. Given the same $\vec{u}$ and $\vec{v}$, can be rewritten as $$\vec{v} \times \vec{w} = (u_x\hat{a}_x + u_y\hat{a}_y+u_z\hat{a}_z) \times (v_x\hat{a}_x + v_y\hat{a}_y+v_z\hat{a}_z)$$ which, using the distributive property equals $$\vec{v} \times \vec{w} = u_x\hat{a}_x \times v_x\hat{a}_x + u_x\hat{a}_x \times v_y\hat{a}_y + u_x\hat{a}_x \times v_z\hat{a}_z + \
+u_y\hat{a}_y \times v_x\hat{a}_x +u_y\hat{a}_y \times v_y\hat{a}_y + u_y\hat{a}_y \times v_z\hat{a}_z + \nonumber\
 u_z\hat{a}_z \times v_x\hat{a}_x +u_z\hat{a}_z \times v_y\hat{a}_y +u_z\hat{a}_z \times v_z\hat{a}_z \nonumber$$</p>
-<p>grouping scalars, $$\vec{v} \times \vec{w} = u_x v_x (\hat{a}_x \times \hat{a}_x) + u_x v_y (\hat{a}_x \times \hat{a}_y) + u_x v_z(\hat{a}_x \times \hat{a}_z) + \label{eqn:cross_product_basis_simplification1}\<br>
-u_y v_x(\hat{a}_y \times \hat{a}_x) +u_y v_y(\hat{a}_y \times \hat{a}_y) + u_y v_z(\hat{a}_y \times \hat{a}_z) + \nonumber\<br>
+<p>grouping scalars, $$\vec{v} \times \vec{w} = u_x v_x (\hat{a}_x \times \hat{a}_x) + u_x v_y (\hat{a}_x \times \hat{a}_y) + u_x v_z(\hat{a}_x \times \hat{a}_z) + \label{eqn:cross_product_basis_simplification1}\
+u_y v_x(\hat{a}_y \times \hat{a}_x) +u_y v_y(\hat{a}_y \times \hat{a}_y) + u_y v_z(\hat{a}_y \times \hat{a}_z) + \nonumber\
 u_z v_x(\hat{a}_z \times \hat{a}_x) +u_z v_y(\hat{a}_z \times\hat{a}_y) +u_z v_z(\hat{a}_z \times \hat{a}_z) \nonumber$$</p>
-<p>using the definition of the cross product, we can see that the cross product of orthogonal basis unit vectors produces an orthogonal unit vector to both according to the right hand rule, while the cross product of a basis vector with itself is equal to the zero vector. This can be summarized by $$\hat{a}_x\times\hat{a}_x = \vec{0}\<br>
-\hat{a}_x\times\hat{a}_y = \hat{a}_z\<br>
-\hat{a}_x\times\hat{a}_z = -\hat{a}_y\<br>
-\hat{a}_y\times\hat{a}_x = -\hat{a}_z\<br>
-\hat{a}_y\times\hat{a}_y = \vec{0}\<br>
-\hat{a}_y\times\hat{a}_z = \hat{a}_x\<br>
-\hat{a}_z\times\hat{a}_x = \hat{a}_y\<br>
-\hat{a}_z\times\hat{a}_y = -\hat{a}_x\<br>
+<p>using the definition of the cross product, we can see that the cross product of orthogonal basis unit vectors produces an orthogonal unit vector to both according to the right hand rule, while the cross product of a basis vector with itself is equal to the zero vector. This can be summarized by $$\hat{a}_x\times\hat{a}_x = \vec{0}\
+\hat{a}_x\times\hat{a}_y = \hat{a}_z\
+\hat{a}_x\times\hat{a}_z = -\hat{a}_y\
+\hat{a}_y\times\hat{a}_x = -\hat{a}_z\
+\hat{a}_y\times\hat{a}_y = \vec{0}\
+\hat{a}_y\times\hat{a}_z = \hat{a}_x\
+\hat{a}_z\times\hat{a}_x = \hat{a}_y\
+\hat{a}_z\times\hat{a}_y = -\hat{a}_x\
 \hat{a}_z\times\hat{a}_z = \vec{0}$$ This simplifies to $$\vec{v} \times \vec{w} = u_x v_y\hat{a}_z - u_x v_z\hat{a}_y - u_y v_x\hat{a}_z + u_y v_z\hat{a}_x + u_z v_x\hat{a}_y - u_z v_y\hat{a}_x$$</p>
 <blockquote>
 </blockquote>

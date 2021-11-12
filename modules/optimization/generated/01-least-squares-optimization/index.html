@@ -148,15 +148,15 @@ Making better Foldable Robots
 <p>Now assume you create a model of the form $y(k)^<em>$ where k are your model coefficients. You want to pick your model in such a way that the error from $y-y^</em>$ is minimized. The residual error, or just residual can be expressed as</p>
 <p>$$r=y-y^*$$</p>
 <p>thus the sum of squared error is</p>
-<p>$$||r||^2 = ||y-y^<em>||^2 = y^T y - 2</em>y^Ty^* + {y^*}^T y^*$$</p>
+<p>$$||r||^2 = ||y-y^<em>||^2 = y^T y - 2</em>y^Ty^* + {y^<em>}^T y^</em>$$</p>
 <p>Now in matrix form, $y^<em>$ takes the form $y^</em>=Ak$, where $k$ is your set of model weights in the form</p>
 <p>$$k=\left[\begin{matrix}k_1&k_2&\ldots &k_m\end{matrix}\right]^T,$$</p>
 <p>and $A$ is your set of models applied to the input variable $x$
 $$A = A(x) = \left[\begin{matrix}
-a_1(x_0) & a_2(x_0)& \ldots& a_m(x_0)\<br>
-a_1(x_1) & a_2(x_1)& \ldots &a_m(x_1)\<br>
-\vdots & \vdots & \ddots& \vdots\<br>
-a_1(x_n) & a_2(x_n)& \ldots& a_m(x_n)\<br>
+a_1(x_0) & a_2(x_0)& \ldots& a_m(x_0)\
+a_1(x_1) & a_2(x_1)& \ldots &a_m(x_1)\
+\vdots & \vdots & \ddots& \vdots\
+a_1(x_n) & a_2(x_n)& \ldots& a_m(x_n)\
 \end{matrix}
 \right]$$</p>
 <h3 id=example>Example</h3>

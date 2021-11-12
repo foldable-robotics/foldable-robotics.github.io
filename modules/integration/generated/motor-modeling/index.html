@@ -249,8 +249,8 @@ This gives you several ways to compute the mechanical power required. If you kno
 <li>Create a free body diagram for the wheel. Draw and label all important variables and design parameters in your diagrams. This includes things like dimensions, forces, velocities, angles, vectors. Identify all forces acting upon each subsystem, including gravity, interaction forces between subsystems, and ground reaction forces.</li>
 <li>Use static force / moment balance equations to solve for static equilibrium in each subsystem. In planar systems,
 $$\begin{aligned}
-\sum F_x &= 0\<br>
-\sum F_y &= 0\<br>
+\sum F_x &= 0\
+\sum F_y &= 0\
 \sum M &= 0
 \end{aligned}$$
 Please expand these equations, using all forces and torques acting upon the wheel.</li>
@@ -275,8 +275,8 @@ Please expand these equations, using all forces and torques acting upon the whee
 <h4 id=3---4>(3 - 4)</h4>
 <p>In front wheel, using the B frame, since it is free spinning, the ground can only supply a reaction force normal to the wheels, and no moments can be transmitted.</p>
 <p>$$\begin{aligned}
-\sum F_x &= 0\<br>
-\sum F_y &= 0\<br>
+\sum F_x &= 0\
+\sum F_y &= 0\
 \sum M &= 0
 \end{aligned}$$</p>
 <p>if I first define $\vec{f_R}$ as:
@@ -284,19 +284,19 @@ $$\vec{f}<em>R = f</em>{T}\hat{b}<em>x + f</em>{N}\hat{b}_y$$</p>
 <h5 id=rotation-matrix-for-frames-a-and-b>Rotation Matrix for Frames A and B</h5>
 <p>$$
 \begin{array}{c|c c c}
-^AR^B & \hat{b}_x &\hat{b}_y & \hat{b}_z\<br>
+^AR^B & \hat{b}_x &\hat{b}_y & \hat{b}_z\
 \hline
-\hat{a}_x &\cos q&-\sin q &0 \<br>
-\hat{a}_y &\sin q& \cos q &0 \<br>
+\hat{a}_x &\cos q&-\sin q &0 \
+\hat{a}_y &\sin q& \cos q &0 \
 \hat{a}_z &0&0&1
 \end{array}
 $$</p>
 <p>Summing forces along $b_x$:
 $$\begin{aligned}
-0&=\sum F_x\<br>
-0 &= f_{T}\hat{b}_x - mg \sin(q)\hat{b}_x\<br>
-0 &= f_{T} - mg \sin(q)\<br>
-f_{T} &= mg \sin(q)\<br>
+0&=\sum F_x\
+0 &= f_{T}\hat{b}<em>x - mg \sin(q)\hat{b}<em>x\
+0 &= f</em>{T} - mg \sin(q)\
+f</em>{T} &= mg \sin(q)\
 \end{aligned}$$</p>
 <div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>ft</span> <span style=color:#f92672>=</span> <span style=color:#111>mass</span><span style=color:#f92672>*</span><span style=color:#111>gravity</span><span style=color:#f92672>*</span><span style=color:#111>sin</span><span style=color:#111>(</span><span style=color:#111>q</span><span style=color:#111>)</span>
 <span style=color:#111>ft</span>
@@ -304,10 +304,10 @@ f_{T} &= mg \sin(q)\<br>
 </code></pre>
 <p>summing forces along $b_y$:
 $$\begin{aligned}
-0&=\sum F_y\<br>
-0 &= \vec{f}_{N}\hat{b}<em>y - mg \cos(q)\hat{b}<em>y\<br>
-0 &= \vec{f}</em>{N} -\frac{ mg \cos(q)}{2} \<br>
-f</em>{N} &= mg \cos(q)\<br>
+0&=\sum F_y\
+0 &= \vec{f}_{N}\hat{b}<em>y - mg \cos(q)\hat{b}<em>y\
+0 &= \vec{f}</em>{N} -\frac{ mg \cos(q)}{2} \
+f</em>{N} &= mg \cos(q)\
 \end{aligned}$$</p>
 <div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>fn</span> <span style=color:#f92672>=</span> <span style=color:#111>mass</span><span style=color:#f92672>*</span><span style=color:#111>gravity</span><span style=color:#f92672>*</span><span style=color:#111>cos</span><span style=color:#111>(</span><span style=color:#111>q</span><span style=color:#111>)</span>
 <span style=color:#111>fn</span>
@@ -316,13 +316,13 @@ f</em>{N} &= mg \cos(q)\<br>
 <h4 id=5>(5)</h4>
 <p>Sum moments to find motor torque:
 $$\begin{aligned}
-0&=\sum M \<br>
-0&= -\tau_{wheels} \hat{b}_z + -r \hat{b}_y \times \vec{f}_R\<br>
-0&= -\tau_{wheels} \hat{b}_z + -r \hat{b}_y \times \left(f_t\hat{b}_x + f_n \hat{b}_y\right)\<br>
-0&= -\tau_{wheels} \hat{b}_z + \left(-r \hat{b}_y \times f_t\hat{b}_x \right)+\left(-r \hat{b}_y \times f_n \hat{b}_y\right)\<br>
-0&= -\tau_{wheels} \hat{b}_z + rf_T \hat{b}_z\<br>
-0&= -\tau_{wheels} + rf_T\<br>
-\tau_{wheels}&= rf_T\<br>
+0&=\sum M \
+0&= -\tau_{wheels} \hat{b}_z + -r \hat{b}_y \times \vec{f}<em>R\
+0&= -\tau</em>{wheels} \hat{b}_z + -r \hat{b}_y \times \left(f_t\hat{b}_x + f_n \hat{b}<em>y\right)\
+0&= -\tau</em>{wheels} \hat{b}_z + \left(-r \hat{b}_y \times f_t\hat{b}_x \right)+\left(-r \hat{b}_y \times f_n \hat{b}<em>y\right)\
+0&= -\tau</em>{wheels} \hat{b}<em>z + rf_T \hat{b}<em>z\
+0&= -\tau</em>{wheels} + rf_T\
+\tau</em>{wheels}&= rf_T\
 \end{aligned}$$</p>
 <div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>t_wheels</span> <span style=color:#f92672>=</span> <span style=color:#111>r</span><span style=color:#f92672>*</span><span style=color:#111>ft</span>
 <span style=color:#111>t_wheels</span>
@@ -349,9 +349,9 @@ find the energy it takes to lift mg:
 $$PE = mgh $$
 and then find the average power as a function of energy and time:
 $$\begin{aligned}
-P &= \frac{PE}{t}\<br>
-P &= \frac{mgh}{d/v}\<br>
-P &= \frac{mgdsin(q)v}{d}\<br>
+P &= \frac{PE}{t}\
+P &= \frac{mgh}{d/v}\
+P &= \frac{mgdsin(q)v}{d}\
 P &= mgsin(q)v
 \end{aligned}$$</p>
 <div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>power_mechanical</span> <span style=color:#f92672>=</span> <span style=color:#111>ft</span><span style=color:#f92672>*</span><span style=color:#111>velocity</span>
@@ -659,30 +659,10 @@ Assume a motor is connected to the wheel via belt and a set of pulleys with radi
 <h2 id=part-iv-walkthrough>Part IV Walkthrough</h2>
 <ol>
 <li></li>
+<li></li>
+<li></li>
+<li></li>
 </ol>
-<p>should include motor, battery, pulleys, board, rider, wheel. each should be labeled.<br>
-should be labels for pulley radii, wheel radii
-2.
-If the input power is defined by the torque and angular velocity into the transmission
-$$P = t\omega$$
-$$P_{motor} = t_{motor} \omega_{motor}$$
-then the output power is defined by
-$$P_{wheel} = t_{wheel} \omega_{wheel}$$
-given the speed relationship that the belt is moving at the same speed everywhere,
-$$v_{belt} = r_{pm} \omega_{motor} = r_{pw} \omega_{wheel}$$
-you can solve for the motor speed
-$$\omega_{motor} =\frac{ r_{pw}}{r_{pm}} \omega_{wheel}$$
-3.
-Assuming that power in is equal to power out, you can then solve for the motor torque
-$$\begin{aligned}
-P_{motor} &= P_{wheel}\<br>
-t_{motor} \omega_{motor}&= t_{wheel} \omega_{wheel}\<br>
-t_{motor}&= \frac{t_{wheel} \omega_{wheel}}{ \omega_{motor} }\<br>
-t_{motor}&= \frac{t_{wheel} \omega_{wheel}}{ \frac{ r_{pw}}{r_{pm}} \omega_{wheel} }\<br>
-t_{motor}&= \frac{r_{pm}}{ r_{pw}}t_{wheel}\<br>
-\end{aligned}$$
-4.
-There are several things to check. First, the wheel pulley should not be larger than the wheel, otherwise it will hit the ground. Second, the belts should</p>
 <p>Compute the gear ratio required between motor and wheel</p>
 <div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>G</span> <span style=color:#f92672>=</span> <span style=color:#111>w_wheels</span><span style=color:#f92672>/</span><span style=color:#111>w_motor</span>
 <span style=color:#111>G</span>
