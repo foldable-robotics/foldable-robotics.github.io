@@ -115,11 +115,13 @@ Documents
 <p><em>Contributed by Mason Smith</em></p>
 <p>EGR 557 - Foldable Robotics</p>
 <h1 id=1-resources><strong>1. Resources</strong></h1>
-<p><a href="https://colab.research.google.com/github/tensorflow/examples/blob/master/courses/udacity_intro_to_tensorflow_for_deep_learning/l01c01_introduction_to_colab_and_python.ipynb#scrollTo=YHI3vyhv5p85">Introduction to Colab and Python</a></p>
-<p><a href=https://towardsdatascience.com/getting-started-with-google-colab-f2fff97f594c>Getting Started with Google Colab</a></p>
-<p><a href="https://colab.research.google.com/notebooks/io.ipynb#scrollTo=u22w3BFiOveA">External data: Local Files, Drive, Sheets, and Cloud Storage</a></p>
-<p><a href=https://www.marktechpost.com/2019/06/07/how-to-connect-google-colab-with-google-drive/>How to Connect Google Colab with Google Drive</a></p>
-<p><a href=https://medium.com/analytics-vidhya/embedding-your-image-in-google-colab-markdown-3998d5ac2684>Embedding your image in google colab markdown</a></p>
+<ul>
+<li><a href="https://colab.research.google.com/github/tensorflow/examples/blob/master/courses/udacity_intro_to_tensorflow_for_deep_learning/l01c01_introduction_to_colab_and_python.ipynb#scrollTo=YHI3vyhv5p85">Introduction to Colab and Python</a></li>
+<li><a href=https://towardsdatascience.com/getting-started-with-google-colab-f2fff97f594c>Getting Started with Google Colab</a></li>
+<li><a href="https://colab.research.google.com/notebooks/io.ipynb#scrollTo=u22w3BFiOveA">External data: Local Files, Drive, Sheets, and Cloud Storage</a></li>
+<li><a href=https://www.marktechpost.com/2019/06/07/how-to-connect-google-colab-with-google-drive/>How to Connect Google Colab with Google Drive</a></li>
+<li><a href=https://medium.com/analytics-vidhya/embedding-your-image-in-google-colab-markdown-3998d5ac2684>Embedding your image in google colab markdown</a></li>
+</ul>
 <h1 id=2-what-is-google-colab><strong>2. What is Google Colab</strong></h1>
 <p>&ldquo;Colaboratory is a free Jupyter notebook environment that requires no setup and runs entirely in the cloud. With Colaboratory you can write and execute code, save and share your analyses, and access powerful computing resources, all for free from your browser&mldr; As the name suggests, Google Colab comes with collaboration backed in the product. In fact, it is a Jupyter notebook that leverages Google Docs collaboration features. It also runs on Google servers and you don’t need to install anything. Moreover, the notebooks are saved to your Google Drive account.&rdquo; <a href=https://www.datasciencecentral.com/profiles/blogs/all-about-using-jupyter-notebooks-and-google-colab>[source]</a></p>
 <p><strong>Advantages over Jupyter Notebook</strong></p>
@@ -163,7 +165,7 @@ Documents
 <ol>
 <li>In google drive, go to New>More>Google Colaboratory</li>
 <li>This opens up a fresh Google Colab Notebook in the drive directory you were currently in</li>
-<li>The file will be a &ldquo;.ipynb&rdquo; file and can be downloaded as a Jupyter Notebook to run on a local instance if needed (File>Download .ipynb)</li>
+<li>The file will be a <code>.ipynb</code> file and can be downloaded as a Jupyter Notebook to run on a local instance if needed (File>Download .ipynb)</li>
 </ol>
 </blockquote>
 <h2 id=33-importing-juypiter-notebook-file>3.3 Importing Juypiter Notebook File</h2>
@@ -177,156 +179,45 @@ Documents
 <h1 id=4-installing-dependencies><strong>4. Installing Dependencies</strong></h1>
 <h2 id=41-pip-install-recommended>4.1 pip Install (Recommended)</h2>
 <p>Google Colab comes with most standard packages by default but we can install additional packages using an exclamation mark. In Google Colab, the exclamation mark &ldquo;!&rdquo; is used for executing commands from the underlying operating system. This means that we can use this to execute the pip command and install packages for the current notebook. For example, we can install the <a href=https://egr557.github.io/modules/python/installing-anaconda.html>standard packages from the Foldable Robotics Website</a> by following the same process but adding the modifier &ldquo;!&rdquo;.</p>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e># RUN PIP INSTALL CODE BLOCK</span>
-
-<span style=color:#75715e>#3 Install standard packages...</span>
-<span style=color:#960050;background-color:#1e0010>!</span><span style=color:#111>pip</span> <span style=color:#111>install</span> <span style=color:#111>meshio</span> <span style=color:#111>pygmsh</span> <span style=color:#111>ezdxf</span> <span style=color:#111>pandoc</span><span style=color:#f92672>-</span><span style=color:#111>fignos</span> <span style=color:#111>pandoc</span><span style=color:#f92672>-</span><span style=color:#111>eqnos</span> <span style=color:#111>pypdf4</span> <span style=color:#111>service_identity</span> <span style=color:#111>ftd2xx</span> <span style=color:#111>pygithub</span> <span style=color:#111>twine</span> <span style=color:#111>paho</span><span style=color:#f92672>-</span><span style=color:#111>mqtt</span>
-<span style=color:#960050;background-color:#1e0010>!</span><span style=color:#111>pip</span> <span style=color:#111>install</span> <span style=color:#111>ntplib</span> <span style=color:#111>pygame</span> <span style=color:#111>pysftp</span> <span style=color:#111>pyserial</span>
-
-<span style=color:#75715e>#4 Install foldable-robotics-specific packages.</span>
-<span style=color:#960050;background-color:#1e0010>!</span><span style=color:#111>pip</span> <span style=color:#111>install</span> <span style=color:#111>pypoly2tri</span> <span style=color:#111>idealab_tools</span> <span style=color:#111>foldable_robotics</span> <span style=color:#111>pynamics</span>
-
-</code></pre></div><pre><code>Requirement already satisfied: meshio in /home/danaukes/anaconda3/lib/python3.7/site-packages (4.3.9)
-Requirement already satisfied: pygmsh in /home/danaukes/anaconda3/lib/python3.7/site-packages (7.1.6)
-Requirement already satisfied: ezdxf in /home/danaukes/anaconda3/lib/python3.7/site-packages (0.15.2)
-Requirement already satisfied: pandoc-fignos in /home/danaukes/anaconda3/lib/python3.7/site-packages (2.4.0)
-Requirement already satisfied: pandoc-eqnos in /home/danaukes/anaconda3/lib/python3.7/site-packages (2.5.0)
-Requirement already satisfied: pypdf4 in /home/danaukes/anaconda3/lib/python3.7/site-packages (1.27.0)
-Requirement already satisfied: service_identity in /home/danaukes/anaconda3/lib/python3.7/site-packages (18.1.0)
-Requirement already satisfied: ftd2xx in /home/danaukes/anaconda3/lib/python3.7/site-packages (1.1.2)
-Requirement already satisfied: pygithub in /home/danaukes/anaconda3/lib/python3.7/site-packages (1.54.1)
-Requirement already satisfied: twine in /home/danaukes/anaconda3/lib/python3.7/site-packages (3.3.0)
-Requirement already satisfied: paho-mqtt in /home/danaukes/anaconda3/lib/python3.7/site-packages (1.5.1)
-Requirement already satisfied: pyparsing&gt;=2.0.1 in /home/danaukes/anaconda3/lib/python3.7/site-packages (from ezdxf) (2.4.7)
-Requirement already satisfied: future in /home/danaukes/anaconda3/lib/python3.7/site-packages (from ftd2xx) (0.18.2)
-Requirement already satisfied: numpy in /home/danaukes/anaconda3/lib/python3.7/site-packages (from meshio) (1.19.2)
-Requirement already satisfied: importlib-metadata in /home/danaukes/anaconda3/lib/python3.7/site-packages (from meshio) (2.0.0)
-Requirement already satisfied: pandoc-xnos&lt;3.0,&gt;=2.5.0 in /home/danaukes/anaconda3/lib/python3.7/site-packages (from pandoc-eqnos) (2.5.0)
-Requirement already satisfied: pandocfilters&lt;2,&gt;=1.4.2 in /home/danaukes/anaconda3/lib/python3.7/site-packages (from pandoc-xnos&lt;3.0,&gt;=2.5.0-&gt;pandoc-eqnos) (1.4.3)
-Requirement already satisfied: psutil&lt;6,&gt;=4.1.0 in /home/danaukes/anaconda3/lib/python3.7/site-packages (from pandoc-xnos&lt;3.0,&gt;=2.5.0-&gt;pandoc-eqnos) (5.8.0)
-Requirement already satisfied: requests&gt;=2.14.0 in /home/danaukes/anaconda3/lib/python3.7/site-packages (from pygithub) (2.25.1)
-Requirement already satisfied: pyjwt&lt;2.0 in /home/danaukes/anaconda3/lib/python3.7/site-packages (from pygithub) (1.7.1)
-Requirement already satisfied: deprecated in /home/danaukes/anaconda3/lib/python3.7/site-packages (from pygithub) (1.2.11)
-Requirement already satisfied: idna&lt;3,&gt;=2.5 in /home/danaukes/anaconda3/lib/python3.7/site-packages (from requests&gt;=2.14.0-&gt;pygithub) (2.10)
-Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /home/danaukes/anaconda3/lib/python3.7/site-packages (from requests&gt;=2.14.0-&gt;pygithub) (1.26.3)
-Requirement already satisfied: chardet&lt;5,&gt;=3.0.2 in /home/danaukes/anaconda3/lib/python3.7/site-packages (from requests&gt;=2.14.0-&gt;pygithub) (4.0.0)
-Requirement already satisfied: certifi&gt;=2017.4.17 in /home/danaukes/anaconda3/lib/python3.7/site-packages (from requests&gt;=2.14.0-&gt;pygithub) (2020.12.5)
-Requirement already satisfied: attrs&gt;=16.0.0 in /home/danaukes/anaconda3/lib/python3.7/site-packages (from service_identity) (20.3.0)
-Requirement already satisfied: pyasn1-modules in /home/danaukes/anaconda3/lib/python3.7/site-packages (from service_identity) (0.2.8)
-Requirement already satisfied: cryptography in /home/danaukes/anaconda3/lib/python3.7/site-packages (from service_identity) (3.4.6)
-Requirement already satisfied: pyasn1 in /home/danaukes/anaconda3/lib/python3.7/site-packages (from service_identity) (0.4.8)
-Requirement already satisfied: rfc3986&gt;=1.4.0 in /home/danaukes/anaconda3/lib/python3.7/site-packages (from twine) (1.4.0)
-Requirement already satisfied: setuptools&gt;=0.7.0 in /home/danaukes/anaconda3/lib/python3.7/site-packages (from twine) (52.0.0.post20210125)
-Requirement already satisfied: readme-renderer&gt;=21.0 in /home/danaukes/anaconda3/lib/python3.7/site-packages (from twine) (28.0)
-Requirement already satisfied: requests-toolbelt!=0.9.0,&gt;=0.8.0 in /home/danaukes/anaconda3/lib/python3.7/site-packages (from twine) (0.9.1)
-Requirement already satisfied: colorama&gt;=0.4.3 in /home/danaukes/anaconda3/lib/python3.7/site-packages (from twine) (0.4.4)
-Requirement already satisfied: pkginfo&gt;=1.4.2 in /home/danaukes/anaconda3/lib/python3.7/site-packages (from twine) (1.7.0)
-Requirement already satisfied: keyring&gt;=15.1 in /home/danaukes/anaconda3/lib/python3.7/site-packages (from twine) (22.0.1)
-Requirement already satisfied: tqdm&gt;=4.14 in /home/danaukes/anaconda3/lib/python3.7/site-packages (from twine) (4.56.0)
-Requirement already satisfied: SecretStorage&gt;=3.2 in /home/danaukes/anaconda3/lib/python3.7/site-packages (from keyring&gt;=15.1-&gt;twine) (3.3.0)
-Requirement already satisfied: jeepney&gt;=0.4.2 in /home/danaukes/anaconda3/lib/python3.7/site-packages (from keyring&gt;=15.1-&gt;twine) (0.6.0)
-Requirement already satisfied: zipp&gt;=0.5 in /home/danaukes/anaconda3/lib/python3.7/site-packages (from importlib-metadata-&gt;meshio) (3.4.0)
-Requirement already satisfied: docutils&gt;=0.13.1 in /home/danaukes/anaconda3/lib/python3.7/site-packages (from readme-renderer&gt;=21.0-&gt;twine) (0.16)
-Requirement already satisfied: six in /home/danaukes/anaconda3/lib/python3.7/site-packages (from readme-renderer&gt;=21.0-&gt;twine) (1.15.0)
-Requirement already satisfied: Pygments&gt;=2.5.1 in /home/danaukes/anaconda3/lib/python3.7/site-packages (from readme-renderer&gt;=21.0-&gt;twine) (2.7.4)
-Requirement already satisfied: bleach&gt;=2.1.0 in /home/danaukes/anaconda3/lib/python3.7/site-packages (from readme-renderer&gt;=21.0-&gt;twine) (3.3.0)
-Requirement already satisfied: webencodings in /home/danaukes/anaconda3/lib/python3.7/site-packages (from bleach&gt;=2.1.0-&gt;readme-renderer&gt;=21.0-&gt;twine) (0.5.1)
-Requirement already satisfied: packaging in /home/danaukes/anaconda3/lib/python3.7/site-packages (from bleach&gt;=2.1.0-&gt;readme-renderer&gt;=21.0-&gt;twine) (20.9)
-Requirement already satisfied: cffi&gt;=1.12 in /home/danaukes/anaconda3/lib/python3.7/site-packages (from cryptography-&gt;service_identity) (1.14.5)
-Requirement already satisfied: pycparser in /home/danaukes/anaconda3/lib/python3.7/site-packages (from cffi&gt;=1.12-&gt;cryptography-&gt;service_identity) (2.20)
-Requirement already satisfied: wrapt&lt;2,&gt;=1.10 in /home/danaukes/anaconda3/lib/python3.7/site-packages (from deprecated-&gt;pygithub) (1.12.1)
-Requirement already satisfied: ntplib in /home/danaukes/anaconda3/lib/python3.7/site-packages (0.3.4)
-Requirement already satisfied: pygame in /home/danaukes/anaconda3/lib/python3.7/site-packages (2.0.1)
-Requirement already satisfied: pysftp in /home/danaukes/anaconda3/lib/python3.7/site-packages (0.2.9)
-Requirement already satisfied: pyserial in /home/danaukes/anaconda3/lib/python3.7/site-packages (3.5)
-Requirement already satisfied: paramiko&gt;=1.17 in /home/danaukes/anaconda3/lib/python3.7/site-packages (from pysftp) (2.7.2)
-Requirement already satisfied: pynacl&gt;=1.0.1 in /home/danaukes/anaconda3/lib/python3.7/site-packages (from paramiko&gt;=1.17-&gt;pysftp) (1.4.0)
-Requirement already satisfied: cryptography&gt;=2.5 in /home/danaukes/anaconda3/lib/python3.7/site-packages (from paramiko&gt;=1.17-&gt;pysftp) (3.4.6)
-Requirement already satisfied: bcrypt&gt;=3.1.3 in /home/danaukes/anaconda3/lib/python3.7/site-packages (from paramiko&gt;=1.17-&gt;pysftp) (3.2.0)
-Requirement already satisfied: six&gt;=1.4.1 in /home/danaukes/anaconda3/lib/python3.7/site-packages (from bcrypt&gt;=3.1.3-&gt;paramiko&gt;=1.17-&gt;pysftp) (1.15.0)
-Requirement already satisfied: cffi&gt;=1.1 in /home/danaukes/anaconda3/lib/python3.7/site-packages (from bcrypt&gt;=3.1.3-&gt;paramiko&gt;=1.17-&gt;pysftp) (1.14.5)
-Requirement already satisfied: pycparser in /home/danaukes/anaconda3/lib/python3.7/site-packages (from cffi&gt;=1.1-&gt;bcrypt&gt;=3.1.3-&gt;paramiko&gt;=1.17-&gt;pysftp) (2.20)
-Collecting foldable_robotics
-  Downloading foldable_robotics-0.0.29-py2.py3-none-any.whl (32 kB)
-Requirement already satisfied: numpy in /home/danaukes/anaconda3/lib/python3.7/site-packages (from foldable_robotics) (1.19.2)
-Requirement already satisfied: shapely in /home/danaukes/anaconda3/lib/python3.7/site-packages (from foldable_robotics) (1.7.1)
-Requirement already satisfied: pyyaml in /home/danaukes/anaconda3/lib/python3.7/site-packages (from foldable_robotics) (5.4.1)
-Requirement already satisfied: matplotlib in /home/danaukes/anaconda3/lib/python3.7/site-packages (from foldable_robotics) (3.3.4)
-Requirement already satisfied: ezdxf in /home/danaukes/anaconda3/lib/python3.7/site-packages (from foldable_robotics) (0.15.2)
-Collecting idealab_tools
-  Downloading idealab_tools-0.0.22-py2.py3-none-any.whl (28 kB)
-Requirement already satisfied: imageio in /home/danaukes/anaconda3/lib/python3.7/site-packages (from idealab_tools) (2.9.0)
-Collecting pynamics
-  Downloading pynamics-0.0.8-py2.py3-none-any.whl (87 kB)
-[K     |████████████████████████████████| 87 kB 4.1 MB/s eta 0:00:011
-[?25hRequirement already satisfied: scipy in /home/danaukes/anaconda3/lib/python3.7/site-packages (from pynamics) (1.6.0)
-Requirement already satisfied: sympy in /home/danaukes/anaconda3/lib/python3.7/site-packages (from pynamics) (1.7.1)
-Collecting pypoly2tri
-  Downloading pypoly2tri-0.0.3-py2.py3-none-any.whl (11 kB)
-Requirement already satisfied: pyparsing&gt;=2.0.1 in /home/danaukes/anaconda3/lib/python3.7/site-packages (from ezdxf-&gt;foldable_robotics) (2.4.7)
-Requirement already satisfied: pillow in /home/danaukes/anaconda3/lib/python3.7/site-packages (from imageio-&gt;idealab_tools) (8.1.0)
-Requirement already satisfied: python-dateutil&gt;=2.1 in /home/danaukes/anaconda3/lib/python3.7/site-packages (from matplotlib-&gt;foldable_robotics) (2.8.1)
-Requirement already satisfied: cycler&gt;=0.10 in /home/danaukes/anaconda3/lib/python3.7/site-packages (from matplotlib-&gt;foldable_robotics) (0.10.0)
-Requirement already satisfied: kiwisolver&gt;=1.0.1 in /home/danaukes/anaconda3/lib/python3.7/site-packages (from matplotlib-&gt;foldable_robotics) (1.3.1)
-Requirement already satisfied: six in /home/danaukes/anaconda3/lib/python3.7/site-packages (from cycler&gt;=0.10-&gt;matplotlib-&gt;foldable_robotics) (1.15.0)
-Requirement already satisfied: mpmath&gt;=0.19 in /home/danaukes/anaconda3/lib/python3.7/site-packages (from sympy-&gt;pynamics) (1.1.0)
-Installing collected packages: pypoly2tri, idealab-tools, pynamics, foldable-robotics
-Successfully installed foldable-robotics-0.0.29 idealab-tools-0.0.22 pynamics-0.0.8 pypoly2tri-0.0.3
-</code></pre>
+<h1 id=run-pip-install-code-block>RUN PIP INSTALL CODE BLOCK</h1>
+<p>#3 Install standard packages&mldr;
+!pip install meshio pygmsh ezdxf pandoc-fignos pandoc-eqnos pypdf4 service_identity ftd2xx pygithub twine paho-mqtt
+!pip install ntplib pygame pysftp pyserial</p>
+<p>#4 Install foldable-robotics-specific packages.
+!pip install pypoly2tri idealab_tools foldable_robotics pynamics</p>
 <h2 id=42-manual-install>4.2 Manual Install</h2>
 <p>A package can be manually installed by adding the .whl file to Google Drive and using the pip command on this file. For convenience, it is probably best to add it to the same directory as the Google Colab file in your drive. To pip install a .whl file we just have to run the pip command and referencing the path to that file.</p>
 <blockquote>
 <p><strong>Note:</strong> To access a file stored in your Google Drive, your google drive must be mounted to the google Colab notebook. For details regarding mounting our drive see the &ldquo;<em>Mounting Drive to Google Colab</em>&rdquo; section.</p>
 </blockquote>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e># DO NOT RUN IF ALREADY RAN COD IN PIP INSTALL SECTION</span>
-<span style=color:#f92672>from</span> <span style=color:#111>google.colab</span> <span style=color:#f92672>import</span> <span style=color:#111>drive</span>
-
-<span style=color:#75715e># Where the drive will be mounted in the Colab notebook</span>
-<span style=color:#111>ROOT</span> <span style=color:#f92672>=</span> <span style=color:#d88200>&#39;/content/drive&#39;</span> 
-
-<span style=color:#75715e># Path to the file in YOUR DRIVE.  Will be different for you</span>
-<span style=color:#111>FILE_PATH</span> <span style=color:#f92672>=</span> <span style=color:#d88200>&#39;/MyDrive/GoogleColabExample/pynamics-0.0.8-py2.py3-none-any.whl&#39;</span> 
-
-<span style=color:#75715e># Accessingg a file on your drive</span>
-<span style=color:#111>drive</span><span style=color:#f92672>.</span><span style=color:#111>mount</span><span style=color:#111>(</span><span style=color:#111>ROOT</span><span style=color:#111>,</span> <span style=color:#111>force_remount</span><span style=color:#f92672>=</span><span style=color:#00a8c8>True</span><span style=color:#111>)</span> <span style=color:#75715e># Mount the drive to this notebook</span>
-<span style=color:#00a8c8>with</span> <span style=color:#111>open</span><span style=color:#111>(</span><span style=color:#111>ROOT</span><span style=color:#f92672>+</span><span style=color:#111>FILE_PATH</span><span style=color:#111>,</span><span style=color:#d88200>&#39;w&#39;</span><span style=color:#111>)</span> <span style=color:#00a8c8>as</span> <span style=color:#111>f</span><span style=color:#111>:</span> <span style=color:#75715e># Open the file in the drive</span>
-  <span style=color:#960050;background-color:#1e0010>!</span><span style=color:#111>pip</span> <span style=color:#111>install</span> <span style=color:#111>f</span>  <span style=color:#75715e># Run the pip install command for the file</span>
-
-<span style=color:#75715e># This next command is to unmount my drive from th notebook so that it my </span>
-<span style=color:#75715e># personal files will not be made available if this Google Colab File is shared</span>
-<span style=color:#111>drive</span><span style=color:#f92672>.</span><span style=color:#111>flush_and_unmount</span><span style=color:#111>()</span> 
-</code></pre></div><pre><code>---------------------------------------------------------------------------
-
-ModuleNotFoundError                       Traceback (most recent call last)
-
-&lt;ipython-input-2-43a92df53274&gt; in &lt;module&gt;
-      1 # DO NOT RUN IF ALREADY RAN COD IN PIP INSTALL SECTION
-----&gt; 2 from google.colab import drive
-      3 
-      4 # Where the drive will be mounted in the Colab notebook
-      5 ROOT = '/content/drive'
-
-
-ModuleNotFoundError: No module named 'google'
-</code></pre>
+<h1 id=do-not-run-if-already-ran-cod-in-pip-install-section>DO NOT RUN IF ALREADY RAN COD IN PIP INSTALL SECTION</h1>
+<p>from google.colab import drive</p>
+<h1 id=where-the-drive-will-be-mounted-in-the-colab-notebook>Where the drive will be mounted in the Colab notebook</h1>
+<p>ROOT = &lsquo;/content/drive&rsquo;</p>
+<h1 id=path-to-the-file-in-your-drive--will-be-different-for-you>Path to the file in YOUR DRIVE. Will be different for you</h1>
+<p>FILE_PATH = &lsquo;/MyDrive/GoogleColabExample/pynamics-0.0.8-py2.py3-none-any.whl&rsquo;</p>
+<h1 id=accessingg-a-file-on-your-drive>Accessingg a file on your drive</h1>
+<p>drive.mount(ROOT, force_remount=True) # Mount the drive to this notebook
+with open(ROOT+FILE_PATH,&lsquo;w&rsquo;) as f: # Open the file in the drive
+!pip install f # Run the pip install command for the file</p>
+<h1 id=this-next-command-is-to-unmount-my-drive-from-th-notebook-so-that-it-my>This next command is to unmount my drive from th notebook so that it my</h1>
+<h1 id=personal-files-will-not-be-made-available-if-this-google-colab-file-is-shared>personal files will not be made available if this Google Colab File is shared</h1>
+<p>drive.flush_and_unmount()</p>
 <h2 id=43-verifying-imported-packages>4.3 Verifying Imported Packages</h2>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e># RUN THIS COD BLOCK TO ENSURE ALL PACKAGES ARE INSTALLED</span>
-<span style=color:#f92672>import</span> <span style=color:#111>pynamics</span>
-<span style=color:#f92672>from</span> <span style=color:#111>pynamics.frame</span> <span style=color:#f92672>import</span> <span style=color:#111>Frame</span>
-<span style=color:#f92672>from</span> <span style=color:#111>pynamics.variable_types</span> <span style=color:#f92672>import</span> <span style=color:#111>Differentiable</span><span style=color:#111>,</span><span style=color:#111>Constant</span>
-<span style=color:#f92672>from</span> <span style=color:#111>pynamics.system</span> <span style=color:#f92672>import</span> <span style=color:#111>System</span>
-<span style=color:#f92672>from</span> <span style=color:#111>pynamics.constraint</span> <span style=color:#f92672>import</span> <span style=color:#111>Constraint</span>
-<span style=color:#f92672>from</span> <span style=color:#111>pynamics.output</span> <span style=color:#f92672>import</span> <span style=color:#111>PointsOutput</span>
-
-<span style=color:#f92672>import</span> <span style=color:#111>sympy</span>
-<span style=color:#f92672>import</span> <span style=color:#111>numpy</span> <span style=color:#00a8c8>as</span> <span style=color:#111>np</span>
-<span style=color:#f92672>import</span> <span style=color:#111>matplotlib.pyplot</span> <span style=color:#00a8c8>as</span> <span style=color:#111>plt</span>
-<span style=color:#f92672>import</span> <span style=color:#111>scipy.optimize</span>
-
-<span style=color:#f92672>from</span> <span style=color:#111>math</span> <span style=color:#f92672>import</span> <span style=color:#111>pi</span>
-
-<span style=color:#75715e># If there are no errors in the output, the packages have been properly installed</span>
-</code></pre></div><blockquote>
+<h1 id=run-this-cod-block-to-ensure-all-packages-are-installed>RUN THIS COD BLOCK TO ENSURE ALL PACKAGES ARE INSTALLED</h1>
+<p>import pynamics
+from pynamics.frame import Frame
+from pynamics.variable_types import Differentiable,Constant
+from pynamics.system import System
+from pynamics.constraint import Constraint
+from pynamics.output import PointsOutput</p>
+<p>import sympy
+import numpy as np
+import matplotlib.pyplot as plt
+import scipy.optimize</p>
+<p>from math import pi</p>
+<h1 id=if-there-are-no-errors-in-the-output-the-packages-have-been-properly-installed>If there are no errors in the output, the packages have been properly installed</h1>
+<blockquote>
 <p><strong>Note:</strong> Packages that do not come installed by default will have to be reinstalled using the pip command for each new notebook.</p>
 </blockquote>
 <h1 id=5-mounting-drive-to-google-colab><strong>5. Mounting Drive to Google Colab</strong></h1>
@@ -339,39 +230,31 @@ ModuleNotFoundError: No module named 'google'
 <p><strong>Disclaimer:</strong> Your drive will remain mounted to the Google Colab notebook until you unmount it. That means people with access to the notebook will be able to access your drive until it is unmounted. Once unmounted, another party will not be able to access your drive since they would need to perform the authorization process which requires a sign in from your google account.</p>
 </blockquote>
 <h2 id=51-mounting-and-unmounting-a-drive-using-a-code-block-reccomended>5.1 Mounting and Unmounting a Drive Using a Code Block (Reccomended)</h2>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>from</span> <span style=color:#111>google.colab</span> <span style=color:#f92672>import</span> <span style=color:#111>drive</span>
-
-<span style=color:#75715e># Where the drive will be mounted in the Colab notebook</span>
-<span style=color:#111>ROOT</span> <span style=color:#f92672>=</span> <span style=color:#d88200>&#39;/content/drive&#39;</span> 
-
-<span style=color:#75715e># Path to the file in your drive.  Will be different for you</span>
-<span style=color:#111>FILE_PATH</span> <span style=color:#f92672>=</span> <span style=color:#d88200>&#39;/MyDrive/Folder1/Folder2/file&#39;</span> 
-<span style=color:#75715e>#FILE_PATH = &#39;/Shareddrives/Folder1/Folder2/file&#39; </span>
-
-<span style=color:#75715e># Mount the drive to this notebook</span>
-<span style=color:#111>drive</span><span style=color:#f92672>.</span><span style=color:#111>mount</span><span style=color:#111>(</span><span style=color:#111>ROOT</span><span style=color:#111>,</span> <span style=color:#111>force_remount</span><span style=color:#f92672>=</span><span style=color:#00a8c8>True</span><span style=color:#111>)</span> 
-
-<span style=color:#75715e># Append full path</span>
-<span style=color:#111>full_path_to_file</span> <span style=color:#f92672>=</span> <span style=color:#111>ROOT</span><span style=color:#f92672>+</span><span style=color:#111>FILE_PATH</span>
-
-<span style=color:#75715e>############################################</span>
-<span style=color:#75715e>#### INSERT CODE TO PROCESS/IMPORT FILE ####</span>
-<span style=color:#75715e># EX1</span>
-<span style=color:#f92672>import</span> <span style=color:#111>csv</span>
-<span style=color:#111>data</span> <span style=color:#f92672>=</span> <span style=color:#111>csv</span><span style=color:#f92672>.</span><span style=color:#111>reader</span><span style=color:#111>(</span><span style=color:#111>full_path_to_file</span><span style=color:#111>,</span> <span style=color:#111>delimiter</span><span style=color:#f92672>=</span><span style=color:#d88200>&#39;,&#39;</span><span style=color:#111>)</span>
-
-<span style=color:#75715e># EX2</span>
-<span style=color:#f92672>import</span> <span style=color:#111>cv2</span>
-<span style=color:#111>img</span> <span style=color:#f92672>=</span> <span style=color:#111>cv2</span><span style=color:#f92672>.</span><span style=color:#111>imread</span><span style=color:#111>(</span><span style=color:#111>full_path_to_file</span><span style=color:#111>)</span>   
-<span style=color:#75715e>#### INSERT CODE TO PROCESS/IMPORT FILE ####</span>
-<span style=color:#75715e>############################################</span>
-
-<span style=color:#75715e># Unmount Drive</span>
-<span style=color:#111>drive</span><span style=color:#f92672>.</span><span style=color:#111>flush_and_unmount</span><span style=color:#111>()</span> 
-
-<span style=color:#75715e># As long as the variable used to import the file (data/img) is not overwritten</span>
-<span style=color:#75715e># or deleted, the variable can be used later in the code with an unmounted drive</span>
-</code></pre></div><h2 id=52-mounting-and-unmounting-a-drive-using-the-ui>5.2 Mounting and Unmounting a Drive Using the UI</h2>
+<p>from google.colab import drive</p>
+<h1 id=where-the-drive-will-be-mounted-in-the-colab-notebook-1>Where the drive will be mounted in the Colab notebook</h1>
+<p>ROOT = &lsquo;/content/drive&rsquo;</p>
+<h1 id=path-to-the-file-in-your-drive--will-be-different-for-you-1>Path to the file in your drive. Will be different for you</h1>
+<p>FILE_PATH = &lsquo;/MyDrive/Folder1/Folder2/file&rsquo;
+#FILE_PATH = &lsquo;/Shareddrives/Folder1/Folder2/file&rsquo;</p>
+<h1 id=mount-the-drive-to-this-notebook>Mount the drive to this notebook</h1>
+<p>drive.mount(ROOT, force_remount=True)</p>
+<h1 id=append-full-path>Append full path</h1>
+<p>full_path_to_file = ROOT+FILE_PATH</p>
+<p>############################################</p>
+<h4 id=insert-code-to-processimport-file>INSERT CODE TO PROCESS/IMPORT FILE</h4>
+<h1 id=ex1>EX1</h1>
+<p>import csv
+data = csv.reader(full_path_to_file, delimiter=',')</p>
+<h1 id=ex2>EX2</h1>
+<p>import cv2
+img = cv2.imread(full_path_to_file)</p>
+<h4 id=insert-code-to-processimport-file-1>INSERT CODE TO PROCESS/IMPORT FILE</h4>
+<p>############################################</p>
+<h1 id=unmount-drive>Unmount Drive</h1>
+<p>drive.flush_and_unmount()</p>
+<h1 id=as-long-as-the-variable-used-to-import-the-file-dataimg-is-not-overwritten>As long as the variable used to import the file (data/img) is not overwritten</h1>
+<h1 id=or-deleted-the-variable-can-be-used-later-in-the-code-with-an-unmounted-drive>or deleted, the variable can be used later in the code with an unmounted drive</h1>
+<h2 id=52-mounting-and-unmounting-a-drive-using-the-ui>5.2 Mounting and Unmounting a Drive Using the UI</h2>
 <p>Alternatively, you can use the toolbar on the left to mount the drive to a notebook. This does not require account verification since you are accessing the notebook through your google account. If you do not have any code cells that mount a drive. This can be done by</p>
 <ol>
 <li>Selecting the files button (folder icon)</li>

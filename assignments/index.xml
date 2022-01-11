@@ -293,7 +293,7 @@ to find good starting points for references and keywords.&lt;/li>
 &lt;li>&lt;a href="http://foldable-robotics.github.io/modules/python/installing-anaconda/">Installing Anaconda Python Tutorial&lt;/a>&lt;/li>
 &lt;li>&lt;a href="http://foldable-robotics.github.io/modules/misc/add-folder-to-system-path/">Add folder to system path (Windows)&lt;/a>&lt;/li>
 &lt;li>&lt;a href="http://foldable-robotics.github.io/modules/python/using-jupyter-notebook/">Using Jupyter Notebook&lt;/a>&lt;/li>
-&lt;li>&lt;a href="http://foldable-robotics.github.io/modules/python/generated/google-colab-tutorial/">Google Colabl Tutorial&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://foldable-robotics.github.io/modules/python/generated/google-colab-tutorial/">Google Colab Tutorial&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h2 id="installing-anaconda">Installing Anaconda&lt;/h2></description></item><item><title>Intro to Dynamics</title><link>http://foldable-robotics.github.io/assignments/dynamics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/dynamics/</guid><description>&lt;h2 id="assignment-overview">Assignment Overview&lt;/h2>
 &lt;p>The purpose of this assignment is to get you comfortable using the computational capabilities of Python and Pynamics to start estimating the performance of your design.&lt;/p>
