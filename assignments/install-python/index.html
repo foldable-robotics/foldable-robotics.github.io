@@ -111,8 +111,10 @@ Documents
 <p>Python is essential for Foldable Robotics. This task leads you through installing the Anaconda Python Distribution. Completing this task will ensure you have the basic packages installed to use Python in the course.</p>
 <h2 id=resources>Resources</h2>
 <ul>
-<li><a href=/modules/python/installing-anaconda>Installing Anaconda Python Tutorial</a></li>
-<li><a href=/modules/misc/add-folder-to-system-path>Add folder to system path (Windows)</a></li>
+<li><a href=/modules/python/installing-anaconda/>Installing Anaconda Python Tutorial</a></li>
+<li><a href=/modules/misc/add-folder-to-system-path/>Add folder to system path (Windows)</a></li>
+<li><a href=/modules/python/using-jupyter-notebook/>Using Jupyter Notebook</a></li>
+<li><a href=/modules/python/generated/google-colab-tutorial/>Google Colabl Tutorial</a></li>
 </ul>
 <h2 id=installing-anaconda>Installing Anaconda</h2>
 <ol>
@@ -176,7 +178,8 @@ Full Name
 </code></pre></div></li>
 <li>
 <p>Run that code by hitting shift+enter. Some information should pop out, along with a blank plot. There should be a new code window below the first. In this window, enter:</p>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>HTML</span><span style=color:#111>(</span><span style=color:#111>pynamics_examples</span><span style=color:#f92672>.</span><span style=color:#111>pendulum_2_ways</span><span style=color:#f92672>.</span><span style=color:#111>points_output</span><span style=color:#f92672>.</span><span style=color:#111>anim</span><span style=color:#f92672>.</span><span style=color:#111>to_html5_video</span><span style=color:#111>())</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>pynamics_examples</span><span style=color:#f92672>.</span><span style=color:#111>pendulum_2_ways</span><span style=color:#f92672>.</span><span style=color:#111>points_output</span><span style=color:#f92672>.</span><span style=color:#111>animate</span><span style=color:#111>(</span><span style=color:#111>fps</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>30</span><span style=color:#111>,</span><span style=color:#111>lw</span><span style=color:#f92672>=</span><span style=color:#ae81ff>2</span><span style=color:#111>)</span>
+<span style=color:#111>HTML</span><span style=color:#111>(</span><span style=color:#111>pynamics_examples</span><span style=color:#f92672>.</span><span style=color:#111>pendulum_2_ways</span><span style=color:#f92672>.</span><span style=color:#111>points_output</span><span style=color:#f92672>.</span><span style=color:#111>anim</span><span style=color:#f92672>.</span><span style=color:#111>to_html5_video</span><span style=color:#111>())</span>
 </code></pre></div></li>
 <li>
 <p>Run the code.</p>
