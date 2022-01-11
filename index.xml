@@ -93,25 +93,7 @@ to find good starting points for references and keywords.&lt;/li>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Cantilever Beams</title><link>http://foldable-robotics.github.io/modules/compliance/cantilever-beams/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/compliance/cantilever-beams/</guid><description>Cantilever Beams Overview Compute the stiffness of a laminate beam</description></item><item><title>CATME I</title><link>http://foldable-robotics.github.io/assignments/catme-i/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/catme-i/</guid><description>CATME I Assignment Overview Please use the link provided in the email sent from CATME to complete an assessment of your teammates.</description></item><item><title>CATME II</title><link>http://foldable-robotics.github.io/assignments/catme-ii/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/catme-ii/</guid><description>&lt;h1 id="catme-ii">CATME II&lt;/h1>
-&lt;h2 id="assignment-overview">Assignment Overview&lt;/h2>
-&lt;p>Please use the link provided in the email sent from CATME to complete an assessment of your teammates.&lt;/p>
-&lt;p>Please remember that feedback to teammates will be released to them, so keep your criticism constructive&lt;/p>
-&lt;h2 id="rubric">Rubric&lt;/h2>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th style="text-align:left">Description&lt;/th>
-&lt;th style="text-align:right">Points&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
-&lt;td style="text-align:right">200&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table></description></item><item><title>convert excel spreadsheet to markdown table</title><link>http://foldable-robotics.github.io/modules/misc/excel-to-markdown/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/misc/excel-to-markdown/</guid><description>Introduction Often you are working in excel and want to output to a markdown table.</description></item><item><title>Converting Powerpoint to .mp4</title><link>http://foldable-robotics.github.io/modules/project/powerpoint-to-mp4/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/project/powerpoint-to-mp4/</guid><description>Converting Powerpoint to .mp4 Introduction This tutorial takes you step-by-step through creating a .</description></item><item><title>Course Feedback I</title><link>http://foldable-robotics.github.io/assignments/course-feedback-i/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/course-feedback-i/</guid><description>&lt;h1 id="course-feedback-i">Course Feedback I&lt;/h1>
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Cantilever Beams</title><link>http://foldable-robotics.github.io/modules/compliance/cantilever-beams/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/compliance/cantilever-beams/</guid><description>Cantilever Beams Overview Compute the stiffness of a laminate beam</description></item><item><title>convert excel spreadsheet to markdown table</title><link>http://foldable-robotics.github.io/modules/misc/excel-to-markdown/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/misc/excel-to-markdown/</guid><description>Introduction Often you are working in excel and want to output to a markdown table.</description></item><item><title>Converting Powerpoint to .mp4</title><link>http://foldable-robotics.github.io/modules/project/powerpoint-to-mp4/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/project/powerpoint-to-mp4/</guid><description>Converting Powerpoint to .mp4 Introduction This tutorial takes you step-by-step through creating a .</description></item><item><title>Course Feedback I</title><link>http://foldable-robotics.github.io/assignments/course-feedback-i/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/course-feedback-i/</guid><description>&lt;h1 id="course-feedback-i">Course Feedback I&lt;/h1>
 &lt;h2 id="assignment-overview">Assignment Overview&lt;/h2>
 &lt;p>The goal of this assignment is to learn about your activities in this course and how the course can be improved in the future.&lt;/p>
 &lt;h2 id="rubric">Rubric&lt;/h2>
@@ -147,47 +129,11 @@ to find good starting points for references and keywords.&lt;/li>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Data Collection and Experimental Validation</title><link>http://foldable-robotics.github.io/assignments/data-collection-and-experimental-validation/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/data-collection-and-experimental-validation/</guid><description>&lt;h1 id="data-collection-and-experimental-validation">Data Collection and Experimental Validation&lt;/h1>
-&lt;h2 id="assignment-overview">Assignment Overview&lt;/h2>
-&lt;p>The purpose of this assignment is to collect data on your system and compare against the results estimated from simulation.&lt;/p>
-&lt;h2 id="rubric">Rubric&lt;/h2>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th style="text-align:left">Description&lt;/th>
-&lt;th style="text-align:right">Points&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td style="text-align:left">Report Narrative&lt;/td>
-&lt;td style="text-align:right">50&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align:left">Figure(s) of Data&lt;/td>
-&lt;td style="text-align:right">50&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align:left">Image of Experimental&lt;/td>
-&lt;td style="text-align:right">25&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align:left">Video&lt;/td>
-&lt;td style="text-align:right">25&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align:left">Discussion&lt;/td>
-&lt;td style="text-align:right">50&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
-&lt;td style="text-align:right">200&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Data Collection Permission Form</title><link>http://foldable-robotics.github.io/assignments/data-collection-permission/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/data-collection-permission/</guid><description>&lt;h2 id="assignment-overview">Assignment Overview&lt;/h2>
+&lt;p>The goal of this assignment is to get your permission to collect data through periodic surveys.&lt;/p>
 &lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Derivatives and the Golden Rule</title><link>http://foldable-robotics.github.io/modules/dynamics/generated/05-derivatives-and-the-golden-rule/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/dynamics/generated/05-derivatives-and-the-golden-rule/</guid><description>Derivatives and the Golden Rule $$ \frac{ {}^N{d\vec{v}}}{dt} = \frac{ {}^A{d\vec{v}}}{dt} + {}^N{\vec{w}}^{A} \times \vec{v} $$</description></item><item><title>Design and Manufacturing Workflow</title><link>http://foldable-robotics.github.io/assignments/design-and-manufacturing-workflow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/design-and-manufacturing-workflow/</guid><description>&lt;h1 id="design-and-manufacturing-workflow">Design and Manufacturing Workflow&lt;/h1>
 &lt;h2 id="introduction">Introduction&lt;/h2>
-&lt;p>The purpose of this assignment is to plan for the manufacturing of the full system, test the output, and &lt;em>hopefully&lt;/em> use it to produce a prototype.&lt;/p>
+&lt;p>The purpose of this assignment is to plan for the manufacturing of the full system, test the output, and use it to produce a prototype.&lt;/p>
 &lt;h2 id="rubric">Rubric&lt;/h2>
 &lt;table>
 &lt;thead>
@@ -243,57 +189,37 @@ to find good starting points for references and keywords.&lt;/li>
 &lt;ul>
 &lt;li>Solidworks Tutorial kinematics tutorial: &lt;a href="https://drive.google.com/open?id=1En2zWrJg5EV_T9sTThubRUUclYcnW9jV&amp;amp;authuser=daukes%40asu.edu&amp;amp;usp=drive_fs">https://drive.google.com/open?id=1En2zWrJg5EV_T9sTThubRUUclYcnW9jV&amp;amp;authuser=daukes%40asu.edu&amp;amp;usp=drive_fs&lt;/a>&lt;/li>
 &lt;li>The macros for exporting a laminate to .dxf: &lt;a href="https://github.com/popupcad/code_popupcad_solidworks_exporter">https://github.com/popupcad/code_popupcad_solidworks_exporter&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Design Optimization</title><link>http://foldable-robotics.github.io/assignments/design-optimization/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/design-optimization/</guid><description>&lt;h1 id="design-optimization">Design Optimization&lt;/h1>
-&lt;h2 id="introduction">Introduction&lt;/h2>
-&lt;p>The purpose of this assignment is to optimize the dynamics of your system to maximize performance against your team&amp;rsquo;s selected research question and design goal.&lt;/p>
+&lt;/ul></description></item><item><title>Design Optimization, Experiment Design, Data Collection, and Analysis</title><link>http://foldable-robotics.github.io/assignments/doeddca/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/doeddca/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>The purpose of this assignment is to execute the plan individual tasks assigned to you for the final part of your project.&lt;/p>
 &lt;h2 id="rubric">Rubric&lt;/h2>
 &lt;table>
 &lt;thead>
 &lt;tr>
 &lt;th style="text-align:left">Description&lt;/th>
-&lt;th style="text-align:right">Points&lt;/th>
+&lt;th style="text-align:left">Points&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:left">1a&lt;/td>
-&lt;td style="text-align:right">20&lt;/td>
+&lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
+&lt;td style="text-align:left">200&lt;/td>
 &lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Design Optimization, Experiment Design, Data Collection, and Analysis Plan</title><link>http://foldable-robotics.github.io/assignments/doeddcap/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/doeddcap/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>The purpose of this assignment is to create a plan for the final part of your project and assign individual tasks&lt;/p>
+&lt;h2 id="rubric">Rubric&lt;/h2>
+&lt;table>
+&lt;thead>
 &lt;tr>
-&lt;td style="text-align:left">1b&lt;/td>
-&lt;td style="text-align:right">10&lt;/td>
+&lt;th style="text-align:left">Description&lt;/th>
+&lt;th style="text-align:left">Points&lt;/th>
 &lt;/tr>
-&lt;tr>
-&lt;td style="text-align:left">1c&lt;/td>
-&lt;td style="text-align:right">10&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align:left">1d&lt;/td>
-&lt;td style="text-align:right">20&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align:left">1e&lt;/td>
-&lt;td style="text-align:right">40&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align:left">2a&lt;/td>
-&lt;td style="text-align:right">15&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align:left">2b&lt;/td>
-&lt;td style="text-align:right">10&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align:left">3&lt;/td>
-&lt;td style="text-align:right">50&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align:left">4&lt;/td>
-&lt;td style="text-align:right">25&lt;/td>
-&lt;/tr>
+&lt;/thead>
+&lt;tbody>
 &lt;tr>
 &lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
-&lt;td style="text-align:right">200&lt;/td>
+&lt;td style="text-align:left">25&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -352,107 +278,59 @@ to find good starting points for references and keywords.&lt;/li>
 &lt;li>The associated module on &lt;a href="http://foldable-robotics.github.io/modules/project/developing-a-research-question">developing a research question&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://www.mendeley.com/download-desktop-new/">Mendeley Desktop&lt;/a>, a useful citation manager&lt;/li>
 &lt;/ul>
-&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Developing a Research Question</title><link>http://foldable-robotics.github.io/modules/project/developing-a-research-question/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/project/developing-a-research-question/</guid><description>Developing a Research Question Introduction Robotics as a field is highly multi-disciplinary.</description></item><item><title>Developing Specifications</title><link>http://foldable-robotics.github.io/modules/biomechanics/developing-specifications/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/biomechanics/developing-specifications/</guid><description>Developing Specifications Introduction Developing specifications for a novel robot is difficult, especially considering how wide-open the potential design space is.</description></item><item><title>Download and Link to Python Packages</title><link>http://foldable-robotics.github.io/modules/python/download-and-link-to-python-packages/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/python/download-and-link-to-python-packages/</guid><description>Download and Link to Python Packages Say you want to run a python package from source using a git repository.</description></item><item><title>Dyads, Dyadics, and Inertia</title><link>http://foldable-robotics.github.io/modules/dynamics/generated/04-dyads-dyadics-and-inertia/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/dynamics/generated/04-dyads-dyadics-and-inertia/</guid><description>Dyads Dyads and dyadics are a difficult concept to understand, initially.</description></item><item><title>Dynamics II Plan</title><link>http://foldable-robotics.github.io/assignments/dynamics-ii-plan/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/dynamics-ii-plan/</guid><description>Dynamics II Plan Introduction The purpose of this assignment is to decide as a team how you will split up the various Parameter ID tasks individually</description></item><item><title>Dynamics II Prep (Parameter ID)</title><link>http://foldable-robotics.github.io/assignments/dynamics-ii-prep/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/dynamics-ii-prep/</guid><description>&lt;h1 id="dynamics-ii-prep">Dynamics II Prep&lt;/h1>
-&lt;h2 id="introduction">Introduction&lt;/h2>
-&lt;p>The purpose of this assignment is to get your team to model the various aspects of your model including&lt;/p>
-&lt;ul>
-&lt;li>The full system&lt;/li>
-&lt;li>Actuator Parameters&lt;/li>
-&lt;li>Energy Storage Devices&lt;/li>
-&lt;li>System / Link Stiffness&lt;/li>
-&lt;li>Damping and Friction&lt;/li>
-&lt;/ul>
-&lt;h2 id="rubric">Rubric&lt;/h2>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th style="text-align:left">Description&lt;/th>
-&lt;th style="text-align:left">Points&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
-&lt;td style="text-align:left">100&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Euler-Bernoulli Beams</title><link>http://foldable-robotics.github.io/modules/compliance/generated/euler-bernoulli-beams/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/compliance/generated/euler-bernoulli-beams/</guid><description>Euler-Bernoulli Beams The relationship between the bending moment and the radius of curvature($\rho$) for a beam of Young&amp;rsquo;s modulus $E$ and cross-sectional moment of inertia(second moment of area) $I$ is given by</description></item><item><title>Falling Rod Example</title><link>http://foldable-robotics.github.io/modules/dynamics/generated/09-falling-rod-example/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/dynamics/generated/09-falling-rod-example/</guid><description>Falling Rod Example This example shows how to implement contact and friction using a penalty method and damping</description></item><item><title>FEA Modeling</title><link>http://foldable-robotics.github.io/modules/compliance/laminate-fea/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/compliance/laminate-fea/</guid><description>FEA Modeling Introduction The goal of this tutorial is to get you familiar computing the stiffness of a laminate using FEA.</description></item><item><title>Fitting a Dynamic Model</title><link>http://foldable-robotics.github.io/modules/optimization/generated/04-fitting-a-dynamic-model/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/optimization/generated/04-fitting-a-dynamic-model/</guid><description>Fitting a Dynamic Model Introduction This example takes us through the beginning of the triple pendulum example again.</description></item><item><title>Foldable Robotics Background</title><link>http://foldable-robotics.github.io/modules/introduction/01-foldable-background/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/introduction/01-foldable-background/</guid><description>A short history of foldable robotics</description></item><item><title>Foldable Robotics Timeline</title><link>http://foldable-robotics.github.io/modules/introduction/02-foldable-timeline/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/introduction/02-foldable-timeline/</guid><description>A visual timeline of foldable robotics</description></item><item><title>Forces and Torques</title><link>http://foldable-robotics.github.io/modules/dynamics/generated/06-forces-and-torques/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/dynamics/generated/06-forces-and-torques/</guid><description>Forces and Torques Introduction Non-Conservative Forces Damping $$\vec{f} = -b\vec{v}$$</description></item><item><title>Frames, Basis Vectors, and Vectors</title><link>http://foldable-robotics.github.io/modules/dynamics/generated/02-vectors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/dynamics/generated/02-vectors/</guid><description>Frames When analyzing a system, sometimes it&amp;rsquo;s convenient or simple to represent a system in a specific way.</description></item><item><title>Full Design Pipeline</title><link>http://foldable-robotics.github.io/modules/manufacturing/generated/full-workflow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/manufacturing/generated/full-workflow/</guid><description>Full Design Pipeline %matplotlib inline import foldable_robotics import foldable_robotics.dxf import numpy import shapely.</description></item><item><title>Google Colab Documentation</title><link>http://foldable-robotics.github.io/modules/python/generated/google-colab-tutorial/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/python/generated/google-colab-tutorial/</guid><description>Google Colab Documentation Contributed by Mason Smith
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Developing a Research Question</title><link>http://foldable-robotics.github.io/modules/project/developing-a-research-question/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/project/developing-a-research-question/</guid><description>Developing a Research Question Introduction Robotics as a field is highly multi-disciplinary.</description></item><item><title>Developing Specifications</title><link>http://foldable-robotics.github.io/modules/biomechanics/developing-specifications/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/biomechanics/developing-specifications/</guid><description>Developing Specifications Introduction Developing specifications for a novel robot is difficult, especially considering how wide-open the potential design space is.</description></item><item><title>Download and Link to Python Packages</title><link>http://foldable-robotics.github.io/modules/python/download-and-link-to-python-packages/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/python/download-and-link-to-python-packages/</guid><description>Download and Link to Python Packages Say you want to run a python package from source using a git repository.</description></item><item><title>Dyads, Dyadics, and Inertia</title><link>http://foldable-robotics.github.io/modules/dynamics/generated/04-dyads-dyadics-and-inertia/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/dynamics/generated/04-dyads-dyadics-and-inertia/</guid><description>Dyads Dyads and dyadics are a difficult concept to understand, initially.</description></item><item><title>Euler-Bernoulli Beams</title><link>http://foldable-robotics.github.io/modules/compliance/generated/euler-bernoulli-beams/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/compliance/generated/euler-bernoulli-beams/</guid><description>Euler-Bernoulli Beams The relationship between the bending moment and the radius of curvature($\rho$) for a beam of Young&amp;rsquo;s modulus $E$ and cross-sectional moment of inertia(second moment of area) $I$ is given by</description></item><item><title>Falling Rod Example</title><link>http://foldable-robotics.github.io/modules/dynamics/generated/09-falling-rod-example/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/dynamics/generated/09-falling-rod-example/</guid><description>Falling Rod Example This example shows how to implement contact and friction using a penalty method and damping</description></item><item><title>FEA Modeling</title><link>http://foldable-robotics.github.io/modules/compliance/laminate-fea/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/compliance/laminate-fea/</guid><description>FEA Modeling Introduction The goal of this tutorial is to get you familiar computing the stiffness of a laminate using FEA.</description></item><item><title>Fitting a Dynamic Model</title><link>http://foldable-robotics.github.io/modules/optimization/generated/04-fitting-a-dynamic-model/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/optimization/generated/04-fitting-a-dynamic-model/</guid><description>Fitting a Dynamic Model Introduction This example takes us through the beginning of the triple pendulum example again.</description></item><item><title>Foldable Robotics Background</title><link>http://foldable-robotics.github.io/modules/introduction/01-foldable-background/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/introduction/01-foldable-background/</guid><description>A short history of foldable robotics</description></item><item><title>Foldable Robotics Timeline</title><link>http://foldable-robotics.github.io/modules/introduction/02-foldable-timeline/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/introduction/02-foldable-timeline/</guid><description>A visual timeline of foldable robotics</description></item><item><title>Forces and Torques</title><link>http://foldable-robotics.github.io/modules/dynamics/generated/06-forces-and-torques/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/dynamics/generated/06-forces-and-torques/</guid><description>Forces and Torques Introduction Non-Conservative Forces Damping $$\vec{f} = -b\vec{v}$$</description></item><item><title>Frames, Basis Vectors, and Vectors</title><link>http://foldable-robotics.github.io/modules/dynamics/generated/02-vectors/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/dynamics/generated/02-vectors/</guid><description>Frames When analyzing a system, sometimes it&amp;rsquo;s convenient or simple to represent a system in a specific way.</description></item><item><title>Full Design Pipeline</title><link>http://foldable-robotics.github.io/modules/manufacturing/generated/full-workflow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/manufacturing/generated/full-workflow/</guid><description>Full Design Pipeline %matplotlib inline import foldable_robotics import foldable_robotics.dxf import numpy import shapely.</description></item><item><title>Google Colab Documentation</title><link>http://foldable-robotics.github.io/modules/python/generated/google-colab-tutorial/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/python/generated/google-colab-tutorial/</guid><description>Google Colab Documentation Contributed by Mason Smith
 EGR 557 - Foldable Robotics</description></item><item><title>Graphical Synthesis</title><link>http://foldable-robotics.github.io/modules/kinematics/graphical-synthesis/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/kinematics/graphical-synthesis/</guid><description>Graphical Synthesis A popular way of deriving the desired kinematics of a device graphically has also been employed for centures.</description></item><item><title>Hinges</title><link>http://foldable-robotics.github.io/modules/manufacturing/generated/hinges/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/manufacturing/generated/hinges/</guid><description>Hinges import shapely.geometry as sg from foldable_robotics.layer import Layer from foldable_robotics.</description></item><item><title>Incoming Survey</title><link>http://foldable-robotics.github.io/assignments/incoming-survey/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/incoming-survey/</guid><description>&lt;h1 id="incoming-survey">Incoming Survey&lt;/h1>
 &lt;h2 id="assignment-overview">Assignment Overview&lt;/h2>
 &lt;p>The goal of this assignment is to learn about you, your background, and your interests and abilities.&lt;/p>
-&lt;h2 id="rubric">Rubric&lt;/h2>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th style="text-align:left">Description&lt;/th>
-&lt;th style="text-align:left">Points&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
-&lt;td style="text-align:left">50&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Inertias for common shapes</title><link>http://foldable-robotics.github.io/modules/dynamics/inertias-for-common-shapes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/dynamics/inertias-for-common-shapes/</guid><description>Inertias for common shapes Rectangular parallelepiped/prism (a box) with length $a$, width $b$, height $c$</description></item><item><title>Install Python</title><link>http://foldable-robotics.github.io/assignments/install-python/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/install-python/</guid><description>&lt;h1 id="install-python">Install Python&lt;/h1>
-&lt;h2 id="assignment-overview">Assignment Overview&lt;/h2>
-&lt;p>The goal here is to verify you have python installed correctly.&lt;/p>
-&lt;h2 id="rubric">Rubric&lt;/h2>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th style="text-align:left">Description&lt;/th>
-&lt;th style="text-align:left">Points&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
-&lt;td style="text-align:left">50&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Inertias for common shapes</title><link>http://foldable-robotics.github.io/modules/dynamics/inertias-for-common-shapes/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/dynamics/inertias-for-common-shapes/</guid><description>Inertias for common shapes Rectangular parallelepiped/prism (a box) with length $a$, width $b$, height $c$</description></item><item><title>Install CAD</title><link>http://foldable-robotics.github.io/assignments/install-cad/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/install-cad/</guid><description>&lt;h2 id="assignment-overview">Assignment Overview&lt;/h2>
+&lt;p>The goal here is to verify you have CAD installed correctly.&lt;/p>
 &lt;h2 id="resources">Resources&lt;/h2>
 &lt;ul>
 &lt;li>&lt;a href="http://foldable-robotics.github.io/modules/python/installing-anaconda">Installing Anaconda Python Tutorial&lt;/a>&lt;/li>
 &lt;li>&lt;a href="http://foldable-robotics.github.io/modules/misc/add-folder-to-system-path">Add folder to system path (Windows)&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Install Solidworks</title><link>http://foldable-robotics.github.io/assignments/install-solidworks/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/install-solidworks/</guid><description>&lt;h1 id="install-solidworks">Install Solidworks&lt;/h1>
-&lt;h2 id="assignment-overview">Assignment Overview&lt;/h2>
-&lt;p>The goal here is to ensure you have Solidworks installed correctly.&lt;/p>
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Install Python</title><link>http://foldable-robotics.github.io/assignments/install-python/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/install-python/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>Python is essential for Foldable Robotics. This task leads you through installing the Anaconda Python Distribution. Completing this task will ensure you have the basic packages installed to use Python in the course.&lt;/p>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="http://foldable-robotics.github.io/modules/python/installing-anaconda">Installing Anaconda Python Tutorial&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://foldable-robotics.github.io/modules/misc/add-folder-to-system-path">Add folder to system path (Windows)&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="installing-anaconda">Installing Anaconda&lt;/h2></description></item><item><title>Installing Anaconda</title><link>http://foldable-robotics.github.io/modules/python/installing-anaconda/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/python/installing-anaconda/</guid><description>Installing Anaconda Introduction Anaconda is a distribution of Python that includes the ability to manage packages using the conda package manager as well as the ability to create and manage environments, or collections of packages that work together.</description></item><item><title>Installing Git Extensions for Windows</title><link>http://foldable-robotics.github.io/modules/misc/installing-git/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/misc/installing-git/</guid><description>In Windows Download and install Git keep default install location I prefer to disable shell integration I prefer to use notepad++ as a text editor, but you must install it separately.</description></item><item><title>Intro to Dynamics</title><link>http://foldable-robotics.github.io/assignments/dynamics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/dynamics/</guid><description>&lt;h2 id="assignment-overview">Assignment Overview&lt;/h2>
+&lt;p>The purpose of this assignment is to get you comfortable using the computational capabilities of Python and Pynamics to start estimating the performance of your design.&lt;/p>
 &lt;h2 id="rubric">Rubric&lt;/h2>
 &lt;table>
 &lt;thead>
 &lt;tr>
 &lt;th style="text-align:left">Description&lt;/th>
-&lt;th style="text-align:left">Points&lt;/th>
+&lt;th style="text-align:right">Points&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:left">Solidworks Installed&lt;/td>
-&lt;td style="text-align:left">20&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align:left">Transparent Background without artifacts&lt;/td>
-&lt;td style="text-align:left">10&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align:left">Correct Use of Jupyter&lt;/td>
-&lt;td style="text-align:left">20&lt;/td>
-&lt;/tr>
-&lt;tr>
 &lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
-&lt;td style="text-align:left">&lt;strong>50&lt;/strong>&lt;/td>
+&lt;td style="text-align:right">200&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2 id="optional-external-resources">Optional External Resources&lt;/h2>
-&lt;p>&lt;a href="https://www.gimp.org/">GNU Image Manipulation Program&lt;/a> (Image Editor)&lt;/p>
-&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Installing Anaconda</title><link>http://foldable-robotics.github.io/modules/python/installing-anaconda/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/python/installing-anaconda/</guid><description>Installing Anaconda Introduction Anaconda is a distribution of Python that includes the ability to manage packages using the conda package manager as well as the ability to create and manage environments, or collections of packages that work together.</description></item><item><title>Installing Git Extensions for Windows</title><link>http://foldable-robotics.github.io/modules/misc/installing-git/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/misc/installing-git/</guid><description>In Windows Download and install Git keep default install location I prefer to disable shell integration I prefer to use notepad++ as a text editor, but you must install it separately.</description></item><item><title>Intro to Python</title><link>http://foldable-robotics.github.io/modules/python/why-python/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/python/why-python/</guid><description>Intro to Python One thing I really like about python is that it is based on good programming practice .</description></item><item><title>Intro to Shapely</title><link>http://foldable-robotics.github.io/assignments/shapely/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/shapely/</guid><description>&lt;h1 id="shapely--manufacturing">Shapely &amp;amp; Manufacturing&lt;/h1>
-&lt;h2 id="overview">Overview&lt;/h2>
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Intro to Kinematics</title><link>http://foldable-robotics.github.io/assignments/kinematics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/kinematics/</guid><description>&lt;h2 id="assignment-overview">Assignment Overview&lt;/h2>
+&lt;p>The purpose of this assignment is to get you comfortable using the computational capabilities of Python and Sympy to start estimating the performance of your design.&lt;/p>
+&lt;h2 id="rubric">Rubric&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">Description&lt;/th>
+&lt;th style="text-align:right">Points&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
+&lt;td style="text-align:right">200&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Intro to Manufacturing Computation</title><link>http://foldable-robotics.github.io/assignments/shapely/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/shapely/</guid><description>&lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>The purpose of this exercise is to get used to working with shapely polygons and to use it to compute some manufacturing geometry. It is your job to determine how to compute the cut files using Python, shapely, and the foldable_robotics package&lt;/p>
 &lt;h2 id="rubric">Rubric&lt;/h2>
 &lt;table>
@@ -482,7 +360,7 @@ EGR 557 - Foldable Robotics</description></item><item><title>Graphical Synthesis
 &lt;li>&lt;a href="https://github.com/idealabasu/code_foldable_robotics">https://github.com/idealabasu/code_foldable_robotics&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://shapely.readthedocs.io/en/stable/manual.html">The Shapely User Manual&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Jacobians</title><link>http://foldable-robotics.github.io/modules/kinematics/jacobians/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/kinematics/jacobians/</guid><description>&lt;h1 id="jacobians">Jacobians&lt;/h1>
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Intro to Python</title><link>http://foldable-robotics.github.io/modules/python/why-python/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/python/why-python/</guid><description>Intro to Python One thing I really like about python is that it is based on good programming practice .</description></item><item><title>Jacobians</title><link>http://foldable-robotics.github.io/modules/kinematics/jacobians/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/kinematics/jacobians/</guid><description>&lt;h1 id="jacobians">Jacobians&lt;/h1>
 &lt;p>A Jacobian is a matrix that collects the partial derivatives of rates of change between two vectors. These rates of change are related by&lt;/p></description></item><item><title>Kane's method</title><link>http://foldable-robotics.github.io/modules/dynamics/generated/07-kanes-method/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/dynamics/generated/07-kanes-method/</guid><description>Kane&amp;rsquo;s method
 Frames Frame A
 $$ {}^{N}{}{\vec{\omega}}^{A}{} = \dot{\theta} \hat{n}_z= \dot{\theta} \hat{a}_z $$</description></item><item><title>Kinematics Introduction</title><link>http://foldable-robotics.github.io/modules/kinematics/introduction-to-kinematics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/kinematics/introduction-to-kinematics/</guid><description>Kinematics Introduction Prototyping in Paper A second step is to ideate, mock-up, and prototype candidate mechanisms in paper.</description></item><item><title>Kinematics Via Prototyping &amp; CAD</title><link>http://foldable-robotics.github.io/assignments/kinematics-via-prototyping-and-cad/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/kinematics-via-prototyping-and-cad/</guid><description>&lt;h1 id="kinematics-via-prototyping--cad">Kinematics Via Prototyping &amp;amp; CAD&lt;/h1>
@@ -499,35 +377,35 @@ $$ {}^{N}{}{\vec{\omega}}^{A}{} = \dot{\theta} \hat{n}_z= \dot{\theta} \hat{a}_z
 &lt;tbody>
 &lt;tr>
 &lt;td style="text-align:left">Picture of prototype&lt;/td>
-&lt;td style="text-align:right">25&lt;/td>
+&lt;td style="text-align:right">50&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:left">Evaluation of 2D/3D&lt;/td>
-&lt;td style="text-align:right">5&lt;/td>
+&lt;td style="text-align:right">10&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:left">Drawing of Kinematics&lt;/td>
-&lt;td style="text-align:right">25&lt;/td>
+&lt;td style="text-align:right">50&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:left">DOF&lt;/td>
-&lt;td style="text-align:right">5&lt;/td>
+&lt;td style="text-align:right">10&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:left">Input/Output&lt;/td>
-&lt;td style="text-align:right">10&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align:left">Range of Motion&lt;/td>
-&lt;td style="text-align:right">10&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align:left">discussion&lt;/td>
 &lt;td style="text-align:right">20&lt;/td>
 &lt;/tr>
 &lt;tr>
+&lt;td style="text-align:left">Range of Motion&lt;/td>
+&lt;td style="text-align:right">20&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">discussion&lt;/td>
+&lt;td style="text-align:right">40&lt;/td>
+&lt;/tr>
+&lt;tr>
 &lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
-&lt;td style="text-align:right">100&lt;/td>
+&lt;td style="text-align:right">200&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -535,7 +413,7 @@ $$ {}^{N}{}{\vec{\omega}}^{A}{} = \dot{\theta} \hat{n}_z= \dot{\theta} \hat{a}_z
 &lt;ol>
 &lt;li>Solidworks should be installed. It may be downloaded from &lt;a href="https://myapps.asu.edu">https://myapps.asu.edu&lt;/a>.&lt;/li>
 &lt;/ol>
-&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Least Squares Optimization</title><link>http://foldable-robotics.github.io/modules/optimization/generated/01-least-squares-optimization/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/optimization/generated/01-least-squares-optimization/</guid><description>%matplotlib inline import numpy import numpy.random import matplotlib.pyplot as plt import numpy.</description></item><item><title>Lecture 1</title><link>http://foldable-robotics.github.io/lectures/lecture01/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/lectures/lecture01/</guid><description>Introduction to Foldable Robotics. Go over syllabus and course logistics. Discuss software-based tools, assignments</description></item><item><title>Lecture 10</title><link>http://foldable-robotics.github.io/lectures/lecture10/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/lectures/lecture10/</guid><description>Go over upcoming kinematics assignments and break out into teams for work time</description></item><item><title>Lecture 11</title><link>http://foldable-robotics.github.io/lectures/lecture11/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/lectures/lecture11/</guid><description>Loop Equations, Team Updates</description></item><item><title>Lecture 12</title><link>http://foldable-robotics.github.io/lectures/lecture12/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/lectures/lecture12/</guid><description>Team Checkoffs, HW Checkoffs Go over inertia, forces, F=ma, Kane&amp;rsquo;s method, and triple pendulum walkthrough</description></item><item><title>Lecture 13</title><link>http://foldable-robotics.github.io/lectures/lecture13/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/lectures/lecture13/</guid><description>Present system architecture, kinematics, forces</description></item><item><title>Lecture 14</title><link>http://foldable-robotics.github.io/lectures/lecture14/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/lectures/lecture14/</guid><description>Seminar, Presentation I Overflow, HW Flex Time</description></item><item><title>Lecture 15</title><link>http://foldable-robotics.github.io/lectures/lecture15/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/lectures/lecture15/</guid><description>Introduction to Optimization and Application to Model Fitting</description></item><item><title>Lecture 16</title><link>http://foldable-robotics.github.io/lectures/lecture16/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/lectures/lecture16/</guid><description>Discuss Euler-Bernoulli Beam Equations, go through Solidworks FEA example</description></item><item><title>Lecture 17</title><link>http://foldable-robotics.github.io/lectures/lecture17/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/lectures/lecture17/</guid><description>Application examples for modeling reality</description></item><item><title>Lecture 18</title><link>http://foldable-robotics.github.io/lectures/lecture18/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/lectures/lecture18/</guid><description>Continuing topics in Dynamics</description></item><item><title>Lecture 19</title><link>http://foldable-robotics.github.io/lectures/lecture19/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/lectures/lecture19/</guid><description>Special Guest Seminar</description></item><item><title>Lecture 2</title><link>http://foldable-robotics.github.io/lectures/lecture02/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/lectures/lecture02/</guid><description>Foldable Robotics History. Bring popup books to class and share</description></item><item><title>Lecture 20</title><link>http://foldable-robotics.github.io/lectures/lecture20/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/lectures/lecture20/</guid><description>Special Guest Seminar</description></item><item><title>Lecture 21</title><link>http://foldable-robotics.github.io/lectures/lecture21/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/lectures/lecture21/</guid><description>Present updated dynamics including actuator selection and modeling, system compliance, and design optimization</description></item><item><title>Lecture 22</title><link>http://foldable-robotics.github.io/lectures/lecture22/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/lectures/lecture22/</guid><description>CSG, Laminate Manufacturability</description></item><item><title>Lecture 22 Code</title><link>http://foldable-robotics.github.io/modules/manufacturing/generated/lec22_example/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/manufacturing/generated/lec22_example/</guid><description>import shapely.geometry as sg from foldable_robotics.layer import Layer from foldable_robotics.laminate import Laminate a = sg.</description></item><item><title>Lecture 23</title><link>http://foldable-robotics.github.io/lectures/lecture23/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/lectures/lecture23/</guid><description>Special Guest Seminar</description></item><item><title>Lecture 24</title><link>http://foldable-robotics.github.io/lectures/lecture24/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/lectures/lecture24/</guid><description>Laminate Manufacturability</description></item><item><title>Lecture 25</title><link>http://foldable-robotics.github.io/lectures/lecture25/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/lectures/lecture25/</guid><description>Digital Manufacturing</description></item><item><title>Lecture 26</title><link>http://foldable-robotics.github.io/lectures/lecture26/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/lectures/lecture26/</guid><description>In-class consulting time for compliance, actuator modeling and design optimization</description></item><item><title>Lecture 27</title><link>http://foldable-robotics.github.io/lectures/lecture27/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/lectures/lecture27/</guid><description>Bring prototypes to class</description></item><item><title>Lecture 28</title><link>http://foldable-robotics.github.io/lectures/lecture28/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/lectures/lecture28/</guid><description/></item><item><title>Lecture 29</title><link>http://foldable-robotics.github.io/lectures/lecture29/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/lectures/lecture29/</guid><description>Special Guest Seminar</description></item><item><title>Lecture 3</title><link>http://foldable-robotics.github.io/lectures/lecture03/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/lectures/lecture03/</guid><description>No Class &amp;ndash; MLK Day</description></item><item><title>Lecture 30</title><link>http://foldable-robotics.github.io/lectures/lecture30/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/lectures/lecture30/</guid><description>Final Presentation Videos</description></item><item><title>Lecture 31</title><link>http://foldable-robotics.github.io/lectures/lecture31/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/lectures/lecture31/</guid><description>No Class</description></item><item><title>Lecture 32</title><link>http://foldable-robotics.github.io/lectures/lecture32/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/lectures/lecture32/</guid><description>No Class</description></item><item><title>Lecture 4</title><link>http://foldable-robotics.github.io/lectures/lecture04/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/lectures/lecture04/</guid><description>Introduction to Biomechanics</description></item><item><title>Lecture 5</title><link>http://foldable-robotics.github.io/lectures/lecture05/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/lectures/lecture05/</guid><description>Pitch projects and coalesce in teams</description></item><item><title>Lecture 6</title><link>http://foldable-robotics.github.io/lectures/lecture06/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/lectures/lecture06/</guid><description>Work on developing research question in class (teams), present out. Solidworks kinematics examples.</description></item><item><title>Lecture 7</title><link>http://foldable-robotics.github.io/lectures/lecture07/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/lectures/lecture07/</guid><description>Biomechanics wrap-up. Origami, Kirigami Background. Introduction to kinematics and degrees of freedom. Break into teams for work time (20 min). Meet back and discuss singularities</description></item><item><title>Lecture 8</title><link>http://foldable-robotics.github.io/lectures/lecture08/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/lectures/lecture08/</guid><description>Introduce Jacobian. Introduce constraint equations, plotting, numpy, nonlinear optimization, motion paths. Using motion path to determine Jacobian, estimate forces, speed, and power. Work on kinematics example in class.</description></item><item><title>Lecture 9</title><link>http://foldable-robotics.github.io/lectures/lecture09/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/lectures/lecture09/</guid><description>Introduction to vectors, rotation, vector operations, differentiation</description></item><item><title>Make a Bibliography</title><link>http://foldable-robotics.github.io/modules/project/make-a-bibliography/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/project/make-a-bibliography/</guid><description>Make a Bibliography Introduction The purpose of this assignment is to make a bibliography page and to include it in your website</description></item><item><title>Make a Pop-up Book</title><link>http://foldable-robotics.github.io/assignments/make-a-popup-book/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/make-a-popup-book/</guid><description>&lt;h1 id="make-a-pop-up-book">Make a Pop-up Book&lt;/h1>
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Least Squares Optimization</title><link>http://foldable-robotics.github.io/modules/optimization/generated/01-least-squares-optimization/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/optimization/generated/01-least-squares-optimization/</guid><description>%matplotlib inline import numpy import numpy.random import matplotlib.pyplot as plt import numpy.</description></item><item><title>Lecture 22 Code</title><link>http://foldable-robotics.github.io/modules/manufacturing/generated/lec22_example/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/manufacturing/generated/lec22_example/</guid><description>import shapely.geometry as sg from foldable_robotics.layer import Layer from foldable_robotics.laminate import Laminate a = sg.</description></item><item><title>Make a Bibliography</title><link>http://foldable-robotics.github.io/modules/project/make-a-bibliography/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/project/make-a-bibliography/</guid><description>Make a Bibliography Introduction The purpose of this assignment is to make a bibliography page and to include it in your website</description></item><item><title>Make a Pop-up Book</title><link>http://foldable-robotics.github.io/assignments/make-a-popup-book/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/make-a-popup-book/</guid><description>&lt;h1 id="make-a-pop-up-book">Make a Pop-up Book&lt;/h1>
 &lt;h2 id="assignment-overview">Assignment Overview&lt;/h2>
 &lt;p>The goal of this assignment is to search externally for origami-inspired mechanisms you could use for your project. Additionally, this assignment is meant to make you think critically about how the manufacturing of foldable robots is intertwined with cutting and joining processes, and to appreciate the automation&lt;/p>
 &lt;h2 id="rubric">Rubric&lt;/h2>
@@ -548,8 +426,12 @@ $$ {}^{N}{}{\vec{\omega}}^{A}{} = \dot{\theta} \hat{n}_z= \dot{\theta} \hat{a}_z
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:left">Report&lt;/td>
-&lt;td style="text-align:right">80&lt;/td>
+&lt;td style="text-align:left">Report Narrative&lt;/td>
+&lt;td style="text-align:right">30&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Report Discussion&lt;/td>
+&lt;td style="text-align:right">30&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:left">Figure(s)&lt;/td>
@@ -585,6 +467,21 @@ $$ {}^{N}{}{\vec{\omega}}^{A}{} = \dot{\theta} \hat{n}_z= \dot{\theta} \hat{a}_z
 &lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Make a Project Repository and Website</title><link>http://foldable-robotics.github.io/modules/project/make-a-website/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/project/make-a-website/</guid><description>Make a Project Repository and Website Introduction The purpose of this post is to help you create a website to share your work.</description></item><item><title>Make a Website</title><link>http://foldable-robotics.github.io/assignments/make-a-website/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/make-a-website/</guid><description>&lt;h1 id="make-a-website">Make a Website&lt;/h1>
 &lt;h2 id="assignment-overview">Assignment Overview&lt;/h2>
 &lt;p>The purpose of this assignment is to create a project website as a living document that will document all your work for the class.&lt;/p>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="http://foldable-robotics.github.io/modules/project/make-a-website">Make a Project Repository and Website&lt;/a> Tutorial&lt;/li>
+&lt;li>&lt;a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Manufacturing Computation for Multi-layer Devices</title><link>http://foldable-robotics.github.io/modules/manufacturing/generated/manufacturing_planning/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/manufacturing/generated/manufacturing_planning/</guid><description>Manufacturing Computation for Multi-layer Devices Hinge width, laminate thickness, and range of motion The first thing to think about is how the thickness of your laminate will impact and alter the ideal kinematics you have been assuming up to this point.</description></item><item><title>Manufacturing Tutorial Video</title><link>http://foldable-robotics.github.io/modules/manufacturing/manufacturing-tutorial/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/manufacturing/manufacturing-tutorial/</guid><description/></item><item><title>Motor Modeling Process</title><link>http://foldable-robotics.github.io/modules/integration/generated/motor-modeling/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/integration/generated/motor-modeling/</guid><description>Motor Modeling Process from math import sin, cos, pi import numpy import matplotlib.</description></item><item><title>Operators &amp; Operations</title><link>http://foldable-robotics.github.io/modules/python/generated/operators-and-operations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/python/generated/operators-and-operations/</guid><description>Operators &amp;amp; Operations Basic Operators a = 3 b = 2 c = 0b110011 d = 0x3ab1 a 3 b 2 c 51 d 15025 a+b 5 a-b 1 a*b 6 a**b 9 a%b 1 a/b 1.</description></item><item><title>Packages in Python</title><link>http://foldable-robotics.github.io/modules/python/packages/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/python/packages/</guid><description>Packages in Python Introduction The most important packages that I use when creating python code are those packages which make a python more Matlab-like.</description></item><item><title>Parameter Identification</title><link>http://foldable-robotics.github.io/assignments/parameter-identification/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/parameter-identification/</guid><description>&lt;h1 id="parameter-identification">Parameter Identification&lt;/h1>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>The purpose of this assignment is to get your team to model the various aspects of your model including&lt;/p>
+&lt;ul>
+&lt;li>The full system&lt;/li>
+&lt;li>Actuator Parameters&lt;/li>
+&lt;li>Energy Storage Devices&lt;/li>
+&lt;li>System / Link Stiffness&lt;/li>
+&lt;li>Damping and Friction&lt;/li>
+&lt;/ul>
 &lt;h2 id="rubric">Rubric&lt;/h2>
 &lt;table>
 &lt;thead>
@@ -596,52 +493,11 @@ $$ {}^{N}{}{\vec{\omega}}^{A}{} = \dot{\theta} \hat{n}_z= \dot{\theta} \hat{a}_z
 &lt;tbody>
 &lt;tr>
 &lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
-&lt;td style="text-align:left">100&lt;/td>
+&lt;td style="text-align:left">200&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2 id="resources">Resources&lt;/h2>
-&lt;ul>
-&lt;li>&lt;a href="http://foldable-robotics.github.io/modules/project/make-a-website">Make a Project Repository and Website&lt;/a> Tutorial&lt;/li>
-&lt;li>&lt;a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet&lt;/a>&lt;/li>
-&lt;/ul>
-&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Manufacturing Computation for Multi-layer Devices</title><link>http://foldable-robotics.github.io/modules/manufacturing/generated/manufacturing_planning/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/manufacturing/generated/manufacturing_planning/</guid><description>Manufacturing Computation for Multi-layer Devices Hinge width, laminate thickness, and range of motion The first thing to think about is how the thickness of your laminate will impact and alter the ideal kinematics you have been assuming up to this point.</description></item><item><title>Manufacturing Tutorial Video</title><link>http://foldable-robotics.github.io/modules/manufacturing/manufacturing-tutorial/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/manufacturing/manufacturing-tutorial/</guid><description/></item><item><title>Motor Modeling Process</title><link>http://foldable-robotics.github.io/modules/integration/generated/motor-modeling/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/integration/generated/motor-modeling/</guid><description>Motor Modeling Process from math import sin, cos, pi import numpy import matplotlib.</description></item><item><title>Operators &amp; Operations</title><link>http://foldable-robotics.github.io/modules/python/generated/operators-and-operations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/python/generated/operators-and-operations/</guid><description>Operators &amp;amp; Operations Basic Operators a = 3 b = 2 c = 0b110011 d = 0x3ab1 a 3 b 2 c 51 d 15025 a+b 5 a-b 1 a*b 6 a**b 9 a%b 1 a/b 1.</description></item><item><title>Packages in Python</title><link>http://foldable-robotics.github.io/modules/python/packages/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/python/packages/</guid><description>Packages in Python Introduction The most important packages that I use when creating python code are those packages which make a python more Matlab-like.</description></item><item><title>Pendulum Model Fitting</title><link>http://foldable-robotics.github.io/modules/optimization/pendulum_model_fitting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/optimization/pendulum_model_fitting/</guid><description>Find a bright round spherical object like a tennis ball, orange, etc.</description></item><item><title>Plotting in 3D</title><link>http://foldable-robotics.github.io/modules/python/generated/3d-plotting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/python/generated/3d-plotting/</guid><description>%matplotlib inline Plotting in 3D Visit this matplotlib tutorial on 3d Plotting Another useful reference import matplotlib.</description></item><item><title>Presentation Feedback I</title><link>http://foldable-robotics.github.io/assignments/presentation-feedback-i/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/presentation-feedback-i/</guid><description>&lt;h1 id="presentation-feedback-i">Presentation Feedback I&lt;/h1>
-&lt;h2 id="assignment-overview">Assignment Overview&lt;/h2>
-&lt;p>Each of you is responsible for compiling at least three questions and submitting them to teams via a google form. Comments are helpful, but questions which require teams to address holes in their design are most useful. Be constructive and thoughtful.&lt;/p>
-&lt;h2 id="rubric">Rubric&lt;/h2>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th style="text-align:left">Description&lt;/th>
-&lt;th style="text-align:right">Points&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
-&lt;td style="text-align:right">0&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Presentation Feedback II</title><link>http://foldable-robotics.github.io/assignments/presentation-feedback-ii/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/presentation-feedback-ii/</guid><description>&lt;h1 id="presentation-feedback-ii">Presentation Feedback II&lt;/h1>
-&lt;h2 id="assignment-overview">Assignment Overview&lt;/h2>
-&lt;p>Each of you is responsible for compiling at least three questions and submitting them to teams via a google form. Comments are helpful, but questions which require teams to address holes in their design are most useful. Be constructive and thoughtful.&lt;/p>
-&lt;h2 id="rubric">Rubric&lt;/h2>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th style="text-align:left">Description&lt;/th>
-&lt;th style="text-align:right">Points&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
-&lt;td style="text-align:right">0&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Presentation I</title><link>http://foldable-robotics.github.io/assignments/presentation-i/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/presentation-i/</guid><description>&lt;h1 id="presentation-i">Presentation I&lt;/h1>
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Parameter Identification Plan</title><link>http://foldable-robotics.github.io/assignments/parameter-id-plan/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/parameter-id-plan/</guid><description>Dynamics II Plan Introduction The purpose of this assignment is to decide as a team how you will split up the various Parameter ID tasks individually</description></item><item><title>Pendulum Model Fitting</title><link>http://foldable-robotics.github.io/modules/optimization/pendulum_model_fitting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/optimization/pendulum_model_fitting/</guid><description>Find a bright round spherical object like a tennis ball, orange, etc.</description></item><item><title>Plotting in 3D</title><link>http://foldable-robotics.github.io/modules/python/generated/3d-plotting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/python/generated/3d-plotting/</guid><description>%matplotlib inline Plotting in 3D Visit this matplotlib tutorial on 3d Plotting Another useful reference import matplotlib.</description></item><item><title>Presentation I</title><link>http://foldable-robotics.github.io/assignments/presentation-i/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/presentation-i/</guid><description>&lt;h1 id="presentation-i">Presentation I&lt;/h1>
 &lt;h2 id="assignment-overview">Assignment Overview&lt;/h2>
 &lt;p>Please prepare your group presentation based on your most recent project activities&lt;/p>
 &lt;h2 id="rubric">Rubric&lt;/h2>
@@ -779,7 +635,7 @@ $$ {}^{N}{}{\vec{\omega}}^{A}{} = \dot{\theta} \hat{n}_z= \dot{\theta} \hat{a}_z
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Project Pitches</title><link>http://foldable-robotics.github.io/assignments/project-pitches/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/project-pitches/</guid><description>&lt;h1 id="project-pitches">Project Pitches&lt;/h1>
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Project Pitch</title><link>http://foldable-robotics.github.io/assignments/project-pitch/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/project-pitch/</guid><description>&lt;h1 id="project-pitches">Project Pitches&lt;/h1>
 &lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>The goal of this assignment is to permit those interested in pitching their ideas to attract a group of people interested in joining them. This pitch will be used to inspire and promote discussion amongst students before teams are formed.&lt;/p>
 &lt;p>&lt;em>This is your opportunity to shape your semester and to accomplish a personal research goal through class. If, after group discussion, you wish to create other pitches, you may upload them independently to the Google Drive Folder listed below.&lt;/em>&lt;/p>
@@ -794,24 +650,26 @@ $$ {}^{N}{}{\vec{\omega}}^{A}{} = \dot{\theta} \hat{n}_z= \dot{\theta} \hat{a}_z
 &lt;tbody>
 &lt;tr>
 &lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
-&lt;td style="text-align:right">0&lt;/td>
+&lt;td style="text-align:right">100&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
 &lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Project Selection Survey</title><link>http://foldable-robotics.github.io/assignments/project-selection-survey/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/project-selection-survey/</guid><description>&lt;h1 id="project-selection-survey">Project Selection Survey&lt;/h1>
 &lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Prototyping</title><link>http://foldable-robotics.github.io/assignments/prototyping/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/prototyping/</guid><description>&lt;h2 id="assignment-overview">Assignment Overview&lt;/h2>
+&lt;p>The purpose of this assignment is to get you comfortable using the laminate computation in conjunction with the laminate fabrication approaches in the Innovation Hub to start making useful prototypes&lt;/p>
 &lt;h2 id="rubric">Rubric&lt;/h2>
 &lt;table>
 &lt;thead>
 &lt;tr>
 &lt;th style="text-align:left">Description&lt;/th>
-&lt;th style="text-align:left">Points&lt;/th>
+&lt;th style="text-align:right">Points&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
 &lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
-&lt;td style="text-align:left">20&lt;/td>
+&lt;td style="text-align:right">200&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -870,6 +728,7 @@ $$ {}^{N}{}{\vec{\omega}}^{A}{} = \dot{\theta} \hat{n}_z= \dot{\theta} \hat{a}_z
 &lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Python Functions</title><link>http://foldable-robotics.github.io/assignments/python-functions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/python-functions/</guid><description>&lt;h1 id="python-functions">Python Functions&lt;/h1>
 &lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;p>The purpose of this assignment is to get you comfortable understanding the basics of python functions and how to use them with arguments and keyword arguments&lt;/p>
+&lt;p>Before starting this assignment, please become familiar with Python functions, including how you declare and call them.&lt;/p>
 &lt;h2 id="rubric">Rubric&lt;/h2>
 &lt;table>
 &lt;thead>
@@ -880,12 +739,12 @@ $$ {}^{N}{}{\vec{\omega}}^{A}{} = \dot{\theta} \hat{n}_z= \dot{\theta} \hat{a}_z
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:left">Report&lt;/td>
-&lt;td style="text-align:right">30&lt;/td>
-&lt;/tr>
-&lt;tr>
 &lt;td style="text-align:left">Code&lt;/td>
 &lt;td style="text-align:right">70&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Report&lt;/td>
+&lt;td style="text-align:right">30&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
@@ -898,92 +757,10 @@ $$ {}^{N}{}{\vec{\omega}}^{A}{} = \dot{\theta} \hat{n}_z= \dot{\theta} \hat{a}_z
 &lt;li>&lt;a href="https://pythontips.com/2013/08/04/args-and-kwargs-in-python-explained/">*args and **kwargs in python explained&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://docs.scipy.org/doc/numpy/user/numpy-for-matlab-users.html">NumPy for Matlab users&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Robotics Domains</title><link>http://foldable-robotics.github.io/modules/introduction/robotics-domains/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/introduction/robotics-domains/</guid><description>Robotics is multidisciplinary. Foldable robotics draws from these fields</description></item><item><title>Rotations</title><link>http://foldable-robotics.github.io/modules/dynamics/generated/01-rotations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/dynamics/generated/01-rotations/</guid><description>Introduction While there may be many ways to navigate and describe the same three-dimensional space using reference frames, it is also necessary and desireable to be able to change representations; this can be useful for interpreting motion from a differet perspective, for adding forces or torques to a system using dirctional components which are a more natural description, or in order to perform mathematical operations between vectors which are represented by different basis vectors.</description></item><item><title>Running Dynamixel X-Series</title><link>http://foldable-robotics.github.io/modules/integration/dynamixel/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/integration/dynamixel/</guid><description>Running Dynamixel X-Series Using Arduino IDE for OpenCM9.04 Install Arduino IDE and OpenCM9.</description></item><item><title>Sarrus Kinematics</title><link>http://foldable-robotics.github.io/assignments/sarrus-kinematics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/sarrus-kinematics/</guid><description>&lt;h1 id="spherical-kinematics">Spherical Kinematics&lt;/h1>
-&lt;h2 id="assignment-overview">Assignment Overview&lt;/h2>
-&lt;p>The purpose of this assignment is to get you comfortable using the numerical computational capabilities of Python to start estimating the performance of your design.&lt;/p>
-&lt;p>&lt;div class="text-center">
-&lt;a href="http://foldable-robotics.github.io/figures/kinematics/sarrus.png">&lt;img src="http://foldable-robotics.github.io/figures/kinematics/sarrus.png" alt="mechanism" style="max-width:80%; max-height:200px; width:auto; height: auto; text-align:center;"/>&lt;/a>
-&lt;/div>&lt;/p>
-&lt;!--![two views of the same folded spherical mechanism](/figures/spherical-mechanism.png)-->
-&lt;h2 id="rubric">Rubric&lt;/h2>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th style="text-align:left">Description&lt;/th>
-&lt;th style="text-align:right">Points&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td style="text-align:left">Step 1&lt;/td>
-&lt;td style="text-align:right">5&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align:left">Step 2&lt;/td>
-&lt;td style="text-align:right">5&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align:left">Step 3a&lt;/td>
-&lt;td style="text-align:right">5&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align:left">Step 3b&lt;/td>
-&lt;td style="text-align:right">5&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align:left">Step 3b&lt;/td>
-&lt;td style="text-align:right">5&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align:left">Step 3c&lt;/td>
-&lt;td style="text-align:right">5&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align:left">Step 3d&lt;/td>
-&lt;td style="text-align:right">5&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align:left">Step 3e&lt;/td>
-&lt;td style="text-align:right">5&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align:left">Step 4a&lt;/td>
-&lt;td style="text-align:right">5&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align:left">Step 4b&lt;/td>
-&lt;td style="text-align:right">5&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align:left">Step 5&lt;/td>
-&lt;td style="text-align:right">10&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align:left">Step 6&lt;/td>
-&lt;td style="text-align:right">10&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align:left">Step 7&lt;/td>
-&lt;td style="text-align:right">10&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align:left">Step 8&lt;/td>
-&lt;td style="text-align:right">10&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align:left">Step 9&lt;/td>
-&lt;td style="text-align:right">10&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
-&lt;td style="text-align:right">100&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Scipy Optimization Example</title><link>http://foldable-robotics.github.io/modules/optimization/generated/02-scipy-optimization-example/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/optimization/generated/02-scipy-optimization-example/</guid><description>Scipy Optimization Example This short example shows you how to use the scipy minimize function to identify model parameters.</description></item><item><title>Singularities and Solver Problems</title><link>http://foldable-robotics.github.io/modules/kinematics/singularities-and-solver-problems/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/kinematics/singularities-and-solver-problems/</guid><description>Singularities and Solver Problems Many of the devices you will prototype are highly nonlinear mechanisms which may have certain charactersitics which are hard to solve for in your typical CAD sketcher.</description></item><item><title>Skeletonizing an image</title><link>http://foldable-robotics.github.io/modules/manufacturing/generated/skeletonizing-an-image/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/manufacturing/generated/skeletonizing-an-image/</guid><description>Introduction External References https://scikit-image.org/docs/stable/index.html https://datacarpentry.org/image-processing/aio/index.html # -*- coding: utf-8 -*- &amp;#34;&amp;#34;&amp;#34; Created on Wed Aug 18 14:24:17 2021 @author: danaukes &amp;#34;&amp;#34;&amp;#34; '\nCreated on Wed Aug 18 14:24:17 2021\n\n@author: danaukes\n' import skimage import skimage.</description></item><item><title>Sketching 2D Kinematics in CAD</title><link>http://foldable-robotics.github.io/modules/kinematics/sketching-2d-kinematics-in-cad/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/kinematics/sketching-2d-kinematics-in-cad/</guid><description>Sketching 2D Kinematics in CAD Introduction Steps Create a planar sketch Turn off the background color in Solidworks by changing the background to plain white in the options at the top of the viewport window.</description></item><item><title>Software List</title><link>http://foldable-robotics.github.io/course-documents/software-list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/course-documents/software-list/</guid><description>Student List Type Name / Link Required Cost Python Distribution Anaconda Miniconda Installer Required Open Source Google Colab colab.</description></item><item><title>Solidworks Export Tutorial</title><link>http://foldable-robotics.github.io/modules/kinematics/solidworks-export-tutorial/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/kinematics/solidworks-export-tutorial/</guid><description>Solidworks is an attractive way to model popup devices because you can interact with the three-dimensional kinematics of your popup device.</description></item><item><title>Solidworks FEA Tutorial</title><link>http://foldable-robotics.github.io/modules/compliance/solidworks-fea-tutorial/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/compliance/solidworks-fea-tutorial/</guid><description>Solidworks FEA Tutorial Create a new part</description></item><item><title>Solve Triangle</title><link>http://foldable-robotics.github.io/modules/kinematics/generated/find-triangle/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/kinematics/generated/find-triangle/</guid><description>This example shows how to solve geometric constraints for a triangle of given length sides</description></item><item><title>Solving Four-Bar Constraints</title><link>http://foldable-robotics.github.io/modules/kinematics/generated/solving-four-bar-constraints/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/kinematics/generated/solving-four-bar-constraints/</guid><description>Solving Four-Bar Constraints Turn on inline plotting
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Robotics Domains</title><link>http://foldable-robotics.github.io/modules/introduction/robotics-domains/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/introduction/robotics-domains/</guid><description>Robotics is multidisciplinary. Foldable robotics draws from these fields</description></item><item><title>Rotations</title><link>http://foldable-robotics.github.io/modules/dynamics/generated/01-rotations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/dynamics/generated/01-rotations/</guid><description>Introduction While there may be many ways to navigate and describe the same three-dimensional space using reference frames, it is also necessary and desireable to be able to change representations; this can be useful for interpreting motion from a differet perspective, for adding forces or torques to a system using dirctional components which are a more natural description, or in order to perform mathematical operations between vectors which are represented by different basis vectors.</description></item><item><title>Running Dynamixel X-Series</title><link>http://foldable-robotics.github.io/modules/integration/dynamixel/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/integration/dynamixel/</guid><description>Running Dynamixel X-Series Using Arduino IDE for OpenCM9.04 Install Arduino IDE and OpenCM9.</description></item><item><title>Scipy Optimization Example</title><link>http://foldable-robotics.github.io/modules/optimization/generated/02-scipy-optimization-example/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/optimization/generated/02-scipy-optimization-example/</guid><description>Scipy Optimization Example This short example shows you how to use the scipy minimize function to identify model parameters.</description></item><item><title>Singularities and Solver Problems</title><link>http://foldable-robotics.github.io/modules/kinematics/singularities-and-solver-problems/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/kinematics/singularities-and-solver-problems/</guid><description>Singularities and Solver Problems Many of the devices you will prototype are highly nonlinear mechanisms which may have certain charactersitics which are hard to solve for in your typical CAD sketcher.</description></item><item><title>Skeletonizing an image</title><link>http://foldable-robotics.github.io/modules/manufacturing/generated/skeletonizing-an-image/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/manufacturing/generated/skeletonizing-an-image/</guid><description>Introduction External References https://scikit-image.org/docs/stable/index.html https://datacarpentry.org/image-processing/aio/index.html # -*- coding: utf-8 -*- &amp;#34;&amp;#34;&amp;#34; Created on Wed Aug 18 14:24:17 2021 @author: danaukes &amp;#34;&amp;#34;&amp;#34; '\nCreated on Wed Aug 18 14:24:17 2021\n\n@author: danaukes\n' import skimage import skimage.</description></item><item><title>Sketching 2D Kinematics in CAD</title><link>http://foldable-robotics.github.io/modules/kinematics/sketching-2d-kinematics-in-cad/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/kinematics/sketching-2d-kinematics-in-cad/</guid><description>Sketching 2D Kinematics in CAD Introduction Steps Create a planar sketch Turn off the background color in Solidworks by changing the background to plain white in the options at the top of the viewport window.</description></item><item><title>Software List</title><link>http://foldable-robotics.github.io/course-documents/software-list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/course-documents/software-list/</guid><description>Student List Type Name / Link Required Cost Python Distribution Anaconda Miniconda Installer Required Open Source Google Colab colab.</description></item><item><title>Solidworks Export Tutorial</title><link>http://foldable-robotics.github.io/modules/kinematics/solidworks-export-tutorial/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/kinematics/solidworks-export-tutorial/</guid><description>Solidworks is an attractive way to model popup devices because you can interact with the three-dimensional kinematics of your popup device.</description></item><item><title>Solidworks FEA Tutorial</title><link>http://foldable-robotics.github.io/modules/compliance/solidworks-fea-tutorial/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/compliance/solidworks-fea-tutorial/</guid><description>Solidworks FEA Tutorial Create a new part</description></item><item><title>Solve Triangle</title><link>http://foldable-robotics.github.io/modules/kinematics/generated/find-triangle/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/kinematics/generated/find-triangle/</guid><description>This example shows how to solve geometric constraints for a triangle of given length sides</description></item><item><title>Solving Four-Bar Constraints</title><link>http://foldable-robotics.github.io/modules/kinematics/generated/solving-four-bar-constraints/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/kinematics/generated/solving-four-bar-constraints/</guid><description>Solving Four-Bar Constraints Turn on inline plotting
 %matplotlib inline import required packages</description></item><item><title>Solving Kinematics Numerically with Python</title><link>http://foldable-robotics.github.io/modules/kinematics/generated/solving-kinematics-with-python/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/kinematics/generated/solving-kinematics-with-python/</guid><description>&lt;h1 id="solving-kinematics-numerically-with-python">Solving Kinematics Numerically with Python&lt;/h1>
 &lt;h2 id="introduction">Introduction&lt;/h2>
-&lt;p>This module takes you through solving the motion of a device by using a numerical nonlinear solver to solve a complex system of constraint equations. We will be using a number of Python packages to do this.&lt;/p></description></item><item><title>Solving Nonlinear Problems with Scipy Optimize and pyCMA</title><link>http://foldable-robotics.github.io/modules/optimization/generated/03-solving-nonlinear-problems/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/optimization/generated/03-solving-nonlinear-problems/</guid><description>Solving Nonlinear Problems with Scipy Optimize and pyCMA Introduction Nonlinear solvers can suffer from the possibility of reaching local minima if the initial guess is too far away from the best minimum solution.</description></item><item><title>Submission Best Practices</title><link>http://foldable-robotics.github.io/course-documents/submission-best-practices/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/course-documents/submission-best-practices/</guid><description>This page details how to prepare assignments for submission. The &amp;ldquo;Submission&amp;rdquo; section of your assignment should provide the details for what format and where to submit assignments.</description></item><item><title>Suggested Drawing and Modeling Software</title><link>http://foldable-robotics.github.io/modules/misc/software/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/misc/software/</guid><description>Drawing Software Title Description Availability [Inkscape][[Inkscape]] Recommended.</description></item><item><title>Suggested Materials List</title><link>http://foldable-robotics.github.io/course-documents/suggested-materials-list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/course-documents/suggested-materials-list/</guid><description>Suggested Materials List Prototyping Item # Link(s) Posterboard1 Cardstock Rubber Bands Stapler / Staples String or Twine Duct Tape Rivets Measurement Item # Link(s) Kitchen Scale Fish Scale Tape Measure SmartPhone Multimeter Electronics Item # Link(s) Microcontroller RC Servo IMU avoid common cardboard(chipboard).</description></item><item><title>Syllabus for Foldable Robotics</title><link>http://foldable-robotics.github.io/course-documents/syllabus-web/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/course-documents/syllabus-web/</guid><description>Overview Foldable Robotics is a course organized around new types of robots being developed in research labs and industry across the country.</description></item><item><title>Sympy Example</title><link>http://foldable-robotics.github.io/modules/python/generated/sympy-example/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/python/generated/sympy-example/</guid><description>import sympy a = sympy.Symbol(&amp;#39;a&amp;#39;) b = sympy.Symbol(&amp;#39;b&amp;#39;) x = sympy.</description></item><item><title>System Capture and Fitting</title><link>http://foldable-robotics.github.io/modules/validation/system-capture-and-fitting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/validation/system-capture-and-fitting/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>This module takes you through solving the motion of a device by using a numerical nonlinear solver to solve a complex system of constraint equations. We will be using a number of Python packages to do this.&lt;/p></description></item><item><title>Solving Nonlinear Problems with Scipy Optimize and pyCMA</title><link>http://foldable-robotics.github.io/modules/optimization/generated/03-solving-nonlinear-problems/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/optimization/generated/03-solving-nonlinear-problems/</guid><description>Solving Nonlinear Problems with Scipy Optimize and pyCMA Introduction Nonlinear solvers can suffer from the possibility of reaching local minima if the initial guess is too far away from the best minimum solution.</description></item><item><title>Submission Best Practices</title><link>http://foldable-robotics.github.io/course-documents/submission-best-practices/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/course-documents/submission-best-practices/</guid><description>This page details how to prepare assignments for submission. The &amp;ldquo;Submission&amp;rdquo; section of your assignment should provide the details for what format and where to submit assignments.</description></item><item><title>Suggested Drawing and Modeling Software</title><link>http://foldable-robotics.github.io/modules/misc/software/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/misc/software/</guid><description>Drawing Software Title Description Availability [Inkscape][[Inkscape]] Recommended.</description></item><item><title>Suggested Materials List</title><link>http://foldable-robotics.github.io/course-documents/suggested-materials-list/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/course-documents/suggested-materials-list/</guid><description>Suggested Materials List Prototyping Posterboard1 Cardstock Rubber Bands Stapler / Staples String or Twine Duct Tape Rivets Measurement Kitchen Scale Fish Scale Tape Measure SmartPhone Multimeter Electronics Microcontroller RC Servo IMU avoid common cardboard(chipboard).</description></item><item><title>Syllabus for Foldable Robotics</title><link>http://foldable-robotics.github.io/course-documents/syllabus/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/course-documents/syllabus/</guid><description>Overview Foldable Robotics is a course organized around new types of robots being developed in research labs and industry across the country.</description></item><item><title>Sympy Example</title><link>http://foldable-robotics.github.io/modules/python/generated/sympy-example/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/python/generated/sympy-example/</guid><description>import sympy a = sympy.Symbol(&amp;#39;a&amp;#39;) b = sympy.Symbol(&amp;#39;b&amp;#39;) x = sympy.</description></item><item><title>System Capture and Fitting</title><link>http://foldable-robotics.github.io/modules/validation/system-capture-and-fitting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/modules/validation/system-capture-and-fitting/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;p>The purpose of this assignment is to collect data on your system for use in fitting your model&lt;/p>
 &lt;h2 id="course-resources">Course Resources&lt;/h2>
 &lt;ul>
@@ -1229,13 +1006,40 @@ $$ {}^{N}{}{\vec{\omega}}^{A}{} = \dot{\theta} \hat{n}_z= \dot{\theta} \hat{a}_z
 &lt;thead>
 &lt;tr>
 &lt;th style="text-align:left">Description&lt;/th>
-&lt;th style="text-align:left">Points&lt;/th>
+&lt;th style="text-align:left">Action&lt;/th>
+&lt;th style="text-align:right">Points&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
+&lt;td style="text-align:left">Main Page&lt;/td>
+&lt;td style="text-align:left">new&lt;/td>
+&lt;td style="text-align:right">&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Research Question&lt;/td>
+&lt;td style="text-align:left">new&lt;/td>
+&lt;td style="text-align:right">25&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Biomechanics&lt;/td>
+&lt;td style="text-align:left">new&lt;/td>
+&lt;td style="text-align:right">25&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Kinematics&lt;/td>
+&lt;td style="text-align:left">new&lt;/td>
+&lt;td style="text-align:right">25&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Presentations&lt;/td>
+&lt;td style="text-align:left">Add Presentation 1&lt;/td>
+&lt;td style="text-align:right">25&lt;/td>
+&lt;/tr>
+&lt;tr>
 &lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
-&lt;td style="text-align:left">100&lt;/td>
+&lt;td style="text-align:left">&lt;/td>
+&lt;td style="text-align:right">&lt;strong>100&lt;/strong>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -1247,13 +1051,60 @@ $$ {}^{N}{}{\vec{\omega}}^{A}{} = \dot{\theta} \hat{n}_z= \dot{\theta} \hat{a}_z
 &lt;thead>
 &lt;tr>
 &lt;th style="text-align:left">Description&lt;/th>
-&lt;th style="text-align:left">Points&lt;/th>
+&lt;th style="text-align:left">Action&lt;/th>
+&lt;th style="text-align:right">Points&lt;/th>
 &lt;/tr>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
+&lt;td style="text-align:left">Main Page&lt;/td>
+&lt;td style="text-align:left">Update&lt;/td>
+&lt;td style="text-align:right">&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Research Question&lt;/td>
+&lt;td style="text-align:left">update&lt;/td>
+&lt;td style="text-align:right">20&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Biomechanics&lt;/td>
+&lt;td style="text-align:left">update&lt;/td>
+&lt;td style="text-align:right">20&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Kinematics&lt;/td>
+&lt;td style="text-align:left">update&lt;/td>
+&lt;td style="text-align:right">20&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">&lt;strong>System Dynamics&lt;/strong>&lt;/td>
+&lt;td style="text-align:left">new&lt;/td>
+&lt;td style="text-align:right">&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Dynamics I&lt;/td>
+&lt;td style="text-align:left">new&lt;/td>
+&lt;td style="text-align:right">40&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">System Identification Plan&lt;/td>
+&lt;td style="text-align:left">new&lt;/td>
+&lt;td style="text-align:right">40&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">System Identification&lt;/td>
+&lt;td style="text-align:left">new&lt;/td>
+&lt;td style="text-align:right">40&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Presentations&lt;/td>
+&lt;td style="text-align:left">Add Presentation 2&lt;/td>
+&lt;td style="text-align:right">20&lt;/td>
+&lt;/tr>
+&lt;tr>
 &lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
-&lt;td style="text-align:left">200&lt;/td>
+&lt;td style="text-align:left">&lt;/td>
+&lt;td style="text-align:right">&lt;strong>200&lt;/strong>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -1273,7 +1124,7 @@ $$ {}^{N}{}{\vec{\omega}}^{A}{} = \dot{\theta} \hat{n}_z= \dot{\theta} \hat{a}_z
 &lt;tr>
 &lt;td style="text-align:left">Main Page&lt;/td>
 &lt;td style="text-align:left">Update&lt;/td>
-&lt;td style="text-align:left">20&lt;/td>
+&lt;td style="text-align:left">&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:left">Research Question&lt;/td>
@@ -1296,17 +1147,12 @@ $$ {}^{N}{}{\vec{\omega}}^{A}{} = \dot{\theta} \hat{n}_z= \dot{\theta} \hat{a}_z
 &lt;td style="text-align:left">20&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:left">Design Optimization&lt;/td>
+&lt;td style="text-align:left">Design Optimization, Experiment Design, Data Collection, and Analysis&lt;/td>
 &lt;td style="text-align:left">New&lt;/td>
-&lt;td style="text-align:left">40&lt;/td>
+&lt;td style="text-align:left">80&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:left">Manufacturing&lt;/td>
-&lt;td style="text-align:left">New&lt;/td>
-&lt;td style="text-align:left">40&lt;/td>
-&lt;/tr>
-&lt;tr>
-&lt;td style="text-align:left">Experimental Validation&lt;/td>
+&lt;td style="text-align:left">Manufacturing Planning&lt;/td>
 &lt;td style="text-align:left">New&lt;/td>
 &lt;td style="text-align:left">40&lt;/td>
 &lt;/tr>
@@ -1336,14 +1182,9 @@ $$ {}^{N}{}{\vec{\omega}}^{A}{} = \dot{\theta} \hat{n}_z= \dot{\theta} \hat{a}_z
 &lt;td style="text-align:left">20&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:left">References&lt;/td>
-&lt;td style="text-align:left">Update&lt;/td>
-&lt;td style="text-align:left">20&lt;/td>
-&lt;/tr>
-&lt;tr>
 &lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
 &lt;td style="text-align:left">&lt;/td>
-&lt;td style="text-align:left">&lt;strong>340&lt;/strong>&lt;/td>
+&lt;td style="text-align:left">&lt;strong>300&lt;/strong>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
