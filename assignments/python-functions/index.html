@@ -140,7 +140,70 @@ Documents
 <li><a href=https://docs.scipy.org/doc/numpy/user/numpy-for-matlab-users.html>NumPy for Matlab users</a></li>
 </ul>
 <h2 id=instructions>Instructions</h2>
-<div class="alert-danger text-center"><h2><i class="bi bi-exclamation-triangle-fill"></i> This assignment has not yet been posted</h1></div>
+<ol>
+<li>
+<p>Create a function <code>sum1()</code> that takes two arguments x and y and returns their sum. Demonstrate your working function by running the following commands:</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>print</span><span style=color:#111>(</span><span style=color:#111>sum1</span><span style=color:#111>(</span><span style=color:#ae81ff>2</span><span style=color:#111>,</span><span style=color:#ae81ff>3</span><span style=color:#111>))</span>
+<span style=color:#111>print</span><span style=color:#111>(</span><span style=color:#111>sum1</span><span style=color:#111>(</span><span style=color:#111>x</span><span style=color:#f92672>=</span><span style=color:#ae81ff>3</span><span style=color:#111>,</span><span style=color:#111>y</span><span style=color:#f92672>=</span><span style=color:#ae81ff>4</span><span style=color:#111>))</span>
+</code></pre></div></li>
+<li>
+<p>Create a function <code>sum2()</code> that takes two arguments x and y with default values of 10 and 20, respectively, and returns their sum. Demonstrate your working function by running the following commands:</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>print</span><span style=color:#111>(</span><span style=color:#111>sum2</span><span style=color:#111>())</span>
+<span style=color:#111>print</span><span style=color:#111>(</span><span style=color:#111>sum2</span><span style=color:#111>(</span><span style=color:#ae81ff>2</span><span style=color:#111>))</span>
+<span style=color:#111>print</span><span style=color:#111>(</span><span style=color:#111>sum2</span><span style=color:#111>(</span><span style=color:#111>y</span><span style=color:#f92672>=</span><span style=color:#ae81ff>5</span><span style=color:#111>))</span>
+</code></pre></div></li>
+<li>
+<p>Create a list of 100 elements called <code>list1</code> using <code>range()</code>.</p>
+</li>
+<li>
+<p>Create a function <code>sum3()</code> that takes n arguments and computes their sum. Demonstrate your working function by running the following commands:</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>print</span><span style=color:#111>(</span><span style=color:#111>sum3</span><span style=color:#111>())</span>
+<span style=color:#111>print</span><span style=color:#111>(</span><span style=color:#111>sum3</span><span style=color:#111>(</span><span style=color:#ae81ff>2</span><span style=color:#111>,</span><span style=color:#ae81ff>3</span><span style=color:#111>))</span>
+<span style=color:#111>print</span><span style=color:#111>(</span><span style=color:#111>sum3</span><span style=color:#111>(</span><span style=color:#f92672>*</span><span style=color:#111>list1</span><span style=color:#111>))</span>
+</code></pre></div></li>
+<li>
+<p>Create a dictionary using the following code:</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>dict1</span><span style=color:#f92672>=</span><span style=color:#111>{</span><span style=color:#d88200>&#39;item1&#39;</span><span style=color:#111>:</span><span style=color:#ae81ff>4</span><span style=color:#111>,</span> <span style=color:#d88200>&#39;item2&#39;</span><span style=color:#111>:</span><span style=color:#ae81ff>7</span><span style=color:#111>}</span>
+</code></pre></div></li>
+<li>
+<p>Create a function <code>sum4()</code> that takes n <em>keyword arguments</em>, prints each key, and computes the sum of all keyed values. Demonstrate your working function by running the following commands</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>print</span><span style=color:#111>(</span><span style=color:#111>sum4</span><span style=color:#111>())</span>
+<span style=color:#111>print</span><span style=color:#111>(</span><span style=color:#111>sum4</span><span style=color:#111>(</span><span style=color:#111>x</span><span style=color:#f92672>=</span><span style=color:#ae81ff>2</span><span style=color:#111>,</span><span style=color:#111>y</span><span style=color:#f92672>=</span><span style=color:#ae81ff>3</span><span style=color:#111>))</span>
+<span style=color:#111>print</span><span style=color:#111>(</span><span style=color:#111>sum4</span><span style=color:#111>(</span><span style=color:#f92672>**</span><span style=color:#111>dict1</span><span style=color:#111>))</span>
+</code></pre></div></li>
+<li>
+<p>Create a function <code>sum5()</code> which sums an arbitrary number of arguments and the values of any keyword arguments, and prints the key of each keyword arguments. Demonstrate your working function by running the following commands</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>print</span><span style=color:#111>(</span><span style=color:#111>sum5</span><span style=color:#111>())</span>
+<span style=color:#111>print</span><span style=color:#111>(</span><span style=color:#111>sum5</span><span style=color:#111>(</span><span style=color:#ae81ff>3</span><span style=color:#111>,</span><span style=color:#ae81ff>4</span><span style=color:#111>,</span><span style=color:#111>x</span><span style=color:#f92672>=</span><span style=color:#ae81ff>2</span><span style=color:#111>,</span><span style=color:#111>y</span><span style=color:#f92672>=</span><span style=color:#ae81ff>3</span><span style=color:#111>))</span>
+<span style=color:#111>print</span><span style=color:#111>(</span><span style=color:#111>sum5</span><span style=color:#111>(</span><span style=color:#f92672>*</span><span style=color:#111>list1</span><span style=color:#111>,</span><span style=color:#f92672>**</span><span style=color:#111>dict1</span><span style=color:#111>))</span>
+</code></pre></div></li>
+</ol>
+<h2 id=discussion>Discussion</h2>
+<ol>
+<li>
+<p>Describe what happens to x when supplying a function with <code>*</code> within a function call, as in <code>function1(*x)</code>.</p>
+</li>
+<li>
+<p>Describe what happens to x when supplying a function with <code>**</code> within a function call, as in <code>function1(**x)</code>.</p>
+</li>
+<li>
+<p>If a function is declared with variables <code>x</code> and <code>y</code>, as specified below, using the <code>*</code> and <code>**</code> arguments, please describe in what form(data type) those variables are delivered to function, and how to access sub-elements contained within them.</p>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#00a8c8>def</span> <span style=color:#75af00>arbitrary_function</span><span style=color:#111>(</span><span style=color:#f92672>*</span><span style=color:#111>x</span><span style=color:#111>,</span><span style=color:#f92672>**</span><span style=color:#111>y</span><span style=color:#111>):</span>
+    <span style=color:#75715e>#put code here</span>
+    <span style=color:#00a8c8>return</span> <span style=color:#111>arbitrary_value</span>
+</code></pre></div></li>
+</ol>
+<h2 id=submission>Submission</h2>
+<p>Please include:</p>
+<ol>
+<li>Report with the following
+<ol>
+<li>Answers to the discussion points above</li>
+</ol>
+</li>
+<li>Code</li>
+</ol>
+<p>Please follow the &ldquo;Submission Best Practices&rdquo; document posted on Canvas. This assignment may be submitted as a .pdf document or a jupyter notebook (.ipynb). If submitted as a notebook, make sure it is fully compiled. This can be done by opening the file in the jupyter browser and in the top jupyter menu selecting &ldquo;Kernel&rdquo; &ndash;> &ldquo;Restart and Run All&rdquo;.</p>
 </article>
 </main>
 <footer class=blog-footer>
