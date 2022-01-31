@@ -312,23 +312,6 @@ to find good starting points for references and keywords.&lt;/li>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Intro to Kinematics</title><link>http://foldable-robotics.github.io/assignments/kinematics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/kinematics/</guid><description>&lt;h2 id="assignment-overview">Assignment Overview&lt;/h2>
-&lt;p>The purpose of this assignment is to get you comfortable using the computational capabilities of Python and Sympy to start estimating the performance of your design.&lt;/p>
-&lt;h2 id="rubric">Rubric&lt;/h2>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th style="text-align:left">Description&lt;/th>
-&lt;th style="text-align:right">Points&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
-&lt;td style="text-align:right">200&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
 &lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Intro to Manufacturing Computation</title><link>http://foldable-robotics.github.io/assignments/shapely/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/shapely/</guid><description>&lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>The purpose of this exercise is to get used to working with shapely polygons and to use it to compute some manufacturing geometry. It is your job to determine how to compute the cut files using Python, shapely, and the foldable_robotics package&lt;/p>
 &lt;h2 id="rubric">Rubric&lt;/h2>
@@ -409,6 +392,23 @@ to find good starting points for references and keywords.&lt;/li>
 &lt;ol>
 &lt;li>Solidworks should be installed. It may be downloaded from &lt;a href="https://myapps.asu.edu">https://myapps.asu.edu&lt;/a>.&lt;/li>
 &lt;/ol>
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Kinematics with Python</title><link>http://foldable-robotics.github.io/assignments/kinematics-with-python/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/kinematics-with-python/</guid><description>&lt;h2 id="assignment-overview">Assignment Overview&lt;/h2>
+&lt;p>The purpose of this assignment is to get you comfortable using the computational capabilities of Python and Sympy to start estimating the performance of your design.&lt;/p>
+&lt;h2 id="rubric">Rubric&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">Description&lt;/th>
+&lt;th style="text-align:right">Points&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
+&lt;td style="text-align:right">200&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
 &lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Make a Pop-up Book</title><link>http://foldable-robotics.github.io/assignments/make-a-popup-book/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/make-a-popup-book/</guid><description>&lt;h1 id="make-a-pop-up-book">Make a Pop-up Book&lt;/h1>
 &lt;h2 id="assignment-overview">Assignment Overview&lt;/h2>
 &lt;p>The goal of this assignment is to search externally for origami-inspired mechanisms you could use for your project. Additionally, this assignment is meant to make you think critically about how the manufacturing of foldable robots is intertwined with cutting and joining processes, and to appreciate the automation&lt;/p>
@@ -467,6 +467,7 @@ to find good starting points for references and keywords.&lt;/li>
 &lt;ul>
 &lt;li>&lt;a href="http://foldable-robotics.github.io/modules/project/make-a-website">Make a Project Repository and Website&lt;/a> Tutorial&lt;/li>
 &lt;li>&lt;a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://pandoc.org/">pandoc&lt;/a>, a useful tool for converting documents of all kinds&lt;/li>
 &lt;/ul>
 &lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Parameter Identification</title><link>http://foldable-robotics.github.io/assignments/parameter-identification/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/parameter-identification/</guid><description>&lt;h1 id="parameter-identification">Parameter Identification&lt;/h1>
 &lt;h2 id="introduction">Introduction&lt;/h2>
