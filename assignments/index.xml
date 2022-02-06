@@ -1,1506 +1,1181 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Assignments on Foldable Robotics</title>
-    <link>http://foldable-robotics.github.io/assignments/</link>
-    <description>Recent content in Assignments on Foldable Robotics</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://foldable-robotics.github.io/assignments/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Biomechanics Background and Initial Specifications</title>
-      <link>http://foldable-robotics.github.io/assignments/biomechanics-background-and-initial-specifications/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://foldable-robotics.github.io/assignments/biomechanics-background-and-initial-specifications/</guid>
-      <description>&lt;h1 id=&#34;biomechanics-background-and-initial-specifications&#34;&gt;Biomechanics Background and Initial Specifications&lt;/h1&gt;
-&lt;h2 id=&#34;assignment-overview&#34;&gt;Assignment Overview&lt;/h2&gt;
-&lt;p&gt;The goal of this part is to encourage you to get &amp;ldquo;bio-inspired&amp;rdquo;, to get you thinking about the scale of your robot, and to think about how to replicate the efficiencies of biological systems.  You may refer to the &lt;a href=&#34;http://foldable-robotics.github.io/modules/biomechanics/developing-specifications/&#34;&gt;developing specifications&lt;/a&gt; page for more information&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Please Read this whole assignment first.&lt;/em&gt;&lt;/p&gt;
-&lt;h2 id=&#34;suggestions&#34;&gt;Suggestions&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;It will be useful to start using a program like &lt;a href=&#34;https://www.mendeley.com/?interaction_required=true&#34;&gt;Mendeley&lt;/a&gt; to collect and organize references.&lt;/li&gt;
-&lt;li&gt;Be creative in your search terms. Use 
-
-
-
-
-&lt;span class=&#34;hugo-cite-intext&#34;
-        itemprop=&#34;citation&#34;&gt;(&lt;span class=&#34;hugo-cite-group&#34;&gt;
-
-          &lt;a href=&#34;#dickinson2000&#34;&gt;&lt;span class=&#34;visually-hidden&#34;&gt;Citation: &lt;/span&gt;&lt;span itemprop=&#34;author&#34; itemscope itemtype=&#34;https://schema.org/Person&#34;&gt;&lt;meta itemprop=&#34;givenName&#34; content=&#34;Michael H.&#34;&gt;&lt;span itemprop=&#34;familyName&#34;&gt;Dickinson&lt;/span&gt;&lt;/span&gt;,&amp;#32;&lt;span itemprop=&#34;author&#34; itemscope itemtype=&#34;https://schema.org/Person&#34;&gt;&lt;meta itemprop=&#34;givenName&#34; content=&#34;C T&#34;&gt;&lt;span itemprop=&#34;familyName&#34;&gt;Farley&lt;/span&gt;&lt;/span&gt;
-                  &lt;em&gt;&amp;amp; al.&lt;/em&gt;,&amp;#32;&lt;span itemprop=&#34;datePublished&#34;&gt;2000&lt;/span&gt;&lt;/a&gt;&lt;span class=&#34;hugo-cite-citation&#34;&gt; 
-
-
-
-
-
-
-
-
-
-
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Assignments on Foldable Robotics</title><link>http://foldable-robotics.github.io/assignments/</link><description>Recent content in Assignments on Foldable Robotics</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><atom:link href="http://foldable-robotics.github.io/assignments/index.xml" rel="self" type="application/rss+xml"/><item><title>Biomechanics Background and Initial Specifications</title><link>http://foldable-robotics.github.io/assignments/biomechanics-background-and-initial-specifications/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/biomechanics-background-and-initial-specifications/</guid><description>&lt;h1 id="biomechanics-background-and-initial-specifications">Biomechanics Background and Initial Specifications&lt;/h1>
+&lt;h2 id="assignment-overview">Assignment Overview&lt;/h2>
+&lt;p>The goal of this part is to encourage you to get &amp;ldquo;bio-inspired&amp;rdquo;, to get you thinking about the scale of your robot, and to think about how to replicate the efficiencies of biological systems. You may refer to the &lt;a href="http://foldable-robotics.github.io/modules/biomechanics/developing-specifications/">developing specifications&lt;/a> page for more information&lt;/p>
+&lt;p>&lt;em>Please Read this whole assignment first.&lt;/em>&lt;/p>
+&lt;h2 id="suggestions">Suggestions&lt;/h2>
+&lt;ul>
+&lt;li>It will be useful to start using a program like &lt;a href="https://www.mendeley.com/?interaction_required=true">Mendeley&lt;/a> to collect and organize references.&lt;/li>
+&lt;li>Be creative in your search terms. Use
+&lt;span class="hugo-cite-intext"
+itemprop="citation">(&lt;span class="hugo-cite-group">
+&lt;a href="#dickinson2000">&lt;span class="visually-hidden">Citation: &lt;/span>&lt;span itemprop="author" itemscope itemtype="https://schema.org/Person">&lt;meta itemprop="givenName" content="Michael H.">&lt;span itemprop="familyName">Dickinson&lt;/span>&lt;/span>,&amp;#32;&lt;span itemprop="author" itemscope itemtype="https://schema.org/Person">&lt;meta itemprop="givenName" content="C T">&lt;span itemprop="familyName">Farley&lt;/span>&lt;/span>
+&lt;em>&amp;amp; al.&lt;/em>,&amp;#32;&lt;span itemprop="datePublished">2000&lt;/span>&lt;/a>&lt;span class="hugo-cite-citation">
 &lt;span itemscope
-      itemtype=&#34;https://schema.org/Article&#34;
-      data-type=&#34;article&#34;&gt;&lt;span itemprop=&#34;author&#34; itemscope itemtype=&#34;https://schema.org/Person&#34;&gt;&lt;span itemprop=&#34;familyName&#34;&gt;Dickinson&lt;/span&gt;,&amp;#32;
-    &lt;meta itemprop=&#34;givenName&#34; content=&#34;Michael H.&#34; /&gt;
-    M.&lt;/span&gt;,&amp;#32;
-  &lt;span itemprop=&#34;author&#34; itemscope itemtype=&#34;https://schema.org/Person&#34;&gt;&lt;span itemprop=&#34;familyName&#34;&gt;Farley&lt;/span&gt;,&amp;#32;
-    &lt;meta itemprop=&#34;givenName&#34; content=&#34;C T&#34; /&gt;
-    C.&lt;/span&gt;,&amp;#32;
-  &lt;span itemprop=&#34;author&#34; itemscope itemtype=&#34;https://schema.org/Person&#34;&gt;&lt;span itemprop=&#34;familyName&#34;&gt;Full&lt;/span&gt;,&amp;#32;
-    &lt;meta itemprop=&#34;givenName&#34; content=&#34;R J&#34; /&gt;
-    R.&lt;/span&gt;,&amp;#32;
-  &lt;span itemprop=&#34;author&#34; itemscope itemtype=&#34;https://schema.org/Person&#34;&gt;&lt;span itemprop=&#34;familyName&#34;&gt;Koehl&lt;/span&gt;,&amp;#32;
-    &lt;meta itemprop=&#34;givenName&#34; content=&#34;M A&#34; /&gt;
-    M.&lt;/span&gt;,&amp;#32;
-  &lt;span itemprop=&#34;author&#34; itemscope itemtype=&#34;https://schema.org/Person&#34;&gt;&lt;span itemprop=&#34;familyName&#34;&gt;Kram&lt;/span&gt;,&amp;#32;
-    &lt;meta itemprop=&#34;givenName&#34; content=&#34;R&#34; /&gt;
-    R.&lt;/span&gt;&amp;#32;&amp;amp;&amp;#32;&lt;span itemprop=&#34;author&#34; itemscope itemtype=&#34;https://schema.org/Person&#34;&gt;&lt;span itemprop=&#34;familyName&#34;&gt;Lehman&lt;/span&gt;,&amp;#32;
-    &lt;meta itemprop=&#34;givenName&#34; content=&#34;S&#34; /&gt;
-    S.&lt;/span&gt;
-  &amp;#32;
-    (&lt;span itemprop=&#34;datePublished&#34;&gt;2000&lt;/span&gt;).
-  &amp;#32;&lt;span itemprop=&#34;name&#34;&gt;&lt;span class=&#34;nocase&#34;&gt;How animals move: an integrative view.&lt;/span&gt;&lt;/span&gt;.&lt;i&gt;
-    &lt;span itemprop=&#34;about&#34;&gt;Science (New York, N.Y.)&lt;/span&gt;,&amp;#32;288(5463)&lt;/i&gt;.&amp;#32;&lt;span itemprop=&#34;pagination&#34;&gt;100–6&lt;/span&gt;.
-  &lt;a href=&#34;https://doi.org/10.1126/science.288.5463.100&#34;
-     itemprop=&#34;identifier&#34;
-     itemtype=&#34;https://schema.org/URL&#34;&gt;https://doi.org/10.1126/science.288.5463.100&lt;/a&gt;&lt;/span&gt;
-
-
-
-
-&lt;/span&gt;&lt;/span&gt;)&lt;/span&gt;
- to find good starting points for references and keywords.&lt;/li&gt;
-&lt;li&gt;Start writing down search keywords from class.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;external-resources&#34;&gt;External Resources&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://en.wikipedia.org/wiki/Kleiber%27s_law&#34;&gt;https://en.wikipedia.org/wiki/Kleiber%27s_law&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;rubric&#34;&gt;Rubric&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Description&lt;/th&gt;
-&lt;th style=&#34;text-align:right&#34;&gt;Points&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Bio Inspiration&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;20&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Other bio-inspired robots&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;20&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Table&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;40&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Other Assumptions&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;10&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Figures&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;20&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Engineering Representation&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;20&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Discussion&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;40&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Bibliography&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;30&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;strong&gt;Total&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;200&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;instructions&#34;&gt;Instructions&lt;/h2&gt;</description>
-    </item>
-    
-    <item>
-      <title>Course Feedback I</title>
-      <link>http://foldable-robotics.github.io/assignments/course-feedback-i/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://foldable-robotics.github.io/assignments/course-feedback-i/</guid>
-      <description>&lt;h1 id=&#34;course-feedback-i&#34;&gt;Course Feedback I&lt;/h1&gt;
-&lt;h2 id=&#34;assignment-overview&#34;&gt;Assignment Overview&lt;/h2&gt;
-&lt;p&gt;The goal of this assignment is to learn about your activities in this course and how the course can be improved in the future.&lt;/p&gt;
-&lt;h2 id=&#34;rubric&#34;&gt;Rubric&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Description&lt;/th&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Points&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;strong&gt;Total&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;20&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;instructions&#34;&gt;Instructions&lt;/h2&gt;</description>
-    </item>
-    
-    <item>
-      <title>Course Feedback II</title>
-      <link>http://foldable-robotics.github.io/assignments/course-feedback-ii/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://foldable-robotics.github.io/assignments/course-feedback-ii/</guid>
-      <description>&lt;h1 id=&#34;course-feedback-ii&#34;&gt;Course Feedback II&lt;/h1&gt;
-&lt;h2 id=&#34;assignment-overview&#34;&gt;Assignment Overview&lt;/h2&gt;
-&lt;p&gt;The goal of this assignment is to learn about your activities in this course and how the course can be improved in the future.&lt;/p&gt;
-&lt;h2 id=&#34;rubric&#34;&gt;Rubric&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Description&lt;/th&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Points&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;strong&gt;Total&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;20&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;instructions&#34;&gt;Instructions&lt;/h2&gt;</description>
-    </item>
-    
-    <item>
-      <title>Data Collection Permission Form</title>
-      <link>http://foldable-robotics.github.io/assignments/data-collection-permission/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://foldable-robotics.github.io/assignments/data-collection-permission/</guid>
-      <description>&lt;h2 id=&#34;assignment-overview&#34;&gt;Assignment Overview&lt;/h2&gt;
-&lt;p&gt;The goal of this assignment is to get your permission to collect data through periodic surveys.&lt;/p&gt;
-&lt;h2 id=&#34;instructions&#34;&gt;Instructions&lt;/h2&gt;</description>
-    </item>
-    
-    <item>
-      <title>Design and Manufacturing Workflow</title>
-      <link>http://foldable-robotics.github.io/assignments/design-and-manufacturing-workflow/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://foldable-robotics.github.io/assignments/design-and-manufacturing-workflow/</guid>
-      <description>&lt;h1 id=&#34;design-and-manufacturing-workflow&#34;&gt;Design and Manufacturing Workflow&lt;/h1&gt;
-&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;The purpose of this assignment is to plan for the manufacturing of the full system, test the output, and use it to produce a prototype.&lt;/p&gt;
-&lt;h2 id=&#34;rubric&#34;&gt;Rubric&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Description&lt;/th&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Points&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;1a&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;15&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;1b&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;15&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;2a&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;15&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;2b&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;15&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;3&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;30&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;4a&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;30&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;4b&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;30&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;4c&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;40&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;5&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;10&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;total&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;200&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Solidworks Tutorial kinematics tutorial:	&lt;a href=&#34;https://drive.google.com/open?id=1En2zWrJg5EV_T9sTThubRUUclYcnW9jV&amp;amp;authuser=daukes%40asu.edu&amp;amp;usp=drive_fs&#34;&gt;https://drive.google.com/open?id=1En2zWrJg5EV_T9sTThubRUUclYcnW9jV&amp;amp;authuser=daukes%40asu.edu&amp;amp;usp=drive_fs&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;The macros for exporting a laminate to .dxf: &lt;a href=&#34;https://github.com/popupcad/code_popupcad_solidworks_exporter&#34;&gt;https://github.com/popupcad/code_popupcad_solidworks_exporter&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-    
-    <item>
-      <title>Design Optimization, Experiment Design, Data Collection, and Analysis</title>
-      <link>http://foldable-robotics.github.io/assignments/doeddca/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://foldable-robotics.github.io/assignments/doeddca/</guid>
-      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;The purpose of this assignment is to execute the plan individual  tasks assigned to you for the final part of your project.&lt;/p&gt;
-&lt;h2 id=&#34;rubric&#34;&gt;Rubric&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Description&lt;/th&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Points&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;strong&gt;Total&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;200&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;instructions&#34;&gt;Instructions&lt;/h2&gt;</description>
-    </item>
-    
-    <item>
-      <title>Design Optimization, Experiment Design, Data Collection, and Analysis Plan</title>
-      <link>http://foldable-robotics.github.io/assignments/doeddcap/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://foldable-robotics.github.io/assignments/doeddcap/</guid>
-      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;The purpose of this assignment is to create a plan for the final part of your project and assign individual tasks&lt;/p&gt;
-&lt;h2 id=&#34;rubric&#34;&gt;Rubric&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Description&lt;/th&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Points&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;strong&gt;Total&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;25&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;instructions&#34;&gt;Instructions&lt;/h2&gt;</description>
-    </item>
-    
-    <item>
-      <title>Develop a Research Question</title>
-      <link>http://foldable-robotics.github.io/assignments/develop-a-research-question/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://foldable-robotics.github.io/assignments/develop-a-research-question/</guid>
-      <description>&lt;h1 id=&#34;develop-a-research-question&#34;&gt;Develop a Research Question&lt;/h1&gt;
-&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;Generate a research question worthy of your time.&lt;/p&gt;
-&lt;h2 id=&#34;rubric&#34;&gt;Rubric&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Description&lt;/th&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Points&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Question&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;30&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Tractability Discussion&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;20&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Novelty Discussion&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;30&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Interesting Discussion&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;40&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Open-endedness Discussion&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;20&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Modularity Discussion&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;20&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Team Fit Discussion&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;20&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Topic Fit Discussion&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;20&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;strong&gt;Total&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;strong&gt;200&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;The associated module on &lt;a href=&#34;http://foldable-robotics.github.io/modules/project/developing-a-research-question&#34;&gt;developing a research question&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.mendeley.com/download-desktop-new/&#34;&gt;Mendeley Desktop&lt;/a&gt;, a useful citation manager&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;instructions&#34;&gt;Instructions&lt;/h2&gt;</description>
-    </item>
-    
-    <item>
-      <title>Incoming Survey</title>
-      <link>http://foldable-robotics.github.io/assignments/incoming-survey/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://foldable-robotics.github.io/assignments/incoming-survey/</guid>
-      <description>&lt;h1 id=&#34;incoming-survey&#34;&gt;Incoming Survey&lt;/h1&gt;
-&lt;h2 id=&#34;assignment-overview&#34;&gt;Assignment Overview&lt;/h2&gt;
-&lt;p&gt;The goal of this assignment is to learn about you, your background, and your interests and abilities.&lt;/p&gt;
-&lt;h2 id=&#34;instructions&#34;&gt;Instructions&lt;/h2&gt;</description>
-    </item>
-    
-    <item>
-      <title>Install CAD</title>
-      <link>http://foldable-robotics.github.io/assignments/install-cad/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://foldable-robotics.github.io/assignments/install-cad/</guid>
-      <description>&lt;h2 id=&#34;assignment-overview&#34;&gt;Assignment Overview&lt;/h2&gt;
-&lt;p&gt;The goal here is to verify you have CAD installed correctly.&lt;/p&gt;
-&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://foldable-robotics.github.io/modules/python/installing-anaconda&#34;&gt;Installing Anaconda Python Tutorial&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://foldable-robotics.github.io/modules/misc/add-folder-to-system-path&#34;&gt;Add folder to system path (Windows)&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;instructions&#34;&gt;Instructions&lt;/h2&gt;</description>
-    </item>
-    
-    <item>
-      <title>Install Python</title>
-      <link>http://foldable-robotics.github.io/assignments/install-python/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://foldable-robotics.github.io/assignments/install-python/</guid>
-      <description>&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;Python is essential for Foldable Robotics.  This task leads you through installing the Anaconda Python Distribution.  Completing this task will ensure you have the basic packages installed to use Python in the course.&lt;/p&gt;
-&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://foldable-robotics.github.io/modules/python/installing-anaconda/&#34;&gt;Installing Anaconda Python Tutorial&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://foldable-robotics.github.io/modules/misc/add-folder-to-system-path/&#34;&gt;Add folder to system path (Windows)&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://foldable-robotics.github.io/modules/python/using-jupyter-notebook/&#34;&gt;Using Jupyter Notebook&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;http://foldable-robotics.github.io/modules/python/google-colab-tutorial/&#34;&gt;Google Colab Tutorial&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;installing-anaconda&#34;&gt;Installing Anaconda&lt;/h2&gt;</description>
-    </item>
-    
-    <item>
-      <title>Intro to Dynamics</title>
-      <link>http://foldable-robotics.github.io/assignments/dynamics/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://foldable-robotics.github.io/assignments/dynamics/</guid>
-      <description>&lt;h2 id=&#34;assignment-overview&#34;&gt;Assignment Overview&lt;/h2&gt;
-&lt;p&gt;The purpose of this assignment is to get you comfortable using the computational capabilities of Python and Pynamics to start estimating the performance of your design.&lt;/p&gt;
-&lt;h2 id=&#34;rubric&#34;&gt;Rubric&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Description&lt;/th&gt;
-&lt;th style=&#34;text-align:right&#34;&gt;Points&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;strong&gt;Total&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;200&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;instructions&#34;&gt;Instructions&lt;/h2&gt;</description>
-    </item>
-    
-    <item>
-      <title>Intro to Manufacturing Computation</title>
-      <link>http://foldable-robotics.github.io/assignments/shapely/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://foldable-robotics.github.io/assignments/shapely/</guid>
-      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
-&lt;p&gt;The purpose of this exercise is to get used to working with shapely polygons and to use it to compute some manufacturing geometry.  It is your job to determine how to compute the cut files using Python, shapely, and the foldable_robotics package&lt;/p&gt;
-&lt;h2 id=&#34;rubric&#34;&gt;Rubric&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Description&lt;/th&gt;
-&lt;th style=&#34;text-align:right&#34;&gt;Points&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Steps&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;60&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Discussion&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;40&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;strong&gt;Total&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;100&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/idealabasu/code_foldable_robotics&#34;&gt;https://github.com/idealabasu/code_foldable_robotics&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://shapely.readthedocs.io/en/stable/manual.html&#34;&gt;The Shapely User Manual&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;instructions&#34;&gt;Instructions&lt;/h2&gt;</description>
-    </item>
-    
-    <item>
-      <title>Kinematics Via Prototyping &amp; CAD</title>
-      <link>http://foldable-robotics.github.io/assignments/kinematics-via-prototyping-and-cad/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://foldable-robotics.github.io/assignments/kinematics-via-prototyping-and-cad/</guid>
-      <description>&lt;h1 id=&#34;kinematics-via-prototyping--cad&#34;&gt;Kinematics Via Prototyping &amp;amp; CAD&lt;/h1&gt;
-&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;The goal of this assignment is to 1) propose a mechanism that your team can study as part of a larger laminate system, and 2) to get you comfortable sketching the kinematics of foldable systems in CAD, establishing constraints, and counting degrees of freedom.&lt;/p&gt;
-&lt;h2 id=&#34;rubric&#34;&gt;Rubric&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Description&lt;/th&gt;
-&lt;th style=&#34;text-align:right&#34;&gt;Points&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Picture of prototype&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;50&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Evaluation of 2D/3D&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;10&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Drawing of Kinematics&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;50&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;DOF&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;10&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Input/Output&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;20&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Range of Motion&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;20&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;discussion&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;40&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;strong&gt;Total&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;200&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;prerequisites&#34;&gt;Prerequisites&lt;/h2&gt;
-&lt;ol&gt;
-&lt;li&gt;Solidworks should be installed.  It may be downloaded from &lt;a href=&#34;https://myapps.asu.edu&#34;&gt;https://myapps.asu.edu&lt;/a&gt;.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h2 id=&#34;instructions&#34;&gt;Instructions&lt;/h2&gt;</description>
-    </item>
-    
-    <item>
-      <title>Kinematics with Python</title>
-      <link>http://foldable-robotics.github.io/assignments/kinematics-with-python/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://foldable-robotics.github.io/assignments/kinematics-with-python/</guid>
-      <description>&lt;h2 id=&#34;assignment-overview&#34;&gt;Assignment Overview&lt;/h2&gt;
-&lt;p&gt;The purpose of this assignment is to get you comfortable using the computational capabilities of Python and Sympy to start estimating the performance of your design.&lt;/p&gt;
-&lt;h2 id=&#34;rubric&#34;&gt;Rubric&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Description&lt;/th&gt;
-&lt;th style=&#34;text-align:right&#34;&gt;Points&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;strong&gt;Total&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;200&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;instructions&#34;&gt;Instructions&lt;/h2&gt;</description>
-    </item>
-    
-    <item>
-      <title>Make a Pop-up Book</title>
-      <link>http://foldable-robotics.github.io/assignments/make-a-popup-book/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://foldable-robotics.github.io/assignments/make-a-popup-book/</guid>
-      <description>&lt;h1 id=&#34;make-a-pop-up-book&#34;&gt;Make a Pop-up Book&lt;/h1&gt;
-&lt;h2 id=&#34;assignment-overview&#34;&gt;Assignment Overview&lt;/h2&gt;
-&lt;p&gt;The goal of this assignment is to search externally for origami-inspired mechanisms you could use for your project.  Additionally, this assignment is meant to make you think critically about how the manufacturing of foldable robots is intertwined with cutting and joining processes, and to appreciate the automation&lt;/p&gt;
-&lt;h2 id=&#34;rubric&#34;&gt;Rubric&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Description&lt;/th&gt;
-&lt;th style=&#34;text-align:right&#34;&gt;Points&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Report Narrative&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;30&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Report Discussion&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;30&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Figure(s)&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;40&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Pictures&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;40&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Videos&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;20&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;References&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;20&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;strong&gt;Total&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;200&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;external-resources&#34;&gt;External Resources&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Video Series by D. Birmingham:&lt;br&gt;
-&lt;a href=&#34;https://www.youtube.com/watch?v=aGJZbNh9Phs&#34;&gt;https://www.youtube.com/watch?v=aGJZbNh9Phs&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Itai Cohen Explains The Physics of Origami&lt;br&gt;
-&lt;a href=&#34;http://www.cornell.edu/video/itai-cohen-explains-origami-physics&#34;&gt;http://www.cornell.edu/video/itai-cohen-explains-origami-physics&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;KMMODL Linkage Collection
-&lt;a href=&#34;http://kmoddl.library.cornell.edu/index.php&#34;&gt;http://kmoddl.library.cornell.edu/index.php&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;instructions&#34;&gt;Instructions&lt;/h2&gt;</description>
-    </item>
-    
-    <item>
-      <title>Make a Website</title>
-      <link>http://foldable-robotics.github.io/assignments/make-a-website/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://foldable-robotics.github.io/assignments/make-a-website/</guid>
-      <description>&lt;h1 id=&#34;make-a-website&#34;&gt;Make a Website&lt;/h1&gt;
-&lt;h2 id=&#34;assignment-overview&#34;&gt;Assignment Overview&lt;/h2&gt;
-&lt;p&gt;The purpose of this assignment is to create a project website as a living document that will document all your work for the class.&lt;/p&gt;
-&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://foldable-robotics.github.io/modules/project/make-a-website&#34;&gt;Make a Project Repository and Website&lt;/a&gt; Tutorial&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet&#34;&gt;https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://pandoc.org/&#34;&gt;pandoc&lt;/a&gt;, a useful tool for converting documents of all kinds&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;instructions&#34;&gt;Instructions&lt;/h2&gt;</description>
-    </item>
-    
-    <item>
-      <title>Parameter Identification</title>
-      <link>http://foldable-robotics.github.io/assignments/parameter-identification/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://foldable-robotics.github.io/assignments/parameter-identification/</guid>
-      <description>&lt;h1 id=&#34;parameter-identification&#34;&gt;Parameter Identification&lt;/h1&gt;
-&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;The purpose of this assignment is to get your team to model the various aspects of your model including&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;The full system&lt;/li&gt;
-&lt;li&gt;Actuator Parameters&lt;/li&gt;
-&lt;li&gt;Energy Storage Devices&lt;/li&gt;
-&lt;li&gt;System / Link Stiffness&lt;/li&gt;
-&lt;li&gt;Damping and Friction&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;rubric&#34;&gt;Rubric&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Description&lt;/th&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Points&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;strong&gt;Total&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;200&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;instructions&#34;&gt;Instructions&lt;/h2&gt;</description>
-    </item>
-    
-    <item>
-      <title>Parameter Identification Plan</title>
-      <link>http://foldable-robotics.github.io/assignments/parameter-id-plan/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://foldable-robotics.github.io/assignments/parameter-id-plan/</guid>
-      <description>Dynamics II Plan Introduction The purpose of this assignment is to decide as a team how you will split up the various Parameter ID tasks individually</description>
-    </item>
-    
-    <item>
-      <title>Presentation I</title>
-      <link>http://foldable-robotics.github.io/assignments/presentation-i/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://foldable-robotics.github.io/assignments/presentation-i/</guid>
-      <description>&lt;h1 id=&#34;presentation-i&#34;&gt;Presentation I&lt;/h1&gt;
-&lt;h2 id=&#34;assignment-overview&#34;&gt;Assignment Overview&lt;/h2&gt;
-&lt;p&gt;Please prepare your group presentation based on your most recent project activities&lt;/p&gt;
-&lt;h2 id=&#34;rubric&#34;&gt;Rubric&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Description&lt;/th&gt;
-&lt;th style=&#34;text-align:right&#34;&gt;Points&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;strong&gt;Content&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Slide 1&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;35&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Slide 2&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;35&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Slide 3&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;35&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Slide 4&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;35&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Slide 5&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;35&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;strong&gt;Video&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;25&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;strong&gt;Total&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;200&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;instructions&#34;&gt;Instructions&lt;/h2&gt;</description>
-    </item>
-    
-    <item>
-      <title>Presentation II</title>
-      <link>http://foldable-robotics.github.io/assignments/presentation-ii/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://foldable-robotics.github.io/assignments/presentation-ii/</guid>
-      <description>&lt;h1 id=&#34;presentation-ii&#34;&gt;Presentation II&lt;/h1&gt;
-&lt;h2 id=&#34;assignment-overview&#34;&gt;Assignment Overview&lt;/h2&gt;
-&lt;p&gt;Please prepare your group presentation based on your most recent project activities&lt;/p&gt;
-&lt;h2 id=&#34;rubric&#34;&gt;Rubric&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Description&lt;/th&gt;
-&lt;th style=&#34;text-align:right&#34;&gt;Points&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;strong&gt;Content&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Slide 1&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;35&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Slide 2&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;35&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Slide 3&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;35&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Slide 4&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;35&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Slide 5&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;35&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;strong&gt;Video&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;25&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;strong&gt;Total&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;200&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;instructions&#34;&gt;Instructions&lt;/h2&gt;</description>
-    </item>
-    
-    <item>
-      <title>Presentation III</title>
-      <link>http://foldable-robotics.github.io/assignments/presentation-iii/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://foldable-robotics.github.io/assignments/presentation-iii/</guid>
-      <description>&lt;h1 id=&#34;presentation-iii&#34;&gt;Presentation III&lt;/h1&gt;
-&lt;h2 id=&#34;assignment-overview&#34;&gt;Assignment Overview&lt;/h2&gt;
-&lt;p&gt;Please prepare your group presentation based on your most recent project activities&lt;/p&gt;
-&lt;h2 id=&#34;rubric&#34;&gt;Rubric&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Description&lt;/th&gt;
-&lt;th style=&#34;text-align:right&#34;&gt;Points&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;strong&gt;Content&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Slide 1&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;35&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Slide 2&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;35&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Slide 3&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;35&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Slide 4&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;35&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Slide 5&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;35&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;strong&gt;Video&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;25&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;strong&gt;Total&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;200&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;instructions&#34;&gt;Instructions&lt;/h2&gt;</description>
-    </item>
-    
-    <item>
-      <title>Project Pitch</title>
-      <link>http://foldable-robotics.github.io/assignments/project-pitch/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://foldable-robotics.github.io/assignments/project-pitch/</guid>
-      <description>&lt;h1 id=&#34;project-pitches&#34;&gt;Project Pitches&lt;/h1&gt;
-&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
-&lt;p&gt;The goal of this assignment is to permit those interested in pitching their ideas to attract a group of people interested in joining them.  This pitch will be used to inspire and promote discussion amongst students before teams are formed.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;This is your opportunity to shape your semester and to accomplish a personal research goal through class.  If, after group discussion, you wish to create other pitches, you may upload them independently to the Google Drive Folder listed below.&lt;/em&gt;&lt;/p&gt;
-&lt;h2 id=&#34;rubric&#34;&gt;Rubric&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Description&lt;/th&gt;
-&lt;th style=&#34;text-align:right&#34;&gt;Points&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Your Slide&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;100&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;strong&gt;Total&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;100&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;instructions&#34;&gt;Instructions&lt;/h2&gt;</description>
-    </item>
-    
-    <item>
-      <title>Project Selection Survey</title>
-      <link>http://foldable-robotics.github.io/assignments/project-selection-survey/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://foldable-robotics.github.io/assignments/project-selection-survey/</guid>
-      <description>&lt;h1 id=&#34;project-selection-survey&#34;&gt;Project Selection Survey&lt;/h1&gt;
-&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-&lt;h2 id=&#34;instructions&#34;&gt;Instructions&lt;/h2&gt;</description>
-    </item>
-    
-    <item>
-      <title>Prototyping</title>
-      <link>http://foldable-robotics.github.io/assignments/prototyping/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://foldable-robotics.github.io/assignments/prototyping/</guid>
-      <description>&lt;h2 id=&#34;assignment-overview&#34;&gt;Assignment Overview&lt;/h2&gt;
-&lt;p&gt;The purpose of this assignment is to get you comfortable using the laminate computation in conjunction with the laminate fabrication approaches in the Innovation Hub to start making useful prototypes&lt;/p&gt;
-&lt;h2 id=&#34;rubric&#34;&gt;Rubric&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Description&lt;/th&gt;
-&lt;th style=&#34;text-align:right&#34;&gt;Points&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;strong&gt;Total&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;200&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;instructions&#34;&gt;Instructions&lt;/h2&gt;</description>
-    </item>
-    
-    <item>
-      <title>Python for Loops. Arrays. and Plotting</title>
-      <link>http://foldable-robotics.github.io/assignments/python-for-loops-arrays-and-plotting/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://foldable-robotics.github.io/assignments/python-for-loops-arrays-and-plotting/</guid>
-      <description>&lt;h1 id=&#34;python-for-loops-arrays-and-plotting&#34;&gt;Python &lt;code&gt;for&lt;/code&gt; loops, Arrays, and Plotting&lt;/h1&gt;
-&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;The purpose of this assignment is to get to know Python and Juptyer Notebook.&lt;/p&gt;
-&lt;h2 id=&#34;asdf&#34;&gt;Resources&lt;/h2&gt;
-&lt;h3 id=&#34;python&#34;&gt;Python&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://docs.python.org/3/tutorial/introduction.html&#34;&gt;Basic Intro&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://docs.python.org/3/tutorial/controlflow.html&#34;&gt;Control Flow: For, if, etc&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://wiki.python.org/moin/ForLoop&#34;&gt;For loops&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://www.pythonforbeginners.com/basics/list-comprehensions-in-python&#34;&gt;List Comprehensions in Python&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;arrays&#34;&gt;Arrays&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://docs.scipy.org/doc/numpy/user/numpy-for-matlab-users.html&#34;&gt;NumPy for Matlab users&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://numpy.org/doc/stable/user/quickstart.html&#34;&gt;Quickstart Tutorial&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://numpy.org/doc/stable/user/absolute_beginners.html&#34;&gt;Absolute Beginners Tutorial&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h3 id=&#34;plotting-with-matplotlib&#34;&gt;Plotting with Matplotlib&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://matplotlib.org/3.3.3/tutorials/index.html&#34;&gt;Matplotlib Tutorials&lt;/a&gt;, specifically the &lt;a href=&#34;https://matplotlib.org/3.3.3/tutorials/introductory/pyplot.html#sphx-glr-tutorials-introductory-pyplot-py&#34;&gt;pyplot&lt;/a&gt; tutorial&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://matplotlib.org/3.3.3/gallery/index.html&#34;&gt;General Examples&lt;/a&gt; and pyplot &lt;a href=&#34;https://matplotlib.org/3.3.3/tutorials/introductory/sample_plots.html#sphx-glr-tutorials-introductory-sample-plots-py&#34;&gt;examples&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://matplotlib.org/3.1.1/gallery/subplots_axes_and_figures/figure_title.html&#34;&gt;titles&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://matplotlib.org/3.1.1/gallery/subplots_axes_and_figures/axis_equal_demo.html&#34;&gt;equal axis&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://matplotlib.org/3.3.3/api/_as_gen/matplotlib.pyplot.savefig.html#examples-using-matplotlib-pyplot-savefig&#34;&gt;&lt;code&gt;savefig()&lt;/code&gt; examples&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;rubric&#34;&gt;Rubric&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Description&lt;/th&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Points&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Looping&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;30&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Arrays&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;30&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Plotting&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;40&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;strong&gt;Total&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;100&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;instructions&#34;&gt;Instructions&lt;/h2&gt;</description>
-    </item>
-    
-    <item>
-      <title>Python Functions</title>
-      <link>http://foldable-robotics.github.io/assignments/python-functions/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://foldable-robotics.github.io/assignments/python-functions/</guid>
-      <description>&lt;h1 id=&#34;python-functions&#34;&gt;Python Functions&lt;/h1&gt;
-&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;The purpose of this assignment is to get you comfortable understanding the basics of python functions and how to use them with arguments and keyword arguments&lt;/p&gt;
-&lt;p&gt;Before starting this assignment, please become familiar with Python functions, including how you declare and call them.&lt;/p&gt;
-&lt;h2 id=&#34;rubric&#34;&gt;Rubric&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Description&lt;/th&gt;
-&lt;th style=&#34;text-align:right&#34;&gt;Points&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Code&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;70&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Report&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;30&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;strong&gt;Total&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;&lt;strong&gt;100&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://pythontips.com/2013/08/04/args-and-kwargs-in-python-explained/&#34;&gt;*args and **kwargs in python explained&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href=&#34;https://docs.scipy.org/doc/numpy/user/numpy-for-matlab-users.html&#34;&gt;NumPy for Matlab users&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;instructions&#34;&gt;Instructions&lt;/h2&gt;</description>
-    </item>
-    
-    <item>
-      <title>System Dynamics I</title>
-      <link>http://foldable-robotics.github.io/assignments/system-dynamics-i/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://foldable-robotics.github.io/assignments/system-dynamics-i/</guid>
-      <description>&lt;h1 id=&#34;system-dynamics-i&#34;&gt;System Dynamics I&lt;/h1&gt;
-&lt;h2 id=&#34;assignment-overview&#34;&gt;Assignment Overview&lt;/h2&gt;
-&lt;p&gt;This assignment is intended to get you familiar with the dynamics of your system.  We will start with the triple pendulum example and turn it into a leg.&lt;/p&gt;
-&lt;h2 id=&#34;rubric&#34;&gt;Rubric&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Description&lt;/th&gt;
-&lt;th style=&#34;text-align:right&#34;&gt;Points&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Draft&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;30&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Step 1&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;30&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Step 2&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;30&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Step 3&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;30&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Step 4&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;30&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Step 5&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;30&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Step 6&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;20&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;strong&gt;Total&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;&lt;strong&gt;200&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;dynamics &lt;a href=&#34;%7B%7Bsite.baseurl%7D%7D/modules/dynamics&#34;&gt;modules&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;instructions&#34;&gt;Instructions&lt;/h2&gt;</description>
-    </item>
-    
-    <item>
-      <title>System Dynamics II</title>
-      <link>http://foldable-robotics.github.io/assignments/system-dynamics-ii/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://foldable-robotics.github.io/assignments/system-dynamics-ii/</guid>
-      <description>&lt;h1 id=&#34;system-dynamics-ii&#34;&gt;System Dynamics II&lt;/h1&gt;
-&lt;h2 id=&#34;assignment-overview&#34;&gt;Assignment Overview&lt;/h2&gt;
-&lt;p&gt;The point of this assignment is to re-consolidate everything you have learned about your system back into your dynamic model.  It should now include:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;at least one &amp;ldquo;compliant&amp;rdquo; element&lt;/li&gt;
-&lt;li&gt;all unknown parameters determined and included.
-&lt;ul&gt;
-&lt;li&gt;joint or system-level damping determined&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;An actuator model or stored energy source.&lt;/li&gt;
-&lt;li&gt;Ground constraints eliminated (if applicable)&lt;/li&gt;
-&lt;li&gt;Closed-loop constraints (if applicable)&lt;/li&gt;
-&lt;li&gt;valid initial condition&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;rubric&#34;&gt;Rubric&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Description&lt;/th&gt;
-&lt;th style=&#34;text-align:right&#34;&gt;Points&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Procedure&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;50&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Discussion&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;60&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Code&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;50&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Figures/Videos&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;40&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;strong&gt;Total&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;200&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;instructions&#34;&gt;Instructions&lt;/h2&gt;</description>
-    </item>
-    
-    <item>
-      <title>System Kinematics</title>
-      <link>http://foldable-robotics.github.io/assignments/system-kinematics/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://foldable-robotics.github.io/assignments/system-kinematics/</guid>
-      <description>&lt;h1 id=&#34;create-and-plot-kinematics&#34;&gt;Create and Plot Kinematics&lt;/h1&gt;
-&lt;h2 id=&#34;assignment-overview&#34;&gt;Assignment Overview&lt;/h2&gt;
-&lt;p&gt;The purpose of this assignment is to model the kinematics so that you can estimate the forces, and torques, power requirements, and speed of your system.  This will be done using a symbolic approach with the pynamics package&lt;/p&gt;
-&lt;h2 id=&#34;rubric&#34;&gt;Rubric&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Description&lt;/th&gt;
-&lt;th style=&#34;text-align:right&#34;&gt;Points&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Draft&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;30&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Step 1&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;30&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Step 2&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;10&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Step 3&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;30&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Step 4&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;10&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Step 5&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;10&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Step 6&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;10&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Step 7&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;10&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Step 8&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;10&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Step 9&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;10&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Discussion 1&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;10&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Discussion 2&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;10&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Discussion 3&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;10&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Discussion 4&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;10&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;strong&gt;Total&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;&lt;strong&gt;200&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;resources&#34;&gt;Resources&lt;/h2&gt;
-&lt;!--* []()--&gt;
-&lt;ul&gt;
-&lt;li&gt;Triple Pendulum Example&lt;/li&gt;
-&lt;li&gt;EGR557 Kinematics Module&lt;/li&gt;
-&lt;li&gt;EGR557 Dynamics Module&lt;/li&gt;
-&lt;li&gt;pynamics repository&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id=&#34;instructions&#34;&gt;Instructions&lt;/h2&gt;
-&lt;p&gt;Meet with your team to go over each of the prototypes and mockups you have individually created through past homework assignments.  As a team, come up with a mechanism that satisfies your team&amp;rsquo;s need for scope/tractability, manufacturability, and cost.&lt;/p&gt;
-&lt;p&gt;Decide as a team whether you will be using powered actuator(s) or passive energy storage device(s).  This will impact data collection assignments, how much your team spends, the complexity of your prototype, and the strength of the materials you use (you may need to upgrade from light cardboard to stiffer posterboard or even fiberglass)&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-&lt;p&gt;Create a figure (either in python, in a vector-based drawing program like inkscape or illustrator, or as a solidworks rendering) of your system kinematics.  Annotate the image to include:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Names for each rotational reference frame.  You will need one for each rigid body (that moves independently), as well as one for the Newtonian reference frame (N).  Use the convention of a capital letter (A,B,C,&amp;hellip;)&lt;/li&gt;
-&lt;li&gt;Labeled joint locations, such as $\vec{p}_{AB}$&lt;/li&gt;
-&lt;li&gt;A set of orthonormal basis vectors for each frame $(\hat{n}_x,\hat{n}_y,\hat{n}_z),(\hat{a}_x,\hat{a}_y,\hat{a}_z)$. It is best practice to align one of the basis vectors (like $\hat{a}_x$) with each rigid link.&lt;/li&gt;
-&lt;li&gt;variable names for each state variable $(q_1,q_2,x_1,y_1,\ldots)$&lt;/li&gt;
-&lt;li&gt;geometric constants such as link lengths (like $l_1,l_2$)&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Save this figure for reuse later.  You will need to add mass and inertial information as well as system stiffness information, so make sure you do your work in a way that permits reusing and modifying the figure.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Make the device in paper or cardboard.  You need an up-to-date model if it has changed from your individual assignments.  The paper model should dimensionally match your code.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Using a pynamics-based script, develop a kinematic model for your device.  Following the triple pendulum example,&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;Import packages&lt;/li&gt;
-&lt;li&gt;Define variables and constants (you may want to add, remove, or rename variables to match your figure)&lt;/li&gt;
-&lt;li&gt;Declare frames (you may need to add frames or rename them)&lt;/li&gt;
-&lt;li&gt;Define frame rotations (you may want to switch the axis about which frames rotate)&lt;/li&gt;
-&lt;li&gt;Compose kinematics (this depends entirely on the geometry of your system)&lt;/li&gt;
-&lt;li&gt;Take time-derivatives of position vectors&lt;/li&gt;
-&lt;li&gt;Assemble into a Jacobian that maps input velocities to output velocities.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Select or Solve for a valid initial condition that represents the system in the middle of a typical gait, when it is both moving and when forces are being applied to it (or to the world by it)&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;Despite the fact that you will be using a symbolic representation, you still need to solve for a valid initial condition if your device is a &amp;ldquo;parallel mechanism&amp;rdquo;.  This may be done using a nonlinear solver such as &lt;code&gt;scipy.optimize.minimize&lt;/code&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Plot the system in this position.&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;From your biomechanics-based specifications, define one or more force vector estimates (one for each end effector) that the system should be expected to experience.  Consider including, based on your research&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;the force of gravity exerted by the mass of a &amp;ldquo;payload&amp;rdquo; or the main body of the robot.&lt;/li&gt;
-&lt;li&gt;the acceleration the  system experiences during a typical gait&lt;/li&gt;
-&lt;li&gt;ground reaction forces measured from biomechanics studies.&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Calculate the force or torque required at the input to satisfy the end-effector force requirements&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;
-&lt;p&gt;Estimate the velocity of the end-effector in this configuration.  Using the Jacobian, calculate the speed required by the input(s) to achieve that output motion.&lt;/p&gt;
-&lt;p&gt;&lt;em&gt;This may not be directly solvable based on your device kinematics; an iterative guess-and-check approach is ok.&lt;/em&gt;&lt;/p&gt;
-&lt;/li&gt;
-&lt;li&gt;</description>
-    </item>
-    
-    <item>
-      <title>Website Update I</title>
-      <link>http://foldable-robotics.github.io/assignments/website-update-i/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://foldable-robotics.github.io/assignments/website-update-i/</guid>
-      <description>&lt;h1 id=&#34;website-update-i&#34;&gt;Website Update I&lt;/h1&gt;
-&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;The purpose of this assignment is to update your team&amp;rsquo;s progress towards creating a public-facing, unified project report.&lt;/p&gt;
-&lt;h2 id=&#34;rubric&#34;&gt;Rubric&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Description&lt;/th&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Action&lt;/th&gt;
-&lt;th style=&#34;text-align:right&#34;&gt;Points&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Main Page&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;new&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Research Question&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;new&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;25&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Biomechanics&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;new&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;25&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Kinematics&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;new&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;25&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Presentations&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Add Presentation 1&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;25&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;strong&gt;Total&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;&lt;strong&gt;100&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;instructions&#34;&gt;Instructions&lt;/h2&gt;</description>
-    </item>
-    
-    <item>
-      <title>Website Update II</title>
-      <link>http://foldable-robotics.github.io/assignments/website-update-ii/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://foldable-robotics.github.io/assignments/website-update-ii/</guid>
-      <description>&lt;h1 id=&#34;website-update-ii&#34;&gt;Website Update II&lt;/h1&gt;
-&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;The purpose of this assignment is to update your team&amp;rsquo;s progress towards creating a public-facing, unified project report.&lt;/p&gt;
-&lt;h2 id=&#34;rubric&#34;&gt;Rubric&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Description&lt;/th&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Action&lt;/th&gt;
-&lt;th style=&#34;text-align:right&#34;&gt;Points&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Main Page&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Update&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Research Question&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;update&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;20&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Biomechanics&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;update&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;20&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Kinematics&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;update&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;20&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;strong&gt;System Dynamics&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;new&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Dynamics I&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;new&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;40&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;System Identification Plan&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;new&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;40&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;System Identification&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;new&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;40&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Presentations&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Add Presentation 2&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;20&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;strong&gt;Total&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:right&#34;&gt;&lt;strong&gt;200&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;instructions&#34;&gt;Instructions&lt;/h2&gt;</description>
-    </item>
-    
-    <item>
-      <title>Website Update III</title>
-      <link>http://foldable-robotics.github.io/assignments/website-update-iii/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>http://foldable-robotics.github.io/assignments/website-update-iii/</guid>
-      <description>&lt;h1 id=&#34;website-update-iii&#34;&gt;Website Update III&lt;/h1&gt;
-&lt;h2 id=&#34;introduction&#34;&gt;Introduction&lt;/h2&gt;
-&lt;p&gt;The purpose of this assignment is to update your team&amp;rsquo;s progress towards creating a public-facing, unified project report.&lt;/p&gt;
-&lt;h2 id=&#34;rubric&#34;&gt;Rubric&lt;/h2&gt;
-&lt;table&gt;
-&lt;thead&gt;
-&lt;tr&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Assignments&lt;/th&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Grade Consideration&lt;/th&gt;
-&lt;th style=&#34;text-align:left&#34;&gt;Points&lt;/th&gt;
-&lt;/tr&gt;
-&lt;/thead&gt;
-&lt;tbody&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Main Page&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Update&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Research Question&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Update&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;20&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Biomechanics Background &amp;amp; Specifications&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Update&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;20&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Kinematics&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Update&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;20&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Dynamics (I, Prep, Plan, II)&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Update&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;20&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Design Optimization, Experiment Design, Data Collection, and Analysis&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;New&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;80&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Manufacturing Planning&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;New&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;40&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Presentations&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Add Presentation 3&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;20&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Data&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;New&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;20&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Gallery&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;New&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;20&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;CAD&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;New&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;20&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;Code&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;New&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;20&lt;/td&gt;
-&lt;/tr&gt;
-&lt;tr&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;strong&gt;Total&lt;/strong&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;/td&gt;
-&lt;td style=&#34;text-align:left&#34;&gt;&lt;strong&gt;300&lt;/strong&gt;&lt;/td&gt;
-&lt;/tr&gt;
-&lt;/tbody&gt;
-&lt;/table&gt;
-&lt;h2 id=&#34;instructions&#34;&gt;Instructions&lt;/h2&gt;</description>
-    </item>
-    
-  </channel>
-</rss>
+itemtype="https://schema.org/Article"
+data-type="article">&lt;span itemprop="author" itemscope itemtype="https://schema.org/Person">&lt;span itemprop="familyName">Dickinson&lt;/span>,&amp;#32;
+&lt;meta itemprop="givenName" content="Michael H." />
+M.&lt;/span>,&amp;#32;
+&lt;span itemprop="author" itemscope itemtype="https://schema.org/Person">&lt;span itemprop="familyName">Farley&lt;/span>,&amp;#32;
+&lt;meta itemprop="givenName" content="C T" />
+C.&lt;/span>,&amp;#32;
+&lt;span itemprop="author" itemscope itemtype="https://schema.org/Person">&lt;span itemprop="familyName">Full&lt;/span>,&amp;#32;
+&lt;meta itemprop="givenName" content="R J" />
+R.&lt;/span>,&amp;#32;
+&lt;span itemprop="author" itemscope itemtype="https://schema.org/Person">&lt;span itemprop="familyName">Koehl&lt;/span>,&amp;#32;
+&lt;meta itemprop="givenName" content="M A" />
+M.&lt;/span>,&amp;#32;
+&lt;span itemprop="author" itemscope itemtype="https://schema.org/Person">&lt;span itemprop="familyName">Kram&lt;/span>,&amp;#32;
+&lt;meta itemprop="givenName" content="R" />
+R.&lt;/span>&amp;#32;&amp;amp;&amp;#32;&lt;span itemprop="author" itemscope itemtype="https://schema.org/Person">&lt;span itemprop="familyName">Lehman&lt;/span>,&amp;#32;
+&lt;meta itemprop="givenName" content="S" />
+S.&lt;/span>
+&amp;#32;
+(&lt;span itemprop="datePublished">2000&lt;/span>).
+&amp;#32;&lt;span itemprop="name">&lt;span class="nocase">How animals move: an integrative view.&lt;/span>&lt;/span>.&lt;i>
+&lt;span itemprop="about">Science (New York, N.Y.)&lt;/span>,&amp;#32;288(5463)&lt;/i>.&amp;#32;&lt;span itemprop="pagination">100–6&lt;/span>.
+&lt;a href="https://doi.org/10.1126/science.288.5463.100"
+itemprop="identifier"
+itemtype="https://schema.org/URL">https://doi.org/10.1126/science.288.5463.100&lt;/a>&lt;/span>
+&lt;/span>&lt;/span>)&lt;/span>
+to find good starting points for references and keywords.&lt;/li>
+&lt;li>Start writing down search keywords from class.&lt;/li>
+&lt;/ul>
+&lt;h2 id="external-resources">External Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://en.wikipedia.org/wiki/Kleiber%27s_law">https://en.wikipedia.org/wiki/Kleiber%27s_law&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="rubric">Rubric&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">Description&lt;/th>
+&lt;th style="text-align:right">Points&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">Bio Inspiration&lt;/td>
+&lt;td style="text-align:right">20&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Other bio-inspired robots&lt;/td>
+&lt;td style="text-align:right">20&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Table&lt;/td>
+&lt;td style="text-align:right">40&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Other Assumptions&lt;/td>
+&lt;td style="text-align:right">10&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Figures&lt;/td>
+&lt;td style="text-align:right">20&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Engineering Representation&lt;/td>
+&lt;td style="text-align:right">20&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Discussion&lt;/td>
+&lt;td style="text-align:right">40&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Bibliography&lt;/td>
+&lt;td style="text-align:right">30&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
+&lt;td style="text-align:right">200&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Course Feedback I</title><link>http://foldable-robotics.github.io/assignments/course-feedback-i/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/course-feedback-i/</guid><description>&lt;h1 id="course-feedback-i">Course Feedback I&lt;/h1>
+&lt;h2 id="assignment-overview">Assignment Overview&lt;/h2>
+&lt;p>The goal of this assignment is to learn about your activities in this course and how the course can be improved in the future.&lt;/p>
+&lt;h2 id="rubric">Rubric&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">Description&lt;/th>
+&lt;th style="text-align:left">Points&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
+&lt;td style="text-align:left">20&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Course Feedback II</title><link>http://foldable-robotics.github.io/assignments/course-feedback-ii/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/course-feedback-ii/</guid><description>&lt;h1 id="course-feedback-ii">Course Feedback II&lt;/h1>
+&lt;h2 id="assignment-overview">Assignment Overview&lt;/h2>
+&lt;p>The goal of this assignment is to learn about your activities in this course and how the course can be improved in the future.&lt;/p>
+&lt;h2 id="rubric">Rubric&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">Description&lt;/th>
+&lt;th style="text-align:left">Points&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
+&lt;td style="text-align:left">20&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Data Collection Permission Form</title><link>http://foldable-robotics.github.io/assignments/data-collection-permission/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/data-collection-permission/</guid><description>&lt;h2 id="assignment-overview">Assignment Overview&lt;/h2>
+&lt;p>The goal of this assignment is to get your permission to collect data through periodic surveys.&lt;/p>
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Design and Manufacturing Workflow</title><link>http://foldable-robotics.github.io/assignments/design-and-manufacturing-workflow/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/design-and-manufacturing-workflow/</guid><description>&lt;h1 id="design-and-manufacturing-workflow">Design and Manufacturing Workflow&lt;/h1>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>The purpose of this assignment is to plan for the manufacturing of the full system, test the output, and use it to produce a prototype.&lt;/p>
+&lt;h2 id="rubric">Rubric&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">Description&lt;/th>
+&lt;th style="text-align:left">Points&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">1a&lt;/td>
+&lt;td style="text-align:left">15&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">1b&lt;/td>
+&lt;td style="text-align:left">15&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">2a&lt;/td>
+&lt;td style="text-align:left">15&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">2b&lt;/td>
+&lt;td style="text-align:left">15&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">3&lt;/td>
+&lt;td style="text-align:left">30&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">4a&lt;/td>
+&lt;td style="text-align:left">30&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">4b&lt;/td>
+&lt;td style="text-align:left">30&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">4c&lt;/td>
+&lt;td style="text-align:left">40&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">5&lt;/td>
+&lt;td style="text-align:left">10&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">total&lt;/td>
+&lt;td style="text-align:left">200&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>Solidworks Tutorial kinematics tutorial: &lt;a href="https://drive.google.com/open?id=1En2zWrJg5EV_T9sTThubRUUclYcnW9jV&amp;amp;authuser=daukes%40asu.edu&amp;amp;usp=drive_fs">https://drive.google.com/open?id=1En2zWrJg5EV_T9sTThubRUUclYcnW9jV&amp;amp;authuser=daukes%40asu.edu&amp;amp;usp=drive_fs&lt;/a>&lt;/li>
+&lt;li>The macros for exporting a laminate to .dxf: &lt;a href="https://github.com/popupcad/code_popupcad_solidworks_exporter">https://github.com/popupcad/code_popupcad_solidworks_exporter&lt;/a>&lt;/li>
+&lt;/ul></description></item><item><title>Design Optimization, Experiment Design, Data Collection, and Analysis</title><link>http://foldable-robotics.github.io/assignments/doeddca/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/doeddca/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>The purpose of this assignment is to execute the plan individual tasks assigned to you for the final part of your project.&lt;/p>
+&lt;h2 id="rubric">Rubric&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">Description&lt;/th>
+&lt;th style="text-align:left">Points&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
+&lt;td style="text-align:left">200&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Design Optimization, Experiment Design, Data Collection, and Analysis Plan</title><link>http://foldable-robotics.github.io/assignments/doeddcap/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/doeddcap/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>The purpose of this assignment is to create a plan for the final part of your project and assign individual tasks&lt;/p>
+&lt;h2 id="rubric">Rubric&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">Description&lt;/th>
+&lt;th style="text-align:left">Points&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
+&lt;td style="text-align:left">25&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Develop a Research Question</title><link>http://foldable-robotics.github.io/assignments/develop-a-research-question/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/develop-a-research-question/</guid><description>&lt;h1 id="develop-a-research-question">Develop a Research Question&lt;/h1>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>Generate a research question worthy of your time.&lt;/p>
+&lt;h2 id="rubric">Rubric&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">Description&lt;/th>
+&lt;th style="text-align:left">Points&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">Question&lt;/td>
+&lt;td style="text-align:left">30&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Tractability Discussion&lt;/td>
+&lt;td style="text-align:left">20&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Novelty Discussion&lt;/td>
+&lt;td style="text-align:left">30&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Interesting Discussion&lt;/td>
+&lt;td style="text-align:left">40&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Open-endedness Discussion&lt;/td>
+&lt;td style="text-align:left">20&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Modularity Discussion&lt;/td>
+&lt;td style="text-align:left">20&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Team Fit Discussion&lt;/td>
+&lt;td style="text-align:left">20&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Topic Fit Discussion&lt;/td>
+&lt;td style="text-align:left">20&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
+&lt;td style="text-align:left">&lt;strong>200&lt;/strong>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>The associated module on &lt;a href="http://foldable-robotics.github.io/modules/project/developing-a-research-question">developing a research question&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.mendeley.com/download-desktop-new/">Mendeley Desktop&lt;/a>, a useful citation manager&lt;/li>
+&lt;/ul>
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Incoming Survey</title><link>http://foldable-robotics.github.io/assignments/incoming-survey/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/incoming-survey/</guid><description>&lt;h1 id="incoming-survey">Incoming Survey&lt;/h1>
+&lt;h2 id="assignment-overview">Assignment Overview&lt;/h2>
+&lt;p>The goal of this assignment is to learn about you, your background, and your interests and abilities.&lt;/p>
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Install CAD</title><link>http://foldable-robotics.github.io/assignments/install-cad/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/install-cad/</guid><description>&lt;h2 id="assignment-overview">Assignment Overview&lt;/h2>
+&lt;p>The goal here is to verify you have CAD installed correctly.&lt;/p>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="http://foldable-robotics.github.io/modules/python/installing-anaconda">Installing Anaconda Python Tutorial&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://foldable-robotics.github.io/modules/misc/add-folder-to-system-path">Add folder to system path (Windows)&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Install Python</title><link>http://foldable-robotics.github.io/assignments/install-python/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/install-python/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>Python is essential for Foldable Robotics. This task leads you through installing the Anaconda Python Distribution. Completing this task will ensure you have the basic packages installed to use Python in the course.&lt;/p>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="http://foldable-robotics.github.io/modules/python/installing-anaconda/">Installing Anaconda Python Tutorial&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://foldable-robotics.github.io/modules/misc/add-folder-to-system-path/">Add folder to system path (Windows)&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://foldable-robotics.github.io/modules/python/using-jupyter-notebook/">Using Jupyter Notebook&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://foldable-robotics.github.io/modules/python/google-colab-tutorial/">Google Colab Tutorial&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="installing-anaconda">Installing Anaconda&lt;/h2></description></item><item><title>Intro to Dynamics</title><link>http://foldable-robotics.github.io/assignments/dynamics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/dynamics/</guid><description>&lt;h2 id="assignment-overview">Assignment Overview&lt;/h2>
+&lt;p>The purpose of this assignment is to get you comfortable using the computational capabilities of Python and Pynamics to start estimating the performance of your design.&lt;/p>
+&lt;h2 id="rubric">Rubric&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">Description&lt;/th>
+&lt;th style="text-align:right">Points&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
+&lt;td style="text-align:right">200&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Intro to Manufacturing Computation</title><link>http://foldable-robotics.github.io/assignments/shapely/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/shapely/</guid><description>&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>The purpose of this exercise is to get used to working with shapely polygons and to use it to compute some manufacturing geometry. It is your job to determine how to compute the cut files using Python, shapely, and the foldable_robotics package&lt;/p>
+&lt;h2 id="rubric">Rubric&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">Description&lt;/th>
+&lt;th style="text-align:right">Points&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">Steps&lt;/td>
+&lt;td style="text-align:right">60&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Discussion&lt;/td>
+&lt;td style="text-align:right">40&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
+&lt;td style="text-align:right">100&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://github.com/idealabasu/code_foldable_robotics">https://github.com/idealabasu/code_foldable_robotics&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://shapely.readthedocs.io/en/stable/manual.html">The Shapely User Manual&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Kinematics Via Prototyping &amp; CAD</title><link>http://foldable-robotics.github.io/assignments/kinematics-via-prototyping-and-cad/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/kinematics-via-prototyping-and-cad/</guid><description>&lt;h1 id="kinematics-via-prototyping--cad">Kinematics Via Prototyping &amp;amp; CAD&lt;/h1>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>The goal of this assignment is to 1) propose a mechanism that your team can study as part of a larger laminate system, and 2) to get you comfortable sketching the kinematics of foldable systems in CAD, establishing constraints, and counting degrees of freedom.&lt;/p>
+&lt;h2 id="rubric">Rubric&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">Description&lt;/th>
+&lt;th style="text-align:right">Points&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">Picture of prototype&lt;/td>
+&lt;td style="text-align:right">50&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Evaluation of 2D/3D&lt;/td>
+&lt;td style="text-align:right">10&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Drawing of Kinematics&lt;/td>
+&lt;td style="text-align:right">50&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">DOF&lt;/td>
+&lt;td style="text-align:right">10&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Input/Output&lt;/td>
+&lt;td style="text-align:right">20&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Range of Motion&lt;/td>
+&lt;td style="text-align:right">20&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">discussion&lt;/td>
+&lt;td style="text-align:right">40&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
+&lt;td style="text-align:right">200&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="prerequisites">Prerequisites&lt;/h2>
+&lt;ol>
+&lt;li>Solidworks should be installed. It may be downloaded from &lt;a href="https://myapps.asu.edu">https://myapps.asu.edu&lt;/a>.&lt;/li>
+&lt;/ol>
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Kinematics with Python</title><link>http://foldable-robotics.github.io/assignments/kinematics-with-python/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/kinematics-with-python/</guid><description>&lt;h2 id="assignment-overview">Assignment Overview&lt;/h2>
+&lt;p>The purpose of this assignment is to get you comfortable using the computational capabilities of Python and Sympy to start estimating the performance of your design.&lt;/p>
+&lt;h2 id="rubric">Rubric&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">Description&lt;/th>
+&lt;th style="text-align:right">Points&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
+&lt;td style="text-align:right">200&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Make a Pop-up Book</title><link>http://foldable-robotics.github.io/assignments/make-a-popup-book/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/make-a-popup-book/</guid><description>&lt;h1 id="make-a-pop-up-book">Make a Pop-up Book&lt;/h1>
+&lt;h2 id="assignment-overview">Assignment Overview&lt;/h2>
+&lt;p>The goal of this assignment is to search externally for origami-inspired mechanisms you could use for your project. Additionally, this assignment is meant to make you think critically about how the manufacturing of foldable robots is intertwined with cutting and joining processes, and to appreciate the automation&lt;/p>
+&lt;h2 id="rubric">Rubric&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">Description&lt;/th>
+&lt;th style="text-align:right">Points&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">Report Narrative&lt;/td>
+&lt;td style="text-align:right">30&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Report Discussion&lt;/td>
+&lt;td style="text-align:right">30&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Figure(s)&lt;/td>
+&lt;td style="text-align:right">40&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Pictures&lt;/td>
+&lt;td style="text-align:right">40&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Videos&lt;/td>
+&lt;td style="text-align:right">20&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">References&lt;/td>
+&lt;td style="text-align:right">20&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
+&lt;td style="text-align:right">200&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="external-resources">External Resources&lt;/h2>
+&lt;ul>
+&lt;li>Video Series by D. Birmingham:&lt;br>
+&lt;a href="https://www.youtube.com/watch?v=aGJZbNh9Phs">https://www.youtube.com/watch?v=aGJZbNh9Phs&lt;/a>&lt;/li>
+&lt;li>Itai Cohen Explains The Physics of Origami&lt;br>
+&lt;a href="http://www.cornell.edu/video/itai-cohen-explains-origami-physics">http://www.cornell.edu/video/itai-cohen-explains-origami-physics&lt;/a>&lt;/li>
+&lt;li>KMMODL Linkage Collection
+&lt;a href="http://kmoddl.library.cornell.edu/index.php">http://kmoddl.library.cornell.edu/index.php&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Make a Website</title><link>http://foldable-robotics.github.io/assignments/make-a-website/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/make-a-website/</guid><description>&lt;h1 id="make-a-website">Make a Website&lt;/h1>
+&lt;h2 id="assignment-overview">Assignment Overview&lt;/h2>
+&lt;p>The purpose of this assignment is to create a project website as a living document that will document all your work for the class.&lt;/p>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="http://foldable-robotics.github.io/modules/project/make-a-website">Make a Project Repository and Website&lt;/a> Tutorial&lt;/li>
+&lt;li>&lt;a href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://pandoc.org/">pandoc&lt;/a>, a useful tool for converting documents of all kinds&lt;/li>
+&lt;/ul>
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Parameter Identification</title><link>http://foldable-robotics.github.io/assignments/parameter-identification/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/parameter-identification/</guid><description>&lt;h1 id="parameter-identification">Parameter Identification&lt;/h1>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>The purpose of this assignment is to get your team to model the various aspects of your model including&lt;/p>
+&lt;ul>
+&lt;li>The full system&lt;/li>
+&lt;li>Actuator Parameters&lt;/li>
+&lt;li>Energy Storage Devices&lt;/li>
+&lt;li>System / Link Stiffness&lt;/li>
+&lt;li>Damping and Friction&lt;/li>
+&lt;/ul>
+&lt;h2 id="rubric">Rubric&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">Description&lt;/th>
+&lt;th style="text-align:left">Points&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
+&lt;td style="text-align:left">200&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Parameter Identification Plan</title><link>http://foldable-robotics.github.io/assignments/parameter-id-plan/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/parameter-id-plan/</guid><description>Dynamics II Plan Introduction The purpose of this assignment is to decide as a team how you will split up the various Parameter ID tasks individually</description></item><item><title>Presentation I</title><link>http://foldable-robotics.github.io/assignments/presentation-i/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/presentation-i/</guid><description>&lt;h1 id="presentation-i">Presentation I&lt;/h1>
+&lt;h2 id="assignment-overview">Assignment Overview&lt;/h2>
+&lt;p>Please prepare your group presentation based on your most recent project activities&lt;/p>
+&lt;h2 id="rubric">Rubric&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">Description&lt;/th>
+&lt;th style="text-align:right">Points&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">&lt;strong>Content&lt;/strong>&lt;/td>
+&lt;td style="text-align:right">&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Slide 1&lt;/td>
+&lt;td style="text-align:right">35&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Slide 2&lt;/td>
+&lt;td style="text-align:right">35&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Slide 3&lt;/td>
+&lt;td style="text-align:right">35&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Slide 4&lt;/td>
+&lt;td style="text-align:right">35&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Slide 5&lt;/td>
+&lt;td style="text-align:right">35&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">&lt;strong>Video&lt;/strong>&lt;/td>
+&lt;td style="text-align:right">25&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
+&lt;td style="text-align:right">200&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Presentation II</title><link>http://foldable-robotics.github.io/assignments/presentation-ii/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/presentation-ii/</guid><description>&lt;h1 id="presentation-ii">Presentation II&lt;/h1>
+&lt;h2 id="assignment-overview">Assignment Overview&lt;/h2>
+&lt;p>Please prepare your group presentation based on your most recent project activities&lt;/p>
+&lt;h2 id="rubric">Rubric&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">Description&lt;/th>
+&lt;th style="text-align:right">Points&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">&lt;strong>Content&lt;/strong>&lt;/td>
+&lt;td style="text-align:right">&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Slide 1&lt;/td>
+&lt;td style="text-align:right">35&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Slide 2&lt;/td>
+&lt;td style="text-align:right">35&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Slide 3&lt;/td>
+&lt;td style="text-align:right">35&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Slide 4&lt;/td>
+&lt;td style="text-align:right">35&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Slide 5&lt;/td>
+&lt;td style="text-align:right">35&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">&lt;strong>Video&lt;/strong>&lt;/td>
+&lt;td style="text-align:right">25&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
+&lt;td style="text-align:right">200&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Presentation III</title><link>http://foldable-robotics.github.io/assignments/presentation-iii/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/presentation-iii/</guid><description>&lt;h1 id="presentation-iii">Presentation III&lt;/h1>
+&lt;h2 id="assignment-overview">Assignment Overview&lt;/h2>
+&lt;p>Please prepare your group presentation based on your most recent project activities&lt;/p>
+&lt;h2 id="rubric">Rubric&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">Description&lt;/th>
+&lt;th style="text-align:right">Points&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">&lt;strong>Content&lt;/strong>&lt;/td>
+&lt;td style="text-align:right">&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Slide 1&lt;/td>
+&lt;td style="text-align:right">35&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Slide 2&lt;/td>
+&lt;td style="text-align:right">35&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Slide 3&lt;/td>
+&lt;td style="text-align:right">35&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Slide 4&lt;/td>
+&lt;td style="text-align:right">35&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Slide 5&lt;/td>
+&lt;td style="text-align:right">35&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">&lt;strong>Video&lt;/strong>&lt;/td>
+&lt;td style="text-align:right">25&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
+&lt;td style="text-align:right">200&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Project Pitch</title><link>http://foldable-robotics.github.io/assignments/project-pitch/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/project-pitch/</guid><description>&lt;h1 id="project-pitches">Project Pitches&lt;/h1>
+&lt;h2 id="overview">Overview&lt;/h2>
+&lt;p>The goal of this assignment is to permit those interested in pitching their ideas to attract a group of people interested in joining them. This pitch will be used to inspire and promote discussion amongst students before teams are formed.&lt;/p>
+&lt;p>&lt;em>This is your opportunity to shape your semester and to accomplish a personal research goal through class. If, after group discussion, you wish to create other pitches, you may upload them independently to the Google Drive Folder listed below.&lt;/em>&lt;/p>
+&lt;h2 id="rubric">Rubric&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">Description&lt;/th>
+&lt;th style="text-align:right">Points&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">Your Slide&lt;/td>
+&lt;td style="text-align:right">100&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
+&lt;td style="text-align:right">100&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Project Selection Survey</title><link>http://foldable-robotics.github.io/assignments/project-selection-survey/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/project-selection-survey/</guid><description>&lt;h1 id="project-selection-survey">Project Selection Survey&lt;/h1>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Prototyping</title><link>http://foldable-robotics.github.io/assignments/prototyping/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/prototyping/</guid><description>&lt;h2 id="assignment-overview">Assignment Overview&lt;/h2>
+&lt;p>The purpose of this assignment is to get you comfortable using the laminate computation in conjunction with the laminate fabrication approaches in the Innovation Hub to start making useful prototypes&lt;/p>
+&lt;h2 id="rubric">Rubric&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">Description&lt;/th>
+&lt;th style="text-align:right">Points&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
+&lt;td style="text-align:right">200&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Python for Loops. Arrays. and Plotting</title><link>http://foldable-robotics.github.io/assignments/python-for-loops-arrays-and-plotting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/python-for-loops-arrays-and-plotting/</guid><description>&lt;h1 id="python-for-loops-arrays-and-plotting">Python &lt;code>for&lt;/code> loops, Arrays, and Plotting&lt;/h1>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>The purpose of this assignment is to get to know Python and Juptyer Notebook.&lt;/p>
+&lt;h2 id="asdf">Resources&lt;/h2>
+&lt;h3 id="python">Python&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.python.org/3/tutorial/introduction.html">Basic Intro&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.python.org/3/tutorial/controlflow.html">Control Flow: For, if, etc&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://wiki.python.org/moin/ForLoop">For loops&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://www.pythonforbeginners.com/basics/list-comprehensions-in-python">List Comprehensions in Python&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="arrays">Arrays&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://docs.scipy.org/doc/numpy/user/numpy-for-matlab-users.html">NumPy for Matlab users&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://numpy.org/doc/stable/user/quickstart.html">Quickstart Tutorial&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://numpy.org/doc/stable/user/absolute_beginners.html">Absolute Beginners Tutorial&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h3 id="plotting-with-matplotlib">Plotting with Matplotlib&lt;/h3>
+&lt;ul>
+&lt;li>&lt;a href="https://matplotlib.org/3.3.3/tutorials/index.html">Matplotlib Tutorials&lt;/a>, specifically the &lt;a href="https://matplotlib.org/3.3.3/tutorials/introductory/pyplot.html#sphx-glr-tutorials-introductory-pyplot-py">pyplot&lt;/a> tutorial&lt;/li>
+&lt;li>&lt;a href="https://matplotlib.org/3.3.3/gallery/index.html">General Examples&lt;/a> and pyplot &lt;a href="https://matplotlib.org/3.3.3/tutorials/introductory/sample_plots.html#sphx-glr-tutorials-introductory-sample-plots-py">examples&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://matplotlib.org/3.1.1/gallery/subplots_axes_and_figures/figure_title.html">titles&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://matplotlib.org/3.1.1/gallery/subplots_axes_and_figures/axis_equal_demo.html">equal axis&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://matplotlib.org/3.3.3/api/_as_gen/matplotlib.pyplot.savefig.html#examples-using-matplotlib-pyplot-savefig">&lt;code>savefig()&lt;/code> examples&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="rubric">Rubric&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">Description&lt;/th>
+&lt;th style="text-align:left">Points&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">Looping&lt;/td>
+&lt;td style="text-align:left">30&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Arrays&lt;/td>
+&lt;td style="text-align:left">30&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Plotting&lt;/td>
+&lt;td style="text-align:left">40&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
+&lt;td style="text-align:left">100&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Python Functions</title><link>http://foldable-robotics.github.io/assignments/python-functions/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/python-functions/</guid><description>&lt;h1 id="python-functions">Python Functions&lt;/h1>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>The purpose of this assignment is to get you comfortable understanding the basics of python functions and how to use them with arguments and keyword arguments&lt;/p>
+&lt;p>Before starting this assignment, please become familiar with Python functions, including how you declare and call them.&lt;/p>
+&lt;h2 id="rubric">Rubric&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">Description&lt;/th>
+&lt;th style="text-align:right">Points&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">Code&lt;/td>
+&lt;td style="text-align:right">70&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Report&lt;/td>
+&lt;td style="text-align:right">30&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
+&lt;td style="text-align:right">&lt;strong>100&lt;/strong>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://pythontips.com/2013/08/04/args-and-kwargs-in-python-explained/">*args and **kwargs in python explained&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://docs.scipy.org/doc/numpy/user/numpy-for-matlab-users.html">NumPy for Matlab users&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>System Dynamics I</title><link>http://foldable-robotics.github.io/assignments/system-dynamics-i/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/system-dynamics-i/</guid><description>&lt;h1 id="system-dynamics-i">System Dynamics I&lt;/h1>
+&lt;h2 id="assignment-overview">Assignment Overview&lt;/h2>
+&lt;p>This assignment is intended to get you familiar with the dynamics of your system. We will start with the triple pendulum example and turn it into a leg.&lt;/p>
+&lt;h2 id="rubric">Rubric&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">Description&lt;/th>
+&lt;th style="text-align:right">Points&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">Draft&lt;/td>
+&lt;td style="text-align:right">30&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Step 1&lt;/td>
+&lt;td style="text-align:right">30&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Step 2&lt;/td>
+&lt;td style="text-align:right">30&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Step 3&lt;/td>
+&lt;td style="text-align:right">30&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Step 4&lt;/td>
+&lt;td style="text-align:right">30&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Step 5&lt;/td>
+&lt;td style="text-align:right">30&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Step 6&lt;/td>
+&lt;td style="text-align:right">20&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
+&lt;td style="text-align:right">&lt;strong>200&lt;/strong>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>dynamics &lt;a href="%7B%7Bsite.baseurl%7D%7D/modules/dynamics">modules&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>System Dynamics II</title><link>http://foldable-robotics.github.io/assignments/system-dynamics-ii/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/system-dynamics-ii/</guid><description>&lt;h1 id="system-dynamics-ii">System Dynamics II&lt;/h1>
+&lt;h2 id="assignment-overview">Assignment Overview&lt;/h2>
+&lt;p>The point of this assignment is to re-consolidate everything you have learned about your system back into your dynamic model. It should now include:&lt;/p>
+&lt;ul>
+&lt;li>at least one &amp;ldquo;compliant&amp;rdquo; element&lt;/li>
+&lt;li>all unknown parameters determined and included.
+&lt;ul>
+&lt;li>joint or system-level damping determined&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>An actuator model or stored energy source.&lt;/li>
+&lt;li>Ground constraints eliminated (if applicable)&lt;/li>
+&lt;li>Closed-loop constraints (if applicable)&lt;/li>
+&lt;li>valid initial condition&lt;/li>
+&lt;/ul>
+&lt;h2 id="rubric">Rubric&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">Description&lt;/th>
+&lt;th style="text-align:right">Points&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">Procedure&lt;/td>
+&lt;td style="text-align:right">50&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Discussion&lt;/td>
+&lt;td style="text-align:right">60&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Code&lt;/td>
+&lt;td style="text-align:right">50&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Figures/Videos&lt;/td>
+&lt;td style="text-align:right">40&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
+&lt;td style="text-align:right">200&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>System Kinematics</title><link>http://foldable-robotics.github.io/assignments/system-kinematics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/system-kinematics/</guid><description>&lt;h1 id="create-and-plot-kinematics">Create and Plot Kinematics&lt;/h1>
+&lt;h2 id="assignment-overview">Assignment Overview&lt;/h2>
+&lt;p>The purpose of this assignment is to model the kinematics so that you can estimate the forces, and torques, power requirements, and speed of your system. This will be done using a symbolic approach with the pynamics package&lt;/p>
+&lt;h2 id="rubric">Rubric&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">Description&lt;/th>
+&lt;th style="text-align:right">Points&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">Draft&lt;/td>
+&lt;td style="text-align:right">30&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Step 1&lt;/td>
+&lt;td style="text-align:right">30&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Step 2&lt;/td>
+&lt;td style="text-align:right">10&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Step 3&lt;/td>
+&lt;td style="text-align:right">30&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Step 4&lt;/td>
+&lt;td style="text-align:right">10&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Step 5&lt;/td>
+&lt;td style="text-align:right">10&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Step 6&lt;/td>
+&lt;td style="text-align:right">10&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Step 7&lt;/td>
+&lt;td style="text-align:right">10&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Step 8&lt;/td>
+&lt;td style="text-align:right">10&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Step 9&lt;/td>
+&lt;td style="text-align:right">10&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Discussion 1&lt;/td>
+&lt;td style="text-align:right">10&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Discussion 2&lt;/td>
+&lt;td style="text-align:right">10&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Discussion 3&lt;/td>
+&lt;td style="text-align:right">10&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Discussion 4&lt;/td>
+&lt;td style="text-align:right">10&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
+&lt;td style="text-align:right">&lt;strong>200&lt;/strong>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;!--* []()-->
+&lt;ul>
+&lt;li>Triple Pendulum Example&lt;/li>
+&lt;li>EGR557 Kinematics Module&lt;/li>
+&lt;li>EGR557 Dynamics Module&lt;/li>
+&lt;li>pynamics repository&lt;/li>
+&lt;/ul>
+&lt;h2 id="instructions">Instructions&lt;/h2>
+&lt;p>Meet with your team to go over each of the prototypes and mockups you have individually created through past homework assignments. As a team, come up with a mechanism that satisfies your team&amp;rsquo;s need for scope/tractability, manufacturability, and cost.&lt;/p>
+&lt;p>Decide as a team whether you will be using powered actuator(s) or passive energy storage device(s). This will impact data collection assignments, how much your team spends, the complexity of your prototype, and the strength of the materials you use (you may need to upgrade from light cardboard to stiffer posterboard or even fiberglass)&lt;/p>
+&lt;ol>
+&lt;li>
+&lt;p>Create a figure (either in python, in a vector-based drawing program like inkscape or illustrator, or as a solidworks rendering) of your system kinematics. Annotate the image to include:&lt;/p>
+&lt;ul>
+&lt;li>Names for each rotational reference frame. You will need one for each rigid body (that moves independently), as well as one for the Newtonian reference frame (N). Use the convention of a capital letter (A,B,C,&amp;hellip;)&lt;/li>
+&lt;li>Labeled joint locations, such as $\vec{p}_{AB}$&lt;/li>
+&lt;li>A set of orthonormal basis vectors for each frame $(\hat{n}_x,\hat{n}_y,\hat{n}_z),(\hat{a}_x,\hat{a}_y,\hat{a}_z)$. It is best practice to align one of the basis vectors (like $\hat{a}_x$) with each rigid link.&lt;/li>
+&lt;li>variable names for each state variable $(q_1,q_2,x_1,y_1,\ldots)$&lt;/li>
+&lt;li>geometric constants such as link lengths (like $l_1,l_2$)&lt;/li>
+&lt;/ul>
+&lt;p>Save this figure for reuse later. You will need to add mass and inertial information as well as system stiffness information, so make sure you do your work in a way that permits reusing and modifying the figure.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Make the device in paper or cardboard. You need an up-to-date model if it has changed from your individual assignments. The paper model should dimensionally match your code.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Using a pynamics-based script, develop a kinematic model for your device. Following the triple pendulum example,&lt;/p>
+&lt;ol>
+&lt;li>Import packages&lt;/li>
+&lt;li>Define variables and constants (you may want to add, remove, or rename variables to match your figure)&lt;/li>
+&lt;li>Declare frames (you may need to add frames or rename them)&lt;/li>
+&lt;li>Define frame rotations (you may want to switch the axis about which frames rotate)&lt;/li>
+&lt;li>Compose kinematics (this depends entirely on the geometry of your system)&lt;/li>
+&lt;li>Take time-derivatives of position vectors&lt;/li>
+&lt;li>Assemble into a Jacobian that maps input velocities to output velocities.&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;li>
+&lt;p>Select or Solve for a valid initial condition that represents the system in the middle of a typical gait, when it is both moving and when forces are being applied to it (or to the world by it)&lt;/p>
+&lt;p>&lt;em>Despite the fact that you will be using a symbolic representation, you still need to solve for a valid initial condition if your device is a &amp;ldquo;parallel mechanism&amp;rdquo;. This may be done using a nonlinear solver such as &lt;code>scipy.optimize.minimize&lt;/code>&lt;/em>&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Plot the system in this position.&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>From your biomechanics-based specifications, define one or more force vector estimates (one for each end effector) that the system should be expected to experience. Consider including, based on your research&lt;/p>
+&lt;ul>
+&lt;li>the force of gravity exerted by the mass of a &amp;ldquo;payload&amp;rdquo; or the main body of the robot.&lt;/li>
+&lt;li>the acceleration the system experiences during a typical gait&lt;/li>
+&lt;li>ground reaction forces measured from biomechanics studies.&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>
+&lt;p>Calculate the force or torque required at the input to satisfy the end-effector force requirements&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>Estimate the velocity of the end-effector in this configuration. Using the Jacobian, calculate the speed required by the input(s) to achieve that output motion.&lt;/p>
+&lt;p>&lt;em>This may not be directly solvable based on your device kinematics; an iterative guess-and-check approach is ok.&lt;/em>&lt;/p>
+&lt;/li>
+&lt;li></description></item><item><title>Website Update I</title><link>http://foldable-robotics.github.io/assignments/website-update-i/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/website-update-i/</guid><description>&lt;h1 id="website-update-i">Website Update I&lt;/h1>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>The purpose of this assignment is to update your team&amp;rsquo;s progress towards creating a public-facing, unified project report.&lt;/p>
+&lt;h2 id="rubric">Rubric&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">Description&lt;/th>
+&lt;th style="text-align:left">Action&lt;/th>
+&lt;th style="text-align:right">Points&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">Main Page&lt;/td>
+&lt;td style="text-align:left">new&lt;/td>
+&lt;td style="text-align:right">&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Research Question&lt;/td>
+&lt;td style="text-align:left">new&lt;/td>
+&lt;td style="text-align:right">25&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Biomechanics&lt;/td>
+&lt;td style="text-align:left">new&lt;/td>
+&lt;td style="text-align:right">25&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Kinematics&lt;/td>
+&lt;td style="text-align:left">new&lt;/td>
+&lt;td style="text-align:right">25&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Presentations&lt;/td>
+&lt;td style="text-align:left">Add Presentation 1&lt;/td>
+&lt;td style="text-align:right">25&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
+&lt;td style="text-align:left">&lt;/td>
+&lt;td style="text-align:right">&lt;strong>100&lt;/strong>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Website Update II</title><link>http://foldable-robotics.github.io/assignments/website-update-ii/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/website-update-ii/</guid><description>&lt;h1 id="website-update-ii">Website Update II&lt;/h1>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>The purpose of this assignment is to update your team&amp;rsquo;s progress towards creating a public-facing, unified project report.&lt;/p>
+&lt;h2 id="rubric">Rubric&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">Description&lt;/th>
+&lt;th style="text-align:left">Action&lt;/th>
+&lt;th style="text-align:right">Points&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">Main Page&lt;/td>
+&lt;td style="text-align:left">Update&lt;/td>
+&lt;td style="text-align:right">&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Research Question&lt;/td>
+&lt;td style="text-align:left">update&lt;/td>
+&lt;td style="text-align:right">20&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Biomechanics&lt;/td>
+&lt;td style="text-align:left">update&lt;/td>
+&lt;td style="text-align:right">20&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Kinematics&lt;/td>
+&lt;td style="text-align:left">update&lt;/td>
+&lt;td style="text-align:right">20&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">&lt;strong>System Dynamics&lt;/strong>&lt;/td>
+&lt;td style="text-align:left">new&lt;/td>
+&lt;td style="text-align:right">&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Dynamics I&lt;/td>
+&lt;td style="text-align:left">new&lt;/td>
+&lt;td style="text-align:right">40&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">System Identification Plan&lt;/td>
+&lt;td style="text-align:left">new&lt;/td>
+&lt;td style="text-align:right">40&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">System Identification&lt;/td>
+&lt;td style="text-align:left">new&lt;/td>
+&lt;td style="text-align:right">40&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Presentations&lt;/td>
+&lt;td style="text-align:left">Add Presentation 2&lt;/td>
+&lt;td style="text-align:right">20&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
+&lt;td style="text-align:left">&lt;/td>
+&lt;td style="text-align:right">&lt;strong>200&lt;/strong>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Website Update III</title><link>http://foldable-robotics.github.io/assignments/website-update-iii/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/website-update-iii/</guid><description>&lt;h1 id="website-update-iii">Website Update III&lt;/h1>
+&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>The purpose of this assignment is to update your team&amp;rsquo;s progress towards creating a public-facing, unified project report.&lt;/p>
+&lt;h2 id="rubric">Rubric&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">Assignments&lt;/th>
+&lt;th style="text-align:left">Grade Consideration&lt;/th>
+&lt;th style="text-align:left">Points&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">Main Page&lt;/td>
+&lt;td style="text-align:left">Update&lt;/td>
+&lt;td style="text-align:left">&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Research Question&lt;/td>
+&lt;td style="text-align:left">Update&lt;/td>
+&lt;td style="text-align:left">20&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Biomechanics Background &amp;amp; Specifications&lt;/td>
+&lt;td style="text-align:left">Update&lt;/td>
+&lt;td style="text-align:left">20&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Kinematics&lt;/td>
+&lt;td style="text-align:left">Update&lt;/td>
+&lt;td style="text-align:left">20&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Dynamics (I, Prep, Plan, II)&lt;/td>
+&lt;td style="text-align:left">Update&lt;/td>
+&lt;td style="text-align:left">20&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Design Optimization, Experiment Design, Data Collection, and Analysis&lt;/td>
+&lt;td style="text-align:left">New&lt;/td>
+&lt;td style="text-align:left">80&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Manufacturing Planning&lt;/td>
+&lt;td style="text-align:left">New&lt;/td>
+&lt;td style="text-align:left">40&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Presentations&lt;/td>
+&lt;td style="text-align:left">Add Presentation 3&lt;/td>
+&lt;td style="text-align:left">20&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Data&lt;/td>
+&lt;td style="text-align:left">New&lt;/td>
+&lt;td style="text-align:left">20&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Gallery&lt;/td>
+&lt;td style="text-align:left">New&lt;/td>
+&lt;td style="text-align:left">20&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">CAD&lt;/td>
+&lt;td style="text-align:left">New&lt;/td>
+&lt;td style="text-align:left">20&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Code&lt;/td>
+&lt;td style="text-align:left">New&lt;/td>
+&lt;td style="text-align:left">20&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
+&lt;td style="text-align:left">&lt;/td>
+&lt;td style="text-align:left">&lt;strong>300&lt;/strong>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item></channel></rss>
