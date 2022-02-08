@@ -144,18 +144,18 @@ $$</p>
 
 <span style=color:#111>a</span> <span style=color:#f92672>=</span> <span style=color:#111>sympy</span><span style=color:#f92672>.</span><span style=color:#111>symbols</span><span style=color:#111>(</span><span style=color:#d88200>&#39;a&#39;</span><span style=color:#111>)</span>
 
-<span style=color:#111>N</span> <span style=color:#f92672>=</span> <span style=color:#111>Frame</span><span style=color:#111>(</span><span style=color:#d88200>&#39;N&#39;</span><span style=color:#111>)</span>
-<span style=color:#111>A</span> <span style=color:#f92672>=</span> <span style=color:#111>Frame</span><span style=color:#111>(</span><span style=color:#d88200>&#39;A&#39;</span><span style=color:#111>)</span>
+<span style=color:#111>N</span> <span style=color:#f92672>=</span> <span style=color:#111>Frame</span><span style=color:#111>(</span><span style=color:#d88200>&#39;N&#39;</span><span style=color:#111>,</span><span style=color:#111>system</span><span style=color:#111>)</span>
+<span style=color:#111>A</span> <span style=color:#f92672>=</span> <span style=color:#111>Frame</span><span style=color:#111>(</span><span style=color:#d88200>&#39;A&#39;</span><span style=color:#111>,</span><span style=color:#111>system</span><span style=color:#111>)</span>
 
 <span style=color:#75715e>#system.set_newtonian(N)</span>
-<span style=color:#111>A</span><span style=color:#f92672>.</span><span style=color:#111>rotate_fixed_axis_directed</span><span style=color:#111>(</span><span style=color:#111>N</span><span style=color:#111>,[</span><span style=color:#ae81ff>0</span><span style=color:#111>,</span><span style=color:#ae81ff>0</span><span style=color:#111>,</span><span style=color:#ae81ff>1</span><span style=color:#111>],</span><span style=color:#111>a</span><span style=color:#111>,</span><span style=color:#111>system</span><span style=color:#111>)</span>
+<span style=color:#111>A</span><span style=color:#f92672>.</span><span style=color:#111>rotate_fixed_axis</span><span style=color:#111>(</span><span style=color:#111>N</span><span style=color:#111>,[</span><span style=color:#ae81ff>0</span><span style=color:#111>,</span><span style=color:#ae81ff>0</span><span style=color:#111>,</span><span style=color:#ae81ff>1</span><span style=color:#111>],</span><span style=color:#111>a</span><span style=color:#111>,</span><span style=color:#111>system</span><span style=color:#111>)</span>
 
-<span style=color:#111>A</span><span style=color:#f92672>.</span><span style=color:#111>getR</span><span style=color:#111>(</span><span style=color:#111>N</span><span style=color:#111>)</span>
-</code></pre></div><pre><code>⎡cos(a)  -sin(a)  0⎤
-⎢                  ⎥
-⎢sin(a)  cos(a)   0⎥
-⎢                  ⎥
-⎣  0        0     1⎦
+<span style=color:#111>result</span> <span style=color:#f92672>=</span> <span style=color:#111>A</span><span style=color:#f92672>.</span><span style=color:#111>get_r_from</span><span style=color:#111>(</span><span style=color:#111>N</span><span style=color:#111>)</span>
+<span style=color:#111>result</span>
+</code></pre></div><pre><code>Matrix([
+[ cos(a), sin(a), 0],
+[-sin(a), cos(a), 0],
+[      0,      0, 1]])
 </code></pre>
 <div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#00a8c8>del</span> <span style=color:#111>system</span><span style=color:#111>,</span><span style=color:#111>N</span><span style=color:#111>,</span><span style=color:#111>A</span><span style=color:#111>,</span><span style=color:#111>a</span>
 </code></pre></div><h2 id=usage>Usage</h2>
@@ -166,6 +166,9 @@ $$</p>
 <li>They are used in conjunction with differentiable state variables to determine rotational velocity and acceleration between frames</li>
 </ul>
 <p>Rotations in pynamics are typically generated in a sequential order from a base, or Newtonian frame (a non-accelerating world frame). The ordering is not required, because internally pynamics establishes connections to neighboring rotations by creating a tree-like map of all frames connected to each other. This can be done with or without explicitly defining the Newtonian frame first (though other functions dealing with differentiation require this declaration first)</p>
+<h2 id=multiple-rotations>Multiple Rotations</h2>
+<p>Rotations can be chained together and resolved into a single expression:</p>
+<p>$${}^N{\textbf{R}}^{B} = {}^{N}{\textbf{R}}^{A} {}^N{\textbf{R}}^{B}$$</p>
 <div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#f92672>import</span> <span style=color:#111>pynamics</span>
 <span style=color:#f92672>from</span> <span style=color:#111>pynamics.system</span> <span style=color:#f92672>import</span> <span style=color:#111>System</span>
 <span style=color:#f92672>from</span> <span style=color:#111>pynamics.frame</span> <span style=color:#f92672>import</span> <span style=color:#111>Frame</span>
@@ -174,52 +177,34 @@ $$</p>
 <span style=color:#111>system</span> <span style=color:#f92672>=</span> <span style=color:#111>System</span><span style=color:#111>()</span>
 <span style=color:#111>pynamics</span><span style=color:#f92672>.</span><span style=color:#111>set_system</span><span style=color:#111>(</span><span style=color:#111>__name__</span><span style=color:#111>,</span><span style=color:#111>system</span><span style=color:#111>)</span>
 
-<span style=color:#111>a</span><span style=color:#111>,</span><span style=color:#111>b</span><span style=color:#111>,</span><span style=color:#111>c</span> <span style=color:#f92672>=</span> <span style=color:#111>sympy</span><span style=color:#f92672>.</span><span style=color:#111>symbols</span><span style=color:#111>(</span><span style=color:#d88200>&#39;a,b,c&#39;</span><span style=color:#111>)</span>
+<span style=color:#111>a</span><span style=color:#111>,</span><span style=color:#111>b</span> <span style=color:#f92672>=</span> <span style=color:#111>sympy</span><span style=color:#f92672>.</span><span style=color:#111>symbols</span><span style=color:#111>(</span><span style=color:#d88200>&#39;a,b&#39;</span><span style=color:#111>)</span>
 
-<span style=color:#111>N</span> <span style=color:#f92672>=</span> <span style=color:#111>Frame</span><span style=color:#111>(</span><span style=color:#d88200>&#39;N&#39;</span><span style=color:#111>)</span>
-<span style=color:#111>A</span> <span style=color:#f92672>=</span> <span style=color:#111>Frame</span><span style=color:#111>(</span><span style=color:#d88200>&#39;A&#39;</span><span style=color:#111>)</span>
-<span style=color:#111>B</span> <span style=color:#f92672>=</span> <span style=color:#111>Frame</span><span style=color:#111>(</span><span style=color:#d88200>&#39;B&#39;</span><span style=color:#111>)</span>
-<span style=color:#111>C</span> <span style=color:#f92672>=</span> <span style=color:#111>Frame</span><span style=color:#111>(</span><span style=color:#d88200>&#39;C&#39;</span><span style=color:#111>)</span>
+<span style=color:#111>N</span> <span style=color:#f92672>=</span> <span style=color:#111>Frame</span><span style=color:#111>(</span><span style=color:#d88200>&#39;N&#39;</span><span style=color:#111>,</span><span style=color:#111>system</span><span style=color:#111>)</span>
+<span style=color:#111>A</span> <span style=color:#f92672>=</span> <span style=color:#111>Frame</span><span style=color:#111>(</span><span style=color:#d88200>&#39;A&#39;</span><span style=color:#111>,</span><span style=color:#111>system</span><span style=color:#111>)</span>
+<span style=color:#111>B</span> <span style=color:#f92672>=</span> <span style=color:#111>Frame</span><span style=color:#111>(</span><span style=color:#d88200>&#39;B&#39;</span><span style=color:#111>,</span><span style=color:#111>system</span><span style=color:#111>)</span>
 
 <span style=color:#75715e>#system.set_newtonian(N)</span>
-<span style=color:#111>A</span><span style=color:#f92672>.</span><span style=color:#111>rotate_fixed_axis_directed</span><span style=color:#111>(</span><span style=color:#111>N</span><span style=color:#111>,[</span><span style=color:#ae81ff>0</span><span style=color:#111>,</span><span style=color:#ae81ff>0</span><span style=color:#111>,</span><span style=color:#ae81ff>1</span><span style=color:#111>],</span><span style=color:#111>a</span><span style=color:#111>,</span><span style=color:#111>system</span><span style=color:#111>)</span>
-<span style=color:#111>B</span><span style=color:#f92672>.</span><span style=color:#111>rotate_fixed_axis_directed</span><span style=color:#111>(</span><span style=color:#111>A</span><span style=color:#111>,[</span><span style=color:#ae81ff>0</span><span style=color:#111>,</span><span style=color:#ae81ff>1</span><span style=color:#111>,</span><span style=color:#ae81ff>0</span><span style=color:#111>],</span><span style=color:#111>b</span><span style=color:#111>,</span><span style=color:#111>system</span><span style=color:#111>)</span>
-<span style=color:#111>C</span><span style=color:#f92672>.</span><span style=color:#111>rotate_fixed_axis_directed</span><span style=color:#111>(</span><span style=color:#111>N</span><span style=color:#111>,[</span><span style=color:#ae81ff>1</span><span style=color:#111>,</span><span style=color:#ae81ff>0</span><span style=color:#111>,</span><span style=color:#ae81ff>0</span><span style=color:#111>],</span><span style=color:#111>c</span><span style=color:#111>,</span><span style=color:#111>system</span><span style=color:#111>)</span>
-</code></pre></div><div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>A</span><span style=color:#f92672>.</span><span style=color:#111>getR</span><span style=color:#111>(</span><span style=color:#111>N</span><span style=color:#111>)</span>
-</code></pre></div><pre><code>⎡cos(a)  -sin(a)  0⎤
-⎢                  ⎥
-⎢sin(a)  cos(a)   0⎥
-⎢                  ⎥
-⎣  0        0     1⎦
+<span style=color:#111>A</span><span style=color:#f92672>.</span><span style=color:#111>rotate_fixed_axis</span><span style=color:#111>(</span><span style=color:#111>N</span><span style=color:#111>,[</span><span style=color:#ae81ff>0</span><span style=color:#111>,</span><span style=color:#ae81ff>0</span><span style=color:#111>,</span><span style=color:#ae81ff>1</span><span style=color:#111>],</span><span style=color:#111>a</span><span style=color:#111>,</span><span style=color:#111>system</span><span style=color:#111>)</span>
+<span style=color:#111>B</span><span style=color:#f92672>.</span><span style=color:#111>rotate_fixed_axis</span><span style=color:#111>(</span><span style=color:#111>A</span><span style=color:#111>,[</span><span style=color:#ae81ff>0</span><span style=color:#111>,</span><span style=color:#ae81ff>1</span><span style=color:#111>,</span><span style=color:#ae81ff>0</span><span style=color:#111>],</span><span style=color:#111>b</span><span style=color:#111>,</span><span style=color:#111>system</span><span style=color:#111>)</span>
+<span style=color:#111>R_BA</span>  <span style=color:#f92672>=</span> <span style=color:#111>B</span><span style=color:#f92672>.</span><span style=color:#111>get_r_from</span><span style=color:#111>(</span><span style=color:#111>A</span><span style=color:#111>)</span>
+<span style=color:#111>R_AN</span>  <span style=color:#f92672>=</span> <span style=color:#111>A</span><span style=color:#f92672>.</span><span style=color:#111>get_r_from</span><span style=color:#111>(</span><span style=color:#111>N</span><span style=color:#111>)</span>
+<span style=color:#111>RBN2</span> <span style=color:#f92672>=</span> <span style=color:#111>R_BA</span><span style=color:#f92672>*</span><span style=color:#111>R_AN</span>
+<span style=color:#111>RBN2</span>
+</code></pre></div><pre><code>Matrix([
+[cos(a)*cos(b), sin(a)*cos(b), -sin(b)],
+[      -sin(a),        cos(a),       0],
+[sin(b)*cos(a), sin(a)*sin(b),  cos(b)]])
 </code></pre>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>B</span><span style=color:#f92672>.</span><span style=color:#111>getR</span><span style=color:#111>(</span><span style=color:#111>N</span><span style=color:#111>)</span>
-</code></pre></div><pre><code>⎡cos(a)⋅cos(b)  -sin(a)  sin(b)⋅cos(a)⎤
-⎢                                     ⎥
-⎢sin(a)⋅cos(b)  cos(a)   sin(a)⋅sin(b)⎥
-⎢                                     ⎥
-⎣   -sin(b)        0        cos(b)    ⎦
-</code></pre>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>C</span><span style=color:#f92672>.</span><span style=color:#111>getR</span><span style=color:#111>(</span><span style=color:#111>N</span><span style=color:#111>)</span>
-</code></pre></div><pre><code>⎡1    0        0   ⎤
-⎢                  ⎥
-⎢0  cos(c)  -sin(c)⎥
-⎢                  ⎥
-⎣0  sin(c)  cos(c) ⎦
-</code></pre>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>C</span><span style=color:#f92672>.</span><span style=color:#111>getR</span><span style=color:#111>(</span><span style=color:#111>B</span><span style=color:#111>)</span>
-</code></pre></div><pre><code>⎡cos(a)⋅cos(b)  sin(a)⋅cos(b)⋅cos(c) - sin(b)⋅sin(c)  -sin(a)⋅sin(c)⋅cos(b) - 
-⎢                                                                             
-⎢   -sin(a)                cos(a)⋅cos(c)                         -sin(c)⋅cos(a
-⎢                                                                             
-⎣sin(b)⋅cos(a)  sin(a)⋅sin(b)⋅cos(c) + sin(c)⋅cos(b)  -sin(a)⋅sin(b)⋅sin(c) + 
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#75715e>#------</span>
 
-sin(b)⋅cos(c)⎤
-             ⎥
-)            ⎥
-             ⎥
-cos(b)⋅cos(c)⎦
+<span style=color:#111>R_BN</span>  <span style=color:#f92672>=</span> <span style=color:#111>B</span><span style=color:#f92672>.</span><span style=color:#111>get_r_from</span><span style=color:#111>(</span><span style=color:#111>N</span><span style=color:#111>)</span>
+<span style=color:#111>R_BN</span>
+</code></pre></div><pre><code>Matrix([
+[cos(a)*cos(b), sin(a)*cos(b), -sin(b)],
+[      -sin(a),        cos(a),       0],
+[sin(b)*cos(a), sin(a)*sin(b),  cos(b)]])
 </code></pre>
-<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#00a8c8>del</span> <span style=color:#111>a</span><span style=color:#111>,</span><span style=color:#111>b</span><span style=color:#111>,</span><span style=color:#111>c</span><span style=color:#111>,</span><span style=color:#111>N</span><span style=color:#111>,</span><span style=color:#111>A</span><span style=color:#111>,</span><span style=color:#111>B</span><span style=color:#111>,</span><span style=color:#111>C</span>
+<div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#00a8c8>del</span> <span style=color:#111>a</span><span style=color:#111>,</span><span style=color:#111>b</span><span style=color:#111>,</span><span style=color:#111>N</span><span style=color:#111>,</span><span style=color:#111>A</span><span style=color:#111>,</span><span style=color:#111>B</span>
 </code></pre></div>
 </article>
 </main>
