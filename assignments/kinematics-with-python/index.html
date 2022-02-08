@@ -300,18 +300,18 @@ Documents
 <p>use the <code>.time_derivative()</code> method of $\vec{p}^{B_{tip}}$ to take the time derivative of $\vec{p}^{B_{tip}}$ to obtain $\vec{v}^{B_{tip}}$, where:</p>
 <p>$$\vec{v}^{B_{tip}}=\dot{\vec{p}}^{B_{tip}} = \frac{d^{N}(\vec{p}^{B_{tip}})}{dt}$$</p>
 <p>with reference to the Newtonian frame, $N$. In the above expression, the $d^N$ denotes the derivative with reference to the $N$ frame.</p>
-<p><em><strong>Note:</strong> the</em> <code>.time_derivative()</code> <em>method takes two optional keyword variables: first, the frame of reference you are taking the derivative in (it default&rsquo;s to the declared Newtonian frame), and second, the current pynamics system. You may keep these optional terms blank in this case.</em></p>
+<p><strong>Note:</strong> the <code>.time_derivative()</code> method takes two optional keyword variables: first, the frame of reference you are taking the derivative in (it default&rsquo;s to the declared Newtonian frame), and second, the current pynamics system. You may keep these optional terms blank in this case.</p>
 </li>
 <li>
-<p>Obtain the scalar components of $\vec{v}^{B_{tip}}$ in the $\hat{n}_x$, $\hat{n}_y$, and $\hat{n}<em>z$ directions, and save as $v^{B</em>{tip}}<em>x$, $v^{B</em>{tip}}<em>y$, and $v^{B</em>{tip}}_z$.</p>
+<p>Obtain the scalar components of $\vec{v}^{B_{tip}}$ in the $\hat{n}_x$, $\hat{n}_y$, and $\hat{n}_z$
+directions, and save as $v^{B{tip}}_x,v^{B{tip}}_y,v^{B{tip}}_z$.</p>
 </li>
 <li>
-<p>Use the <code>sympy.Matrix()</code> function to create a 3x1 matrix $\textbf{v}$, where</p>
-<p>$$\textbf{v}=\left[\begin{array}{c} v^{B_{tip}}<em>x\v^{B</em>{tip}}<em>y\v^{B</em>{tip}}_z\end{array}\right]$$</p>
+<p>Use the <code>sympy.Matrix()</code> function to create a 3x1 matrix $\textbf{v}$, where $$\textbf{v}=\left[\begin{array}{c} v^{B{tip}}_x \\ v^{B{tip}}_y \\ v^{B{tip}}_z\end{array}\right]$$</p>
 </li>
 <li>
 <p>Use the <code>sympy.Matrix()</code> function to create a 2x1 matrix $\dot{\textbf{q}}$ (or <code>q_d</code> in python), where</p>
-<p>$$\dot{\textbf{q}}=\left[\begin{array}{c} \dot{q}_A \ \dot{q}_B \end{array}\right]$$</p>
+<p>$$\dot{\textbf{q}}=\left[\begin{array}{c} \dot{q}_A \\ \dot{q}_B \end{array}\right]$$</p>
 </li>
 <li>
 <p>Use the <code>.jacobian()</code> method of $\textbf{v}$ to compute its Jacobian $\textbf{J}$ with respect to $\dot{\textbf{q}}$. (This should result in a 3x2 matrix).</p>
@@ -320,11 +320,11 @@ Documents
 <p>Using the <code>.subs()</code> method of $\textbf{J}$, identify the numerical value of new variables $\textbf{J}_1$ and $\textbf{J}_2$, by substituting <code>system.constant_values</code> and then either <code>state1</code> or <code>state2</code>. This will result in two new 3x2 arrays with number literals (rather than a symbolic expression).</p>
 </li>
 <li>
-<p>Using $\textbf{J}_1$, $\textbf{J}_2$, and $\dot{\textbf{q}}=\left[\begin{array}{c}3.3\2.4\end{array}\right]$, identify $\textbf{v}_1$ and $\textbf{v}_2$</p>
+<p>Using $\textbf{J}_1$, $\textbf{J}_2$, and $\dot{\textbf{q}}=\left[\begin{array}{c}3.3 \\ 2.4\end{array}\right]$, identify $\textbf{v}_1$ and $\textbf{v}_2$</p>
 </li>
 <li>
 <p>Now, assume that a force $\vec{f}$, formulated as a <code>sympy.Matrix()</code>, where</p>
-<p>$$\textbf{f}=\left[\begin{array}{c}1.4\2.6\-3.2\end{array}\right]$$
+<p>$$\textbf{f}=\left[\begin{array}{c}1.4 \\ 2.6 \\ -3.2\end{array}\right]$$
 is applied to the end-effector. Compute the torques at the robot&rsquo;s joints at both <code>state1</code> and <code>state2</code>.</p>
 </li>
 </ol>
