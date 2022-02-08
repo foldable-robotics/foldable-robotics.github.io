@@ -404,12 +404,71 @@ to find good starting points for references and keywords.&lt;/li>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
+&lt;td style="text-align:left">1.&lt;/td>
+&lt;td style="text-align:right">10&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">2.&lt;/td>
+&lt;td style="text-align:right">10&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">3.&lt;/td>
+&lt;td style="text-align:right">10&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">4.&lt;/td>
+&lt;td style="text-align:right">10&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">5.&lt;/td>
+&lt;td style="text-align:right">10&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">6.&lt;/td>
+&lt;td style="text-align:right">10&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">7.&lt;/td>
+&lt;td style="text-align:right">10&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">8.&lt;/td>
+&lt;td style="text-align:right">10&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">9.&lt;/td>
+&lt;td style="text-align:right">10&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">10.&lt;/td>
+&lt;td style="text-align:right">10&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">11.&lt;/td>
+&lt;td style="text-align:right">10&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">12.&lt;/td>
+&lt;td style="text-align:right">10&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">13.&lt;/td>
+&lt;td style="text-align:right">15&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">14.&lt;/td>
+&lt;td style="text-align:right">15&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Discussion&lt;/td>
+&lt;td style="text-align:right">50&lt;/td>
+&lt;/tr>
+&lt;tr>
 &lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
 &lt;td style="text-align:right">200&lt;/td>
 &lt;/tr>
 &lt;/tbody>
-&lt;/table>
-&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Make a Pop-up Book</title><link>http://foldable-robotics.github.io/assignments/make-a-popup-book/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/make-a-popup-book/</guid><description>&lt;h1 id="make-a-pop-up-book">Make a Pop-up Book&lt;/h1>
+&lt;/table></description></item><item><title>Make a Pop-up Book</title><link>http://foldable-robotics.github.io/assignments/make-a-popup-book/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/make-a-popup-book/</guid><description>&lt;h1 id="make-a-pop-up-book">Make a Pop-up Book&lt;/h1>
 &lt;h2 id="assignment-overview">Assignment Overview&lt;/h2>
 &lt;p>The goal of this assignment is to search externally for origami-inspired mechanisms you could use for your project. Additionally, this assignment is meant to make you think critically about how the manufacturing of foldable robots is intertwined with cutting and joining processes, and to appreciate the automation&lt;/p>
 &lt;h2 id="rubric">Rubric&lt;/h2>
