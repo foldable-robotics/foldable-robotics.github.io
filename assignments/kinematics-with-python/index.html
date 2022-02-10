@@ -317,7 +317,7 @@ directions, and save as $v^{B{tip}}_x,v^{B{tip}}_y.</p>
 <p>Use the <code>.jacobian()</code> method of $\textbf{v}$ to compute its Jacobian $\textbf{J}$ with respect to $\dot{\textbf{q}}$. (This should result in a 2x2 matrix).</p>
 </li>
 <li>
-<p>Using the <code>.subs()</code> method of $\textbf{J}$, identify the numerical value of new variables $\textbf{J}_1$ and $\textbf{J}_2$, by substituting <code>system.constant_values</code> and then either <code>state1</code> or <code>state2</code>. This will result in two new 3x2 arrays with number literals (rather than a symbolic expression).</p>
+<p>Using the <code>.subs()</code> method of $\textbf{J}$, identify the numerical value of new variables $\textbf{J}_1$ and $\textbf{J}_2$, by substituting <code>system.constant_values</code> and then either <code>state1</code> or <code>state2</code>. This will result in two new 2x2 arrays with number literals (rather than a symbolic expression).</p>
 </li>
 <li>
 <p>Using $\textbf{J}_1$, $\textbf{J}_2$, and $\dot{\textbf{q}}=\left[\begin{array}{c}3.3 \\ 2.4\end{array}\right]$, identify $\textbf{v}_1$ and $\textbf{v}_2$</p>
