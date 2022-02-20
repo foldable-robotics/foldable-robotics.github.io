@@ -263,25 +263,25 @@ Documents
 </code></pre>
 <hr>
 <h2 id=consider-constraint-equations>Consider Constraint Equations</h2>
-<p>$$ 0 = \left[\begin{array}{c}
-f_1(q_1,&mldr;q_n)
-\
-\vdots\
-f_m(q_1,&mldr;q_n)
-\end{array}\right]$$</p>
+$$ 0 = \left[\begin{array}{c}
+f_1(q_1,...q_n)
+\\
+\vdots\\
+f_m(q_1,...q_n)
+\end{array}\right]$$
 <h2 id=take-the-derivative>Take the derivative</h2>
-<p>$$ 0 = \left[\begin{array}{c}
-\dot{f}<em>1(q_1,&mldr;q_n)
-\
-\vdots\
-\dot{f}<em>m(q_1,&mldr;q_n)
+$$ 0 = \left[\begin{array}{c}
+\dot{f}_1(q_1,...q_n)
+\\
+\vdots\\
+\dot{f}_m(q_1,...q_n)
 \end{array}\right]=\underbrace{\left[\begin{array}{ccc}
-j</em>{1q_1} & \dots & j</em>{1q_n}
-\
-\vdots & \ddots & \vdots \
+j_{1q_1} & \dots & j_{1q_n}
+\\
+\vdots & \ddots & \vdots \\
 j_{mq_1} & \dots & j_{mq_n}
-\end{array}\right]}<em>{J</em>{c}}\left[\begin{array}{c}
-\dot{q}_1\\vdots\\dot{q}_n\end{array}\right]$$</p>
+\end{array}\right]}_{J_{c}}\left[\begin{array}{c}
+\dot{q}_1\\\vdots\\\dot{q}_n\end{array}\right]$$
 <div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>eq_d</span><span style=color:#f92672>=</span><span style=color:#111>[(</span><span style=color:#111>system</span><span style=color:#f92672>.</span><span style=color:#111>derivative</span><span style=color:#111>(</span><span style=color:#111>item</span><span style=color:#111>))</span> <span style=color:#00a8c8>for</span> <span style=color:#111>item</span> <span style=color:#f92672>in</span> <span style=color:#111>eq_scalar</span><span style=color:#111>]</span>
 <span style=color:#111>eq_d</span> <span style=color:#f92672>=</span> <span style=color:#111>sympy</span><span style=color:#f92672>.</span><span style=color:#111>Matrix</span><span style=color:#111>(</span><span style=color:#111>eq_d</span><span style=color:#111>)</span>
 <span style=color:#111>eq_d</span> <span style=color:#f92672>=</span> <span style=color:#111>eq_d</span><span style=color:#f92672>.</span><span style=color:#111>subs</span><span style=color:#111>(</span><span style=color:#111>system</span><span style=color:#f92672>.</span><span style=color:#111>constant_values</span><span style=color:#111>)</span>
@@ -293,16 +293,16 @@ j_{mq_1} & \dots & j_{mq_n}
 </code></pre>
 <p>Now, given a valid configuration, solve for the linearized, velocity-based constraint equation. If</p>
 <p>$$0= \textbf{J}_c \dot{q} = \textbf{A} \dot{q}_i + \textbf{B} \dot{q}_d$$</p>
-<p>where $\textbf{A}<em>{(m \times (n-m))}$, $\textbf{B}</em>{(m \times m)}$</p>
-<p>$$\dot{q}=\left[\begin{array}{c}
-\dot{q}<em>{i1} \
-\vdots \
-\dot{q}</em>{i(n-m)}\
+<p>where $\textbf{A}_{(m \times (n-m))}$, $\textbf{B}_{(m \times m)}$ </p>
+$$\dot{q}=\left[\begin{array}{c}
+\dot{q}_{i1} \\
+\vdots \\
+\dot{q}_{i(n-m)}\\
 \hline
-\dot{q}<em>{d1}\
-\vdots\
-\dot{q}</em>{dm}
-\end{array}\right]$$</p>
+\dot{q}_{d1}\\
+\vdots\\
+\dot{q}_{dm}
+\end{array}\right]$$
 <p>Define independent variables as a Sympy Matrix</p>
 <div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>qi</span> <span style=color:#f92672>=</span> <span style=color:#111>sympy</span><span style=color:#f92672>.</span><span style=color:#111>Matrix</span><span style=color:#111>([</span><span style=color:#111>qA_d</span><span style=color:#111>])</span>
 <span style=color:#111>qi</span>
@@ -332,9 +332,9 @@ j_{mq_1} & \dots & j_{mq_n}
 [                                         0,                                           1,                                 0]])
 </code></pre>
 <h2 id=solve-the-internal-inputoutput-jacobian-to-find-q_d>Solve the internal input/output Jacobian to find $q_d$</h2>
-<p>$$0= \textbf{A} \dot{q}_i + \textbf{B} \dot{q}_d$$
+$$0= \textbf{A} \dot{q}_i + \textbf{B} \dot{q}_d$$
 $$-\textbf{B}\dot{q}_d = \textbf{A}\dot{q}_i$$
-$$\dot{q}<em>d = \underbrace{-\textbf{B}^{-1}\textbf{A}}</em>{C}\dot{q}_i$$</p>
+$$\dot{q}_d = \underbrace{-\textbf{B}^{-1}\textbf{A}}_{C}\dot{q}_i$$
 <div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>J_int</span><span style=color:#f92672>=</span> <span style=color:#f92672>-</span><span style=color:#111>BB</span><span style=color:#f92672>.</span><span style=color:#111>inv</span><span style=color:#111>()</span><span style=color:#f92672>*</span><span style=color:#111>AA</span>
 <span style=color:#111>J_int</span>
 </code></pre></div><pre><code>Matrix([
@@ -352,10 +352,10 @@ $$\dot{q}<em>d = \underbrace{-\textbf{B}^{-1}\textbf{A}}</em>{C}\dot{q}_i$$</p>
 </code></pre>
 <p>Solving for the dependent variables $q_d$:</p>
 <h2 id=apply-to-end-effector>Apply to end-effector</h2>
-<p>$$\textbf{v}<em>{out} = \textbf{J}\dot{\textbf{q}}$$
-$$\textbf{v}</em>{out} = \textbf{D}\dot{\textbf{q}}_i+\textbf{E}\dot{\textbf{q}}<em>d$$
-$$\textbf{v}</em>{out} = \textbf{D}\dot{\textbf{q}}_i+\textbf{EC}\dot{\textbf{q}}<em>i$$
-$$\textbf{v}</em>{out} = \textbf{(D+EC)}\dot{\textbf{q}}_i$$</p>
+$$\textbf{v}_{out} = \textbf{J}\dot{\textbf{q}}$$
+$$\textbf{v}_{out} = \textbf{D}\dot{\textbf{q}}_i+\textbf{E}\dot{\textbf{q}}_d$$
+$$\textbf{v}_{out} = \textbf{D}\dot{\textbf{q}}_i+\textbf{EC}\dot{\textbf{q}}_i$$
+$$\textbf{v}_{out} = \textbf{(D+EC)}\dot{\textbf{q}}_i$$
 <p>Pick an end-effector</p>
 <div class=highlight><pre tabindex=0 style=color:#272822;background-color:#fafafa;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-python data-lang=python><span style=color:#111>pout</span>
 </code></pre></div><pre><code>lA*A.x + 3*B.x - 2*B.y
