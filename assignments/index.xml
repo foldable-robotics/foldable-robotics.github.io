@@ -543,6 +543,14 @@ to find good starting points for references and keywords.&lt;/li>
 &lt;li>System / Link Stiffness&lt;/li>
 &lt;li>Damping and Friction&lt;/li>
 &lt;/ul>
+&lt;h2 id="resources">Resources&lt;/h2>
+&lt;ul>
+&lt;li>&lt;a href="https://foldable-robotics.github.io/modules/validation/Tracker%20tutorial.html">Tracker tutorial&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://foldable-robotics.github.io/modules/validation/actuator-fitting.html">Actuator Fitting&lt;/a> tutorial&lt;/li>
+&lt;li>&lt;a href="https://foldable-robotics.github.io/modules/compliance/laminate-fea.html">Solidworks FEA&lt;/a> tutorial&lt;/li>
+&lt;li>&lt;a href="https://foldable-robotics.github.io/modules/compliance/cantilever-beams.html">Cantilever Beams&lt;/a> process&lt;/li>
+&lt;li>&lt;a href="https://foldable-robotics.github.io/modules/compliance/generated/euler-bernoulli-beams/euler-bernoulli-beams.html">Euler-Bernoulli Beams&lt;/a> code&lt;/li>
+&lt;/ul>
 &lt;h2 id="rubric">Rubric&lt;/h2>
 &lt;table>
 &lt;thead>
@@ -553,8 +561,32 @@ to find good starting points for references and keywords.&lt;/li>
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
+&lt;td style="text-align:left">Procedure Writeup&lt;/td>
+&lt;td style="text-align:left">50&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Data&lt;/td>
+&lt;td style="text-align:left">20&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Images of Setup&lt;/td>
+&lt;td style="text-align:left">30&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Figure of Model/Data&lt;/td>
+&lt;td style="text-align:left">30&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Code&lt;/td>
+&lt;td style="text-align:left">20&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Discussion&lt;/td>
+&lt;td style="text-align:left">50&lt;/td>
+&lt;/tr>
+&lt;tr>
 &lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
-&lt;td style="text-align:left">200&lt;/td>
+&lt;td style="text-align:left">&lt;strong>200&lt;/strong>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -874,7 +906,7 @@ to find good starting points for references and keywords.&lt;/li>
 &lt;/ul>
 &lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>System Dynamics II</title><link>http://foldable-robotics.github.io/assignments/system-dynamics-ii/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/system-dynamics-ii/</guid><description>&lt;h1 id="system-dynamics-ii">System Dynamics II&lt;/h1>
 &lt;h2 id="assignment-overview">Assignment Overview&lt;/h2>
-&lt;p>The point of this assignment is to re-consolidate everything you have learned about your system back into your dynamic model. It should now include:&lt;/p>
+&lt;p>The purpose of this assignment is to re-consolidate everything you have learned about your system back into your dynamic model. It should now include:&lt;/p>
 &lt;ul>
 &lt;li>at least one &amp;ldquo;compliant&amp;rdquo; element&lt;/li>
 &lt;li>all unknown parameters determined and included.
