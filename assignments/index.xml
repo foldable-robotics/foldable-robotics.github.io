@@ -188,7 +188,7 @@ to find good starting points for references and keywords.&lt;/li>
 &lt;li>Solidworks Tutorial kinematics tutorial: &lt;a href="https://drive.google.com/open?id=1En2zWrJg5EV_T9sTThubRUUclYcnW9jV&amp;amp;authuser=daukes%40asu.edu&amp;amp;usp=drive_fs">https://drive.google.com/open?id=1En2zWrJg5EV_T9sTThubRUUclYcnW9jV&amp;amp;authuser=daukes%40asu.edu&amp;amp;usp=drive_fs&lt;/a>&lt;/li>
 &lt;li>The macros for exporting a laminate to .dxf: &lt;a href="https://github.com/popupcad/code_popupcad_solidworks_exporter">https://github.com/popupcad/code_popupcad_solidworks_exporter&lt;/a>&lt;/li>
 &lt;/ul></description></item><item><title>Design Optimization, Experiment Design, Data Collection, and Analysis</title><link>http://foldable-robotics.github.io/assignments/doeddca/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/doeddca/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
-&lt;p>The purpose of this assignment is to execute the plan individual tasks assigned to you for the final part of your project.&lt;/p>
+&lt;p>The purpose of this assignment is to execute the planned design study assigned to you for completing the final part of your team project.&lt;/p>
 &lt;h2 id="rubric">Rubric&lt;/h2>
 &lt;table>
 &lt;thead>
@@ -771,6 +771,7 @@ to find good starting points for references and keywords.&lt;/li>
 &lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Prototyping</title><link>http://foldable-robotics.github.io/assignments/prototyping/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>http://foldable-robotics.github.io/assignments/prototyping/</guid><description>&lt;h2 id="assignment-overview">Assignment Overview&lt;/h2>
 &lt;p>The purpose of this assignment is to get you comfortable using the laminate computation in conjunction with the laminate fabrication approaches in the Innovation Hub to start making useful prototypes&lt;/p>
+&lt;p>This prototype will assist you in completing your design study in the upcoming &lt;a href="http://foldable-robotics.github.io/assignments/doeddca/">&lt;em>&amp;ldquo;Design Optimization, Experiment Design, Data Collection, and Analysis&amp;rdquo;&lt;/em>&lt;/a> Assignment. For this reason, take care to include the elements required to complete your performance analysis in the prototype.&lt;/p>
 &lt;h2 id="rubric">Rubric&lt;/h2>
 &lt;table>
 &lt;thead>
