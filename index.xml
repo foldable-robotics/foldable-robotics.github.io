@@ -384,7 +384,7 @@ $$ {}^{N}{}{\vec{\omega}}^{A}{} = \dot{\theta} \hat{n}_z= \dot{\theta} \hat{a}_z
 &lt;td style="text-align:right">20&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:left">discussion&lt;/td>
+&lt;td style="text-align:left">Discussion&lt;/td>
 &lt;td style="text-align:right">40&lt;/td>
 &lt;/tr>
 &lt;tr>
@@ -491,19 +491,23 @@ $$ {}^{N}{}{\vec{\omega}}^{A}{} = \dot{\theta} \hat{n}_z= \dot{\theta} \hat{a}_z
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
-&lt;td style="text-align:left">Report Narrative&lt;/td>
-&lt;td style="text-align:right">30&lt;/td>
+&lt;td style="text-align:left">Narrative of Steps Taken&lt;/td>
+&lt;td style="text-align:right">10&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:left">Report Discussion&lt;/td>
-&lt;td style="text-align:right">30&lt;/td>
+&lt;td style="text-align:left">Table of Mechanisms&lt;/td>
+&lt;td style="text-align:right">20&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:left">Figure(s)&lt;/td>
-&lt;td style="text-align:right">40&lt;/td>
+&lt;td style="text-align:left">Discussion&lt;/td>
+&lt;td style="text-align:right">30&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:left">Pictures&lt;/td>
+&lt;td style="text-align:right">40&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Figure(s)&lt;/td>
 &lt;td style="text-align:right">40&lt;/td>
 &lt;/tr>
 &lt;tr>
@@ -632,6 +636,10 @@ $$ {}^{N}{}{\vec{\omega}}^{A}{} = \dot{\theta} \hat{n}_z= \dot{\theta} \hat{a}_z
 &lt;td style="text-align:right">35&lt;/td>
 &lt;/tr>
 &lt;tr>
+&lt;td style="text-align:left">Slide 6&lt;/td>
+&lt;td style="text-align:right">0&lt;/td>
+&lt;/tr>
+&lt;tr>
 &lt;td style="text-align:left">&lt;strong>Video&lt;/strong>&lt;/td>
 &lt;td style="text-align:right">25&lt;/td>
 &lt;/tr>
@@ -678,6 +686,10 @@ $$ {}^{N}{}{\vec{\omega}}^{A}{} = \dot{\theta} \hat{n}_z= \dot{\theta} \hat{a}_z
 &lt;td style="text-align:right">35&lt;/td>
 &lt;/tr>
 &lt;tr>
+&lt;td style="text-align:left">Slide 6&lt;/td>
+&lt;td style="text-align:right">0&lt;/td>
+&lt;/tr>
+&lt;tr>
 &lt;td style="text-align:left">&lt;strong>Video&lt;/strong>&lt;/td>
 &lt;td style="text-align:right">25&lt;/td>
 &lt;/tr>
@@ -722,6 +734,10 @@ $$ {}^{N}{}{\vec{\omega}}^{A}{} = \dot{\theta} \hat{n}_z= \dot{\theta} \hat{a}_z
 &lt;tr>
 &lt;td style="text-align:left">Slide 5&lt;/td>
 &lt;td style="text-align:right">35&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Slide 6&lt;/td>
+&lt;td style="text-align:right">0&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:left">&lt;strong>Video&lt;/strong>&lt;/td>
