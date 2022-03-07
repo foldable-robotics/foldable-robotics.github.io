@@ -4,7 +4,7 @@
 <meta name=viewport content="width=device-width,initial-scale=1">
 <meta name=description content>
 <title>
-Arduino Setup Tutorial | Foldable Robotics
+Arduino IDE and Pro Trinket Setup | Foldable Robotics
 </title><link href=/css/bootstrap.min.css rel=stylesheet>
 <style>.bd-placeholder-img{font-size:1.125rem;text-anchor:middle;-webkit-user-select:none;-moz-user-select:none;user-select:none}@media(min-width:768px){.bd-placeholder-img-lg{font-size:3.5rem}}</style><link rel=preconnect href=https://fonts.gstatic.com>
 <link href="https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap" rel=stylesheet>
@@ -87,7 +87,7 @@ Documents
 <nav aria-label=breadcrumb>
 <ol class=breadcrumb>
 <li class=breadcrumb-item><a href=/modules>modules</a></li><li class=breadcrumb-item><a href=/modules/integration>integration</a></li><li class="breadcrumb-item active" aria-current=page>arduino</li></ol></nav></div><article>
-<h1 id=arduino-ide-and-pro-trinket-setup>Arduino IDE and pro trinket setup</h1><p>Refer to the <a href=https://www.adafruit.com/product/2000>website</a> for all the documentation and files</p><ol>
+<p>Refer to the <a href=https://www.adafruit.com/product/2000>website</a> for all the documentation and files</p><ol>
 <li>Install the <a href=https://www.arduino.cc/>Arduino IDE</a></li><li>Install Adafruit <a href=https://learn.adafruit.com/adafruit-arduino-ide-setup/windows-setup>windows drivers</a>(if applicable)</li><li>Add repository
 <ul>
 <li>file &ndash;> preferences</li><li>in &ldquo;additional board managers&rdquo;, type &ldquo;<a href=https://adafruit.github.io/arduino-board-index/package_adafruit_index.json%22>https://adafruit.github.io/arduino-board-index/package_adafruit_index.json"</a></li></ul></li><li>Add adafruit boards manager
@@ -106,7 +106,7 @@ Documents
 ```{C}
 asdf
 ```
---><h1 id=working-with-serial>Working with serial</h1><h3 id=serial-echo>Serial Echo</h3><pre tabindex=0><code class=language-{C} data-lang={C}>void setup() {
+--><h2 id=working-with-serial>Working with serial</h2><h3 id=serial-echo>Serial Echo</h3><pre tabindex=0><code class=language-{C} data-lang={C}>void setup() {
   Serial.begin(9600);
 }
 void loop() {
