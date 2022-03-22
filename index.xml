@@ -325,11 +325,11 @@ Friction Friction is typically formulated as the forces acting between two bodie
 &lt;tbody>
 &lt;tr>
 &lt;td style="text-align:left">Steps&lt;/td>
-&lt;td style="text-align:right">60&lt;/td>
+&lt;td style="text-align:right">80&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:left">Discussion&lt;/td>
-&lt;td style="text-align:right">40&lt;/td>
+&lt;td style="text-align:right">20&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
@@ -339,8 +339,9 @@ Friction Friction is typically formulated as the forces acting between two bodie
 &lt;/table>
 &lt;h2 id="resources">Resources&lt;/h2>
 &lt;ul>
-&lt;li>&lt;a href="https://github.com/idealabasu/code_foldable_robotics">https://github.com/idealabasu/code_foldable_robotics&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://shapely.readthedocs.io/en/stable/manual.html">The Shapely User Manual&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/idealabasu/code_foldable_robotics">Foldable robotics package repository on GitHub&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://idealab.asu.edu/code_foldable_robotics/">foldable robotics package documentation&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Intro to Python</title><link>https://foldable-robotics.github.io/modules/python/why-python/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://foldable-robotics.github.io/modules/python/why-python/</guid><description>One thing I really like about python is that it is based on good programming practice .</description></item><item><title>Jacobians</title><link>https://foldable-robotics.github.io/modules/kinematics/jacobians/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://foldable-robotics.github.io/modules/kinematics/jacobians/</guid><description>A Jacobian is a matrix that collects the partial derivatives of rates of change between two vectors.</description></item><item><title>Kane's method</title><link>https://foldable-robotics.github.io/modules/dynamics/generated/07-kanes-method/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://foldable-robotics.github.io/modules/dynamics/generated/07-kanes-method/</guid><description>Frames Frame A
 $$ {}^{N}{}{\vec{\omega}}^{A}{} = \dot{\theta} \hat{n}_z= \dot{\theta} \hat{a}_z $$</description></item><item><title>Kinematics Introduction</title><link>https://foldable-robotics.github.io/modules/kinematics/introduction-to-kinematics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://foldable-robotics.github.io/modules/kinematics/introduction-to-kinematics/</guid><description>Prototyping in Paper A second step is to ideate, mock-up, and prototype candidate mechanisms in paper.</description></item><item><title>Kinematics Via Prototyping &amp; CAD</title><link>https://foldable-robotics.github.io/assignments/kinematics-via-prototyping-and-cad/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://foldable-robotics.github.io/assignments/kinematics-via-prototyping-and-cad/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>

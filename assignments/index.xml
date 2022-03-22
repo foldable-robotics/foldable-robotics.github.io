@@ -319,11 +319,11 @@ to find good starting points for references and keywords.&lt;/li>
 &lt;tbody>
 &lt;tr>
 &lt;td style="text-align:left">Steps&lt;/td>
-&lt;td style="text-align:right">60&lt;/td>
+&lt;td style="text-align:right">80&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:left">Discussion&lt;/td>
-&lt;td style="text-align:right">40&lt;/td>
+&lt;td style="text-align:right">20&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
@@ -333,8 +333,9 @@ to find good starting points for references and keywords.&lt;/li>
 &lt;/table>
 &lt;h2 id="resources">Resources&lt;/h2>
 &lt;ul>
-&lt;li>&lt;a href="https://github.com/idealabasu/code_foldable_robotics">https://github.com/idealabasu/code_foldable_robotics&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://shapely.readthedocs.io/en/stable/manual.html">The Shapely User Manual&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://github.com/idealabasu/code_foldable_robotics">Foldable robotics package repository on GitHub&lt;/a>&lt;/li>
+&lt;li>&lt;a href="http://idealab.asu.edu/code_foldable_robotics/">foldable robotics package documentation&lt;/a>&lt;/li>
 &lt;/ul>
 &lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Kinematics Via Prototyping &amp; CAD</title><link>https://foldable-robotics.github.io/assignments/kinematics-via-prototyping-and-cad/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://foldable-robotics.github.io/assignments/kinematics-via-prototyping-and-cad/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;p>The goal of this assignment is to 1) propose a mechanism that your team can study as part of a larger laminate system, and 2) to get you comfortable sketching the kinematics of foldable systems in CAD, establishing constraints, and counting degrees of freedom.&lt;/p>
