@@ -181,7 +181,13 @@ to find good starting points for references and keywords.&lt;/li>
 &lt;/table>
 &lt;h2 id="resources">Resources&lt;/h2>
 &lt;ul>
-&lt;li>Solidworks Tutorial kinematics tutorial: &lt;a href="https://drive.google.com/open?id=1En2zWrJg5EV_T9sTThubRUUclYcnW9jV&amp;amp;authuser=daukes%40asu.edu&amp;amp;usp=drive_fs">https://drive.google.com/open?id=1En2zWrJg5EV_T9sTThubRUUclYcnW9jV&amp;amp;authuser=daukes%40asu.edu&amp;amp;usp=drive_fs&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://foldable-robotics.github.io/modules/manufacturing/generated/full-workflow/">Full Design Pipeline&lt;/a>&lt;/li>
+&lt;li>Solidworks Tutorials:
+&lt;ul>
+&lt;li>&lt;a href="https://foldable-robotics.github.io/modules/kinematics/solidworks-export-tutorial/">kinematics&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://foldable-robotics.github.io/modules/kinematics/solidworks-export-tutorial/">export&lt;/a>&lt;/li>
+&lt;/ul>
+&lt;/li>
 &lt;li>The macros for exporting a laminate to .dxf: &lt;a href="https://github.com/popupcad/code_popupcad_solidworks_exporter">https://github.com/popupcad/code_popupcad_solidworks_exporter&lt;/a>&lt;/li>
 &lt;/ul></description></item><item><title>Design Optimization, Experiment Design, Data Collection, and Analysis</title><link>https://foldable-robotics.github.io/assignments/doeddca/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://foldable-robotics.github.io/assignments/doeddca/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;p>The purpose of this assignment is to execute the planned design study assigned to you for completing the final part of your team project.&lt;/p>
