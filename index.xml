@@ -553,11 +553,11 @@ $$ {}^{N}{}{\vec{\omega}}^{A}{} = \dot{\theta} \hat{n}_z= \dot{\theta} \hat{a}_z
 &lt;/ul>
 &lt;h2 id="resources">Resources&lt;/h2>
 &lt;ul>
-&lt;li>&lt;a href="https://foldable-robotics.github.io/modules/validation/Tracker%20tutorial.html">Tracker tutorial&lt;/a>&lt;/li>
-&lt;li>&lt;a href="https://foldable-robotics.github.io/modules/validation/actuator-fitting.html">Actuator Fitting&lt;/a> tutorial&lt;/li>
-&lt;li>&lt;a href="https://foldable-robotics.github.io/modules/compliance/laminate-fea.html">Solidworks FEA&lt;/a> tutorial&lt;/li>
-&lt;li>&lt;a href="https://foldable-robotics.github.io/modules/compliance/cantilever-beams.html">Cantilever Beams&lt;/a> process&lt;/li>
-&lt;li>&lt;a href="https://foldable-robotics.github.io/modules/compliance/generated/euler-bernoulli-beams/euler-bernoulli-beams.html">Euler-Bernoulli Beams&lt;/a> code&lt;/li>
+&lt;li>&lt;a href="https://foldable-robotics.github.io/modules/validation/tracker-tutorial/">Tracker tutorial&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://foldable-robotics.github.io/modules/validation/actuator-fitting/">Actuator Fitting&lt;/a> tutorial&lt;/li>
+&lt;li>&lt;a href="https://foldable-robotics.github.io/modules/compliance/solidworks-fea-tutorial/">Solidworks FEA&lt;/a> tutorial&lt;/li>
+&lt;li>&lt;a href="https://foldable-robotics.github.io/modules/compliance/cantilever-beams/">Cantilever Beams&lt;/a> process&lt;/li>
+&lt;li>&lt;a href="https://foldable-robotics.github.io/modules/compliance/generated/euler-bernoulli-beams/">Euler-Bernoulli Beams&lt;/a> code&lt;/li>
 &lt;/ul>
 &lt;h2 id="rubric">Rubric&lt;/h2>
 &lt;table>
