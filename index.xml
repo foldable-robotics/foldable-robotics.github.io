@@ -798,24 +798,6 @@ $$ {}^{N}{}{\vec{\omega}}^{A}{} = \dot{\theta} \hat{n}_z= \dot{\theta} \hat{a}_z
 &lt;/tbody>
 &lt;/table>
 &lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Project Selection Survey</title><link>https://foldable-robotics.github.io/assignments/project-selection-survey/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://foldable-robotics.github.io/assignments/project-selection-survey/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
-&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Prototyping</title><link>https://foldable-robotics.github.io/assignments/prototyping/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://foldable-robotics.github.io/assignments/prototyping/</guid><description>&lt;h2 id="assignment-overview">Assignment Overview&lt;/h2>
-&lt;p>The purpose of this assignment is to get you comfortable using the laminate computation in conjunction with the laminate fabrication approaches in the Innovation Hub to start making useful prototypes&lt;/p>
-&lt;p>This prototype will assist you in completing your design study in the upcoming &lt;a href="https://foldable-robotics.github.io/assignments/doeddca/">&lt;em>&amp;ldquo;Design Optimization, Experiment Design, Data Collection, and Analysis&amp;rdquo;&lt;/em>&lt;/a> Assignment. For this reason, take care to include the elements required to complete your performance analysis in the prototype.&lt;/p>
-&lt;h2 id="rubric">Rubric&lt;/h2>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th style="text-align:left">Description&lt;/th>
-&lt;th style="text-align:right">Points&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
-&lt;td style="text-align:right">200&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
 &lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Python Development</title><link>https://foldable-robotics.github.io/modules/python/python-development/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://foldable-robotics.github.io/modules/python/python-development/</guid><description>Now What? More Python Making your programs for others Releasing your code Licensing Collaborating Testing / Building Imports Imports should always be written at the top of the file, after any module comments and docstrings.</description></item><item><title>Python for Loops. Arrays. and Plotting</title><link>https://foldable-robotics.github.io/assignments/python-for-loops-arrays-and-plotting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://foldable-robotics.github.io/assignments/python-for-loops-arrays-and-plotting/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;p>The purpose of this assignment is to get to know Python and Juptyer Notebook.&lt;/p>
 &lt;h2 id="asdf">Resources&lt;/h2>
