@@ -206,13 +206,59 @@ password: posted in class</description></item><item><title>Data Collection Permi
 &lt;/thead>
 &lt;tbody>
 &lt;tr>
+&lt;td style="text-align:left">Procedure Writeup&lt;/td>
+&lt;td style="text-align:left">50&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Discussion of each step&lt;/td>
+&lt;td style="text-align:left">50&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Code&lt;/td>
+&lt;td style="text-align:left">20&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Plots &amp;amp; Figures&lt;/td>
+&lt;td style="text-align:left">30&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Data&lt;/td>
+&lt;td style="text-align:left">20&lt;/td>
+&lt;/tr>
+&lt;tr>
+&lt;td style="text-align:left">Images&lt;/td>
+&lt;td style="text-align:left">30&lt;/td>
+&lt;/tr>
+&lt;tr>
 &lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
-&lt;td style="text-align:left">200&lt;/td>
+&lt;td style="text-align:left">&lt;strong>200&lt;/strong>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
 &lt;h2 id="instructions">Instructions&lt;/h2>
-&lt;p>Based on the approach of splitting up your&lt;/p></description></item><item><title>Design Optimization, Experiment Design, Data Collection, and Analysis Plan</title><link>https://foldable-robotics.github.io/assignments/doeddcap/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://foldable-robotics.github.io/assignments/doeddcap/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>Execute the plan determined by your team to investigate the impact of different design changes on system performance. You may write up your experience one or more (or all) of the below steps, depending on what your team agreed. For example, your teammates may have each decided to independently execute this sequence on a smaller or more focused question, or split this process amongst the group. Which steps you describe and write up depend on the plan agreed upon by the team.&lt;/p>
+&lt;ol>
+&lt;li>With the dynamics model updated per System Dynamics II, create an optimization routine that permits you to run your simulation by supplying different values for a selected number of design variables (link length, joint stiffness, actuator signal, etc).&lt;/li>
+&lt;li>Determine a performance metric against which to measure your system&amp;rsquo;s performance. This should be determined by your team&amp;rsquo;s research question, so in general, your whole team should agree on the &amp;ldquo;goal&amp;rdquo; of each person&amp;rsquo;s assignment.&lt;/li>
+&lt;li>Using one of the many optimization approaches discussed in class (global search, evolutionary, &lt;code>scipy.optimize&lt;/code>), identify the value of the design parameters that maximizes (or minimizes) yoru performance metric&lt;/li>
+&lt;li>Prototype and validate this result experimentally.&lt;/li>
+&lt;/ol>
+&lt;h2 id="discussion">Discussion&lt;/h2>
+&lt;p>The discussion in this assignment is intentionally more free-form. You must justify each engineering decision made while following the above sequence. Discuss what worked, what didn&amp;rsquo;t work, and alternatives that you considered.&lt;/p>
+&lt;h2 id="submission">Submission&lt;/h2>
+&lt;p>Please include a Jupyter notebook with the following:&lt;/p>
+&lt;ol>
+&lt;li>Detailed description of the completed steps above&lt;/li>
+&lt;li>Detailed justification of your rationale for each step&lt;/li>
+&lt;li>Code used in solving the problem (inline in the report in code blocks)&lt;/li>
+&lt;li>Visualizations of the various steps, including dynamics, optimization results, experiment setup, experimental data, and comparison between model / reality.&lt;/li>
+&lt;li>Raw data. If the data is too long to fit in your ipython notebook, provide the .csv or .xlsx files used to store the raw data&lt;/li>
+&lt;li>Figure(s) of your data and model plotted in the same graph.&lt;/li>
+&lt;li>Images of your experiment setup across multiple steps.&lt;/li>
+&lt;/ol>
+&lt;p>Please follow the &amp;ldquo;Submission Best Practices&amp;rdquo; document posted on Canvas. This assignment should be submitted to canvas as a .pdf document as well as the the jupyter notebook (.ipynb). Please ensure the jupyter notebook is fully compiled. This can be done by opening the file in the jupyter browser and in the top jupyter menu selecting &amp;ldquo;Kernel&amp;rdquo; &amp;ndash;&amp;gt; &amp;ldquo;Restart and Run All&amp;rdquo;.&lt;/p>
+&lt;p>Please also post the completed assignment to your team&amp;rsquo;s website as a rendered jupyter notebook, saved as markdown and uploaded to github.&lt;/p>
+&lt;!--1. Please explain how you categorized variables as known or measurable, and which ones you left free for the optimizer to identify.--></description></item><item><title>Design Optimization, Experiment Design, Data Collection, and Analysis Plan</title><link>https://foldable-robotics.github.io/assignments/doeddcap/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://foldable-robotics.github.io/assignments/doeddcap/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;p>The purpose of this assignment is to create a plan for the final part of your project, and to assign individual tasks.&lt;/p>
 &lt;h2 id="rubric">Rubric&lt;/h2>
 &lt;table>
@@ -1198,11 +1244,6 @@ Rigid Material Adhesive Flexure MAterial Adhesive Rigid Material Preparing your 
 &lt;td style="text-align:right">40&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:left">System Identification&lt;/td>
-&lt;td style="text-align:left">new&lt;/td>
-&lt;td style="text-align:right">40&lt;/td>
-&lt;/tr>
-&lt;tr>
 &lt;td style="text-align:left">Presentations&lt;/td>
 &lt;td style="text-align:left">Add Presentation 2&lt;/td>
 &lt;td style="text-align:right">20&lt;/td>
@@ -1210,7 +1251,7 @@ Rigid Material Adhesive Flexure MAterial Adhesive Rigid Material Preparing your 
 &lt;tr>
 &lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
 &lt;td style="text-align:left">&lt;/td>
-&lt;td style="text-align:right">&lt;strong>200&lt;/strong>&lt;/td>
+&lt;td style="text-align:right">&lt;strong>160&lt;/strong>&lt;/td>
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
@@ -1247,14 +1288,14 @@ Rigid Material Adhesive Flexure MAterial Adhesive Rigid Material Preparing your 
 &lt;td style="text-align:left">20&lt;/td>
 &lt;/tr>
 &lt;tr>
-&lt;td style="text-align:left">Dynamics (I, Prep, Plan, II)&lt;/td>
-&lt;td style="text-align:left">Update&lt;/td>
-&lt;td style="text-align:left">20&lt;/td>
+&lt;td style="text-align:left">Dynamics (I, Parameter ID Plan, Parameter ID, II)&lt;/td>
+&lt;td style="text-align:left">Update &amp;amp; New&lt;/td>
+&lt;td style="text-align:left">40&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:left">Design Optimization, Experiment Design, Data Collection, and Analysis&lt;/td>
 &lt;td style="text-align:left">New&lt;/td>
-&lt;td style="text-align:left">80&lt;/td>
+&lt;td style="text-align:left">60&lt;/td>
 &lt;/tr>
 &lt;tr>
 &lt;td style="text-align:left">Manufacturing Planning&lt;/td>
