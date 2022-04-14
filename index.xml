@@ -348,24 +348,7 @@ Friction Friction is typically formulated as the forces acting between two bodie
 &lt;li>&lt;a href="https://foldable-robotics.github.io/modules/python/using-jupyter-notebook/">Using Jupyter Notebook&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://foldable-robotics.github.io/modules/python/google-colab-tutorial/">Google Colab Tutorial&lt;/a>&lt;/li>
 &lt;/ul>
-&lt;h2 id="installing-anaconda">Installing Anaconda&lt;/h2></description></item><item><title>Installing Anaconda</title><link>https://foldable-robotics.github.io/modules/python/installing-anaconda/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://foldable-robotics.github.io/modules/python/installing-anaconda/</guid><description>Introduction Anaconda is a distribution of Python that includes the ability to manage packages using the conda package manager as well as the ability to create and manage environments, or collections of packages that work together.</description></item><item><title>Installing Git</title><link>https://foldable-robotics.github.io/modules/misc/installing-git/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://foldable-robotics.github.io/modules/misc/installing-git/</guid><description>Windows Instructions These instructions are for installing Git along with Git Extensions, a nice GUI for working with repositories.</description></item><item><title>Intro to Dynamics</title><link>https://foldable-robotics.github.io/assignments/dynamics/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://foldable-robotics.github.io/assignments/dynamics/</guid><description>&lt;h2 id="assignment-overview">Assignment Overview&lt;/h2>
-&lt;p>The purpose of this assignment is to get you comfortable using the computational capabilities of Python and Pynamics to start estimating the performance of your design.&lt;/p>
-&lt;h2 id="rubric">Rubric&lt;/h2>
-&lt;table>
-&lt;thead>
-&lt;tr>
-&lt;th style="text-align:left">Description&lt;/th>
-&lt;th style="text-align:right">Points&lt;/th>
-&lt;/tr>
-&lt;/thead>
-&lt;tbody>
-&lt;tr>
-&lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
-&lt;td style="text-align:right">200&lt;/td>
-&lt;/tr>
-&lt;/tbody>
-&lt;/table>
-&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Intro to Manufacturing Computation</title><link>https://foldable-robotics.github.io/assignments/shapely/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://foldable-robotics.github.io/assignments/shapely/</guid><description>&lt;h2 id="overview">Overview&lt;/h2>
+&lt;h2 id="installing-anaconda">Installing Anaconda&lt;/h2></description></item><item><title>Installing Anaconda</title><link>https://foldable-robotics.github.io/modules/python/installing-anaconda/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://foldable-robotics.github.io/modules/python/installing-anaconda/</guid><description>Introduction Anaconda is a distribution of Python that includes the ability to manage packages using the conda package manager as well as the ability to create and manage environments, or collections of packages that work together.</description></item><item><title>Installing Git</title><link>https://foldable-robotics.github.io/modules/misc/installing-git/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://foldable-robotics.github.io/modules/misc/installing-git/</guid><description>Windows Instructions These instructions are for installing Git along with Git Extensions, a nice GUI for working with repositories.</description></item><item><title>Intro to Manufacturing Computation</title><link>https://foldable-robotics.github.io/assignments/shapely/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://foldable-robotics.github.io/assignments/shapely/</guid><description>&lt;h2 id="overview">Overview&lt;/h2>
 &lt;p>The purpose of this exercise is to get used to working with shapely polygons and to use it to compute some manufacturing geometry. It is your job to determine how to compute the cut files using Python, shapely, and the foldable_robotics package&lt;/p>
 &lt;h2 id="rubric">Rubric&lt;/h2>
 &lt;table>
