@@ -194,7 +194,8 @@ password: posted in class</description></item><item><title>Data Collection Permi
 &lt;/ul>
 &lt;/li>
 &lt;li>The macros for exporting a laminate to .dxf: &lt;a href="https://github.com/popupcad/code_popupcad_solidworks_exporter">https://github.com/popupcad/code_popupcad_solidworks_exporter&lt;/a>&lt;/li>
-&lt;/ul></description></item><item><title>Design Optimization, Experiment Design, Data Collection, and Analysis</title><link>https://foldable-robotics.github.io/assignments/doeddca/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://foldable-robotics.github.io/assignments/doeddca/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;/ul>
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Design Optimization, Experiment Design, Data Collection, and Analysis</title><link>https://foldable-robotics.github.io/assignments/doeddca/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://foldable-robotics.github.io/assignments/doeddca/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;p>The purpose of this assignment is to execute the planned design study assigned to you for completing the final part of your team project.&lt;/p>
 &lt;h2 id="rubric">Rubric&lt;/h2>
 &lt;table>
@@ -235,30 +236,7 @@ password: posted in class</description></item><item><title>Data Collection Permi
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2 id="instructions">Instructions&lt;/h2>
-&lt;p>Execute the plan determined by your team to investigate the impact of different design changes on system performance. You may write up your experience one or more (or all) of the below steps, depending on what your team agreed. For example, your teammates may have each decided to independently execute this sequence on a smaller or more focused question, or split this process amongst the group. Which steps you describe and write up depend on the plan agreed upon by the team.&lt;/p>
-&lt;ol>
-&lt;li>With the dynamics model updated per System Dynamics II, create an optimization routine that permits you to run your simulation by supplying different values for a selected number of design variables (link length, joint stiffness, actuator signal, etc).&lt;/li>
-&lt;li>Determine a performance metric against which to measure your system&amp;rsquo;s performance. This should be determined by your team&amp;rsquo;s research question, so in general, your whole team should agree on the &amp;ldquo;goal&amp;rdquo; of each person&amp;rsquo;s assignment.&lt;/li>
-&lt;li>Using one of the many optimization approaches discussed in class (global search, evolutionary, &lt;code>scipy.optimize&lt;/code>), identify the value of the design parameters that maximizes (or minimizes) yoru performance metric&lt;/li>
-&lt;li>Prototype and validate this result experimentally.&lt;/li>
-&lt;/ol>
-&lt;h2 id="discussion">Discussion&lt;/h2>
-&lt;p>The discussion in this assignment is intentionally more free-form. You must justify each engineering decision made while following the above sequence. Discuss what worked, what didn&amp;rsquo;t work, and alternatives that you considered.&lt;/p>
-&lt;h2 id="submission">Submission&lt;/h2>
-&lt;p>Please include a Jupyter notebook with the following:&lt;/p>
-&lt;ol>
-&lt;li>Detailed description of the completed steps above&lt;/li>
-&lt;li>Detailed justification of your rationale for each step&lt;/li>
-&lt;li>Code used in solving the problem (inline in the report in code blocks)&lt;/li>
-&lt;li>Visualizations of the various steps, including dynamics, optimization results, experiment setup, experimental data, and comparison between model / reality.&lt;/li>
-&lt;li>Raw data. If the data is too long to fit in your ipython notebook, provide the .csv or .xlsx files used to store the raw data&lt;/li>
-&lt;li>Figure(s) of your data and model plotted in the same graph.&lt;/li>
-&lt;li>Images of your experiment setup across multiple steps.&lt;/li>
-&lt;/ol>
-&lt;p>Please follow the &amp;ldquo;Submission Best Practices&amp;rdquo; document posted on Canvas. This assignment should be submitted to canvas as a .pdf document as well as the the jupyter notebook (.ipynb). Please ensure the jupyter notebook is fully compiled. This can be done by opening the file in the jupyter browser and in the top jupyter menu selecting &amp;ldquo;Kernel&amp;rdquo; &amp;ndash;&amp;gt; &amp;ldquo;Restart and Run All&amp;rdquo;.&lt;/p>
-&lt;p>Please also post the completed assignment to your team&amp;rsquo;s website as a rendered jupyter notebook, saved as markdown and uploaded to github.&lt;/p>
-&lt;!--1. Please explain how you categorized variables as known or measurable, and which ones you left free for the optimizer to identify.--></description></item><item><title>Design Optimization, Experiment Design, Data Collection, and Analysis Plan</title><link>https://foldable-robotics.github.io/assignments/doeddcap/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://foldable-robotics.github.io/assignments/doeddcap/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Design Optimization, Experiment Design, Data Collection, and Analysis Plan</title><link>https://foldable-robotics.github.io/assignments/doeddcap/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://foldable-robotics.github.io/assignments/doeddcap/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;p>The purpose of this assignment is to create a plan for the final part of your project, and to assign individual tasks.&lt;/p>
 &lt;h2 id="rubric">Rubric&lt;/h2>
 &lt;table>
@@ -628,7 +606,24 @@ $$ {}^{N}{}{\vec{\omega}}^{A}{} = \dot{\theta} \hat{n}_z= \dot{\theta} \hat{a}_z
 &lt;/tr>
 &lt;/tbody>
 &lt;/table>
-&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Parameter Identification Plan</title><link>https://foldable-robotics.github.io/assignments/parameter-id-plan/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://foldable-robotics.github.io/assignments/parameter-id-plan/</guid><description>Introduction The purpose of this assignment is to decide as a team how you will split up the various Parameter ID tasks individually</description></item><item><title>Plotting in 3D</title><link>https://foldable-robotics.github.io/modules/python/generated/3d-plotting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://foldable-robotics.github.io/modules/python/generated/3d-plotting/</guid><description>%matplotlib inline Visit this matplotlib tutorial on 3d Plotting Another useful reference import matplotlib.</description></item><item><title>Presentation I</title><link>https://foldable-robotics.github.io/assignments/presentation-i/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://foldable-robotics.github.io/assignments/presentation-i/</guid><description>&lt;h2 id="assignment-overview">Assignment Overview&lt;/h2>
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Parameter Identification Plan</title><link>https://foldable-robotics.github.io/assignments/parameter-id-plan/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://foldable-robotics.github.io/assignments/parameter-id-plan/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
+&lt;p>The purpose of this assignment is to decide as a team how you will split up the various Parameter ID tasks individually&lt;/p>
+&lt;h2 id="rubric">Rubric&lt;/h2>
+&lt;table>
+&lt;thead>
+&lt;tr>
+&lt;th style="text-align:left">Description&lt;/th>
+&lt;th style="text-align:left">Points&lt;/th>
+&lt;/tr>
+&lt;/thead>
+&lt;tbody>
+&lt;tr>
+&lt;td style="text-align:left">&lt;strong>Total&lt;/strong>&lt;/td>
+&lt;td style="text-align:left">&lt;strong>25&lt;/strong>&lt;/td>
+&lt;/tr>
+&lt;/tbody>
+&lt;/table>
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>Plotting in 3D</title><link>https://foldable-robotics.github.io/modules/python/generated/3d-plotting/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://foldable-robotics.github.io/modules/python/generated/3d-plotting/</guid><description>%matplotlib inline Visit this matplotlib tutorial on 3d Plotting Another useful reference import matplotlib.</description></item><item><title>Presentation I</title><link>https://foldable-robotics.github.io/assignments/presentation-i/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://foldable-robotics.github.io/assignments/presentation-i/</guid><description>&lt;h2 id="assignment-overview">Assignment Overview&lt;/h2>
 &lt;p>Please prepare your group presentation based on your most recent project activities&lt;/p>
 &lt;h2 id="rubric">Rubric&lt;/h2>
 &lt;table>
@@ -1063,59 +1058,7 @@ import pynamics from pynamics.</description></item><item><title>Solving Nonlinea
 &lt;li>EGR557 Dynamics Module&lt;/li>
 &lt;li>pynamics repository&lt;/li>
 &lt;/ul>
-&lt;h2 id="instructions">Instructions&lt;/h2>
-&lt;p>Meet with your team to go over each of the prototypes and mockups you have individually created through past homework assignments. As a team, come up with a mechanism that satisfies your team&amp;rsquo;s need for scope/tractability, manufacturability, and cost.&lt;/p>
-&lt;p>Decide as a team whether you will be using powered actuator(s) or passive energy storage device(s). This will impact data collection assignments, how much your team spends, the complexity of your prototype, and the strength of the materials you use (you may need to upgrade from light cardboard to stiffer posterboard or even fiberglass)&lt;/p>
-&lt;ol>
-&lt;li>
-&lt;p>Create a figure (either in python, in a vector-based drawing program like inkscape or illustrator, or as a solidworks rendering) of your system kinematics. Annotate the image to include:&lt;/p>
-&lt;ul>
-&lt;li>Names for each rotational reference frame. You will need one for each rigid body (that moves independently), as well as one for the Newtonian reference frame (N). Use the convention of a capital letter (A,B,C,&amp;hellip;)&lt;/li>
-&lt;li>Labeled joint locations, such as $\vec{p}_{AB}$&lt;/li>
-&lt;li>A set of orthonormal basis vectors for each frame $(\hat{n}_x,\hat{n}_y,\hat{n}_z),(\hat{a}_x,\hat{a}_y,\hat{a}_z)$. It is best practice to align one of the basis vectors (like $\hat{a}_x$) with each rigid link.&lt;/li>
-&lt;li>variable names for each state variable $(q_1,q_2,x_1,y_1,\ldots)$&lt;/li>
-&lt;li>geometric constants such as link lengths (like $l_1,l_2$)&lt;/li>
-&lt;/ul>
-&lt;p>Save this figure for reuse later. You will need to add mass and inertial information as well as system stiffness information, so make sure you do your work in a way that permits reusing and modifying the figure.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Make the device in paper or cardboard. You need an up-to-date model if it has changed from your individual assignments. The paper model should dimensionally match your code.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Using a pynamics-based script, develop a kinematic model for your device. Following the triple pendulum example,&lt;/p>
-&lt;ol>
-&lt;li>Import packages&lt;/li>
-&lt;li>Define variables and constants (you may want to add, remove, or rename variables to match your figure)&lt;/li>
-&lt;li>Declare frames (you may need to add frames or rename them)&lt;/li>
-&lt;li>Define frame rotations (you may want to switch the axis about which frames rotate)&lt;/li>
-&lt;li>Compose kinematics (this depends entirely on the geometry of your system)&lt;/li>
-&lt;li>Take time-derivatives of position vectors&lt;/li>
-&lt;li>Assemble into a Jacobian that maps input velocities to output velocities.&lt;/li>
-&lt;/ol>
-&lt;/li>
-&lt;li>
-&lt;p>Select or Solve for a valid initial condition that represents the system in the middle of a typical gait, when it is both moving and when forces are being applied to it (or to the world by it)&lt;/p>
-&lt;p>&lt;em>Despite the fact that you will be using a symbolic representation, you still need to solve for a valid initial condition if your device is a &amp;ldquo;parallel mechanism&amp;rdquo;. This may be done using a nonlinear solver such as &lt;code>scipy.optimize.minimize&lt;/code>&lt;/em>&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Plot the system in this position.&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>From your biomechanics-based specifications, define one or more force vector estimates (one for each end effector) that the system should be expected to experience. Consider including, based on your research&lt;/p>
-&lt;ul>
-&lt;li>the force of gravity exerted by the mass of a &amp;ldquo;payload&amp;rdquo; or the main body of the robot.&lt;/li>
-&lt;li>the acceleration the system experiences during a typical gait&lt;/li>
-&lt;li>ground reaction forces measured from biomechanics studies.&lt;/li>
-&lt;/ul>
-&lt;/li>
-&lt;li>
-&lt;p>Calculate the force or torque required at the input to satisfy the end-effector force requirements&lt;/p>
-&lt;/li>
-&lt;li>
-&lt;p>Estimate the velocity of the end-effector in this configuration. Using the Jacobian, calculate the speed required by the input(s) to achieve that output motion.&lt;/p>
-&lt;p>&lt;em>This may not be directly solvable based on your device kinematics; an iterative guess-and-check approach is ok.&lt;/em>&lt;/p>
-&lt;/li>
-&lt;li></description></item><item><title>The Fabrication Process</title><link>https://foldable-robotics.github.io/modules/manufacturing/the-fabrication-process/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://foldable-robotics.github.io/modules/manufacturing/the-fabrication-process/</guid><description>5-Layer Design A typical five layer design consists of
+&lt;h2 id="instructions">Instructions&lt;/h2></description></item><item><title>The Fabrication Process</title><link>https://foldable-robotics.github.io/modules/manufacturing/the-fabrication-process/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://foldable-robotics.github.io/modules/manufacturing/the-fabrication-process/</guid><description>5-Layer Design A typical five layer design consists of
 Rigid Material Adhesive Flexure MAterial Adhesive Rigid Material Preparing your Cut Files You should have already generated cutfiles using the process outlined in the last chapter.</description></item><item><title>Tracker Tutorial</title><link>https://foldable-robotics.github.io/modules/validation/tracker-tutorial/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://foldable-robotics.github.io/modules/validation/tracker-tutorial/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;p>The purpose of this module is to show you how to track position data using a low-cost camera such as a smartphone. Use this &lt;a href="pendulum.mp4">video&lt;/a> to follow along!&lt;/p></description></item><item><title>Triple Pendulum Example</title><link>https://foldable-robotics.github.io/modules/dynamics/generated/08-triple-pendulum-example/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://foldable-robotics.github.io/modules/dynamics/generated/08-triple-pendulum-example/</guid><description>%matplotlib inline Try running with this variable set to true and to false and see the difference in the resulting equations of motion</description></item><item><title>Unit Scaling</title><link>https://foldable-robotics.github.io/modules/dynamics/generated/07-unit-scaling/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://foldable-robotics.github.io/modules/dynamics/generated/07-unit-scaling/</guid><description>import idealab_tools.units idealab_tools.units.force kilogram*meter/second^2 idealab_tools.units.force.base_units {'kilogram': 1, 'meter': 1, 'second': -2} idealab_tools.</description></item><item><title>Updating Python Packages</title><link>https://foldable-robotics.github.io/modules/python/updating-python-packages/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://foldable-robotics.github.io/modules/python/updating-python-packages/</guid><description>There are several Python packages that are in active development for the purposes of this class.</description></item><item><title>Using Jupyter Notebook</title><link>https://foldable-robotics.github.io/modules/python/using-jupyter-notebook/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://foldable-robotics.github.io/modules/python/using-jupyter-notebook/</guid><description>About Jupyter Jupyter notebook is a useful browser-based IPython editor that provides inline documentation via markdown and inline plotting functionality for a one-stop-shop coding and documentation experience.</description></item><item><title>Using the ASU Library Proxy</title><link>https://foldable-robotics.github.io/modules/misc/library-proxy/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://foldable-robotics.github.io/modules/misc/library-proxy/</guid><description>Introduction Accessing journal and conference papers off-campus can be a chore, made more difficult by having to use VPN&amp;rsquo;s or navigate ASU Library&amp;rsquo;s search tool.</description></item><item><title>Variable Types</title><link>https://foldable-robotics.github.io/modules/dynamics/generated/03-variable-types/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://foldable-robotics.github.io/modules/dynamics/generated/03-variable-types/</guid><description>Variables in pynamics may be grouped into different categories, and used for different things.</description></item><item><title>Vector Constraint Equations</title><link>https://foldable-robotics.github.io/modules/kinematics/vector-based-constraint-equations/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://foldable-robotics.github.io/modules/kinematics/vector-based-constraint-equations/</guid><description>v,w perpendicular Here the intuition is that perpendicular lines have an angle of $\theta$ between them.</description></item><item><title>Vectors and Vector Math</title><link>https://foldable-robotics.github.io/modules/kinematics/vectors-and-vector-math/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://foldable-robotics.github.io/modules/kinematics/vectors-and-vector-math/</guid><description>A $\vec{v}$ defines a magnitude and direction in $n$-dimensional space.</description></item><item><title>Website Update I</title><link>https://foldable-robotics.github.io/assignments/website-update-i/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://foldable-robotics.github.io/assignments/website-update-i/</guid><description>&lt;h2 id="introduction">Introduction&lt;/h2>
 &lt;p>The purpose of this assignment is to update your team&amp;rsquo;s progress towards creating a public-facing, unified project report.&lt;/p>
