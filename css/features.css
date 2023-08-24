@@ -59,23 +59,3 @@
   background-position: center center;
   background-size: cover;
 }
-
-
-.breadcrumb {
-  display: flex;
-  flex-wrap: wrap;
-  padding: .5rem .5rem;
-  margin-bottom: 1rem;
-  list-style: none;
-  background: #eee;
-}
-
-.breadcrumb-item {
-  padding-left: 1rem;
-}
-
-.breadcrumb-item + .breadcrumb-item {
-}
-.breadcrumb-item + .breadcrumb-item::before {
-  content: var(--bs-breadcrumb-divider, ">") /* rtl: var(--bs-breadcrumb-divider, ">") */;
-}
