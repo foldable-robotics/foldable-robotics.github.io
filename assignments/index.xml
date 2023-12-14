@@ -4,39 +4,58 @@
 &lt;h2 id="suggestions">Suggestions&lt;/h2>
 &lt;ul>
 &lt;li>It will be useful to start using a program like &lt;a href="https://www.mendeley.com/?interaction_required=true">Mendeley&lt;/a> to collect and organize references.&lt;/li>
-&lt;li>Be creative in your search terms. Use
+&lt;li>Be creative in your search terms. Use 
+
+
+
+
 &lt;span class="hugo-cite-intext"
-itemprop="citation">(&lt;span class="hugo-cite-group">
-&lt;a href="#dickinson2000">&lt;span class="visually-hidden">Citation: &lt;/span>&lt;span itemprop="author" itemscope itemtype="https://schema.org/Person">&lt;meta itemprop="givenName" content="Michael H.">&lt;span itemprop="familyName">Dickinson&lt;/span>&lt;/span>,&amp;#32;&lt;span itemprop="author" itemscope itemtype="https://schema.org/Person">&lt;meta itemprop="givenName" content="C T">&lt;span itemprop="familyName">Farley&lt;/span>&lt;/span>
-&lt;em>&amp;amp; al.&lt;/em>,&amp;#32;&lt;span itemprop="datePublished">2000&lt;/span>&lt;/a>&lt;span class="hugo-cite-citation">
+ itemprop="citation">(&lt;span class="hugo-cite-group">
+
+ &lt;a href="#dickinson2000">&lt;span class="visually-hidden">Citation: &lt;/span>&lt;span itemprop="author" itemscope itemtype="https://schema.org/Person">&lt;meta itemprop="givenName" content="Michael H.">&lt;span itemprop="familyName">Dickinson&lt;/span>&lt;/span>,&amp;#32;&lt;span itemprop="author" itemscope itemtype="https://schema.org/Person">&lt;meta itemprop="givenName" content="C T">&lt;span itemprop="familyName">Farley&lt;/span>&lt;/span>
+ &lt;em>&amp;amp; al.&lt;/em>,&amp;#32;&lt;span itemprop="datePublished">2000&lt;/span>&lt;/a>&lt;span class="hugo-cite-citation"> 
+
+
+
+
+
+
+
+
+
+
 &lt;span itemscope
-itemtype="https://schema.org/Article"
-data-type="article">&lt;span itemprop="author" itemscope itemtype="https://schema.org/Person">&lt;span itemprop="familyName">Dickinson&lt;/span>,&amp;#32;
-&lt;meta itemprop="givenName" content="Michael H." />
-M.&lt;/span>,&amp;#32;
-&lt;span itemprop="author" itemscope itemtype="https://schema.org/Person">&lt;span itemprop="familyName">Farley&lt;/span>,&amp;#32;
-&lt;meta itemprop="givenName" content="C T" />
-C.&lt;/span>,&amp;#32;
-&lt;span itemprop="author" itemscope itemtype="https://schema.org/Person">&lt;span itemprop="familyName">Full&lt;/span>,&amp;#32;
-&lt;meta itemprop="givenName" content="R J" />
-R.&lt;/span>,&amp;#32;
-&lt;span itemprop="author" itemscope itemtype="https://schema.org/Person">&lt;span itemprop="familyName">Koehl&lt;/span>,&amp;#32;
-&lt;meta itemprop="givenName" content="M A" />
-M.&lt;/span>,&amp;#32;
-&lt;span itemprop="author" itemscope itemtype="https://schema.org/Person">&lt;span itemprop="familyName">Kram&lt;/span>,&amp;#32;
-&lt;meta itemprop="givenName" content="R" />
-R.&lt;/span>&amp;#32;&amp;amp;&amp;#32;&lt;span itemprop="author" itemscope itemtype="https://schema.org/Person">&lt;span itemprop="familyName">Lehman&lt;/span>,&amp;#32;
-&lt;meta itemprop="givenName" content="S" />
-S.&lt;/span>
-&amp;#32;
-(&lt;span itemprop="datePublished">2000&lt;/span>).
-&amp;#32;&lt;span itemprop="name">&lt;span class="nocase">How animals move: an integrative view.&lt;/span>&lt;/span>.&lt;i>
-&lt;span itemprop="about">Science (New York, N.Y.)&lt;/span>,&amp;#32;288(5463)&lt;/i>.&amp;#32;&lt;span itemprop="pagination">100–6&lt;/span>.
-&lt;a href="https://doi.org/10.1126/science.288.5463.100"
-itemprop="identifier"
-itemtype="https://schema.org/URL">https://doi.org/10.1126/science.288.5463.100&lt;/a>&lt;/span>
+ itemtype="https://schema.org/Article"
+ data-type="article">&lt;span itemprop="author" itemscope itemtype="https://schema.org/Person">&lt;span itemprop="familyName">Dickinson&lt;/span>,&amp;#32;
+ &lt;meta itemprop="givenName" content="Michael H." />
+ M.&lt;/span>,&amp;#32;
+ &lt;span itemprop="author" itemscope itemtype="https://schema.org/Person">&lt;span itemprop="familyName">Farley&lt;/span>,&amp;#32;
+ &lt;meta itemprop="givenName" content="C T" />
+ C.&lt;/span>,&amp;#32;
+ &lt;span itemprop="author" itemscope itemtype="https://schema.org/Person">&lt;span itemprop="familyName">Full&lt;/span>,&amp;#32;
+ &lt;meta itemprop="givenName" content="R J" />
+ R.&lt;/span>,&amp;#32;
+ &lt;span itemprop="author" itemscope itemtype="https://schema.org/Person">&lt;span itemprop="familyName">Koehl&lt;/span>,&amp;#32;
+ &lt;meta itemprop="givenName" content="M A" />
+ M.&lt;/span>,&amp;#32;
+ &lt;span itemprop="author" itemscope itemtype="https://schema.org/Person">&lt;span itemprop="familyName">Kram&lt;/span>,&amp;#32;
+ &lt;meta itemprop="givenName" content="R" />
+ R.&lt;/span>&amp;#32;&amp;amp;&amp;#32;&lt;span itemprop="author" itemscope itemtype="https://schema.org/Person">&lt;span itemprop="familyName">Lehman&lt;/span>,&amp;#32;
+ &lt;meta itemprop="givenName" content="S" />
+ S.&lt;/span>
+ &amp;#32;
+ (&lt;span itemprop="datePublished">2000&lt;/span>).
+ &amp;#32;&lt;span itemprop="name">&lt;span class="nocase">How animals move: an integrative view.&lt;/span>&lt;/span>.&lt;i>
+ &lt;span itemprop="about">Science (New York, N.Y.)&lt;/span>,&amp;#32;288(5463)&lt;/i>.&amp;#32;&lt;span itemprop="pagination">100–6&lt;/span>.
+ &lt;a href="https://doi.org/10.1126/science.288.5463.100"
+ itemprop="identifier"
+ itemtype="https://schema.org/URL">https://doi.org/10.1126/science.288.5463.100&lt;/a>&lt;/span>
+
+
+
+
 &lt;/span>&lt;/span>)&lt;/span>
-to find good starting points for references and keywords.&lt;/li>
+ to find good starting points for references and keywords.&lt;/li>
 &lt;li>Start writing down search keywords from class.&lt;/li>
 &lt;/ul>
 &lt;h2 id="external-resources">External Resources&lt;/h2>
