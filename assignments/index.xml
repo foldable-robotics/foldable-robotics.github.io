@@ -334,7 +334,7 @@
 &lt;p>Python is essential for Foldable Robotics. This task leads you through installing the Anaconda Python Distribution. Completing this task will ensure you have the basic packages installed to use Python in the course.&lt;/p>
 &lt;h2 id="resources">Resources&lt;/h2>
 &lt;ul>
-&lt;li>&lt;a href="https://foldable-robotics.github.io/modules/python/installing-anaconda/">Installing Anaconda Python Tutorial&lt;/a>&lt;/li>
+&lt;li>&lt;a href="https://foldable-robotics.github.io/modules/python/installing-anaconda-python/">Installing Anaconda Python Tutorial&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://foldable-robotics.github.io/modules/misc/add-folder-to-system-path/">Add folder to system path (Windows)&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://foldable-robotics.github.io/modules/python/using-jupyter-notebook/">Using Jupyter Notebook&lt;/a>&lt;/li>
 &lt;li>&lt;a href="https://foldable-robotics.github.io/modules/python/google-colab-tutorial/">Google Colab Tutorial&lt;/a>&lt;/li>
