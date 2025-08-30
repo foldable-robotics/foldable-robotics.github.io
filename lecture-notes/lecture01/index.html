@@ -1,0 +1,1388 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+
+<meta name="robots" content="nofollow" />
+
+
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Daniel M. Aukes">
+      
+      
+      
+        <link rel="prev" href="../../course-info/05-software-list/">
+      
+      
+        <link rel="next" href="../../static/node_modules/mathjax/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.18">
+            
+
+        
+
+    
+      
+        <title>Lecture 1 - Foldable Robotics</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.66ac8b77.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+
+
+   <link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+    html.glightbox-open { overflow: initial; height: 100%; }
+    .gslide-title { margin-top: 0px; user-select: text; }
+    .gslide-desc { color: #666; user-select: text; }
+    .gslide-image img { background: white; }
+    .gscrollbar-fixer { padding-right: 15px; }
+    .gdesc-inner { font-size: 0.75rem; }
+    body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+    body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+    body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}</style> <script src="../../assets/javascripts/glightbox.min.js"></script></head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#welcome-to-foldable-robotics" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Foldable Robotics" class="md-header__button md-logo" aria-label="Foldable Robotics" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Foldable Robotics
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lecture 1
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var media,input,key,value,palette=__md_get("__palette");if(palette&&palette.color){"(prefers-color-scheme)"===palette.color.media&&(media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']"),palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent"));for([key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/flexible-robotics/project_flexible_robotics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../course-info/01-syllabus/" class="md-tabs__link">
+          
+  
+    
+  
+  Course info
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+    
+  
+  Lecture notes
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../static/node_modules/mathjax/" class="md-tabs__link">
+          
+  
+    
+  
+  Static
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Foldable Robotics" class="md-nav__button md-logo" aria-label="Foldable Robotics" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Foldable Robotics
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/flexible-robotics/project_flexible_robotics" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.5.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Course info
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Course info
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-info/01-syllabus/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Foldable Robotics Syllabus
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-info/02-submission-best-practices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Submission Best Practices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-info/03-parts-list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Parts List
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../course-info/05-software-list/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software List
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Lecture notes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Lecture notes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Lecture 1
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Lecture 1
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#agenda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Agenda
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attendance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attendance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daniel-m-aukes-phd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Daniel M. Aukes, PhD
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-research" class="md-nav__link">
+    <span class="md-ellipsis">
+      My Research
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#background" class="md-nav__link">
+    <span class="md-ellipsis">
+      Background
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changes-this-year" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changes this year
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Static
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Static
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Node modules
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Node modules
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1_1" >
+        
+          
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../static/node_modules/mathjax/" class="md-nav__link ">
+              
+  
+  <span class="md-ellipsis">
+    Mathjax
+  </span>
+  
+
+            </a>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_4_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            Mathjax
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#agenda" class="md-nav__link">
+    <span class="md-ellipsis">
+      Agenda
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#attendance" class="md-nav__link">
+    <span class="md-ellipsis">
+      Attendance
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#daniel-m-aukes-phd" class="md-nav__link">
+    <span class="md-ellipsis">
+      Daniel M. Aukes, PhD
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#my-research" class="md-nav__link">
+    <span class="md-ellipsis">
+      My Research
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#background" class="md-nav__link">
+    <span class="md-ellipsis">
+      Background
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changes-this-year" class="md-nav__link">
+    <span class="md-ellipsis">
+      Changes this year
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+    <a href="https://github.com/flexible-robotics/project_flexible_robotics/edit/main/docs/lecture-notes/lecture01.md" title="Edit this page" class="md-content__button md-icon">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="welcome-to-foldable-robotics">Welcome to Foldable Robotics</h1>
+<h2 id="agenda">Agenda</h2>
+<ul>
+<li>Attendance</li>
+<li>Survey Released</li>
+<li>Welcome to Foldable Robotics</li>
+<li>Go over syllabus<ul>
+<li>Discuss Course topics</li>
+</ul>
+</li>
+<li>Discuss course logistics<ul>
+<li>Go over course websites</li>
+<li>Discuss software-based tools</li>
+<li>Discuss parts and materials</li>
+</ul>
+</li>
+<li>Lecture: Intro to Foldable Robotics</li>
+</ul>
+<h2 id="attendance">Attendance</h2>
+<p><a class="glightbox" href="../attendance/2025-08-25.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="../attendance/2025-08-25.png" /></a></p>
+<h2 id="daniel-m-aukes-phd">Daniel M. Aukes, PhD</h2>
+<ul>
+<li>Associate Professor at Arizona State University</li>
+<li>Teach topics related to robotics, engineering, and embedded systems.</li>
+<li>You can call me Dr. Aukes</li>
+</ul>
+<h2 id="my-research">My Research</h2>
+<ul>
+<li>Foldable Robotics and other “informal” robot design methods</li>
+<li>IDEAlab: <a href="https://idealab.asu.edu">https://idealab.asu.edu</a></li>
+<li>I will integrate my own research into the class during the semester</li>
+</ul>
+<h2 id="background">Background</h2>
+<table>
+<thead>
+<tr>
+<th>Position</th>
+<th>Where</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Assistant Professor</td>
+<td>Arizona State University</td>
+</tr>
+<tr>
+<td>Postdoctoral Researcher</td>
+<td>Harvard University Microrobotics Lab</td>
+</tr>
+<tr>
+<td>Graduate Student (MS, PhD)</td>
+<td>Stanford University</td>
+</tr>
+<tr>
+<td>Industry (System Integration)</td>
+<td>DMC, Inc</td>
+</tr>
+<tr>
+<td>Undergraduate (BS)</td>
+<td>Northwestern University, Evanston IL</td>
+</tr>
+</tbody>
+</table>
+<h2 id="_1"></h2>
+<blockquote>
+<p>Please let me know if you don’t understand what I am saying…I’m an expert, I can’t help it!</p>
+</blockquote>
+<h2 id="changes-this-year">Changes this year</h2>
+<ul>
+<li>Some schedule changes</li>
+<li>Some remote / hybrid classes -- will post and let you know</li>
+<li>Should not change the overall content or timing of the semester.</li>
+<li>30-person cap -- impacts attendance</li>
+</ul>
+<h1 id="syllabus-walkthrough">Syllabus Walkthrough</h1>
+<p><a href="syllabus-slides.html">Syllabus Slides</a></p>
+<h1 id="course-logistics">Course Logistics</h1>
+<h2 id="course-website-walkthrough">Course Website Walkthrough</h2>
+<ul>
+<li>Course Info: Syllabus, Submission Best Practices, Parts &amp; Materials  </li>
+<li>Lecture Notes</li>
+<li>Tutorials and Handouts</li>
+<li>Full Assignments</li>
+</ul>
+<p>. . .</p>
+<blockquote>
+<p>Link will be posted today</p>
+</blockquote>
+<h2 id="canvas">Canvas</h2>
+<p><a href="https://canvas.asu.edu">https://canvas.asu.edu</a></p>
+<ul>
+<li><a href="https://canvas.asu.edu/">https://canvas.asu.edu/</a><ul>
+<li>discussion board</li>
+<li>assignment links</li>
+<li>announcements</li>
+<li>grading</li>
+<li>Calendar: Add to your google / apple calendar?</li>
+</ul>
+</li>
+</ul>
+<h2 id="assignment-types">Assignment Types</h2>
+<ul>
+<li><strong>Individual Assignments:</strong> Completed by you with a significant learning compoenent.</li>
+<li><strong>Team Project Assignments:</strong>Completed by team, graded as team.</li>
+<li><strong>In Class Activities:</strong> Ungraded assignments related to completing a basic technical objective.</li>
+<li><strong>Other misc tasks:</strong> Ungraded activities needed for you to complete upcoming assignments or inform me about class status, eg surveys, installing software, etc.</li>
+</ul>
+<h2 id="what-to-bring">What to bring</h2>
+<ul>
+<li>Phone / Camera (for data collection)</li>
+<li>Laptop (required)</li>
+<li>Notebook &amp; Pen</li>
+</ul>
+<h2 id="other-instructional-team">Other Instructional Team</h2>
+<ul>
+<li>TA - TBD</li>
+</ul>
+<h2 id="tools-used-in-the-class">Tools Used in the Class</h2>
+<ul>
+<li>Python (Anaconda distribution) or Google Colab</li>
+<li>Solidworks / Autodesk Fusion</li>
+<li>Digital Fabrication: printers, laser cutters, vinyl cutters, etc.</li>
+<li>Analog Fabrication: scissors, tape, staples, folding, etc.</li>
+</ul>
+<h3 id="other-suggested-resources">Other suggested resources</h3>
+<ul>
+<li>Github for website hosting and -- if you wish -- repository management</li>
+</ul>
+<h2 id="parts-and-materials">Parts and Materials</h2>
+<p>The goal of my research is to make it possible to make a ~$100 robot in less than two hours.  </p>
+<ul>
+<li>We will mix in prototyping throughout the semester</li>
+<li>We will use a mixture of digital and analog prototyping approaches.</li>
+<li>These are all compatible with low-fi and high-fi tools, including your home or teaching labs</li>
+<li>You are responsible for selecting and obtaining custom materials and your own craft tools.</li>
+<li>We will be able to supply some parts and materials.  More soon...s</li>
+<li>Will discuss parts and materials more later in the semester.</li>
+</ul>
+<h1 id="course-overview">Course Overview</h1>
+<p><a class="glightbox" href="/home/danaukes/syncthing/scratch/videos-compressed/2013-2015/informal-robotics/2%20years%20of%20robots/2%20years%20of%20robots-new-med.mp4" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="/home/danaukes/syncthing/scratch/videos-compressed/2013-2015/informal-robotics/2%20years%20of%20robots/2%20years%20of%20robots-new-med.mp4" /></a></p>
+<h2 id="vocabulary">Vocabulary</h2>
+<ul>
+<li>Rigid</li>
+<li>Adaptive</li>
+<li>Stiff vs Compliant</li>
+<li>Flexible</li>
+<li>Soft</li>
+<li>Series Elastic eg ("Series Elastic Actuator")</li>
+</ul>
+<h2 id="rigid-robots">Rigid Robots</h2>
+<p>Traditionally, robots have been</p>
+<ul>
+<li>rigid</li>
+<li>highly-geared</li>
+<li>heavy</li>
+<li>slow</li>
+<li>unsafe</li>
+<li>expensive</li>
+</ul>
+<h2 id="soft-robots">Soft Robots</h2>
+<ul>
+<li>typically involves "soft" materials<ul>
+<li>silicone and other rubbers</li>
+<li>pneumatic actuation</li>
+</ul>
+</li>
+<li>limited modeling capabilities</li>
+</ul>
+<p><a class="glightbox" href="images-new/th-3432411149.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="images-new/th-3432411149.jpg" style="width:auto;max-width:100%;max-height:1.5in;" /></a></p>
+<iframe style="width:auto;max-width:100%;max-height:1.5in;" src="https://www.youtube.com/embed/ZrrM-QZ-xDI?si=z8ZyM-HHu3GQAf7g" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+<p><a class="glightbox" href="images-new/2016_RT_MW_Octobot_006-e1472754146545.avif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="images-new/2016_RT_MW_Octobot_006-e1472754146545.avif" style="width:auto;max-width:100%;max-height:1.5in;" /></a>
+<a class="glightbox" href="images-new/vineroboto-1536x804.webp" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="images-new/vineroboto-1536x804.webp" style="width:auto;max-width:100%;max-height:1.5in;" /></a></p>
+<h2 id="modeling-challenge">Modeling Challenge</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9P8NlwnYr98?si=50VfuKCD19H37aRS" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<h2 id="exemplar-flexible-robots">Exemplar Flexible Robots</h2>
+<p><a href="https://duckduckgo.com/?q=series+elastic+robot&amp;t=ffab&amp;iar=images&amp;iax=images&amp;ia=images">series elastic</a> |
+<a href="https://www.pinterest.com/engrefpage/flexures-compliant-mechanisms/">flexure mechanisms</a></p>
+<ul>
+<li>Arms</li>
+<li><a href="https://duckduckgo.com/?q=compliant+robot+legs&amp;t=ffab&amp;iar=images&amp;iax=images&amp;ia=images">Legs</a></li>
+<li>Wings</li>
+<li>Flippers</li>
+<li>Grippers / Hands</li>
+</ul>
+<p><a class="glightbox" href="images-new/CheetahCubISO1_MV.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="images-new/CheetahCubISO1_MV.jpg" style="width:auto;max-width:100%;max-height:2in;" /></a>
+<a class="glightbox" href="images-new/Screen_Shot_2019-04-18_at_5.55.23_PM.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="images-new/Screen_Shot_2019-04-18_at_5.55.23_PM.png" style="width:auto;max-width:100%;max-height:2in;" /></a></p>
+<h2 id="example">Example</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/1qe_WwuDRSY?si=mh9YRU8wK-OdJetR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<h2 id="birdbot">Birdbot</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/6myoC_un7Gg?si=eUIQFtBA8pCR9JbK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<h2 id="flexure-mechanisms">Flexure Mechanisms</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/IUe3mGkngs4?si=qRe7cHkyqMb8rPD7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<h2 id="scram-mechanisms">SCRAM Mechanisms</h2>
+<p><a class="glightbox" href="images-new/image6.jpg" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="images-new/image6.jpg" style="width:auto;max-width:100%;max-height:3in;" /></a></p>
+<h2 id="flexible-robots">Flexible Robots</h2>
+<p><em>Can</em> be</p>
+<ul>
+<li>lighter</li>
+<li>simpler</li>
+<li>safer</li>
+<li>sensing-compatible</li>
+<li>slower</li>
+<li>harder to control</li>
+<li>safer</li>
+<li>...</li>
+</ul>
+<p>. . .</p>
+<p>* there are always exceptions</p>
+<h2 id="case-study">Case Study</h2>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/kJPuenyxeps?si=yo8FGi77HJc73DkV" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+<h2 id="comparison">Comparison</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: right;">Aspect</th>
+<th style="text-align: center;">Rigid</th>
+<th style="text-align: center;">Flexible</th>
+<th style="text-align: center;">Soft</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: right;">Joints</td>
+<td style="text-align: center;">mechanical joints</td>
+<td style="text-align: center;">soft links <em>or</em> joints with springs</td>
+<td style="text-align: center;">No joints; weaker or stiffer regions</td>
+</tr>
+<tr>
+<td style="text-align: right;">Strain</td>
+<td style="text-align: center;">none</td>
+<td style="text-align: center;">bending</td>
+<td style="text-align: center;">stretching</td>
+</tr>
+<tr>
+<td style="text-align: right;">Materials</td>
+<td style="text-align: center;">stiff</td>
+<td style="text-align: center;">mixed</td>
+<td style="text-align: center;">soft</td>
+</tr>
+<tr>
+<td style="text-align: right;">DOFs</td>
+<td style="text-align: center;">fully actuated</td>
+<td style="text-align: center;">specific, passive DOFs</td>
+<td style="text-align: center;">completely soft</td>
+</tr>
+<tr>
+<td style="text-align: right;">Dynamics</td>
+<td style="text-align: center;">simple</td>
+<td style="text-align: center;">more complex</td>
+<td style="text-align: center;">intractable for common use</td>
+</tr>
+</tbody>
+</table>
+<h2 id="foldable-mechanisms">Foldable Mechanisms</h2>
+<p>one type of flexible mechanism</p>
+<p><a class="glightbox" href="/home/danaukes/syncthing/scratch/shared-robotics-videos-compressed//unsorted/Origami%20spherical%20mechanism.mp4" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="/home/danaukes/syncthing/scratch/shared-robotics-videos-compressed//unsorted/Origami%20spherical%20mechanism.mp4" /></a></p>
+<h2 id="foldable-mechanisms_1">Foldable Mechanisms</h2>
+<ul>
+<li>Use affordable materials</li>
+<li>Accessible, planar fabrication techniques</li>
+<li>Compliance accompanies material / geometry choice</li>
+<li>Can add benefits of flexible systems to the precision rigid, kinematics-driven systems</li>
+</ul>
+<h2 id="scram-mechanisms_1">SCRAM Mechanisms</h2>
+<p><a class="glightbox" href="file:///home/danaukes/syncthing/scratch/videos-compressed/2019-2023%20EFRI/Peg%20toy%20robot.mp4" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="file:///home/danaukes/syncthing/scratch/videos-compressed/2019-2023%20EFRI/Peg%20toy%20robot.mp4" style="width:auto;max-width:100%;max-height:5in;" /></a></p>
+<h2 id="in-this-class">In this class</h2>
+<p>we will study</p>
+<ul>
+<li>traditional mechanisms<ul>
+<li>how to prototype &amp; analyze them</li>
+</ul>
+</li>
+<li>flexible material systems<ul>
+<li>how to build flexibility into selected materials</li>
+</ul>
+</li>
+<li>rapid prototyping techniques<ul>
+<li>how to compute and fabricate flexible robots</li>
+</ul>
+</li>
+<li>dynamics of flexible systems<ul>
+<li>how to create simple but sufficient models</li>
+</ul>
+</li>
+<li>experimental characterization, validation, and optimization<ul>
+<li>how to close the design loop</li>
+</ul>
+</li>
+</ul>
+<h2 id="characterization-example">Characterization Example</h2>
+<p><a class="glightbox" href="file:///home/danaukes/syncthing/scratch/videos-compressed/2020-2025%20CAREER/servo_id.mp4" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="file:///home/danaukes/syncthing/scratch/videos-compressed/2020-2025%20CAREER/servo_id.mp4" /></a></p>
+<h2 id="model-fitting">Model Fitting</h2>
+<p><a class="glightbox" href="images-new/image19.JPG" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="images-new/image19.JPG" style="width:auto;max-width:100%;max-height:4in;margin:0px;" /></a>
+<a class="glightbox" href="images-new/image20.JPG" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="images-new/image20.JPG" style="width:auto;max-width:100%;max-height:4in;margin:0px;" /></a>
+<a class="glightbox" href="images-new/model-based-pendulum-2.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="images-new/model-based-pendulum-2.gif" style="width:auto;max-width:100%;max-height:4in;margin:0px;" /></a></p>
+<h2 id="applications-for-fit-models">Applications for Fit Models</h2>
+<p><a class="glightbox" href="images-new/image24-2.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="images-new/image24-2.gif" style="width:auto;max-width:100%;max-height:3in;margin:0px;" /></a>
+<a class="glightbox" href="images-new/image25-3.gif" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="images-new/image25-3.gif" style="width:auto;max-width:100%;max-height:3in;margin:0px;" /></a></p>
+<h2 id="optimization">Optimization</h2>
+<p><a class="glightbox" href="file:///home/danaukes/syncthing/scratch/videos-compressed/2020-2025%20CAREER/toy%20sim2real.mp4" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" src="file:///home/danaukes/syncthing/scratch/videos-compressed/2020-2025%20CAREER/toy%20sim2real.mp4" style="width:auto;max-width:100%;max-height:5in;" /></a></p>
+<h2 id="recent-projects-from-foldable-robotics">Recent Projects from Foldable Robotics</h2>
+<p><a class="glightbox" href="file:///home/danaukes/syncthing/scratch/videos-compressed/2016-2020/2019-foldable-robotics/Team%206%20(compressed).mp4" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" height="1.5in" src="file:///home/danaukes/syncthing/scratch/videos-compressed/2016-2020/2019-foldable-robotics/Team%206%20(compressed).mp4" /></a></p>
+<p><a class="glightbox" href="file:///home/danaukes/syncthing/scratch/videos-compressed/2016-2020/2019-foldable-robotics/Team%201%20(compressed).mp4" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" height="1.5in" src="file:///home/danaukes/syncthing/scratch/videos-compressed/2016-2020/2019-foldable-robotics/Team%201%20(compressed).mp4" /></a></p>
+<p><a class="glightbox" href="file:///home/danaukes/syncthing/scratch/videos-compressed/2022-foldable-robotics/presentations/team%204/Presentation%203%20%5B7N7I_g8Vz8A%5D.mp4" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" height="1.5in" src="file:///home/danaukes/syncthing/scratch/videos-compressed/2022-foldable-robotics/presentations/team%204/Presentation%203%20%5B7N7I_g8Vz8A%5D.mp4" /></a></p>
+<p><a class="glightbox" href="file:///home/danaukes/syncthing/scratch/videos-compressed/2022-foldable-robotics/presentations/team%206/Tessellation%20Based%20Robot%20%5BnSZbOi5HaqA%5D.mp4" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="" height="1.5in" src="file:///home/danaukes/syncthing/scratch/videos-compressed/2022-foldable-robotics/presentations/team%206/Tessellation%20Based%20Robot%20%5BnSZbOi5HaqA%5D.mp4" /></a></p>
+<h2 id="other-keywords">Other Keywords</h2>
+<ul>
+<li>Rigid</li>
+<li>Adaptive</li>
+<li>Stiff vs Compliant</li>
+<li>Flexible</li>
+<li>Soft</li>
+<li>Series Elastic eg ("Series Elastic Actuator")</li>
+<li>Reflected inertia</li>
+<li>Continuum</li>
+<li>RHEX Robot</li>
+<li>Cost of Transport (COT)</li>
+<li>Degrees of Freedom (DOF)</li>
+<li>Strain</li>
+<li>Material</li>
+<li>Adaptive: responds to forces</li>
+<li>Flexible</li>
+<li>Stiff materials vs. stiff systems</li>
+<li>Passive</li>
+</ul>
+<h2 id="upcoming-tasks-and-assignments">Upcoming Tasks and Assignments</h2>
+<ul>
+<li>Attendance</li>
+<li>Individual Task: Incoming Survey will be released after class</li>
+<li>Assignment 1 will be released soon</li>
+<li>Individual Task: Install Python - to be released...</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer" >
+        
+          
+          <a href="../../course-info/05-software-list/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Software List">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Software List
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../../static/node_modules/mathjax/" class="md-footer__link md-footer__link--next" aria-label="Next: MathJax">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                MathJax
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2024 Dan Aukes
+    </div>
+  
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "toc.follow", "navigation.top", "content.action.edit", "navigation.footer"], "search": "../../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.3220b9d7.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="/static/node_modules/mathjax/es5/tex-mml-chtml.js"></script>
+      
+    
+  <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(() => { lightbox.reload() });
+</script></body>
+</html>
