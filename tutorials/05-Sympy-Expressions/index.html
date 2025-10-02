@@ -10,10 +10,10 @@
       
       
       
-        <link rel="prev" href="../03-parts-list/">
+        <link rel="prev" href="../03-Numpy-Rotations/">
       
       
-        <link rel="next" href="../../handouts/hw3/">
+        <link rel="next" href="../07-Quaternions-in-Python/">
       
       
       <link rel="icon" href="../../assets/images/favicon.png">
@@ -24,7 +24,7 @@
 
     
       
-        <title>Software List - Foldable Robotics</title>
+        <title>Sympy Symbols and Expressions - Foldable Robotics</title>
       
     
     
@@ -77,11 +77,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#windows" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -114,7 +109,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Software List
+              Sympy Symbols and Expressions
             
           </span>
         </div>
@@ -204,13 +199,11 @@
         
   
   
-    
-  
   
     
     
-      <li class="md-tabs__item md-tabs__item--active">
-        <a href="../01-syllabus/" class="md-tabs__link">
+      <li class="md-tabs__item">
+        <a href="../../course-info/01-syllabus/" class="md-tabs__link">
           
   
     
@@ -313,11 +306,13 @@
         
   
   
+    
+  
   
     
     
-      <li class="md-tabs__item">
-        <a href="../../tutorials/" class="md-tabs__link">
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../" class="md-tabs__link">
           
   
     
@@ -405,10 +400,8 @@
       
   
   
-    
   
   
-  
     
     
       
@@ -423,20 +416,17 @@
     
     
       
-        
-        
-      
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
         
           
-          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
             
   
   <span class="md-ellipsis">
@@ -447,7 +437,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_2">
             <span class="md-nav__icon md-icon"></span>
             Course info
@@ -461,7 +451,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../01-syllabus/" class="md-nav__link">
+      <a href="../../course-info/01-syllabus/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -482,7 +472,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../02-submission-best-practices/" class="md-nav__link">
+      <a href="../../course-info/02-submission-best-practices/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -503,7 +493,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../03-parts-list/" class="md-nav__link">
+      <a href="../../course-info/03-parts-list/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -521,28 +511,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  <span class="md-ellipsis">
-    Software List
-  </span>
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../course-info/05-software-list/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -551,33 +523,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#windows" class="md-nav__link">
-    <span class="md-ellipsis">
-      Windows
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -985,6 +930,8 @@
       
   
   
+    
+  
   
   
     
@@ -1019,19 +966,22 @@
     
     
       
+        
+        
+      
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../tutorials/" class="md-nav__link ">
+            <a href="../" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1042,13 +992,13 @@
             </a>
             
               
-              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="0">
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="">
                 <span class="md-nav__icon md-icon"></span>
               </label>
             
           </div>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             Tutorials
@@ -1085,7 +1035,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../tutorials/01-origami-tutorial/" class="md-nav__link ">
+            <a href="../01-origami-tutorial/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1142,7 +1092,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../tutorials/02-Topological-Analogs/" class="md-nav__link ">
+            <a href="../02-Topological-Analogs/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1199,7 +1149,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../tutorials/03-Numpy-Rotations/" class="md-nav__link ">
+            <a href="../03-Numpy-Rotations/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1232,6 +1182,8 @@
                 
   
   
+    
+  
   
   
     
@@ -1247,16 +1199,16 @@
       
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5">
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6_5" checked>
         
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../tutorials/05-Sympy-Expressions/" class="md-nav__link ">
+            <a href="./" class="md-nav__link md-nav__link--active">
               
   
   <span class="md-ellipsis">
@@ -1268,7 +1220,7 @@
             
           </div>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_5_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_6_5">
             <span class="md-nav__icon md-icon"></span>
             05 Sympy Expressions
@@ -1313,7 +1265,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../tutorials/07-Quaternions-in-Python/" class="md-nav__link ">
+            <a href="../07-Quaternions-in-Python/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1370,7 +1322,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../tutorials/09-Jacobians/" class="md-nav__link ">
+            <a href="../09-Jacobians/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1427,7 +1379,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../tutorials/10-Constraint-Equations-with-Parallel%20Mechanisms/" class="md-nav__link ">
+            <a href="../10-Constraint-Equations-with-Parallel%20Mechanisms/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1484,7 +1436,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../tutorials/12-Kinematics-in-CAD/" class="md-nav__link ">
+            <a href="../12-Kinematics-in-CAD/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1541,7 +1493,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../tutorials/15-Double-Pendulum-Walkthrough/" class="md-nav__link ">
+            <a href="../15-Double-Pendulum-Walkthrough/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1598,7 +1550,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../tutorials/16-Double-Pendulum-Extensions/" class="md-nav__link ">
+            <a href="../16-Double-Pendulum-Extensions/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1655,7 +1607,7 @@
           
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../tutorials/99-Library-Proxy/" class="md-nav__link ">
+            <a href="../99-Library-Proxy/" class="md-nav__link ">
               
   
   <span class="md-ellipsis">
@@ -1709,23 +1661,6 @@
   
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#windows" class="md-nav__link">
-    <span class="md-ellipsis">
-      Windows
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -1739,7 +1674,7 @@
                   
 
   
-    <a href="https://github.com/flexible-robotics/project_flexible_robotics/edit/main/docs/course-info/05-software-list.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/flexible-robotics/project_flexible_robotics/edit/main/docs/tutorials/05-Sympy-Expressions/index.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"></path></svg>
     </a>
@@ -1747,132 +1682,9 @@
   
 
 
-  <h1>Software List</h1>
+  <h1>Sympy Symbols and Expressions</h1>
 
-<h2 id="windows">Windows</h2>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>URL</th>
-<th>Version</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Putty</td>
-<td><a href="https://putty.org/">https://putty.org/</a></td>
-<td>latest</td>
-</tr>
-<tr>
-<td>Inkscape</td>
-<td><a href="https://inkscape.org/">https://inkscape.org/</a></td>
-<td>latest</td>
-</tr>
-<tr>
-<td>7-zip</td>
-<td><a href="https://www.7-zip.org/">https://www.7-zip.org/</a></td>
-<td>latest</td>
-</tr>
-<tr>
-<td>Git</td>
-<td><a href="https://gitforwindows.org/">https://gitforwindows.org/</a></td>
-<td>latest</td>
-</tr>
-<tr>
-<td>Git extensions</td>
-<td><a href="https://gitextensions.github.io/">https://gitextensions.github.io/</a></td>
-<td>latest</td>
-</tr>
-<tr>
-<td>KDiff3</td>
-<td><a href="https://kdiff3.sourceforge.net/">https://kdiff3.sourceforge.net/</a></td>
-<td>latest</td>
-</tr>
-<tr>
-<td>grepwin</td>
-<td><a href="https://github.com/stefankueng/grepWin/releases/lates">https://github.com/stefankueng/grepWin/releases/lates</a></td>
-<td>latest</td>
-</tr>
-<tr>
-<td>SILabs CP201X Driver</td>
-<td><a href="https://www.silabs.com/documents/public/software/CP210x_Universal_Windows_Driver.zip">https://www.silabs.com/documents/public/software/CP210x_Universal_Windows_Driver.zip</a></td>
-<td>latest</td>
-</tr>
-<tr>
-<td>Tracker</td>
-<td><a href="https://physlets.org/tracker/">https://physlets.org/tracker/</a></td>
-<td>latest</td>
-</tr>
-<tr>
-<td>ffmpeg</td>
-<td><a href="https://ffmpeg.org/">https://ffmpeg.org/</a></td>
-<td>latest</td>
-</tr>
-<tr>
-<td>vlc</td>
-<td><a href="https://www.videolan.org/vlc/">https://www.videolan.org/vlc/</a></td>
-<td>latest</td>
-</tr>
-<tr>
-<td>firefox</td>
-<td><a href="https://www.mozilla.org/en-US/firefox/new/">https://www.mozilla.org/en-US/firefox/new/</a></td>
-<td>latest</td>
-</tr>
-<tr>
-<td>notepad++</td>
-<td><a href="https://notepad-plus-plus.org/">https://notepad-plus-plus.org/</a></td>
-<td>latest</td>
-</tr>
-<tr>
-<td>vscode</td>
-<td><a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></td>
-<td>latest</td>
-</tr>
-<tr>
-<td>acrobat(creative cloud)</td>
-<td>asu-provided?</td>
-<td>latest</td>
-</tr>
-<tr>
-<td>office</td>
-<td>asu-provided?</td>
-<td>latest</td>
-</tr>
-<tr>
-<td>Autodesk Fusion 360</td>
-<td><a href="https://www.autodesk.com/products/fusion-360/overview?term=1-YEAR&amp;tab=subscription">https://www.autodesk.com/products/fusion-360/overview?term=1-YEAR&amp;tab=subscription</a></td>
-<td>latest</td>
-</tr>
-<tr>
-<td>Arduino</td>
-<td><a href="https://www.arduino.cc/en/software">https://www.arduino.cc/en/software</a></td>
-<td>latest</td>
-</tr>
-<tr>
-<td>Visual Studio 2022 Build Tools</td>
-<td><a href="https://visualstudio.microsoft.com/visual-cpp-build-tools/">https://visualstudio.microsoft.com/visual-cpp-build-tools/</a> <br> Direct Link:<br> <a href="https://aka.ms/vs/17/release/vs_BuildTools.exe">https://aka.ms/vs/17/release/vs_BuildTools.exe</a></td>
-<td>latest</td>
-</tr>
-<tr>
-<td>Visual Studio Code</td>
-<td><a href="https://code.visualstudio.com/Download">https://code.visualstudio.com/Download</a></td>
-<td>latest</td>
-</tr>
-<tr>
-<td>Anaconda Python</td>
-<td><a href="https://www.anaconda.com/">https://www.anaconda.com/</a> <br>As discussed with Kyle Wright, we will enable persistent user profiles for the semester so that students can install this themselves</td>
-<td>latest</td>
-</tr>
-<tr>
-<td>LibreCAD</td>
-<td><a href="https://librecad.org/">https://librecad.org/</a></td>
-<td>latest</td>
-</tr>
-</tbody>
-</table>
-<p><em><strong>Additionally, we need student profiles to persist over the course of the semester in order for their custom-installed python profiles to remain persistent.
-</strong></em></p>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Rrrx-BigrCk?si=n4gIcslWmaGbBOH7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 
 
@@ -1911,7 +1723,7 @@
       <nav class="md-footer__inner md-grid" aria-label="Footer">
         
           
-          <a href="../03-parts-list/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Parts List">
+          <a href="../03-Numpy-Rotations/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Numerical Rotations with Numpy">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
@@ -1921,20 +1733,20 @@
                 Previous
               </span>
               <div class="md-ellipsis">
-                Parts List
+                Numerical Rotations with Numpy
               </div>
             </div>
           </a>
         
         
           
-          <a href="../../handouts/hw3/" class="md-footer__link md-footer__link--next" aria-label="Next: Homework 3 Supplementary Files">
+          <a href="../07-Quaternions-in-Python/" class="md-footer__link md-footer__link--next" aria-label="Next: Quaternions in Python">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Homework 3 Supplementary Files
+                Quaternions in Python
               </div>
             </div>
             <div class="md-footer__button md-icon">
